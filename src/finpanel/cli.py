@@ -7,6 +7,7 @@ import sys
 from collections import Counter
 from pathlib import Path
 
+from finpanel import filings
 from finpanel.cache.file import atomic_write
 from finpanel.errors import FinPanelError
 from finpanel.sec import parse_companyfacts, parse_submissions
@@ -31,7 +32,28 @@ def main(argv: list[str] | None = None) -> int:
             "--strict", action="store_true", help="Exit 1 if parser issues are present"
         )
         command.add_argument("--verbose", action="store_true")
+    filing_commands = commands.add_parser("filings").add_subparsers(dest="action", required=True)
+    for action in ("timeline", "available-as-of", "coverage"):
+        command = filing_commands.add_parser(action)
+        command.add_argument("cik")
+        if action == "available-as-of":
+            command.add_argument("as_of")
+        command.add_argument("--user-agent", default=os.getenv("FINPANEL_SEC_USER_AGENT"))
+        command.add_argument("--cache-dir", type=Path, default=Path(".finpanel-cache"))
+        command.add_argument("--refresh", action="store_true")
+        command.add_argument("--offline", action="store_true")
+        command.add_argument("--output", type=Path, help="Save full records, issues and provenance")
+        command.add_argument(
+            "--limit", type=int, default=20, help="Maximum displayed filing entries"
+        )
+        command.add_argument(
+            "--strict", action="store_true", help="Exit 1 on parsing or coverage issues"
+        )
     args = parser.parse_args(argv)
+    if args.command == "filings":
+        if args.limit < 0:
+            parser.error("--limit must be nonnegative")
+        return _filings_command(args)
     if args.raw_output and args.normalized_output:
         same_path = args.raw_output.resolve() == args.normalized_output.resolve()
         same_file = (
@@ -70,6 +92,50 @@ def main(argv: list[str] | None = None) -> int:
             summary["units"] = dict(Counter(r.unit for r in result.records))
         print(dumps(summary), end="")
         return 1 if args.strict and result.issues else 0
+    except (FinPanelError, OSError) as exc:
+        print(f"finpanel: {exc}", file=sys.stderr)
+        return 2
+
+
+def _filings_command(args: argparse.Namespace) -> int:
+    try:
+        with SECClient(args.user_agent, cache_dir=args.cache_dir, offline=args.offline) as client:
+            if args.action == "available-as-of":
+                data = filings.available_as_of(
+                    args.cik, args.as_of, client=client, refresh=args.refresh
+                )
+            else:
+                data = filings.timeline(args.cik, client=client, refresh=args.refresh)
+        if args.output:
+            atomic_write(args.output, dumps(data).encode())
+        if args.action == "coverage":
+            summary = filings.coverage(data)
+        else:
+            summary = {
+                "cik": data.cik,
+                "total_filings": len(data),
+                "shown": min(args.limit, len(data)),
+                "issues": len(data.issues),
+                "issue_codes": dict(Counter(i.code for i in data.issues)),
+                "historical_files_loaded": data.historical_files_loaded,
+                "sources": data.sources,
+                "records": [
+                    {
+                        "accession_number": r.accession_number,
+                        "form": r.form,
+                        "filing_date": r.filing_date,
+                        "availability": r.availability,
+                        "is_amendment": r.is_amendment,
+                        "conflicts": r.conflicts,
+                        "source_records": len(r.source_records),
+                    }
+                    for r in data.records[: args.limit]
+                ],
+            }
+            if args.action == "available-as-of":
+                summary["as_of"] = args.as_of
+        print(dumps(summary), end="")
+        return 1 if args.strict and data.issues else 0
     except (FinPanelError, OSError) as exc:
         print(f"finpanel: {exc}", file=sys.stderr)
         return 2

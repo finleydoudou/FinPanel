@@ -5,10 +5,10 @@ from SEC EDGAR. Its long-term goal is reconstruction of information available at
 historical `as_of` date, with filing history and complete provenance.
 
 **FinPanel does NOT yet provide research-grade point-in-time financial panels.**
-This repository implements the Phase 0A ingestion foundation. Authentic SEC
-snapshots for AAPL, MSFT, WMT and NVDA were captured on 2026-10-05 and are tested
-offline alongside separate, explicitly synthetic edge-case fixtures. No Phase 0B
-features or point-in-time resolver are implemented.
+This repository implements Phase 0A raw ingestion and Phase 0B historical filing
+coverage, explicit availability precision, and filing-level as-of filtering.
+Authentic SEC fixtures are tested offline alongside separate synthetic edge cases.
+It still does **not** construct normalized point-in-time financial fundamentals.
 
 ## Installation
 
@@ -62,7 +62,12 @@ print(len(result.records), len(result.issues))
 
 - `sec/client.py`: synchronous httpx client, explicit User-Agent, timeout, CIK
   validation, deterministic exponential retries and a shared in-process limiter.
-- `sec/submissions.py`: recent filing column arrays to independent filing records.
+- `sec/submissions.py`: recent/historical column arrays and typed history references;
+  a shared column parser preserves the original source paths.
+- `filings.py`: accession-based timeline assembly, availability policy, filtering
+  and coverage diagnostics; separate from raw parsing and Company Facts.
+- `models/timeline.py`: filing events, historical references, availability precision,
+  timeline results and coverage dataclasses.
 - `sec/companyfacts.py`: one record per taxonomy/concept/unit/array position.
 - `models/`: dataclasses for filings, observations, source identities and issues.
 - `cache/file.py`: raw JSON objects keyed by SHA-256; versioned retrieval metadata
@@ -84,8 +89,9 @@ Official sources:
 - `https://data.sec.gov/api/xbrl/companyfacts/CIK##########.json`
 
 The submissions endpoint supplies a recent filing section and references to older
-history files. This phase parses **recent only** and preserves those references in
-metadata; it does not claim a complete historical filing inventory. Company Facts
+history files. The raw `sec submissions` command remains recent-only for backward
+compatibility. The Phase 0B `filings` API loads recent and all valid referenced
+history files through the same client/cache. Company Facts
 aggregates selected standard-taxonomy, whole-entity facts. It is not a complete
 archive of filing-level XBRL contexts, dimensions or company-specific extensions.
 
@@ -130,8 +136,10 @@ information first became public.
 
 ## Explicit assumptions and limitations
 
-- No selection, deduplication or amendment merging. Input array order is retained;
-  taxonomy/concept/unit keys are traversed in sorted order.
+- Raw parsers do not select or deduplicate observations. Input array order is
+  retained; taxonomy/concept/unit keys are traversed in sorted order. The derived
+  filing timeline groups by CIK/accession and retains every original source row.
+  Amendments with separate accessions always remain separate filing events.
 - Missing optional fields remain `None`. Invalid optional fields produce issues
   and retain their original raw value. Unusable observations produce issues;
   they are excluded from typed records but retained in raw data and issue payloads.
@@ -210,7 +218,160 @@ Python client; rejection of colliding raw/normalized export destinations; and
 snapshot overwrite protection with incremental provenance manifests. Existing
 throttling, timeout, HTTP 403 fail-fast behavior and parsing semantics are retained.
 
-Phase 0B planning should start with historical submissions traversal,
-filing-level timestamp/context validation and a documented
-availability policy. Do not infer point-in-time availability from this ingestion
-layer. No Phase 0B features have been implemented here.
+## Historical filing timeline (Phase 0B)
+
+```python
+from finpanel import filings
+
+history = filings.timeline("0000320193")
+available = filings.available_as_of(history, "2020-06-30T15:00:00Z")
+report = filings.coverage(history)
+# available_as_of also accepts a CIK and loads its timeline using the same client.
+```
+
+A `FilingTimeline` is iterable and exposes `records`, `issues`, `sources`,
+`historical_references`, `historical_files_loaded`, `availability_policy`, and
+`as_of` (UTC when filtered). Keep the original timeline to query a later cutoff;
+widening a previously filtered timeline is rejected. Pass a caller-owned
+`SECClient` with `client=...` to reuse caching/options; the API does not close it.
+
+```bash
+finpanel filings timeline 0000320193 --limit 10
+finpanel filings available-as-of 0000320193 2020-06-30T15:00:00Z
+finpanel filings coverage 0000320193
+finpanel filings timeline 0000320193 --output output/timeline.json
+```
+
+Default output is a compact JSON summary plus at most 20 event previews. `--output`
+saves all selected events with source rows, issues, policy and provenance.
+`coverage` prints counts for each form (including 10-K, 10-Q and 8-K when present),
+amendments, availability precision, overlaps, source files and potential gaps.
+`--strict` exits 1 on parser/reference/conflict diagnostics. Date-only precision
+alone is not a parser error. Request, offline cache miss and invalid-input errors
+exit 2. There is no GUI.
+
+### Discovery, identity and preservation
+
+`filings.files` is the sole discovery source. Each reference retains its original
+metadata, expected count/range, parent response hash and pointer. Only
+`CIK<matching-10-digit-CIK>-submissions-<digits>.json` names are accepted; arbitrary
+URLs, other issuers and path traversal are rejected with explicit issues.
+Files are fetched from `https://data.sec.gov/submissions/<name>` in sorted name
+order, once per unique filename. All repeated references remain in the result.
+`refresh=True` refreshes both the parent and each history file.
+
+Historical payloads are root-level column arrays and do not carry their own issuer
+CIK/name. Issuer context comes from the parent and validated filename. The raw
+history response is preserved unchanged; inherited entity metadata is not proof
+of the company's historical name or fiscal-year-end regime. Historical record
+pointers are `/accessionNumber/<index>`; recent pointers retain their Phase 0A path.
+
+Within one company's timeline, accession is the primary event identity. Neither
+form nor filing/report dates are identity keys. All source records, including
+identical duplicate rows and unknown SEC fields, are retained in `source_records`.
+Missing values can be supplemented by a non-conflicting source. Conflicting
+non-null metadata is exposed in `conflicts` and issues; the derived field becomes
+`None`. No latest-source preference is applied. Conflicting filing dates or
+acceptance times give unknown availability. Invalid accession rows remain in raw
+sources and issue payloads, but cannot become identifiable timeline events.
+
+Forms ending in `/A` mark amendments, including 10-K/A, 10-Q/A and 8-K/A. They are
+separate events when their accessions differ. Missing/conflicting forms produce
+unknown amendment status. No original-to-amendment relationship is inferred.
+
+### Availability policy: `sec-acceptance-conservative-v1`
+
+Original SEC fields are never overwritten by derived availability. Three distinct
+precision values are serialized:
+
+| Precision | Policy | As-of inclusion |
+| --- | --- | --- |
+| `acceptance_datetime` | Unambiguous, valid timezone-aware SEC acceptance timestamp, converted to UTC | Timestamp is less than or equal to the cutoff |
+| `date_only` | Missing/invalid/naive or potentially date-derived acceptance; use supplied filing date | Cutoff's New York calendar date is strictly later than the filing date |
+| `unknown` | No usable date/time or conflicting availability metadata | Excluded |
+
+An exact New York midnight acceptance timestamp is treated conservatively as
+potentially date-derived, because this pattern occurs in older authentic records.
+This is an explicit reliability heuristic, not a proven SEC flag: a true midnight
+acceptance may also be downgraded. The original timestamp remains in source and
+event metadata. Naive timestamps are never silently assigned a timezone. Other
+aware acceptance times are used as supplied; they are not independently verified
+against filing headers or dissemination logs.
+
+Acceptance is an availability **proxy**, not proof of actual public dissemination
+or delivery to every reader. A filing date is not an acceptance time. `as_of`
+requires an offset-aware ISO datetime (or aware Python datetime); date-only and
+naive cutoffs are rejected. The conservative date rule avoids intraday look-ahead
+but intentionally excludes date-only filings during their own filing day.
+New York day boundaries use `zoneinfo` and DST rules from the system IANA database;
+on systems without it, install Python's `tzdata` package.
+
+Ordering is ascending by availability time; date-only records sort at the start
+of their New York date **only as a sorting key**, never as an exact publication
+time. Precision and accession break ties. Unknown records sort last by accession.
+Policy version, exact original timestamps and explicit precision remain auditable.
+
+### Coverage and failure behavior
+
+Every valid historical reference is attempted. A download failure or missing
+entry in offline mode raises rather than returning an apparently complete recent
+subset. Malformed references are preserved as explicit issues; a returned timeline
+can therefore have incomplete coverage. Malformed rows are also reported. Inspect
+`issues` and `coverage(...).potential_gaps`; use CLI `--strict` for automation.
+
+Diagnostics report expected-versus-parsed historical counts/date ranges, parser
+issues, conflicting metadata, missing dates/forms, unknown availability and
+unresolved intraday precision. They do not infer expected 10-K/10-Q schedules,
+invent absent filings or assert universal completeness when no issue is found.
+Company filing histories, caches and separate retrievals may change over time.
+A current SEC snapshot cannot establish which metadata was present at an old date.
+
+### Authentic historical fixture and fully offline verification
+
+One additional raw Apple history response is frozen in `tests/fixtures/history/`:
+`CIK0000320193-submissions-001.json`, captured on 2026-10-06 (Hong Kong time;
+2026-10-05 UTC). Its manifest preserves endpoint, CIK, UTC retrieval timestamp,
+SHA-256, raw/unmodified status, purpose, and the parent fixture's identity/hash.
+The Phase 0A fixtures have not been modified.
+
+This file supplies 1,259 historical rows and at least 58 amendments. Together with
+1,001 recent rows, the frozen Apple timeline contains 2,260 distinct accessions,
+covering observed filing dates from 1994-01-26 through 2026-10-02. This particular
+pair has no natural accession overlap; separate synthetic tests cover overlaps,
+conflicts and duplicate rows without editing the authentic data.
+
+The parent advertises history through 2015-09-08, whereas the captured historical
+file's latest filing date is 2015-08-31. The timeline reports
+`history_range_mismatch` and preserves both facts. This is a potential coverage
+inconsistency, not proof of a missing filing or a reason to alter the fixture.
+
+```bash
+# Seed an ignored cache from the committed fixture manifests; no SEC requests.
+python examples/inspect_timeline.py --cache-dir output/offline-cache
+finpanel filings timeline 320193 --offline --cache-dir output/offline-cache --limit 3
+finpanel filings available-as-of 320193 2020-06-30T15:00:00Z --offline --cache-dir output/offline-cache
+finpanel filings coverage 320193 --offline --cache-dir output/offline-cache
+```
+
+Offline mode requires no contact identity and never falls back to networking.
+Missing cache entries fail explicitly; combining `--offline` and `--refresh` is
+invalid. The default remains network-capable for uncached requests. CI only reads
+frozen fixtures or mocked transports; fixture capture is never part of CI.
+
+Optional future capture (requires your locally configured real SEC identity):
+
+```bash
+python examples/freeze_history_snapshots.py --parent tests/fixtures/sec/aapl_submissions.json --output output/new-history
+```
+
+Only parent-referenced files are downloaded, with two-second request spacing.
+The destination must be absent/empty. A partial manifest records successful
+responses if a later request fails. Captures are not atomic multi-file SEC
+snapshots; count/range diagnostics remain necessary.
+
+Remaining work includes broader historical-company fixture coverage, independent
+filing-header/dissemination validation, cache snapshot manifests across live
+retrievals, and cross-process rate coordination. A suitable Phase 0C would validate
+filing-level timestamps and XBRL context provenance, with a specification for
+availability uncertainty. No Phase 0C, financial metric normalization, restatement
+value selection, ratios, valuation, price data or trading functionality is included.

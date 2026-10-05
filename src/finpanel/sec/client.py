@@ -14,9 +14,9 @@ from typing import Self
 import httpx
 
 from finpanel.cache import FileCache
-from finpanel.errors import SECRequestError, SECTimeoutError, ValidationError
+from finpanel.errors import CacheMissError, SECRequestError, SECTimeoutError, ValidationError
 from finpanel.models import RawResponse
-from finpanel.sec.common import normalize_cik
+from finpanel.sec.common import historical_filename, normalize_cik
 
 logger = logging.getLogger(__name__)
 BASE = "https://data.sec.gov"
@@ -65,12 +65,15 @@ class SECClient:
         cache_dir: str | Path = ".finpanel-cache",
         timeout: float = 30.0,
         max_retries: int = 3,
+        offline: bool = False,
         limiter: RateLimiter | None = None,
         transport: httpx.BaseTransport | None = None,
         now: Callable[[], datetime] = lambda: datetime.now(UTC),
     ):
         if user_agent is None:
             user_agent = os.environ.get("FINPANEL_SEC_USER_AGENT")
+        if user_agent is None and offline:
+            user_agent = "FinPanel offline"
         if not isinstance(user_agent, str) or not user_agent.strip():
             raise ValidationError(
                 "Set FINPANEL_SEC_USER_AGENT or pass a descriptive User-Agent "
@@ -84,6 +87,7 @@ class SECClient:
             raise ValidationError("max_retries must be an integer between 0 and 10")
         self.cache = cache if cache is not None else FileCache(cache_dir)
         self.max_retries = max_retries
+        self.offline = offline
         self.limiter = limiter if limiter is not None else _DEFAULT_LIMITER
         self.now = now
         self._http = httpx.Client(
@@ -108,6 +112,12 @@ class SECClient:
     def companyfacts(self, cik: str | int, *, refresh: bool = False) -> RawResponse:
         return self._get(f"{BASE}/api/xbrl/companyfacts/CIK{normalize_cik(cik)}.json", refresh)
 
+    def historical_submissions(
+        self, cik: str | int, filename: str, *, refresh: bool = False
+    ) -> RawResponse:
+        name = historical_filename(cik, filename)
+        return self._get(f"{BASE}/submissions/{name}", refresh, historical=True)
+
     def _retry_after(self, value: str | None) -> float:
         if value is None:
             return 0.0
@@ -123,12 +133,16 @@ class SECClient:
             except (ValueError, TypeError, OverflowError):
                 return 0.0
 
-    def _get(self, url: str, refresh: bool) -> RawResponse:
+    def _get(self, url: str, refresh: bool, *, historical: bool = False) -> RawResponse:
+        if self.offline and refresh:
+            raise ValidationError("Cannot refresh SEC responses in offline mode")
         if not refresh:
             cached = self.cache.get(url)
             if cached is not None:
                 logger.debug("SEC cache hit %s", url)
                 return cached
+        if self.offline:
+            raise CacheMissError(f"Offline cache miss: {url}")
         for attempt in range(self.max_retries + 1):
             self.limiter.wait()
             try:
@@ -163,6 +177,10 @@ class SECClient:
                 )
             raw = RawResponse(url, response.content, self.now().isoformat(), dict(response.headers))
             data = raw.json()
+            if historical:
+                if not isinstance(data.get("accessionNumber"), list):
+                    raise ValidationError("Historical SEC response missing accessionNumber array")
+                return self.cache.put(raw)
             # Do not cache a JSON error envelope or another company's response as success.
             expected = url.rsplit("CIK", 1)[1].removesuffix(".json")
             if normalize_cik(data.get("cik")) != expected:

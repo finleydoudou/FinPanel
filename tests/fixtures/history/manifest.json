@@ -1,0 +1,18 @@
+{
+  "files": {
+    "CIK0000320193-submissions-001.json": {
+      "cik": "0000320193",
+      "issues": 0,
+      "purpose": "Offline historical submissions and filing timeline acceptance",
+      "raw_unmodified": true,
+      "records": 1259,
+      "retrieved_at": "2026-10-05T16:24:17.811930+00:00",
+      "sha256": "511f8ea1d9fec5fcca459d556c7920ff1ec02cecd0d86055d720578e48643830",
+      "source_url": "https://data.sec.gov/submissions/CIK0000320193-submissions-001.json"
+    }
+  },
+  "kind": "official_sec_historical_snapshots",
+  "parent_file": "aapl_submissions.json",
+  "parent_sha256": "3cf0928a15c79b842e4ecef56a0ce30c5edfeda0c98643a046233fafba40dae7",
+  "parent_source_url": "https://data.sec.gov/submissions/CIK0000320193.json"
+}

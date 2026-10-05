@@ -23,3 +23,7 @@ class SECRequestError(FinPanelError):
 
 class SECTimeoutError(SECRequestError):
     """Per-operation HTTP timeout exhausted the configured retry budget."""
+
+
+class CacheMissError(CacheError):
+    """An explicit offline request has no cached raw response."""

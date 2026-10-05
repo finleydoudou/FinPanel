@@ -48,3 +48,11 @@ class Reader:
         except ValueError as exc:
             self.issue(path + pointer(key), value, f"{key}: {exc}")
             return None
+
+
+def historical_filename(cik: str | int, name: str) -> str:
+    """Only issuer-matching SEC filenames, never arbitrary URLs or path traversal."""
+    cik = normalize_cik(cik)
+    if not isinstance(name, str) or not re.fullmatch(rf"CIK{cik}-submissions-[0-9]+\.json", name):
+        raise ValidationError(f"Invalid historical submissions filename for CIK {cik}")
+    return name

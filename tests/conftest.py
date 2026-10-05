@@ -62,3 +62,21 @@ def forbid_live_http(monkeypatch):
 
     monkeypatch.setattr(httpx.HTTPTransport, "handle_request", fail)
     monkeypatch.delenv("FINPANEL_SEC_USER_AGENT", raising=False)
+
+
+@pytest.fixture
+def historical_cache(tmp_path):
+    from finpanel.cache import FileCache
+    from finpanel.serialization import loads
+
+    cache = FileCache(tmp_path / "authentic-cache")
+    for folder in (FIXTURES / "sec", FIXTURES / "history"):
+        manifest = loads((folder / "manifest.json").read_bytes())
+        for filename, meta in manifest["files"].items():
+            if meta["cik"] == "0000320193" and "companyfacts" not in filename:
+                source = RawResponse(
+                    meta["source_url"], (folder / filename).read_bytes(), meta["retrieved_at"]
+                )
+                assert source.sha256 == meta["sha256"]
+                cache.put(source)
+    return cache
