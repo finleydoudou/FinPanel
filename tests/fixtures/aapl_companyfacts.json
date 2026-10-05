@@ -1,0 +1,93 @@
+{
+  "_fixture": "SYNTHETIC: NOT FINANCIAL DATA",
+  "cik": 320193,
+  "entityName": "Apple Inc.",
+  "facts": {
+    "dei": {
+      "EntityCommonStockSharesOutstanding": {
+        "units": {
+          "shares": [
+            {
+              "end": "2024-06-30",
+              "val": 100
+            }
+          ]
+        }
+      }
+    },
+    "us-gaap": {
+      "Assets": {
+        "description": "Synthetic instant test",
+        "label": "Assets",
+        "units": {
+          "USD": [
+            {
+              "accn": "0000320193-24-999999",
+              "end": "2024-06-30",
+              "filed": "2024-07-30",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q2I",
+              "fy": 2024,
+              "val": 123
+            },
+            {
+              "accn": "0000320193-24-999999",
+              "end": "2024-06-30",
+              "filed": "2024-07-30",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q2I",
+              "fy": 2024,
+              "val": 123
+            },
+            {
+              "accn": "0000320193-24-999998",
+              "end": "2024-06-30",
+              "filed": "2024-08-01",
+              "form": "10-Q/A",
+              "val": 124
+            }
+          ]
+        }
+      },
+      "EarningsPerShareBasic": {
+        "units": {
+          "USD/shares": [
+            {
+              "end": "2024-06-30",
+              "val": 1.25
+            }
+          ]
+        }
+      },
+      "Revenues": {
+        "units": {
+          "EUR": [
+            {
+              "val": 17
+            }
+          ],
+          "USD": [
+            {
+              "accn": "0000320193-24-999999",
+              "end": "2024-06-30",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2023-10-01",
+              "val": 456
+            },
+            {
+              "accn": "0000320193-24-999999",
+              "end": "2024-06-30",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-04-01",
+              "val": 156
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "files": {
+    "aapl_companyfacts.json": {
+      "cik": "0000320193",
+      "sha256": "33a180c137e985642c2b9be06ef2d152126f9d714f6175e3cadfdb10470a536a",
+      "source_url": null,
+      "ticker": "AAPL"
+    },
+    "aapl_submissions.json": {
+      "cik": "0000320193",
+      "sha256": "d151d54bda0148ac0ba4ff2199ab5599c5147f74f8e49456ae1c42e0ffd6bd00",
+      "source_url": null,
+      "ticker": "AAPL"
+    },
+    "msft_companyfacts.json": {
+      "cik": "0000789019",
+      "sha256": "bfbc3cf93c4d2e7cfc12861874a611bce7dab24db82ae1a3f11e18f88f37b316",
+      "source_url": null,
+      "ticker": "MSFT"
+    },
+    "msft_submissions.json": {
+      "cik": "0000789019",
+      "sha256": "6da0ad31dd695c045aef688b8e90a94721447905eb36c9f09797f1f2454ed65b",
+      "source_url": null,
+      "ticker": "MSFT"
+    },
+    "nvda_companyfacts.json": {
+      "cik": "0001045810",
+      "sha256": "00c2d40385c02313223a5b05efce6b3f936b4d80e44cecf5b5e407614ea7251a",
+      "source_url": null,
+      "ticker": "NVDA"
+    },
+    "nvda_submissions.json": {
+      "cik": "0001045810",
+      "sha256": "ff6a30ae2a57a28953c011594a486aadf0bc1616ac76a5f659217a2d0334d9d5",
+      "source_url": null,
+      "ticker": "NVDA"
+    },
+    "wmt_companyfacts.json": {
+      "cik": "0000104169",
+      "sha256": "021c5ff1907b2f66678d62d88c839d98df99cd462538795662781f689448a5d4",
+      "source_url": null,
+      "ticker": "WMT"
+    },
+    "wmt_submissions.json": {
+      "cik": "0000104169",
+      "sha256": "6cefc1d11f1ee5b139f18fc8e0e200d422ca8ab82a667e1612200e30f5fbd81e",
+      "source_url": null,
+      "ticker": "WMT"
+    }
+  },
+  "kind": "synthetic_schema_fixtures",
+  "warning": "NOT SEC downloads. All financial values, accessions and dates are synthetic test data, not company disclosures."
+}
