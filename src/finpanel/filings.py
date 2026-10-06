@@ -1,14 +1,17 @@
 """Auditable filing timelines; no financial fact selection or normalization."""
 
+from __future__ import annotations
+
 import re
 from collections import Counter, defaultdict
 from dataclasses import replace
 from datetime import UTC, datetime, time
-from typing import Any
+from typing import TYPE_CHECKING, Any
 from zoneinfo import ZoneInfo
 
 from finpanel.errors import ValidationError
 from finpanel.models import Filing, ParseIssue
+from finpanel.models.evidence import Evidence
 from finpanel.models.timeline import Availability, Coverage, FilingEvent, FilingTimeline
 from finpanel.sec.client import SECClient
 from finpanel.sec.common import normalize_cik
@@ -18,6 +21,9 @@ from finpanel.sec.submissions import (
     parse_submissions,
 )
 from finpanel.serialization import dumps
+
+if TYPE_CHECKING:
+    from finpanel.availability import AvailabilityValidation
 
 SEC_DAY_ZONE = ZoneInfo("America/New_York")
 
@@ -100,13 +106,39 @@ def _merge(cik: str, records: list[Filing], issues: list[ParseIssue]) -> tuple[F
                 )
             )
         form = fields["form"]
+        evidence = []
+        for row in rows:
+            base, _, index = row.provenance.pointer.rsplit("/", 2)
+            for key in (
+                "accessionNumber",
+                "form",
+                "filingDate",
+                "reportDate",
+                "acceptanceDateTime",
+                "primaryDocument",
+            ):
+                if key in row.raw:
+                    evidence.append(
+                        Evidence(
+                            key,
+                            row.raw[key],
+                            replace(row.provenance, pointer=f"{base}/{key}/{index}"),
+                        )
+                    )
+        availability = _availability(fields, conflict_fields)
+        method = {
+            "acceptance_datetime": "sec_acceptance_datetime",
+            "date_only": "filing_date_fallback",
+            "unknown": "unknown",
+        }[availability.precision]
+        availability = replace(availability, method=method, evidence=tuple(evidence))
         result.append(
             FilingEvent(
                 cik,
                 accession,
                 **fields,
                 is_amendment=form.endswith("/A") if form else None,
-                availability=_availability(fields, conflict_fields),
+                availability=availability,
                 conflicts=conflict_fields,
                 source_records=tuple(rows),
             )
@@ -279,3 +311,21 @@ def coverage(
         len(data.historical_files_loaded),
         tuple(gaps),
     )
+
+
+def validate_availability(
+    cik: str | int, accession: str, *, client: SECClient | None = None, refresh: bool = False
+) -> AvailabilityValidation:
+    """Explicitly retrieve one official header and compare it with its filing event."""
+    from finpanel.availability import validate
+    from finpanel.sec.headers import parse_filing_header
+
+    if client is None:
+        with SECClient() as owned:
+            return validate_availability(cik, accession, client=owned, refresh=refresh)
+    data = timeline(cik, client=client, refresh=refresh)
+    event = next((r for r in data if r.accession_number == accession), None)
+    if event is None:
+        raise ValidationError("Accession is not present in the company filing timeline")
+    header = parse_filing_header(client.filing_header(data.cik, accession, refresh=refresh))
+    return validate(event, (header,))

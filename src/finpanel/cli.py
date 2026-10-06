@@ -7,7 +7,7 @@ import sys
 from collections import Counter
 from pathlib import Path
 
-from finpanel import filings
+from finpanel import facts, filings
 from finpanel.cache.file import atomic_write
 from finpanel.errors import FinPanelError
 from finpanel.sec import parse_companyfacts, parse_submissions
@@ -33,11 +33,13 @@ def main(argv: list[str] | None = None) -> int:
         )
         command.add_argument("--verbose", action="store_true")
     filing_commands = commands.add_parser("filings").add_subparsers(dest="action", required=True)
-    for action in ("timeline", "available-as-of", "coverage"):
+    for action in ("timeline", "available-as-of", "coverage", "validate-availability"):
         command = filing_commands.add_parser(action)
         command.add_argument("cik")
         if action == "available-as-of":
             command.add_argument("as_of")
+        if action == "validate-availability":
+            command.add_argument("accession")
         command.add_argument("--user-agent", default=os.getenv("FINPANEL_SEC_USER_AGENT"))
         command.add_argument("--cache-dir", type=Path, default=Path(".finpanel-cache"))
         command.add_argument("--refresh", action="store_true")
@@ -49,11 +51,31 @@ def main(argv: list[str] | None = None) -> int:
         command.add_argument(
             "--strict", action="store_true", help="Exit 1 on parsing or coverage issues"
         )
+    fact_commands = commands.add_parser("facts").add_subparsers(dest="action", required=True)
+    command = fact_commands.add_parser("inspect")
+    command.add_argument("cik")
+    command.add_argument("concept")
+    command.add_argument("--taxonomy")
+    command.add_argument(
+        "--header-accession",
+        action="append",
+        default=[],
+        help="Explicitly fetch a header for this accession; repeatable",
+    )
+    command.add_argument("--user-agent", default=os.getenv("FINPANEL_SEC_USER_AGENT"))
+    command.add_argument("--cache-dir", type=Path, default=Path(".finpanel-cache"))
+    command.add_argument("--offline", action="store_true")
+    command.add_argument("--refresh", action="store_true")
+    command.add_argument("--output", type=Path)
+    command.add_argument("--limit", type=int, default=10)
+    command.add_argument(
+        "--strict", action="store_true", help="Exit 1 for source issues or verified inconsistencies"
+    )
     args = parser.parse_args(argv)
-    if args.command == "filings":
+    if args.command in ("filings", "facts"):
         if args.limit < 0:
             parser.error("--limit must be nonnegative")
-        return _filings_command(args)
+        return _facts_command(args) if args.command == "facts" else _filings_command(args)
     if args.raw_output and args.normalized_output:
         same_path = args.raw_output.resolve() == args.normalized_output.resolve()
         same_file = (
@@ -100,6 +122,31 @@ def main(argv: list[str] | None = None) -> int:
 def _filings_command(args: argparse.Namespace) -> int:
     try:
         with SECClient(args.user_agent, cache_dir=args.cache_dir, offline=args.offline) as client:
+            if args.action == "validate-availability":
+                validation = filings.validate_availability(
+                    args.cik, args.accession, client=client, refresh=args.refresh
+                )
+                if args.output:
+                    atomic_write(args.output, dumps(validation).encode())
+                print(
+                    dumps(
+                        {
+                            "cik": validation.filing.cik,
+                            "accession": args.accession,
+                            "comparison_status": validation.comparison_status,
+                            "availability": validation.availability,
+                            "diagnostics": validation.diagnostics,
+                            "headers": [h.provenance for h in validation.headers],
+                        }
+                    ),
+                    end="",
+                )
+                return (
+                    1
+                    if args.strict
+                    and any(d.category == "verified_inconsistency" for d in validation.diagnostics)
+                    else 0
+                )
             if args.action == "available-as-of":
                 data = filings.available_as_of(
                     args.cik, args.as_of, client=client, refresh=args.refresh
@@ -136,6 +183,60 @@ def _filings_command(args: argparse.Namespace) -> int:
                 summary["as_of"] = args.as_of
         print(dumps(summary), end="")
         return 1 if args.strict and data.issues else 0
+    except (FinPanelError, OSError) as exc:
+        print(f"finpanel: {exc}", file=sys.stderr)
+        return 2
+
+
+def _facts_command(args: argparse.Namespace) -> int:
+    try:
+        with SECClient(args.user_agent, cache_dir=args.cache_dir, offline=args.offline) as client:
+            result = facts.for_concept(
+                args.cik,
+                args.concept,
+                taxonomy=args.taxonomy,
+                client=client,
+                header_accessions=tuple(args.header_accession),
+                refresh=args.refresh,
+            )
+        if args.output:
+            atomic_write(args.output, dumps(result).encode())
+        diagnostics = [*result.diagnostics, *(d for r in result.records for d in r.diagnostics)]
+        summary = {
+            "cik": result.cik,
+            "concept": result.concept,
+            "observations": len(result.records),
+            "shown": min(len(result.records), args.limit),
+            "repeated_period_groups": len(result.repeated_periods),
+            "diagnostic_counts": dict(Counter(d.code for d in diagnostics)),
+            "source_issue_counts": dict(Counter(i.code for i in result.source_issues)),
+            "timeline_issue_counts": dict(Counter(i.code for i in result.timeline_issues)),
+            "records": [
+                {
+                    "observation_id": r.observation_id,
+                    "taxonomy": r.observation.taxonomy,
+                    "value": r.observation.value,
+                    "unit": r.observation.unit,
+                    "context": r.context,
+                    "accession": r.observation.accession_number,
+                    "form": r.observation.form,
+                    "availability_method": r.availability.method,
+                    "availability_precision": r.availability.precision,
+                    "availability_timestamp": r.availability.timestamp,
+                    "availability_date": r.availability.date,
+                    "source": r.observation.provenance,
+                    "diagnostics": r.diagnostics,
+                }
+                for r in result.records[: args.limit]
+            ],
+        }
+        print(dumps(summary), end="")
+        bad = (
+            result.source_issues
+            or result.timeline_issues
+            or any(d.category == "verified_inconsistency" for d in diagnostics)
+        )
+        return 1 if args.strict and bad else 0
     except (FinPanelError, OSError) as exc:
         print(f"finpanel: {exc}", file=sys.stderr)
         return 2

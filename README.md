@@ -7,6 +7,7 @@ historical `as_of` date, with filing history and complete provenance.
 **FinPanel does NOT yet provide research-grade point-in-time financial panels.**
 This repository implements Phase 0A raw ingestion and Phase 0B historical filing
 coverage, explicit availability precision, and filing-level as-of filtering.
+Phase 0C adds opt-in SEC header corroboration and auditable fact/context links.
 Authentic SEC fixtures are tested offline alongside separate synthetic edge cases.
 It still does **not** construct normalized point-in-time financial fundamentals.
 
@@ -69,8 +70,11 @@ print(len(result.records), len(result.issues))
 - `models/timeline.py`: filing events, historical references, availability precision,
   timeline results and coverage dataclasses.
 - `sec/companyfacts.py`: one record per taxonomy/concept/unit/array position.
-- `models/`: dataclasses for filings, observations, source identities and issues.
-- `cache/file.py`: raw JSON objects keyed by SHA-256; versioned retrieval metadata
+- `sec/headers.py`: minimal official text header parser, raw fields and line evidence.
+- `availability.py`: cross-source metadata comparison and categorized diagnostics.
+- `facts.py`: exact-concept observation inspection, filing links and repeated periods.
+- `models/`: dataclasses for filings, observations, contexts, evidence and diagnostics.
+- `cache/file.py`: raw JSON/text objects keyed by SHA-256; versioned retrieval metadata
   keyed by metadata hash; atomic latest-response pointers keyed by URL hash.
 - `serialization.py`: sorted JSON, exact Decimal parsing, ISO dates, duplicate-key
   rejection and rejection of non-standard NaN/Infinity JSON.
@@ -149,11 +153,13 @@ information first became public.
 - `fp=Q3` does not imply three months. Start/end dates are preserved independently.
   Absent start dates are not a validated claim of instant taxonomy semantics.
 - `report_date` is read only if supplied as `reportDate`. It is never inferred
-  from `end`, filing date, fiscal year or frame. There is no submissions join yet.
+  from `end`, filing date, fiscal year or frame. Phase 0C links the observation to a
+  separate filing event without overwriting any observation metadata.
 - Fiscal year end comes from current submissions entity metadata. It is not
   independently validated as the fiscal year end at each historical filing.
 - Acceptance timestamps retain supplied timezone information. A timestamp without
-  an offset stays naive; no timezone is guessed.
+  an offset stays naive; no timezone is guessed. Text header wall times use the
+  explicit, separately recorded policy described below.
 - No taxonomy harmonization, period normalization, revision/restatement resolution,
   valuation, predictions, trading, portfolio logic, LLM/news/NLP, external vendor
   integrations, non-US exchange coverage or dashboard.
@@ -369,9 +375,165 @@ The destination must be absent/empty. A partial manifest records successful
 responses if a later request fails. Captures are not atomic multi-file SEC
 snapshots; count/range diagnostics remain necessary.
 
-Remaining work includes broader historical-company fixture coverage, independent
-filing-header/dissemination validation, cache snapshot manifests across live
-retrievals, and cross-process rate coordination. A suitable Phase 0C would validate
-filing-level timestamps and XBRL context provenance, with a specification for
-availability uncertainty. No Phase 0C, financial metric normalization, restatement
-value selection, ratios, valuation, price data or trading functionality is included.
+## Filing evidence and context provenance (Phase 0C)
+
+```python
+from finpanel import facts, filings
+
+checked = filings.validate_availability("0000320193", "0000320193-24-000123")
+print(checked.comparison_status, checked.availability.method, checked.diagnostics)
+observations = facts.for_concept(
+    cik="0000320193",
+    concept="RevenueFromContractWithCustomerExcludingAssessedTax",
+    taxonomy="us-gaap",  # optional exact namespace filter
+    header_accessions=("0000320193-24-000123",),  # optional, explicit fetches only
+)
+for record in observations.records:
+    print(record.observation.value, record.context, record.filing, record.availability)
+```
+
+Both APIs accept `client=...` and `refresh=...`. Fact inspection loads Company
+Facts and the complete referenced timeline; it does not fetch headers unless
+explicitly requested. A missing concept returns an empty result with a diagnostic.
+A supplied `filing_timeline` must be unfiltered and for the same issuer. This API
+exposes observations, not a canonical or point-in-time financial value.
+
+### Header retrieval and evidence policy
+
+`SECClient.filing_header(cik, accession)` retrieves only the official
+`https://www.sec.gov/Archives/edgar/data/<CIK>/<accession-without-dashes>/<accession>.hdr.sgml`
+resource. It uses the existing limiter, retry, timeout, cache and offline policies,
+with `Accept: text/plain`. A missing/blocked header fails explicitly; there is no
+HTML scrape, unofficial mirror or full-filing fallback. The parser reads the
+SEC-HEADER envelope only, supports tagged and readable labels, and preserves raw
+fields including public document count and other supplied metadata. It does not
+build a document/exhibit relationship graph or parse document bodies.
+
+Text responses are kept as `<sha256>.txt` cache objects with `raw_format: text`
+in metadata; old cache metadata without this field continues to mean JSON.
+Header evidence uses one-based `line:N` locators, while submissions/facts use JSON
+pointers. Both retain source URL and response hash. Exact bytes remain authoritative.
+
+Each availability has `precision`, `timestamp` or `date`, `method`, `reason`,
+and `evidence`. Evidence records raw field values, source locators and any
+interpretation policy. The comparison policy is `sec-header-corroboration-v1`:
+
+1. Compare accession/issuer identity, form, filing/report dates and all usable
+   acceptance instants. Different offsets representing the same instant agree.
+2. Preserve a usable submissions acceptance proxy (`sec_acceptance_datetime`).
+   Agreement with a header yields `acceptance_corroborated`, not proof of public
+   dissemination. Without headers, `not_checked` is explicit.
+3. If submissions acceptance is unusable, a nonconflicting header acceptance may
+   supply `filing_header_acceptance`. Otherwise use `filing_date_fallback` with
+   date-only precision, or `unknown`. No intraday timestamp is synthesized.
+4. Conflicting acceptance or filing dates, linked-header identity/metadata conflicts,
+   or conflicting scalar header fields produce unknown availability. Both source
+   values and diagnostics remain. Phase 0B's raw timeline remains unchanged by
+   opt-in validation; use the returned validation/linked fact to inspect its result.
+
+Four diagnostic categories distinguish `verified_inconsistency`, `missing_data`,
+`precision_limitation` and `heuristic_warning`. Malformed supplied timestamps are
+verified formatting inconsistencies; naive timestamps lack precision. Missing or
+malformed evidence does not erase a usable independent source. Submissions form,
+report-date and document conflicts remain explicit without alone invalidating
+Phase 0B's acceptance proxy. Cross-source disagreement is never silently resolved.
+Acceptance preceding the report end or following the filing day is a warning:
+filing-date adjustments and form-specific circumstances require interpretation.
+Midnight acceptance retains Phase 0B's conservative date-derived heuristic.
+
+The 14-digit header acceptance field contains no offset. The parser explicitly
+interprets it as `America/New_York` wall time using IANA DST rules and records that
+policy. DST gaps/folds produce no exact timestamp; `timezone=None` keeps the
+header time unresolved. This is a documented interpretation, not an offset
+supplied in the header. Submissions timestamps without offsets remain naive.
+The authentic sample corroborates the default policy but does not validate it
+for all historical SEC formats.
+
+[SEC webmaster guidance](https://www.sec.gov/about/webmaster-frequently-asked-questions)
+describes a variable delay between acceptance and website availability, often
+one to three minutes. Neither matching metadata nor an acceptance timestamp
+establishes market-wide dissemination, and FinPanel adds no assumed fixed lag.
+
+### Context and filing identity
+
+The original observation retains taxonomy, concept, unit, exact value, accession,
+form, filed date, fiscal year/period, start/end, frame, source and raw fields.
+`observation_id` hashes the response URL/hash/pointer: identical-looking rows at
+different array positions or in different snapshots remain distinct. It is a
+source observation identity, not a persistent SEC fact identifier.
+
+`FactContext` classifies the observed fields conservatively:
+
+| Kind | Evidence | Duration days |
+| --- | --- | --- |
+| `duration` | Valid start and end, start <= end | Inclusive calendar count `(end - start).days + 1` |
+| `instant` | Valid end and the start key is absent | None |
+| `unknown` | Missing/malformed/reversed fields, including explicit null start | None |
+
+An observed instant shape is not taxonomy validation. Company Facts does not
+supply original instance `contextRef` identifiers, dimensional members, complete
+entity contexts or filing document locations. `instance_context_id` remains None;
+no original XBRL context ID is invented. No Q1/Q2/Q3, annual, YTD or TTM label is
+inferred from duration, fiscal period or frame.
+
+`LinkedFact` retains the observation, derived context, matched `FilingEvent`,
+availability evidence and diagnostics. Links use issuer plus exact accession.
+A missing filing link stays unknown; Company Facts `filed` is not substituted as
+availability. Conflicting non-null fact/event form or filing date is reported and
+makes the linked availability unknown. All source records remain auditable.
+
+`repeated_periods` groups exact taxonomy/concept/unit/context/start/end matches
+seen under multiple accessions, with member observation IDs, accessions and a
+`values_differ` flag. Linked records retain each value and filing availability.
+Originals, amendments and later comparative observations remain separate. These
+groups identify repetition, not the cause of a revision or a restatement winner.
+
+### Offline inspection and authentic validation
+
+```bash
+python examples/inspect_provenance.py
+finpanel filings validate-availability 320193 0000320193-24-000123 --offline --cache-dir output/offline-provenance-cache
+finpanel facts inspect 320193 RevenueFromContractWithCustomerExcludingAssessedTax --offline --cache-dir output/offline-provenance-cache --header-accession 0000320193-24-000123 --output output/provenance.json
+```
+
+CLI previews are bounded by `--limit`; `--output` writes the complete inspection
+including contexts, raw observations, filing source rows, evidence and repetition
+groups. Ordering and JSON serialization are deterministic for fixed inputs.
+Fact `--strict` exits 1 for source/timeline issues or verified inconsistencies;
+header validation `--strict` exits 1 for verified inconsistencies. Missing evidence,
+precision limits and heuristic warnings alone do not fail strict validation.
+Request/cache/configuration failures exit 2. The authentic Apple inspection still
+reports the documented Phase 0B `history_range_mismatch` (strict inspection exits 1).
+
+One unmodified 986-byte Apple 2024 10-K header is added in
+`tests/fixtures/headers/`, with an official URL, UTC retrieval time and SHA-256
+manifest. Its `20241101060136` wall time corresponds to submissions acceptance
+`2024-11-01T10:01:36Z` under the recorded policy. Existing Apple Company Facts
+fixtures exercise instant Assets, duration revenue and repeated reporting periods;
+the historical fixture covers older lower-precision availability. Synthetic tests
+cover amendments, conflicts, malformed data and DST ambiguity without changing
+any authentic fixture. Routine CI remains offline and requires no SEC identity.
+
+To capture another header deliberately, using a local environment identity:
+
+```bash
+python examples/freeze_filing_header.py 320193 0000320193-24-000123 --output output/new-header
+```
+
+The destination must be absent/empty. The helper uses two-second request spacing
+and never records the contact identity. Capture is not part of CI.
+
+### Remaining limitations and proposed Phase 0D
+
+Technical debt includes broader issuer/header-format coverage, full instance
+context and document relationship support, cache snapshot manifests across live
+retrievals, cross-process rate coordination and a metadata conflict review workflow.
+Availability validation is opt-in and does not mutate the Phase 0B timeline or
+as-of filter. Repeated filing objects in full exports favor self-contained audits
+over compact output. Live SEC responses may change independently between requests.
+
+A proposed Phase 0D is to specify and test deterministic period interpretation and
+explicit revision-selection policies using these preserved observations. Define
+uncertainty and missing-data behavior before any point-in-time metric resolver.
+No metric normalization, quarter reconstruction, restatement winner, ratios,
+valuation, stock data, trading, GUI or Phase 0D implementation is included here.

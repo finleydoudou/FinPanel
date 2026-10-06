@@ -7,6 +7,7 @@ from dataclasses import dataclass
 from datetime import date, datetime
 from typing import Any, Literal
 
+from finpanel.models.evidence import Evidence
 from finpanel.models.filing import Filing
 from finpanel.models.source import ParseIssue, Provenance
 
@@ -28,6 +29,8 @@ class Availability:
     timestamp: datetime | None = None
     date: date | None = None
     reason: str = ""
+    method: str = "unknown"
+    evidence: tuple[Evidence, ...] = ()
 
 
 @dataclass(frozen=True)

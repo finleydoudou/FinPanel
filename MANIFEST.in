@@ -1,3 +1,4 @@
 include LICENSE README.md pyproject.toml
 recursive-include tests *.py *.json
+recursive-include tests/fixtures *.sgml
 recursive-include examples *.py

@@ -49,25 +49,35 @@ class FileCache:
                 raise ValueError("cached URL mismatch")
             if not isinstance(meta["retrieved_at"], str) or not isinstance(meta["headers"], dict):
                 raise ValueError("invalid cached response metadata")
-            body = (self.root / "raw" / "objects" / f"{digest}.json").read_bytes()
+            raw_format = meta.get("raw_format", "json")
+            if raw_format not in ("json", "text"):
+                raise ValueError("unsupported raw response format")
+            suffix = "json" if raw_format == "json" else "txt"
+            body = (self.root / "raw" / "objects" / f"{digest}.{suffix}").read_bytes()
             if sha256(body).hexdigest() != digest:
                 raise ValueError("raw content hash mismatch")
-            response = RawResponse(url, body, meta["retrieved_at"], meta["headers"], True)
-            response.json()
+            response = RawResponse(
+                url, body, meta["retrieved_at"], meta["headers"], True, raw_format
+            )
+            response.validate()
             return response
         except (OSError, KeyError, TypeError, ValueError, ValidationError) as exc:
             raise CacheError(f"Cannot read cache entry {index}: {exc}") from exc
 
     def put(self, response: RawResponse) -> RawResponse:
-        response.json()
+        response.validate()
         meta = {
             "url": response.url,
             "sha256": response.sha256,
             "retrieved_at": response.retrieved_at,
             "headers": response.headers,
+            "raw_format": response.raw_format,
         }
         try:
-            atomic_write(self.root / "raw" / "objects" / f"{response.sha256}.json", response.body)
+            suffix = "json" if response.raw_format == "json" else "txt"
+            atomic_write(
+                self.root / "raw" / "objects" / f"{response.sha256}.{suffix}", response.body
+            )
             encoded = dumps(meta).encode()
             # Version metadata is itself content-addressed; refresh retains previous retrievals.
             version = sha256(encoded).hexdigest()

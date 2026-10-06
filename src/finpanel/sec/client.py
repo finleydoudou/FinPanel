@@ -1,8 +1,9 @@
-"""Synchronous SEC JSON client. No redirects, HTML fallback, or rate-limit bypass."""
+"""Synchronous SEC JSON/text client. No redirects, HTML fallback, or rate-limit bypass."""
 
 import logging
 import math
 import os
+import re
 import threading
 import time
 from collections.abc import Callable
@@ -118,6 +119,20 @@ class SECClient:
         name = historical_filename(cik, filename)
         return self._get(f"{BASE}/submissions/{name}", refresh, historical=True)
 
+    def filing_header(
+        self, cik: str | int, accession: str, *, refresh: bool = False
+    ) -> RawResponse:
+        cik = normalize_cik(cik)
+        if not isinstance(accession, str) or not re.fullmatch(
+            r"[0-9]{10}-[0-9]{2}-[0-9]{6}", accession
+        ):
+            raise ValidationError("Invalid SEC accession number")
+        url = (
+            f"https://www.sec.gov/Archives/edgar/data/{int(cik)}/"
+            f"{accession.replace('-', '')}/{accession}.hdr.sgml"
+        )
+        return self._get(url, refresh, header=True)
+
     def _retry_after(self, value: str | None) -> float:
         if value is None:
             return 0.0
@@ -133,7 +148,9 @@ class SECClient:
             except (ValueError, TypeError, OverflowError):
                 return 0.0
 
-    def _get(self, url: str, refresh: bool, *, historical: bool = False) -> RawResponse:
+    def _get(
+        self, url: str, refresh: bool, *, historical: bool = False, header: bool = False
+    ) -> RawResponse:
         if self.offline and refresh:
             raise ValidationError("Cannot refresh SEC responses in offline mode")
         if not refresh:
@@ -146,7 +163,11 @@ class SECClient:
         for attempt in range(self.max_retries + 1):
             self.limiter.wait()
             try:
-                response = self._http.get(url)
+                response = (
+                    self._http.get(url, headers={"Accept": "text/plain"})
+                    if header
+                    else self._http.get(url)
+                )
             except (httpx.TimeoutException, httpx.NetworkError, httpx.RemoteProtocolError) as exc:
                 if attempt == self.max_retries:
                     error = (
@@ -176,6 +197,18 @@ class SECClient:
                     status=response.status_code,
                 )
             raw = RawResponse(url, response.content, self.now().isoformat(), dict(response.headers))
+            if header:
+                raw = RawResponse(
+                    url, response.content, raw.retrieved_at, raw.headers, raw_format="text"
+                )
+                text = raw.text()
+                if (
+                    "<SEC-HEADER>" not in text
+                    or "</SEC-HEADER>" not in text
+                    or "<html" in text.lower()
+                ):
+                    raise ValidationError("SEC response is not a complete text filing header")
+                return self.cache.put(raw)
             data = raw.json()
             if historical:
                 if not isinstance(data.get("accessionNumber"), list):
