@@ -8,6 +8,7 @@ historical `as_of` date, with filing history and complete provenance.
 This repository implements Phase 0A raw ingestion and Phase 0B historical filing
 coverage, explicit availability precision, and filing-level as-of filtering.
 Phase 0C adds opt-in SEC header corroboration and auditable fact/context links.
+Phase 0D interprets reported fiscal periods with explicit evidence and uncertainty.
 Authentic SEC fixtures are tested offline alongside separate synthetic edge cases.
 It still does **not** construct normalized point-in-time financial fundamentals.
 
@@ -73,6 +74,8 @@ print(len(result.records), len(result.issues))
 - `sec/headers.py`: minimal official text header parser, raw fields and line evidence.
 - `availability.py`: cross-source metadata comparison and categorized diagnostics.
 - `facts.py`: exact-concept observation inspection, filing links and repeated periods.
+- `periods.py` and `models/period.py`: observed fiscal calendars and separate derived
+  period classifications, identities, evidence and diagnostics.
 - `models/`: dataclasses for filings, observations, contexts, evidence and diagnostics.
 - `cache/file.py`: raw JSON/text objects keyed by SHA-256; versioned retrieval metadata
   keyed by metadata hash; atomic latest-response pointers keyed by URL hash.
@@ -160,7 +163,7 @@ information first became public.
 - Acceptance timestamps retain supplied timezone information. A timestamp without
   an offset stays naive; no timezone is guessed. Text header wall times use the
   explicit, separately recorded policy described below.
-- No taxonomy harmonization, period normalization, revision/restatement resolution,
+- No taxonomy harmonization, financial value reconstruction, revision/restatement resolution,
   valuation, predictions, trading, portfolio logic, LLM/news/NLP, external vendor
   integrations, non-US exchange coverage or dashboard.
 
@@ -523,7 +526,7 @@ python examples/freeze_filing_header.py 320193 0000320193-24-000123 --output out
 The destination must be absent/empty. The helper uses two-second request spacing
 and never records the contact identity. Capture is not part of CI.
 
-### Remaining limitations and proposed Phase 0D
+### Remaining Phase 0C limitations
 
 Technical debt includes broader issuer/header-format coverage, full instance
 context and document relationship support, cache snapshot manifests across live
@@ -532,8 +535,203 @@ Availability validation is opt-in and does not mutate the Phase 0B timeline or
 as-of filter. Repeated filing objects in full exports favor self-contained audits
 over compact output. Live SEC responses may change independently between requests.
 
-A proposed Phase 0D is to specify and test deterministic period interpretation and
-explicit revision-selection policies using these preserved observations. Define
-uncertainty and missing-data behavior before any point-in-time metric resolver.
-No metric normalization, quarter reconstruction, restatement winner, ratios,
-valuation, stock data, trading, GUI or Phase 0D implementation is included here.
+## Fiscal period interpretation (Phase 0D)
+
+```python
+from finpanel import facts, periods
+
+inspected = facts.for_concept("0000320193", "RevenueFromContractWithCustomerExcludingAssessedTax")
+result = periods.interpret(inspected)
+for record in result.records:
+    print(record.fact.observation.accession_number, record.period)
+
+# Or load and interpret through one API:
+result = periods.for_concept("0000320193", "RevenueFromContractWithCustomerExcludingAssessedTax")
+# A single observation can use the same audited calendar:
+period = periods.classify_period(inspected.records[0], calendar=result.calendar)
+```
+
+`periods.for_concept` accepts `taxonomy`, `client` and `refresh`. `interpret` is
+purely local and preserves the entire Phase 0C inspection as `provenance`; its
+records wrap each original linked fact alongside a derived `period`.
+`classify_period` accepts a `FactObservation` or `LinkedFact`, with optional
+`filing` and `calendar`. Without neighboring evidence it can classify an instant,
+or establish a current annual window from a linked annual filing; quarterly
+labels normally need an explicitly supplied calendar. No observation is dropped,
+no financial values change, and duplicate/amended observations remain separate.
+
+### Classification and identity
+
+`PeriodClassification` contains `kind`, start/end, inclusive duration days,
+`method`, deterministic `status`, `identity`, quarter/YTD flags, raw-field evidence,
+diagnostics and policy version `reported-context-periods-v1`. Status is one of
+`observed_shape`, `rule_supported`, `ambiguous`, or `insufficient_data`.
+**Rule-supported is an interpretation under this policy, not SEC verification.**
+
+| Kind | Interpretation |
+| --- | --- |
+| `instant` | Valid end with absent start key; keeps observation date, no fiscal duration label |
+| `annual` | Exact match to a supported observed annual window |
+| `single_quarter` | Exact observed quarter endpoint and start immediately after the previous endpoint, or at fiscal-year start for Q1 |
+| `year_to_date` | Starts at observed fiscal-year start and ends at a supported Q2/Q3 boundary |
+| `other_duration` | Valid interval outside supported standard duration ranges; no normalized fiscal label |
+| `ambiguous` | Usable interval but missing/conflicting calendar, boundary or metadata evidence |
+| `unknown` | Missing, malformed or reversed required dates |
+
+As in Phase 0C, end-without-start is only observed instant shape, not taxonomy
+validation. An explicit null or malformed start is unknown, not instant. Assets,
+Cash and Liabilities stay distinct from duration facts. A duration uses
+`(end - start).days + 1`, including leap days and both boundary dates.
+
+`PeriodIdentity` keeps CIK, exact start/end and, only when supported, the represented
+fiscal-year identifier and label (`FY`, `Q1`–`Q4`, `YTD-Q2`, `YTD-Q3`). It does not
+include value, concept or accession and is not a fact identity. Phase 0C observation
+IDs and filing provenance remain authoritative for distinguishing disclosures.
+An ambiguous/unknown/other-duration result retains dates but has no fiscal label
+or fiscal-year assignment. Instant identities keep the date without a fiscal label.
+
+### Observed fiscal calendars and annual recognition
+
+`FiscalCalendar` uses policy `observed-fiscal-windows-v1`. The default inspection
+builds anchors from observations of the exact requested concept, including its
+units/namespaces unless a taxonomy filter is supplied. Callers can build an
+explicit calendar from audited same-issuer `LinkedFact` records with
+`build_calendar(cik, records)`; it never mixes issuers.
+
+A fiscal-year anchor requires all of:
+
+- A valid inclusive duration of 350–378 days.
+- An annual `10-K` or `10-K/A` fact with `fp=FY` and usable `fy`.
+- A consistent accession/issuer/form/date link to a filing event.
+- The context end matching that filing's report date.
+
+The range is a versioned guardrail, not a universal annual-duration definition.
+It admits 364-day (52-week), 371-day (53-week), and 365/366-day calendars. Dates
+outside it may describe legitimate transition or irregular periods; they are not
+automatically errors, and they do not establish an annual anchor in this version.
+No January 1 or December 31 assumption and no issuer-specific code is used.
+
+Current submissions `fiscalYearEnd` is retained with its source as a hint. It is
+not projected backward into historical boundaries: week-based dates and issuer
+calendars can change. Observed annual start/end dates define each supported year.
+Different windows for the same fiscal year, overlapping fiscal years, conflicting
+quarter endpoints or impossible quarter ordering mark that year's calendar
+ambiguous. All candidate boundaries and their evidence remain in the result.
+
+Annual classification requires an exact supported window match, not merely an
+annual form or near-year duration. Comparative contexts matching an older window
+keep that older fiscal year even when raw `fy` describes the later reporting year.
+The report-end match required for anchoring prevents a later comparative context
+from creating a false current-year window.
+
+### Quarter, YTD and Q1 policy
+
+Quarter boundaries require a consistent `10-Q`/`10-Q/A` linked fact whose end
+matches its filing report date, whose `fy` matches an observed fiscal year, and
+whose start equals that fiscal-year start. Its `fp` and inclusive duration must
+agree with these policy guardrails:
+
+| Boundary | YTD day range |
+| --- | --- |
+| Q1 | 70–112 |
+| Q2 | 150–210 |
+| Q3 | 230–308 |
+
+A reported single quarter must be 70–112 days **and** exactly span the previous
+observed quarter end plus one day through the current observed quarter end.
+Q1 starts at the observed fiscal-year start. Missing prior-quarter evidence is
+not replaced by subtracting 90 days or dividing an annual window into quarters.
+Q2/Q3 YTD starts at the fiscal-year start; it does not require an intervening
+quarter boundary. A reported Q4 context may be recognized when it starts the day
+after observed Q3 and ends at the observed year end. **No Q4 or other financial
+value is derived, and no synthetic observation is created.**
+
+Q1 is represented as `kind=single_quarter`, label `Q1`, with both
+`is_single_quarter=True` and `is_year_to_date=True`. Later single quarters have
+YTD false; Q2/Q3 YTD has single-quarter false. Annual contexts leave the YTD flag
+unspecified because this API reserves it for interim interpretations.
+
+SEC `fp` alone is insufficient: a quarterly filing can contain both a single
+quarter and cumulative YTD, and an annual filing can contain short comparative
+contexts. Current-context metadata conflicts remain ambiguous. For comparative
+contexts, the later filing's `fy/fp` is preserved without forcing it onto the
+represented period. Frame is evidence, not a fiscal label: the
+[SEC frames documentation](https://www.sec.gov/search-filings/edgar-application-programming-interfaces)
+describes alignment to calendar periods and warns that the included start/end
+dates can differ. A calendar frame's quarter number does not override fiscal
+boundaries.
+
+### Authentic Q3 example
+
+Apple accession `0000320193-24-000081` contains both of these observations for
+`RevenueFromContractWithCustomerExcludingAssessedTax`, with raw `fy=2024`,
+`fp=Q3`, and form `10-Q`:
+
+| Represented dates | Inclusive days | Derived period |
+| --- | --- | --- |
+| 2024-03-31 to 2024-06-29 | 91 | FY2024 Q3 single quarter |
+| 2023-10-01 to 2024-06-29 | 273 | FY2024 YTD-Q3 |
+
+The classification also uses the observed FY2024 window (2023-10-01 through
+2024-09-28), Q2 endpoint (2024-03-30), and current Q3 report endpoint. It is not
+inferred from 91/273 days or `fp=Q3` alone. The same filing repeats FY2023 periods;
+those retain FY2023 identities. The later FY2024 annual filing also repeats the
+371-day FY2023 context (2022-09-25 through 2023-09-30), classified as FY2023.
+
+### Diagnostics and ambiguity
+
+Diagnostics cover reversed/missing dates, unusual durations, annual-form short
+contexts, quarterly metadata accompanying annual durations, fiscal-year or `fp`
+conflicts, missing annual/quarter boundaries, fiscal-calendar ambiguity, report
+end conflicts, comparative contexts, and overlapping contexts within one filing
+and exact taxonomy/concept/unit. Nested quarter/YTD intervals are ordinary
+examples of overlap, so overlap is a heuristic warning, not an error. Duplicate
+identical intervals do not themselves produce overlap warnings.
+
+Missing evidence never creates a label. The classifier reports raw-field and
+boundary evidence with URLs, hashes and source locators. Calendar conflicts
+retain competing candidates; no newest-filing or restatement winner is selected.
+`other_duration` describes an unnormalized interval, not an erroneous filing.
+
+### Offline CLI and validation
+
+```bash
+python examples/inspect_provenance.py
+finpanel facts periods 320193 RevenueFromContractWithCustomerExcludingAssessedTax --offline --cache-dir output/offline-provenance-cache --limit 10 --output output/periods.json
+finpanel facts periods 320193 Assets --offline --cache-dir output/offline-provenance-cache --limit 3
+```
+
+The preview shows accession, form, filed date, raw `fy/fp/frame`, observed dates,
+duration, derived identity/kind/status/method and diagnostics. `--output` preserves
+all evidence, the complete observed calendar, every linked observation and the
+original inspection. Fixed inputs produce deterministic output. `--strict` exits
+1 on parser/timeline issues or verified inconsistencies, but not ambiguity or
+heuristic warnings alone. Request/configuration/cache errors exit 2. Apple's
+existing `history_range_mismatch` remains visible and causes strict exit 1.
+
+No new SEC fixture download is needed. Tests reuse unchanged, hash-verified Apple,
+Microsoft, Walmart and NVIDIA fixtures for non-calendar annual/quarter/YTD
+contexts and instant facts. Apple supplies real 364/371-day years. Synthetic tests
+cover missing/conflicting evidence, leap years, 14-week Q1, amendments and boundary
+cases. All Phase 0A–0C regressions remain mandatory; CI uses no live SEC access.
+
+### Limitations and next phase
+
+Calendar discovery depends on available anchors for the selected concept. Older
+comparatives, incomplete histories and current-year quarters without a supported
+annual window can remain ambiguous. This version supports US 10-K/10-Q families;
+foreign and transition filing policies need separate evidence and tests. It does
+not validate taxonomy periodType or recover original instance contexts.
+
+Calendar evidence may come from later filings in the supplied snapshot. This is
+retrospective period interpretation, **not an as-of-safe fiscal-calendar resolver**.
+Consumers must not treat a normalized identity as proof that its supporting
+metadata or financial value was available at an earlier date. Full exports repeat
+linked observations/evidence for auditability and can be large.
+
+Technical debt includes historical calendar transitions, finer conflict scope,
+more periodType/context evidence, compact export references, and explicit timing
+constraints for calendar evidence. A proposed next phase is to specify bounded
+as-of evidence and revision-selection contracts before implementing any financial
+metric resolver. No canonical metrics, subtraction-derived quarters, restatement
+winner selection, TTM, ratios, prices, trading or GUI has been implemented.

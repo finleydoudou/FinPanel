@@ -7,7 +7,7 @@ import sys
 from collections import Counter
 from pathlib import Path
 
-from finpanel import facts, filings
+from finpanel import facts, filings, periods
 from finpanel.cache.file import atomic_write
 from finpanel.errors import FinPanelError
 from finpanel.sec import parse_companyfacts, parse_submissions
@@ -52,29 +52,34 @@ def main(argv: list[str] | None = None) -> int:
             "--strict", action="store_true", help="Exit 1 on parsing or coverage issues"
         )
     fact_commands = commands.add_parser("facts").add_subparsers(dest="action", required=True)
-    command = fact_commands.add_parser("inspect")
-    command.add_argument("cik")
-    command.add_argument("concept")
-    command.add_argument("--taxonomy")
-    command.add_argument(
-        "--header-accession",
-        action="append",
-        default=[],
-        help="Explicitly fetch a header for this accession; repeatable",
-    )
-    command.add_argument("--user-agent", default=os.getenv("FINPANEL_SEC_USER_AGENT"))
-    command.add_argument("--cache-dir", type=Path, default=Path(".finpanel-cache"))
-    command.add_argument("--offline", action="store_true")
-    command.add_argument("--refresh", action="store_true")
-    command.add_argument("--output", type=Path)
-    command.add_argument("--limit", type=int, default=10)
-    command.add_argument(
-        "--strict", action="store_true", help="Exit 1 for source issues or verified inconsistencies"
-    )
+    for action in ("inspect", "periods"):
+        command = fact_commands.add_parser(action)
+        command.add_argument("cik")
+        command.add_argument("concept")
+        command.add_argument("--taxonomy")
+        command.add_argument(
+            "--header-accession",
+            action="append",
+            default=[],
+            help="Explicitly fetch a header for this accession; repeatable",
+        )
+        command.add_argument("--user-agent", default=os.getenv("FINPANEL_SEC_USER_AGENT"))
+        command.add_argument("--cache-dir", type=Path, default=Path(".finpanel-cache"))
+        command.add_argument("--offline", action="store_true")
+        command.add_argument("--refresh", action="store_true")
+        command.add_argument("--output", type=Path)
+        command.add_argument("--limit", type=int, default=10)
+        command.add_argument(
+            "--strict",
+            action="store_true",
+            help="Exit 1 for source issues or verified inconsistencies",
+        )
     args = parser.parse_args(argv)
     if args.command in ("filings", "facts"):
         if args.limit < 0:
             parser.error("--limit must be nonnegative")
+        if args.command == "facts" and args.action == "periods":
+            return _periods_command(args)
         return _facts_command(args) if args.command == "facts" else _filings_command(args)
     if args.raw_output and args.normalized_output:
         same_path = args.raw_output.resolve() == args.normalized_output.resolve()
@@ -235,6 +240,95 @@ def _facts_command(args: argparse.Namespace) -> int:
             result.source_issues
             or result.timeline_issues
             or any(d.category == "verified_inconsistency" for d in diagnostics)
+        )
+        return 1 if args.strict and bad else 0
+    except (FinPanelError, OSError) as exc:
+        print(f"finpanel: {exc}", file=sys.stderr)
+        return 2
+
+
+def _periods_command(args: argparse.Namespace) -> int:
+    try:
+        with SECClient(args.user_agent, cache_dir=args.cache_dir, offline=args.offline) as client:
+            inspected = facts.for_concept(
+                args.cik,
+                args.concept,
+                taxonomy=args.taxonomy,
+                client=client,
+                header_accessions=tuple(args.header_accession),
+                refresh=args.refresh,
+            )
+        result = periods.interpret(inspected)
+        if args.output:
+            atomic_write(args.output, dumps(result).encode())
+        diagnostics = [
+            *result.calendar.diagnostics,
+            *(d for r in result.records for d in r.period.diagnostics),
+        ]
+        print(
+            dumps(
+                {
+                    "cik": result.cik,
+                    "concept": result.concept,
+                    "observations": len(result.records),
+                    "shown": min(args.limit, len(result.records)),
+                    "period_counts": dict(Counter(r.period.kind for r in result.records)),
+                    "diagnostic_counts": dict(Counter(d.code for d in diagnostics)),
+                    "source_issue_counts": dict(Counter(i.code for i in inspected.source_issues)),
+                    "timeline_issue_counts": dict(
+                        Counter(i.code for i in inspected.timeline_issues)
+                    ),
+                    "calendar": {
+                        "policy": result.calendar.policy,
+                        "year_windows": len(result.calendar.years),
+                        "quarter_boundaries": len(result.calendar.quarters),
+                        "ambiguous_years": result.calendar.ambiguous_years,
+                        "current_year_end_hints": result.calendar.current_year_end_hints,
+                        "diagnostics": result.calendar.diagnostics,
+                    },
+                    "records": [
+                        {
+                            "observation_id": r.fact.observation_id,
+                            "accession": r.fact.observation.accession_number,
+                            "form": r.fact.observation.form,
+                            "filed": r.fact.observation.filing_date,
+                            "fy": r.fact.observation.fiscal_year,
+                            "fp": r.fact.observation.fiscal_period,
+                            "frame": r.fact.observation.frame,
+                            "value": r.fact.observation.value,
+                            "unit": r.fact.observation.unit,
+                            "filing_report_date": r.fact.filing.report_date
+                            if r.fact.filing
+                            else None,
+                            "source": r.fact.observation.provenance,
+                            "period": {
+                                "kind": r.period.kind,
+                                "start": r.period.start,
+                                "end": r.period.end,
+                                "duration_days": r.period.duration_days,
+                                "method": r.period.method,
+                                "status": r.period.status,
+                                "identity": r.period.identity,
+                                "is_single_quarter": r.period.is_single_quarter,
+                                "is_year_to_date": r.period.is_year_to_date,
+                                "diagnostics": r.period.diagnostics,
+                            },
+                        }
+                        for r in result.records[: args.limit]
+                    ],
+                }
+            ),
+            end="",
+        )
+        bad = (
+            inspected.source_issues
+            or inspected.timeline_issues
+            or any(d.category == "verified_inconsistency" for d in diagnostics)
+            or any(
+                d.category == "verified_inconsistency"
+                for r in inspected.records
+                for d in r.diagnostics
+            )
         )
         return 1 if args.strict and bad else 0
     except (FinPanelError, OSError) as exc:
