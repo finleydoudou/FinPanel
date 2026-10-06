@@ -7,7 +7,7 @@ import sys
 from collections import Counter
 from pathlib import Path
 
-from finpanel import facts, filings, periods
+from finpanel import asof, facts, filings, periods, revisions
 from finpanel.cache.file import atomic_write
 from finpanel.errors import FinPanelError
 from finpanel.sec import parse_companyfacts, parse_submissions
@@ -51,18 +51,37 @@ def main(argv: list[str] | None = None) -> int:
         command.add_argument(
             "--strict", action="store_true", help="Exit 1 on parsing or coverage issues"
         )
+    evidence_commands = commands.add_parser("asof").add_subparsers(dest="action", required=True)
+    command = evidence_commands.add_parser("evidence")
+    command.add_argument("cik")
+    command.add_argument("as_of")
+    command.add_argument("--concept")
+    command.add_argument("--taxonomy")
+    command.add_argument("--user-agent", default=os.getenv("FINPANEL_SEC_USER_AGENT"))
+    command.add_argument("--cache-dir", type=Path, default=Path(".finpanel-cache"))
+    command.add_argument("--offline", action="store_true")
+    command.add_argument("--refresh", action="store_true")
+    command.add_argument("--output", type=Path)
+    command.add_argument("--limit", type=int, default=10)
+    command.add_argument("--strict", action="store_true")
     fact_commands = commands.add_parser("facts").add_subparsers(dest="action", required=True)
-    for action in ("inspect", "periods"):
+    for action in ("inspect", "periods", "revisions"):
         command = fact_commands.add_parser(action)
         command.add_argument("cik")
         command.add_argument("concept")
         command.add_argument("--taxonomy")
-        command.add_argument(
-            "--header-accession",
-            action="append",
-            default=[],
-            help="Explicitly fetch a header for this accession; repeatable",
-        )
+        if action == "revisions":
+            command.add_argument("--as-of", required=True)
+            command.add_argument(
+                "--policy", choices=sorted(revisions.POLICIES), default="all_available"
+            )
+        else:
+            command.add_argument(
+                "--header-accession",
+                action="append",
+                default=[],
+                help="Explicitly fetch a header for this accession; repeatable",
+            )
         command.add_argument("--user-agent", default=os.getenv("FINPANEL_SEC_USER_AGENT"))
         command.add_argument("--cache-dir", type=Path, default=Path(".finpanel-cache"))
         command.add_argument("--offline", action="store_true")
@@ -75,9 +94,11 @@ def main(argv: list[str] | None = None) -> int:
             help="Exit 1 for source issues or verified inconsistencies",
         )
     args = parser.parse_args(argv)
-    if args.command in ("filings", "facts"):
+    if args.command in ("filings", "facts", "asof"):
         if args.limit < 0:
             parser.error("--limit must be nonnegative")
+        if args.command == "asof" or (args.command == "facts" and args.action == "revisions"):
+            return _asof_command(args)
         if args.command == "facts" and args.action == "periods":
             return _periods_command(args)
         return _facts_command(args) if args.command == "facts" else _filings_command(args)
@@ -273,6 +294,7 @@ def _periods_command(args: argparse.Namespace) -> int:
                     "observations": len(result.records),
                     "shown": min(args.limit, len(result.records)),
                     "period_counts": dict(Counter(r.period.kind for r in result.records)),
+                    "mode": result.mode,
                     "diagnostic_counts": dict(Counter(d.code for d in diagnostics)),
                     "source_issue_counts": dict(Counter(i.code for i in inspected.source_issues)),
                     "timeline_issue_counts": dict(
@@ -329,6 +351,106 @@ def _periods_command(args: argparse.Namespace) -> int:
                 for r in inspected.records
                 for d in r.diagnostics
             )
+        )
+        return 1 if args.strict and bad else 0
+    except (FinPanelError, OSError) as exc:
+        print(f"finpanel: {exc}", file=sys.stderr)
+        return 2
+
+
+def _asof_command(args: argparse.Namespace) -> int:
+    try:
+        with SECClient(args.user_agent, cache_dir=args.cache_dir, offline=args.offline) as client:
+            view = asof.view(
+                args.cik,
+                args.as_of,
+                concept=args.concept,
+                taxonomy=args.taxonomy,
+                client=client,
+                refresh=args.refresh,
+            )
+        result = revisions.analyze(view, policy=args.policy) if args.action == "revisions" else view
+        if args.output:
+            atomic_write(args.output, dumps(result).encode())
+        summary = {
+            "cik": view.cik,
+            "as_of": view.as_of,
+            "mode": view.mode,
+            "policy": view.policy,
+            "eligible_filings": len(view.filings),
+            "eligible_observations": len(view.records),
+            "excluded_filings": len(view.excluded_filings),
+            "excluded_observations": len(view.excluded_observations),
+            "excluded_evidence_reasons": dict(Counter(e.reason for e in view.excluded_evidence)),
+            "calendar_years": len(view.calendar.years) if view.calendar else 0,
+            "diagnostics": view.diagnostics,
+            "source_issue_counts": dict(Counter(i.code for i in view.source_issues)),
+            "timeline_issue_counts": dict(Counter(i.code for i in view.timeline_issues)),
+        }
+        conflicts = False
+        if args.action == "revisions":
+            conflicts = any(g.status == "conflicted" for g in result.groups)
+            summary.update(
+                {
+                    "revision_policy": result.policy,
+                    "revision_status": result.status,
+                    "groups": len(result.groups),
+                    "conflicted_groups": sum(g.status == "conflicted" for g in result.groups),
+                    "records": [
+                        {
+                            "identity": g.identity,
+                            "normalized_period": g.normalized_period,
+                            "status": g.status,
+                            "conflicts": g.conflicts,
+                            "selected_observation_ids": g.selected_observation_ids,
+                            "candidates": [
+                                {
+                                    "observation_id": c.observation.fact.observation_id,
+                                    "accession": c.observation.fact.observation.accession_number,
+                                    "form": c.observation.fact.observation.form,
+                                    "value": c.observation.fact.observation.value,
+                                    "availability": c.observation.eligibility.source_availability,
+                                    "period_kind": c.observation.period.kind,
+                                    "is_amendment": c.is_amendment,
+                                    "is_comparative": c.is_comparative,
+                                    "candidate_status": c.status,
+                                    "source": c.observation.fact.observation.provenance,
+                                }
+                                for c in g.candidates
+                            ],
+                        }
+                        for g in result.groups[: args.limit]
+                    ],
+                }
+            )
+        else:
+            summary["filings"] = [
+                {"accession": f.filing.accession_number, "eligibility": f.eligibility}
+                for f in view.filings[: args.limit]
+            ]
+            summary["records"] = [
+                {
+                    "observation_id": r.fact.observation_id,
+                    "accession": r.fact.observation.accession_number,
+                    "eligibility": r.eligibility,
+                    "period_kind": r.period.kind,
+                    "period_identity": r.period.identity,
+                    "period_diagnostics": r.period.diagnostics,
+                    "supporting_evidence": len(r.supporting_evidence),
+                }
+                for r in view.records[: args.limit]
+            ]
+        print(dumps(summary), end="")
+        bad = (
+            conflicts
+            or view.source_issues
+            or view.timeline_issues
+            or any(
+                d.category == "verified_inconsistency"
+                for r in view.records
+                for d in (*r.period.diagnostics, *r.fact.diagnostics)
+            )
+            or (view.calendar and view.calendar.diagnostics)
         )
         return 1 if args.strict and bad else 0
     except (FinPanelError, OSError) as exc:

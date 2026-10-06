@@ -9,6 +9,7 @@ This repository implements Phase 0A raw ingestion and Phase 0B historical filing
 coverage, explicit availability precision, and filing-level as-of filtering.
 Phase 0C adds opt-in SEC header corroboration and auditable fact/context links.
 Phase 0D interprets reported fiscal periods with explicit evidence and uncertainty.
+Phase 0E bounds evidence by a historical cutoff and exposes temporal revision contracts.
 Authentic SEC fixtures are tested offline alongside separate synthetic edge cases.
 It still does **not** construct normalized point-in-time financial fundamentals.
 
@@ -76,6 +77,8 @@ print(len(result.records), len(result.issues))
 - `facts.py`: exact-concept observation inspection, filing links and repeated periods.
 - `periods.py` and `models/period.py`: observed fiscal calendars and separate derived
   period classifications, identities, evidence and diagnostics.
+- `asof.py` and `models/asof.py`: eligibility decisions and filtering before derivation.
+- `revisions.py`: exact-concept revision groups and temporal candidate contracts.
 - `models/`: dataclasses for filings, observations, contexts, evidence and diagnostics.
 - `cache/file.py`: raw JSON/text objects keyed by SHA-256; versioned retrieval metadata
   keyed by metadata hash; atomic latest-response pointers keyed by URL hash.
@@ -715,7 +718,7 @@ contexts and instant facts. Apple supplies real 364/371-day years. Synthetic tes
 cover missing/conflicting evidence, leap years, 14-week Q1, amendments and boundary
 cases. All Phase 0A–0C regressions remain mandatory; CI uses no live SEC access.
 
-### Limitations and next phase
+### Phase 0D retrospective limitations
 
 Calendar discovery depends on available anchors for the selected concept. Older
 comparatives, incomplete histories and current-year quarters without a supported
@@ -731,7 +734,216 @@ linked observations/evidence for auditability and can be large.
 
 Technical debt includes historical calendar transitions, finer conflict scope,
 more periodType/context evidence, compact export references, and explicit timing
-constraints for calendar evidence. A proposed next phase is to specify bounded
-as-of evidence and revision-selection contracts before implementing any financial
-metric resolver. No canonical metrics, subtraction-derived quarters, restatement
+constraints for calendar evidence. Phase 0E supplies the explicit boundary described
+below; the existing Phase 0D API retains its retrospective meaning. No canonical metrics, subtraction-derived quarters, restatement
 winner selection, TTM, ratios, prices, trading or GUI has been implemented.
+
+
+## As-of evidence and revision contracts (Phase 0E)
+
+Retrospective and as-of interpretation answer different questions:
+
+| Mode | Evidence used | API |
+| --- | --- | --- |
+| `retrospective` | All admissible observations in the supplied snapshot, including later filings | Existing `periods.interpret` / `periods.for_concept` |
+| `as_of` | Only observations and filing evidence eligible at the explicit cutoff, filtered before calendar construction | `asof.view` / `asof.from_inspection` |
+
+Period results expose `mode`; as-of results also expose their UTC `as_of` cutoff.
+No existing Phase 0D classification behavior has silently changed.
+
+```python
+from finpanel import asof, facts, periods, revisions
+
+# Filings only by default; an exact concept also loads facts and interprets periods.
+view = asof.view(
+    "0000320193",
+    "2024-08-02T20:00:00Z",
+    concept="RevenueFromContractWithCustomerExcludingAssessedTax",
+)
+for record in view.records:
+    print(
+        record.fact.observation.accession_number,
+        record.eligibility.reason,
+        record.period.kind,
+        record.supporting_evidence,
+    )
+
+history = revisions.analyze(view, policy="latest_available")
+# Equivalent fetching API:
+history = asof.revisions(
+    "0000320193",
+    "RevenueFromContractWithCustomerExcludingAssessedTax",
+    as_of="2024-01-01T00:00:00Z",
+    policy="first_reported",
+)
+
+# Compare modes locally, reusing an existing inspection:
+inspected = facts.for_concept("0000320193", "Assets")
+retrospective = periods.interpret(inspected)
+bounded = asof.from_inspection(inspected, "2024-01-01T00:00:00Z")
+```
+
+Fetching APIs accept a caller-owned `client`, `taxonomy`, and `refresh`. Local
+`from_inspection` admits only linked filings represented in that inspection;
+`view` loads the complete referenced timeline before applying the cutoff. Missing
+history still fails explicitly. No canonical concept mapping or metric is selected.
+
+### Evidence eligibility and derivation order
+
+Each `EvidenceEligibility` identifies a source URL/hash/locator, source accession,
+availability value/precision/method, cutoff, role, eligibility flag and reason.
+Fact decisions also retain the observation ID. Compact availability summaries
+omit repeated raw evidence; the filing and fact objects retain their original
+source fields and availability evidence.
+
+The boundary follows the Phase 0B/0C availability policy:
+
+- A valid aware acceptance proxy is eligible when its timestamp is **<= T**.
+- Date-only evidence enters only after its New York filing day has ended. An
+  intraday or same-day cutoff excludes it explicitly. DST day boundaries are
+  respected, and no exact publication time is invented.
+- Unknown/conflicting availability or a missing/invalid filing link is excluded.
+- Both the linked filing and the fact's availability must be eligible. A usable
+  filing date cannot rescue a conflicting fact-to-filing availability decision.
+
+The implementation filters source observations first, then builds a new fiscal
+calendar and reclassifies the retained contexts. It never takes a retrospective
+calendar and filters the resulting classifications afterward. Future observations
+cannot contribute annual anchors, quarter boundaries, overlap diagnostics, or
+comparative metadata to admitted classifications. An earlier classification may
+therefore become ambiguous even though the retrospective result is supported.
+
+Current issuer names and submissions `fiscalYearEnd` have no historical field
+availability in these models. The as-of projection withholds them and records
+`unversioned_issuer_metadata` exclusions. Original source objects and raw bytes are
+not mutated. Filing-linked dates, form and acceptance metadata use the documented
+original-filing proxy assumption described below.
+
+The view's primary `filings`, `records`, and `calendar` contain admitted inputs
+and derivations. `admitted_evidence` records permission to use those sources;
+each result's `supporting_evidence` traces the fields actually referenced by its
+classification back to eligible decisions. `excluded_filings`,
+`excluded_observations` and `excluded_evidence` are separate audit collections,
+including raw future observations. They must not be used as derivation inputs.
+Exclusions are retained even when they would have supplied a useful future anchor.
+Snapshot-wide parser and coverage issues remain audit information, not anchors.
+
+### Revision grouping and candidate states
+
+Revision analysis groups exact CIK, taxonomy, concept, unit, observed context
+kind and start/end dates. It never groups by numeric equality, aliases or a
+cross-taxonomy financial metric. Unknown context shapes remain separate by
+observation ID. Ambiguous contexts with exact dates can form comparison buckets,
+but cannot produce resolved selections. A normalized period is attached only
+when all members have supported, agreeing period identities. Disagreement remains
+a conflict instead of being hidden by splitting incompatible normalized labels.
+
+Every group retains all eligible candidates with exact values, accessions, forms,
+filing availability, source provenance and bounded period interpretations.
+`is_amendment` uses the filing form; `is_comparative` indicates that the represented
+end precedes the filing report end. The latter is a metadata heuristic, not proof
+of why a value was repeated or changed. Candidate states distinguish
+`selected_by_contract`, `retained_history`, and `unresolved`.
+
+| Policy | Contract |
+| --- | --- |
+| `first_reported` | Earliest eligible candidates by availability, within this observed exact-concept group |
+| `latest_available` | Latest eligible candidates **by cutoff T**, not the latest observation present in today's full snapshot |
+| `all_available` | Preserve the entire eligible set without a temporal preference |
+
+These are temporal candidate contracts, **not economic restatement winners or
+canonical metric selections**. No scalar financial value is returned. A later
+comparative or amendment may be the unique latest temporal candidate without any
+claim that it is the economically correct value.
+
+Exact timestamps order directly. A date-only candidate is represented internally
+by its New York filing-day uncertainty interval solely for partial ordering; it
+is not assigned an exact availability timestamp. Candidates on different days
+can be ordered, but an exact timestamp inside another candidate's date-only day
+cannot establish which came first. No accession, array order, or numeric value
+breaks such a tie.
+
+### Conflicts and empty results
+
+`first_reported` and `latest_available` remain conflicted when equally ranked or
+partially ordered candidates cannot be distinguished, even if their values agree.
+Different values among the selected temporal candidates produce an explicit value
+conflict. `all_available` retains all members and reports a value conflict when
+those values differ. Earlier differing values do not by themselves prevent a
+unique later temporal candidate under `latest_available`; history remains intact.
+
+Insufficient period evidence, normalized-period disagreement and matching-context
+observations with unknown availability also prevent a resolved selection. Unknown
+observations remain excluded and are shown as uncertainty blockers, not silently
+ranked before or after known observations. Known-future observations do not enter
+revision groups or affect their selection/conflict state at an earlier cutoff.
+
+A group is `resolved` or `conflicted`; conflicted groups have no selected IDs.
+The overall history additionally supports `no_eligible_candidates` when no group
+can be formed. This does not imply that no filing or economic value existed.
+`first_reported` means first among the evidence available in this source coverage,
+not a claim of universal earliest disclosure. All policies retain their audit view.
+Revision analysis rejects retrospective classifications and supporting evidence
+outside its view's cutoff boundary, even if a caller mixes results manually.
+
+### Authentic cutoff example and offline CLI
+
+In the frozen Apple revenue data, the 2024 Q3 filing
+`0000320193-24-000081` supplies the single-quarter context 2024-03-31–2024-06-29.
+Retrospective Phase 0D interpretation calls it FY2024 Q3 using an annual anchor
+from the later 2024 10-K, `0000320193-24-000123`.
+
+At `2024-08-02T20:00:00Z`, that annual filing is future evidence. The quarter's
+observation is admitted, but its interpretation remains ambiguous without the
+annual anchor. At the annual filing's acceptance proxy,
+`2024-11-01T10:01:36Z`, the anchor becomes eligible and supports classification.
+Prior-year comparative observations in that later filing enter only then; they
+are not substituted into earlier candidate histories.
+
+```bash
+python examples/inspect_provenance.py
+finpanel asof evidence 320193 2024-08-02T20:00:00Z --concept RevenueFromContractWithCustomerExcludingAssessedTax --offline --cache-dir output/offline-provenance-cache --limit 3
+finpanel facts revisions 320193 RevenueFromContractWithCustomerExcludingAssessedTax --as-of 2024-01-01T00:00:00Z --policy latest_available --offline --cache-dir output/offline-provenance-cache --limit 3 --output output/revisions.json
+```
+
+Without `--concept`, `asof evidence` inspects filing eligibility only. Previews show
+eligibility/exclusion counts, reasons, periods, revision candidates/conflicts and
+source locators. `--output` saves the full audit structure, including excluded
+evidence. Repeated fixed inputs produce deterministic output. `--strict` exits 1
+for parser/coverage issues, verified inconsistencies, or revision conflicts;
+ordinary future exclusions and ambiguity alone in the evidence command do not
+fail strict checks. Errors such as missing offline cache entries exit 2.
+The inherited Apple `history_range_mismatch` remains visible and fails strict mode.
+
+No authentic fixtures were added or changed. Existing Apple snapshots test future
+filing/fact exclusion, later comparative admission and loss of future fiscal
+anchors. Synthetic cases cover amendments, conflicting values, equal times,
+unknown availability and date-only partial ordering. Metamorphic tests add or
+change future observations, including conflicting annual windows, and require
+the earlier admitted periods and revision groups to remain unchanged. All
+Phase 0A–0D regression tests remain mandatory. CI has no live SEC dependency.
+
+### Scope, limitations and technical debt
+
+SEC acceptance remains the project's availability **proxy**, not proof of the
+exact instant every market participant could see a filing. This boundary prevents
+later-accession evidence from entering an earlier derivation under that proxy.
+It does not turn today's SEC snapshot into a versioned historical archive.
+Company Facts and submissions fields can be corrected or changed between
+snapshots. Original filing-level metadata availability is assumed for the linked
+fields; current issuer attributes are explicitly withheld. The API emits a
+`snapshot_metadata_proxy` diagnostic so this limitation remains visible.
+
+Uncertain availability, incomplete source coverage, absent fiscal anchors and
+unavailable original instance contexts still limit results. First/latest are
+relative to the loaded evidence set. Audit sections intentionally contain future
+data and must remain separate from modeling inputs. Full exports repeat source
+objects for auditability and can be large. There is no persistence or resolver
+that chooses a canonical financial metric.
+
+Technical debt includes versioned historical metadata snapshots, finer evidence
+timing, original instance-context validation, more issuer/revision fixtures,
+compact provenance references and bounded export sizes. A proposed next phase is
+to specify a narrowly scoped metric-resolution contract with explicit concept
+mapping and conflict handling, before implementing any metric winners. No such
+mapping, resolver, derived quarters, ratios, prices, trading or GUI is included.

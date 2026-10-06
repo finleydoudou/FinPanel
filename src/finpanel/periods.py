@@ -401,6 +401,7 @@ class PeriodInspection:
     records: tuple[PeriodObservation, ...]
     calendar: FiscalCalendar
     provenance: facts.FactInspection
+    mode: str = "retrospective"
 
 
 def interpret(inspection: facts.FactInspection) -> PeriodInspection:

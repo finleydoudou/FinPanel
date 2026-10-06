@@ -1,7 +1,7 @@
 """Derived fiscal interpretations; all dates and labels remain separate from SEC fields."""
 
 from dataclasses import dataclass
-from datetime import date
+from datetime import date, datetime
 from typing import Literal
 
 from finpanel.models.evidence import Diagnostic, Evidence
@@ -68,3 +68,5 @@ class PeriodClassification:
     evidence: tuple[Evidence, ...]
     diagnostics: tuple[Diagnostic, ...]
     policy: str = "reported-context-periods-v1"
+    mode: Literal["retrospective", "as_of"] = "retrospective"
+    as_of: datetime | None = None
