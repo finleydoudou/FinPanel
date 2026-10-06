@@ -1,4 +1,4 @@
-"""Developer summaries and exact raw exports; no financial interpretation."""
+"""Developer inspection, canonical reported metrics, and exact raw exports."""
 
 import argparse
 import logging
@@ -93,7 +93,33 @@ def main(argv: list[str] | None = None) -> int:
             action="store_true",
             help="Exit 1 for source issues or verified inconsistencies",
         )
+    metric_commands = commands.add_parser("metrics").add_subparsers(dest="action", required=True)
+    for action in ("candidates", "resolve"):
+        command = metric_commands.add_parser(action)
+        command.add_argument("cik")
+        command.add_argument("metric")
+        command.add_argument("--as-of", required=True)
+        command.add_argument("--cache-dir", type=Path, default=Path(".finpanel-cache"))
+        command.add_argument("--offline", action="store_true")
+        command.add_argument("--refresh", action="store_true")
+        command.add_argument("--output", type=Path)
+        command.add_argument("--limit", type=int, default=5)
+        command.add_argument("--strict", action="store_true")
+        if action == "resolve":
+            command.add_argument("--fiscal-year", type=int)
+            command.add_argument("--period")
+            command.add_argument("--start")
+            command.add_argument("--end")
+            command.add_argument(
+                "--revision-policy", choices=sorted(revisions.POLICIES), default="latest_available"
+            )
+        else:
+            command.add_argument("--inspect-concept", action="append", default=[])
     args = parser.parse_args(argv)
+    if args.command == "metrics":
+        if args.limit < 0:
+            parser.error("--limit must be nonnegative")
+        return _metrics_command(args)
     if args.command in ("filings", "facts", "asof"):
         if args.limit < 0:
             parser.error("--limit must be nonnegative")
@@ -453,6 +479,96 @@ def _asof_command(args: argparse.Namespace) -> int:
             or (view.calendar and view.calendar.diagnostics)
         )
         return 1 if args.strict and bad else 0
+    except (FinPanelError, OSError) as exc:
+        print(f"finpanel: {exc}", file=sys.stderr)
+        return 2
+
+
+def _metrics_command(args: argparse.Namespace) -> int:
+    from finpanel import metrics
+
+    try:
+        with SECClient(cache_dir=args.cache_dir, offline=args.offline) as client:
+            report = metrics.candidates(
+                args.cik,
+                args.metric,
+                as_of=args.as_of,
+                client=client,
+                refresh=args.refresh,
+                inspect_concepts=tuple(getattr(args, "inspect_concept", ())),
+            )
+        source_issues = sorted(
+            {i.code for v in report.evidence for i in (*v.source_issues, *v.timeline_issues)}
+        )
+        summary = {
+            "cik": report.cik,
+            "metric": report.metric,
+            "as_of": report.as_of,
+            "mode": report.mode,
+            "state": report.status,
+            "candidate_count": len(report.records),
+            "rejected_count": len(report.rejected),
+            "rejection_reasons": dict(Counter(x for r in report.rejected for x in r.reasons)),
+            "source_issue_codes": source_issues,
+            "evidence_diagnostics": sorted(
+                {d.code for v in report.evidence for d in v.diagnostics}
+            ),
+        }
+        output = report
+        if args.action == "resolve":
+            output = metrics.resolve_candidates(
+                report,
+                fiscal_year=args.fiscal_year,
+                period=args.period,
+                start=args.start,
+                end=args.end,
+                revision_policy=args.revision_policy,
+            )
+            summary.update(
+                {
+                    "state": output.state,
+                    "value": output.value,
+                    "unit": output.unit,
+                    "represented_period": output.represented_period,
+                    "revision_policy": output.revision_policy,
+                    "conflicts": output.conflicts,
+                    "diagnostics": output.diagnostics,
+                    "considered": output.considered[: args.limit],
+                    "considered_count": len(output.considered),
+                    "target_rejections": output.target_rejections[: args.limit],
+                    "target_rejection_count": len(output.target_rejections),
+                    "sources": [
+                        {
+                            "concept": c.mapping.concept,
+                            "taxonomy": c.mapping.taxonomy,
+                            "accession": c.observation.fact.observation.accession_number,
+                            "availability": c.observation.fact.availability,
+                            "provenance": c.observation.fact.observation.provenance,
+                            "filing": c.observation.fact.filing,
+                            "period_evidence": c.observation.supporting_evidence,
+                        }
+                        for c in output.selected
+                    ],
+                }
+            )
+        else:
+            summary.update(
+                {
+                    "records": report.records[: args.limit],
+                    "rejected": report.rejected[: args.limit],
+                    "unmapped_concepts": report.unmapped_concepts[: args.limit],
+                    "unmapped_concept_count": len(report.unmapped_concepts),
+                    "revision_groups": report.revision_groups[: args.limit],
+                    "revision_policy": "all_available (inspection only)",
+                }
+            )
+        if args.output:
+            atomic_write(args.output, dumps(output).encode())
+        print(dumps(summary), end="")
+        return int(
+            args.strict
+            and (bool(source_issues) or summary["state"] not in {"resolved", "supported"})
+        )
     except (FinPanelError, OSError) as exc:
         print(f"finpanel: {exc}", file=sys.stderr)
         return 2

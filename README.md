@@ -11,7 +11,9 @@ Phase 0C adds opt-in SEC header corroboration and auditable fact/context links.
 Phase 0D interprets reported fiscal periods with explicit evidence and uncertainty.
 Phase 0E bounds evidence by a historical cutoff and exposes temporal revision contracts.
 Authentic SEC fixtures are tested offline alongside separate synthetic edge cases.
-It still does **not** construct normalized point-in-time financial fundamentals.
+Work Package 1 adds six explicitly mapped reported metrics with as-of-safe candidate
+inspection, conservative resolution, and full provenance. Derived quarters and panels
+remain out of scope.
 
 ## Installation
 
@@ -735,8 +737,9 @@ linked observations/evidence for auditability and can be large.
 Technical debt includes historical calendar transitions, finer conflict scope,
 more periodType/context evidence, compact export references, and explicit timing
 constraints for calendar evidence. Phase 0E supplies the explicit boundary described
-below; the existing Phase 0D API retains its retrospective meaning. No canonical metrics, subtraction-derived quarters, restatement
-winner selection, TTM, ratios, prices, trading or GUI has been implemented.
+below; the existing Phase 0D API retains its retrospective meaning. The canonical
+metric layer is described under Work Package 1 below. Subtraction-derived quarters,
+TTM, ratios, prices, trading and GUI remain unimplemented.
 
 
 ## As-of evidence and revision contracts (Phase 0E)
@@ -852,7 +855,8 @@ of why a value was repeated or changed. Candidate states distinguish
 | `all_available` | Preserve the entire eligible set without a temporal preference |
 
 These are temporal candidate contracts, **not economic restatement winners or
-canonical metric selections**. No scalar financial value is returned. A later
+canonical metric selections**. This Phase 0E API returns no scalar value; the
+Work Package 1 resolver consumes its contracts. A later
 comparative or amendment may be the unique latest temporal candidate without any
 claim that it is the economically correct value.
 
@@ -938,12 +942,191 @@ Uncertain availability, incomplete source coverage, absent fiscal anchors and
 unavailable original instance contexts still limit results. First/latest are
 relative to the loaded evidence set. Audit sections intentionally contain future
 data and must remain separate from modeling inputs. Full exports repeat source
-objects for auditability and can be large. There is no persistence or resolver
-that chooses a canonical financial metric.
+objects for auditability and can be large. The following metric layer consumes
+these contracts without redefining their temporal ordering.
 
 Technical debt includes versioned historical metadata snapshots, finer evidence
 timing, original instance-context validation, more issuer/revision fixtures,
-compact provenance references and bounded export sizes. A proposed next phase is
-to specify a narrowly scoped metric-resolution contract with explicit concept
-mapping and conflict handling, before implementing any metric winners. No such
-mapping, resolver, derived quarters, ratios, prices, trading or GUI is included.
+compact provenance references and bounded export sizes. Work Package 1 adds the
+narrowly scoped mapping and resolution contract below; it does not remove these
+evidence limitations.
+
+## Canonical reported fundamentals (Work Package 1)
+
+The `finpanel.metrics` registry defines six metrics. Each immutable definition
+contains its context, period kinds, unit family, exact namespace/concepts,
+priority, rationale, support notes, exclusions and status. Matching is exact and
+case sensitive. Labels, substrings, similarity and LLM inference are never used.
+
+| Metric | Context | Explicit `us-gaap` mappings |
+| --- | --- | --- |
+| `revenue` | Duration | `Revenues`; `RevenueFromContractWithCustomerExcludingAssessedTax`; `SalesRevenueNet` |
+| `net_income` | Duration | `NetIncomeLoss` |
+| `assets` | Instant | `Assets` |
+| `liabilities` | Instant | `Liabilities` |
+| `cash_and_cash_equivalents` | Instant | `CashAndCashEquivalentsAtCarryingValue` |
+| `operating_cash_flow` | Duration | `NetCashProvidedByUsedInOperatingActivities` |
+
+Revenue is a **reported revenue observation with its source scope retained**,
+not a promise of economically identical revenue across companies. `Revenues`
+can include earning activities outside ASC 606; the customer-contract concept
+excludes assessed taxes; `SalesRevenueNet` represents net sales of goods/services.
+The [FASB revenue implementation guide](https://xbrl.fasb.org/impdocs/Rev2_TIG/Revenue.htm)
+distinguishes customer-contract revenue from other revenue activities. The exact
+concept descriptions are also auditable in the unchanged SEC Company Facts
+fixtures and their source URLs/digests in `tests/fixtures/sec/manifest.json`.
+
+All eight mappings currently have equal priority `100`. Lower numeric priority
+is preferred by the general contract, but **no cross-concept override is justified
+or enabled in this catalog**. Multiple eligible concepts for a target therefore
+produce a conflict, even when their values happen to agree. Numeric similarity
+never selects a concept. Walmart's two different fiscal 2024 revenue scopes are
+an authentic expected conflict. These mappings are supported for inspection and
+conservative reported-value resolution, not universal economic normalization.
+
+Net income means attributable to the parent, excluding the broader `ProfitLoss`
+concept and EPS adjustments. Liabilities requires an explicitly reported total;
+assets minus equity is not substituted. Cash excludes restricted-cash aggregates
+and combined cash/investment balances. Operating cash flow includes discontinued
+operations; a continuing-operations-only concept is not substituted. No issuer
+names participate in mapping logic.
+
+### Candidate and resolution APIs
+
+```python
+from finpanel import metrics
+from finpanel.sec.client import SECClient
+
+with SECClient(offline=True, cache_dir="output/offline-provenance-cache") as client:
+    candidates = metrics.candidates(
+        "0000320193", "revenue", as_of="2024-11-15T00:00:00Z", client=client
+    )
+    result = metrics.resolve_candidates(
+        candidates, fiscal_year=2024, period="FY", revision_policy="latest_available"
+    )
+    balance = metrics.resolve(
+        "0000320193",
+        "assets",
+        end="2024-09-28",
+        as_of="2024-11-15T00:00:00Z",
+        client=client,
+    )
+```
+
+`metrics.resolve` also accepts `fiscal_year`, `period` and `revision_policy`
+directly. Duration queries specify fiscal year plus `FY`, `Q1`–`Q4`, `YTD-Q2`
+or `YTD-Q3`, or exact `start` and `end` dates. Exact dates still require a
+supported period classification. Instant queries require `end` alone: the
+metric layer does not manufacture fiscal labels for balance-sheet dates.
+
+Candidates pin one Company Facts response, reuse the validated fact linker,
+and rebuild an as-of view before interpreting each concept's periods. Unsupported
+namespace, context, unit or provenance records are isolated so they cannot
+anchor supported observations. Per-concept calendars are intentionally not
+pooled. Current issuer metadata and future facts/filings/calendar anchors remain
+outside admissible evidence. Every accepted observation and exact-concept revision
+group is retained; generation does not select a canonical winner.
+
+Rejections retain the linked observation, provenance, eligibility decision,
+period if available, and reason codes: `unsupported_concept`, `wrong_taxonomy`,
+`wrong_context_type`, `incompatible_unit`, `unavailable_as_of`,
+`unknown_availability`, `ambiguous_period`, `unsupported_period`,
+`conflicting_provenance`, and `insufficient_evidence`.
+
+Scalar support is deliberately **USD only**. Every other unit, including EUR,
+is preserved with `unsupported_unit_no_conversion` and rejected for resolution.
+No three-letter token is assumed to be a valid currency; no FX or sign conversion
+occurs. A conflicting eligible unit for the same target prevents a USD scalar.
+
+`unmapped_concepts` inventories other concepts with counts and raw JSON pointers.
+Use `inspect_concepts=("ExactExtensionName",)` to expand a concept into individual
+rejection records, or the existing `facts inspect` command to inspect it directly.
+Company extensions remain unsupported even if their names match standard concepts.
+SEC Company Facts itself is not an exhaustive source of extensions or dimensions.
+
+For offline research, `metrics.from_inspections` accepts one `FactInspection` for
+every mapped name (including explicit empty inspections). The caller must provide
+a coherent source set. The loader accepts an explicit `filing_timeline` for a
+limited evidence set; missing links remain unknown. Default loading continues to
+require all referenced history files and fails on missing offline cache entries.
+No silent recent-only fallback is introduced into the public loader.
+
+### Resolution and uncertainty
+
+Results have states `resolved`, `conflicted`, `unavailable`, `unsupported`, or
+`ambiguous_period`. Only `resolved` carries a scalar. Every selected observation
+contains its source namespace/concept, accession, filing, availability, raw
+provenance, interpreted period and supporting evidence. The result also retains
+the candidate report, rejection audit and revision groups under the requested
+policy. Source parsing/coverage diagnostics remain visible.
+
+`first_reported` and `latest_available` use Phase 0E's earliest/latest eligible
+partial ordering, within exact-concept groups. An unresolved time tie remains a
+conflict even if values agree. `all_available` retains all eligible observations;
+a scalar is returned only when all selected observations agree on value, unit
+and represented period. All supporting sources survive. These policies do not
+establish an economically authoritative restatement winner.
+
+Unknown availability peers, incompatible units, distinct mapped concept scopes,
+period disagreement and unresolved revision groups prevent a scalar. Known-future
+observations never change an earlier result's state or value. Ambiguous evidence
+for an overlapping target interval blocks resolution; an older disjoint
+comparative is not relabeled from its raw reporting-year `fy` field.
+
+The filing-availability proxy and current-snapshot limitations of Phase 0E still
+apply. First/latest refer to the loaded evidence set. Audit exports intentionally
+contain excluded future data, which must not be used as modeling inputs.
+A reported current-year quarter can remain ambiguous until a qualifying annual
+anchor becomes eligible; there is no retrospective calendar fallback.
+
+### Offline CLI and validation
+
+Seed the existing Apple cache with `python examples/inspect_provenance.py`, then:
+
+```bash
+finpanel metrics candidates 0000320193 revenue \
+  --as-of 2024-11-15T00:00:00Z --offline \
+  --cache-dir output/offline-provenance-cache --limit 2
+finpanel metrics resolve 0000320193 revenue \
+  --fiscal-year 2024 --period FY --as-of 2024-11-15T00:00:00Z \
+  --revision-policy latest_available --offline \
+  --cache-dir output/offline-provenance-cache
+finpanel metrics resolve 0000320193 assets --end 2024-09-28 \
+  --as-of 2024-11-15T00:00:00Z --offline \
+  --cache-dir output/offline-provenance-cache
+python examples/validate_canonical.py --output output/canonical-validation.json
+```
+
+CLI summaries display states, values, units, conflicts, source concepts/accessions,
+availability and provenance. `--output` saves the complete typed audit result.
+Candidate previews are limited; complete exports can be large. `--inspect-concept`
+is repeatable. Normal state responses exit 0; `--strict` exits 1 for unresolved
+results or source issues; invalid input/cache/request failures exit 2. Apple's
+existing history-range diagnostic is retained and makes strict CLI checks fail.
+
+The 32 literal golden cases in `tests/golden/canonical.json` cover all six metrics
+across AAPL, MSFT, WMT and NVDA, direct annual and quarterly observations,
+non-calendar fiscal years, comparative repetitions under all three policies,
+pre-filing unavailability, revenue-scope conflict, missing reported liabilities,
+and an as-of-ambiguous quarter. Expectations are hand-selected source rows with
+JSON pointers and literal amounts, checked independently against frozen raw bytes;
+they are not generated by the resolver. The runner verifies source digests before
+using them and reports counts and mismatches deterministically.
+
+The four-issuer benchmark explicitly uses existing **recent submissions only**,
+records `golden_recent_only`, and leaves unlinked history unknown. No authentic
+fixtures were added or changed. The Apple CLI tests separately use its existing
+complete cached history. See `docs/canonical-validation.json` for the frozen
+summary. This sample is not evidence of broad issuer or cross-market accuracy.
+
+FinPanel still does **not** derive missing quarterly values or build full research
+panels. There is no Q2/H1 subtraction, Q3/9M subtraction, Q4 derivation, TTM, ratios,
+EPS normalization, segment mapping, industry-specific expansion, FX, prices,
+trading or GUI. A possible Work Package 2 is an explicitly separate derived-quarter
+contract with compatible fiscal intervals, source/revision/currency safeguards
+and full derivation provenance. It has not been started.
+
+Remaining debt includes original instance/dimension validation, versioned snapshots,
+broader issuer validation, richer evidence timing, compact audit exports and repeated
+parsing of the pinned raw snapshot by the existing exact-concept linker. These
+limitations are exposed rather than addressed by redesigning Phase 0 components.

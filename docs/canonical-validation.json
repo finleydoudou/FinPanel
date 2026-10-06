@@ -1,0 +1,15 @@
+{
+  "failures": [],
+  "golden_cases": 32,
+  "issuers": 4,
+  "matched_expected_states": {
+    "ambiguous_period": 1,
+    "conflicted": 1,
+    "resolved": 28,
+    "unavailable": 2
+  },
+  "metrics": 6,
+  "scope": "Four frozen US-GAAP issuers; recent filings only; not a population accuracy claim",
+  "title": "Canonical fundamentals validation",
+  "unexpected_mismatches": 0
+}

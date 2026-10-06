@@ -1,0 +1,826 @@
+{
+  "methodology": "Hand-selected raw SEC rows and literal expected values; no resolver-generated expectations. Existing frozen recent submissions only; missing historical links remain unknown.",
+  "cases": [
+    {
+      "id": "aapl-revenue-2024",
+      "issuer": "aapl",
+      "metric": "revenue",
+      "as_of": "2024-11-15T00:00:00Z",
+      "query": {
+        "fiscal_year": 2024,
+        "period": "FY"
+      },
+      "represented_period": {
+        "start": "2023-10-01",
+        "end": "2024-09-28"
+      },
+      "expected_state": "resolved",
+      "expected_value": 391035000000,
+      "expected_sources": [
+        {
+          "file": "aapl_companyfacts.json",
+          "pointer": "/facts/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/units/USD/99",
+          "value": 391035000000,
+          "accession": "0000320193-24-000123",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax"
+        }
+      ],
+      "note": "Direct reported fiscal 2024 observation."
+    },
+    {
+      "id": "aapl-net_income-2024",
+      "issuer": "aapl",
+      "metric": "net_income",
+      "as_of": "2024-11-15T00:00:00Z",
+      "query": {
+        "fiscal_year": 2024,
+        "period": "FY"
+      },
+      "represented_period": {
+        "start": "2023-10-01",
+        "end": "2024-09-28"
+      },
+      "expected_state": "resolved",
+      "expected_value": 93736000000,
+      "expected_sources": [
+        {
+          "file": "aapl_companyfacts.json",
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/320",
+          "value": 93736000000,
+          "accession": "0000320193-24-000123",
+          "concept": "NetIncomeLoss"
+        }
+      ],
+      "note": "Direct reported fiscal 2024 observation."
+    },
+    {
+      "id": "aapl-assets-2024",
+      "issuer": "aapl",
+      "metric": "assets",
+      "as_of": "2024-11-15T00:00:00Z",
+      "query": {
+        "end": "2024-09-28"
+      },
+      "represented_period": {
+        "start": null,
+        "end": "2024-09-28"
+      },
+      "expected_state": "resolved",
+      "expected_value": 364980000000,
+      "expected_sources": [
+        {
+          "file": "aapl_companyfacts.json",
+          "pointer": "/facts/us-gaap/Assets/units/USD/131",
+          "value": 364980000000,
+          "accession": "0000320193-24-000123",
+          "concept": "Assets"
+        }
+      ],
+      "note": "Direct reported fiscal 2024 observation."
+    },
+    {
+      "id": "aapl-liabilities-2024",
+      "issuer": "aapl",
+      "metric": "liabilities",
+      "as_of": "2024-11-15T00:00:00Z",
+      "query": {
+        "end": "2024-09-28"
+      },
+      "represented_period": {
+        "start": null,
+        "end": "2024-09-28"
+      },
+      "expected_state": "resolved",
+      "expected_value": 308030000000,
+      "expected_sources": [
+        {
+          "file": "aapl_companyfacts.json",
+          "pointer": "/facts/us-gaap/Liabilities/units/USD/129",
+          "value": 308030000000,
+          "accession": "0000320193-24-000123",
+          "concept": "Liabilities"
+        }
+      ],
+      "note": "Direct reported fiscal 2024 observation."
+    },
+    {
+      "id": "aapl-cash_and_cash_equivalents-2024",
+      "issuer": "aapl",
+      "metric": "cash_and_cash_equivalents",
+      "as_of": "2024-11-15T00:00:00Z",
+      "query": {
+        "end": "2024-09-28"
+      },
+      "represented_period": {
+        "start": null,
+        "end": "2024-09-28"
+      },
+      "expected_state": "resolved",
+      "expected_value": 29943000000,
+      "expected_sources": [
+        {
+          "file": "aapl_companyfacts.json",
+          "pointer": "/facts/us-gaap/CashAndCashEquivalentsAtCarryingValue/units/USD/213",
+          "value": 29943000000,
+          "accession": "0000320193-24-000123",
+          "concept": "CashAndCashEquivalentsAtCarryingValue"
+        }
+      ],
+      "note": "Direct reported fiscal 2024 observation."
+    },
+    {
+      "id": "aapl-operating_cash_flow-2024",
+      "issuer": "aapl",
+      "metric": "operating_cash_flow",
+      "as_of": "2024-11-15T00:00:00Z",
+      "query": {
+        "fiscal_year": 2024,
+        "period": "FY"
+      },
+      "represented_period": {
+        "start": "2023-10-01",
+        "end": "2024-09-28"
+      },
+      "expected_state": "resolved",
+      "expected_value": 118254000000,
+      "expected_sources": [
+        {
+          "file": "aapl_companyfacts.json",
+          "pointer": "/facts/us-gaap/NetCashProvidedByUsedInOperatingActivities/units/USD/122",
+          "value": 118254000000,
+          "accession": "0000320193-24-000123",
+          "concept": "NetCashProvidedByUsedInOperatingActivities"
+        }
+      ],
+      "note": "Direct reported fiscal 2024 observation."
+    },
+    {
+      "id": "msft-revenue-2024",
+      "issuer": "msft",
+      "metric": "revenue",
+      "as_of": "2024-08-15T00:00:00Z",
+      "query": {
+        "fiscal_year": 2024,
+        "period": "FY"
+      },
+      "represented_period": {
+        "start": "2023-07-01",
+        "end": "2024-06-30"
+      },
+      "expected_state": "resolved",
+      "expected_value": 245122000000,
+      "expected_sources": [
+        {
+          "file": "msft_companyfacts.json",
+          "pointer": "/facts/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/units/USD/112",
+          "value": 245122000000,
+          "accession": "0000950170-24-087843",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax"
+        }
+      ],
+      "note": "Direct reported fiscal 2024 observation."
+    },
+    {
+      "id": "msft-net_income-2024",
+      "issuer": "msft",
+      "metric": "net_income",
+      "as_of": "2024-08-15T00:00:00Z",
+      "query": {
+        "fiscal_year": 2024,
+        "period": "FY"
+      },
+      "represented_period": {
+        "start": "2023-07-01",
+        "end": "2024-06-30"
+      },
+      "expected_state": "resolved",
+      "expected_value": 88136000000,
+      "expected_sources": [
+        {
+          "file": "msft_companyfacts.json",
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/318",
+          "value": 88136000000,
+          "accession": "0000950170-24-087843",
+          "concept": "NetIncomeLoss"
+        }
+      ],
+      "note": "Direct reported fiscal 2024 observation."
+    },
+    {
+      "id": "msft-assets-2024",
+      "issuer": "msft",
+      "metric": "assets",
+      "as_of": "2024-08-15T00:00:00Z",
+      "query": {
+        "end": "2024-06-30"
+      },
+      "represented_period": {
+        "start": null,
+        "end": "2024-06-30"
+      },
+      "expected_state": "resolved",
+      "expected_value": 512163000000,
+      "expected_sources": [
+        {
+          "file": "msft_companyfacts.json",
+          "pointer": "/facts/us-gaap/Assets/units/USD/124",
+          "value": 512163000000,
+          "accession": "0000950170-24-087843",
+          "concept": "Assets"
+        }
+      ],
+      "note": "Direct reported fiscal 2024 observation."
+    },
+    {
+      "id": "msft-liabilities-2024",
+      "issuer": "msft",
+      "metric": "liabilities",
+      "as_of": "2024-08-15T00:00:00Z",
+      "query": {
+        "end": "2024-06-30"
+      },
+      "represented_period": {
+        "start": null,
+        "end": "2024-06-30"
+      },
+      "expected_state": "resolved",
+      "expected_value": 243686000000,
+      "expected_sources": [
+        {
+          "file": "msft_companyfacts.json",
+          "pointer": "/facts/us-gaap/Liabilities/units/USD/116",
+          "value": 243686000000,
+          "accession": "0000950170-24-087843",
+          "concept": "Liabilities"
+        }
+      ],
+      "note": "Direct reported fiscal 2024 observation."
+    },
+    {
+      "id": "msft-cash_and_cash_equivalents-2024",
+      "issuer": "msft",
+      "metric": "cash_and_cash_equivalents",
+      "as_of": "2024-08-15T00:00:00Z",
+      "query": {
+        "end": "2024-06-30"
+      },
+      "represented_period": {
+        "start": null,
+        "end": "2024-06-30"
+      },
+      "expected_state": "resolved",
+      "expected_value": 18315000000,
+      "expected_sources": [
+        {
+          "file": "msft_companyfacts.json",
+          "pointer": "/facts/us-gaap/CashAndCashEquivalentsAtCarryingValue/units/USD/248",
+          "value": 18315000000,
+          "accession": "0000950170-24-087843",
+          "concept": "CashAndCashEquivalentsAtCarryingValue"
+        }
+      ],
+      "note": "Direct reported fiscal 2024 observation."
+    },
+    {
+      "id": "msft-operating_cash_flow-2024",
+      "issuer": "msft",
+      "metric": "operating_cash_flow",
+      "as_of": "2024-08-15T00:00:00Z",
+      "query": {
+        "fiscal_year": 2024,
+        "period": "FY"
+      },
+      "represented_period": {
+        "start": "2023-07-01",
+        "end": "2024-06-30"
+      },
+      "expected_state": "resolved",
+      "expected_value": 118548000000,
+      "expected_sources": [
+        {
+          "file": "msft_companyfacts.json",
+          "pointer": "/facts/us-gaap/NetCashProvidedByUsedInOperatingActivities/units/USD/148",
+          "value": 118548000000,
+          "accession": "0000950170-24-087843",
+          "concept": "NetCashProvidedByUsedInOperatingActivities"
+        }
+      ],
+      "note": "Direct reported fiscal 2024 observation."
+    },
+    {
+      "id": "wmt-revenue-2024",
+      "issuer": "wmt",
+      "metric": "revenue",
+      "as_of": "2024-04-01T00:00:00Z",
+      "query": {
+        "fiscal_year": 2024,
+        "period": "FY"
+      },
+      "represented_period": {
+        "start": "2023-02-01",
+        "end": "2024-01-31"
+      },
+      "expected_state": "conflicted",
+      "expected_value": null,
+      "expected_sources": [
+        {
+          "file": "wmt_companyfacts.json",
+          "pointer": "/facts/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/units/USD/93",
+          "value": 642637000000,
+          "accession": "0000104169-24-000056",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax"
+        },
+        {
+          "file": "wmt_companyfacts.json",
+          "pointer": "/facts/us-gaap/Revenues/units/USD/266",
+          "value": 648125000000,
+          "accession": "0000104169-24-000056",
+          "concept": "Revenues"
+        }
+      ],
+      "note": "Coexisting revenue scopes differ; no priority override."
+    },
+    {
+      "id": "wmt-net_income-2024",
+      "issuer": "wmt",
+      "metric": "net_income",
+      "as_of": "2024-04-01T00:00:00Z",
+      "query": {
+        "fiscal_year": 2024,
+        "period": "FY"
+      },
+      "represented_period": {
+        "start": "2023-02-01",
+        "end": "2024-01-31"
+      },
+      "expected_state": "resolved",
+      "expected_value": 15511000000,
+      "expected_sources": [
+        {
+          "file": "wmt_companyfacts.json",
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/286",
+          "value": 15511000000,
+          "accession": "0000104169-24-000056",
+          "concept": "NetIncomeLoss"
+        }
+      ],
+      "note": "Direct reported fiscal 2024 observation."
+    },
+    {
+      "id": "wmt-assets-2024",
+      "issuer": "wmt",
+      "metric": "assets",
+      "as_of": "2024-04-01T00:00:00Z",
+      "query": {
+        "end": "2024-01-31"
+      },
+      "represented_period": {
+        "start": null,
+        "end": "2024-01-31"
+      },
+      "expected_state": "resolved",
+      "expected_value": 252399000000,
+      "expected_sources": [
+        {
+          "file": "wmt_companyfacts.json",
+          "pointer": "/facts/us-gaap/Assets/units/USD/180",
+          "value": 252399000000,
+          "accession": "0000104169-24-000056",
+          "concept": "Assets"
+        }
+      ],
+      "note": "Direct reported fiscal 2024 observation."
+    },
+    {
+      "id": "wmt-liabilities-2024",
+      "issuer": "wmt",
+      "metric": "liabilities",
+      "as_of": "2024-04-01T00:00:00Z",
+      "query": {
+        "end": "2024-01-31"
+      },
+      "represented_period": {
+        "start": null,
+        "end": "2024-01-31"
+      },
+      "expected_state": "unavailable",
+      "expected_value": null,
+      "expected_sources": [],
+      "note": "No reported total Liabilities concept; no subtraction."
+    },
+    {
+      "id": "wmt-cash_and_cash_equivalents-2024",
+      "issuer": "wmt",
+      "metric": "cash_and_cash_equivalents",
+      "as_of": "2024-04-01T00:00:00Z",
+      "query": {
+        "end": "2024-01-31"
+      },
+      "represented_period": {
+        "start": null,
+        "end": "2024-01-31"
+      },
+      "expected_state": "resolved",
+      "expected_value": 9867000000,
+      "expected_sources": [
+        {
+          "file": "wmt_companyfacts.json",
+          "pointer": "/facts/us-gaap/CashAndCashEquivalentsAtCarryingValue/units/USD/203",
+          "value": 9867000000,
+          "accession": "0000104169-24-000056",
+          "concept": "CashAndCashEquivalentsAtCarryingValue"
+        }
+      ],
+      "note": "Direct reported fiscal 2024 observation."
+    },
+    {
+      "id": "wmt-operating_cash_flow-2024",
+      "issuer": "wmt",
+      "metric": "operating_cash_flow",
+      "as_of": "2024-04-01T00:00:00Z",
+      "query": {
+        "fiscal_year": 2024,
+        "period": "FY"
+      },
+      "represented_period": {
+        "start": "2023-02-01",
+        "end": "2024-01-31"
+      },
+      "expected_state": "resolved",
+      "expected_value": 35726000000,
+      "expected_sources": [
+        {
+          "file": "wmt_companyfacts.json",
+          "pointer": "/facts/us-gaap/NetCashProvidedByUsedInOperatingActivities/units/USD/138",
+          "value": 35726000000,
+          "accession": "0000104169-24-000056",
+          "concept": "NetCashProvidedByUsedInOperatingActivities"
+        }
+      ],
+      "note": "Direct reported fiscal 2024 observation."
+    },
+    {
+      "id": "nvda-revenue-2024",
+      "issuer": "nvda",
+      "metric": "revenue",
+      "as_of": "2024-03-01T00:00:00Z",
+      "query": {
+        "fiscal_year": 2024,
+        "period": "FY"
+      },
+      "represented_period": {
+        "start": "2023-01-30",
+        "end": "2024-01-28"
+      },
+      "expected_state": "resolved",
+      "expected_value": 60922000000,
+      "expected_sources": [
+        {
+          "file": "nvda_companyfacts.json",
+          "pointer": "/facts/us-gaap/Revenues/units/USD/253",
+          "value": 60922000000,
+          "accession": "0001045810-24-000029",
+          "concept": "Revenues"
+        }
+      ],
+      "note": "Direct reported fiscal 2024 observation."
+    },
+    {
+      "id": "nvda-net_income-2024",
+      "issuer": "nvda",
+      "metric": "net_income",
+      "as_of": "2024-03-01T00:00:00Z",
+      "query": {
+        "fiscal_year": 2024,
+        "period": "FY"
+      },
+      "represented_period": {
+        "start": "2023-01-30",
+        "end": "2024-01-28"
+      },
+      "expected_state": "resolved",
+      "expected_value": 29760000000,
+      "expected_sources": [
+        {
+          "file": "nvda_companyfacts.json",
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/284",
+          "value": 29760000000,
+          "accession": "0001045810-24-000029",
+          "concept": "NetIncomeLoss"
+        }
+      ],
+      "note": "Direct reported fiscal 2024 observation."
+    },
+    {
+      "id": "nvda-assets-2024",
+      "issuer": "nvda",
+      "metric": "assets",
+      "as_of": "2024-03-01T00:00:00Z",
+      "query": {
+        "end": "2024-01-28"
+      },
+      "represented_period": {
+        "start": null,
+        "end": "2024-01-28"
+      },
+      "expected_state": "resolved",
+      "expected_value": 65728000000,
+      "expected_sources": [
+        {
+          "file": "nvda_companyfacts.json",
+          "pointer": "/facts/us-gaap/Assets/units/USD/117",
+          "value": 65728000000,
+          "accession": "0001045810-24-000029",
+          "concept": "Assets"
+        }
+      ],
+      "note": "Direct reported fiscal 2024 observation."
+    },
+    {
+      "id": "nvda-liabilities-2024",
+      "issuer": "nvda",
+      "metric": "liabilities",
+      "as_of": "2024-03-01T00:00:00Z",
+      "query": {
+        "end": "2024-01-28"
+      },
+      "represented_period": {
+        "start": null,
+        "end": "2024-01-28"
+      },
+      "expected_state": "resolved",
+      "expected_value": 22750000000,
+      "expected_sources": [
+        {
+          "file": "nvda_companyfacts.json",
+          "pointer": "/facts/us-gaap/Liabilities/units/USD/65",
+          "value": 22750000000,
+          "accession": "0001045810-24-000029",
+          "concept": "Liabilities"
+        }
+      ],
+      "note": "Direct reported fiscal 2024 observation."
+    },
+    {
+      "id": "nvda-cash_and_cash_equivalents-2024",
+      "issuer": "nvda",
+      "metric": "cash_and_cash_equivalents",
+      "as_of": "2024-03-01T00:00:00Z",
+      "query": {
+        "end": "2024-01-28"
+      },
+      "represented_period": {
+        "start": null,
+        "end": "2024-01-28"
+      },
+      "expected_state": "resolved",
+      "expected_value": 7280000000,
+      "expected_sources": [
+        {
+          "file": "nvda_companyfacts.json",
+          "pointer": "/facts/us-gaap/CashAndCashEquivalentsAtCarryingValue/units/USD/198",
+          "value": 7280000000,
+          "accession": "0001045810-24-000029",
+          "concept": "CashAndCashEquivalentsAtCarryingValue"
+        }
+      ],
+      "note": "Direct reported fiscal 2024 observation."
+    },
+    {
+      "id": "nvda-operating_cash_flow-2024",
+      "issuer": "nvda",
+      "metric": "operating_cash_flow",
+      "as_of": "2024-03-01T00:00:00Z",
+      "query": {
+        "fiscal_year": 2024,
+        "period": "FY"
+      },
+      "represented_period": {
+        "start": "2023-01-30",
+        "end": "2024-01-28"
+      },
+      "expected_state": "resolved",
+      "expected_value": 28090000000,
+      "expected_sources": [
+        {
+          "file": "nvda_companyfacts.json",
+          "pointer": "/facts/us-gaap/NetCashProvidedByUsedInOperatingActivities/units/USD/142",
+          "value": 28090000000,
+          "accession": "0001045810-24-000029",
+          "concept": "NetCashProvidedByUsedInOperatingActivities"
+        }
+      ],
+      "note": "Direct reported fiscal 2024 observation."
+    },
+    {
+      "id": "aapl-reported-q3",
+      "issuer": "aapl",
+      "metric": "revenue",
+      "as_of": "2024-11-15T00:00:00Z",
+      "query": {
+        "fiscal_year": 2024,
+        "period": "Q3"
+      },
+      "represented_period": {
+        "start": "2024-03-31",
+        "end": "2024-06-29"
+      },
+      "expected_state": "resolved",
+      "expected_value": 85777000000,
+      "expected_sources": [
+        {
+          "file": "aapl_companyfacts.json",
+          "pointer": "/facts/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/units/USD/97",
+          "value": 85777000000,
+          "accession": "0000320193-24-000081",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax"
+        }
+      ],
+      "note": "Direct three-month fact; cutoff after annual calendar evidence exists."
+    },
+    {
+      "id": "msft-reported-q3",
+      "issuer": "msft",
+      "metric": "revenue",
+      "as_of": "2024-08-15T00:00:00Z",
+      "query": {
+        "fiscal_year": 2024,
+        "period": "Q3"
+      },
+      "represented_period": {
+        "start": "2024-01-01",
+        "end": "2024-03-31"
+      },
+      "expected_state": "resolved",
+      "expected_value": 61858000000,
+      "expected_sources": [
+        {
+          "file": "msft_companyfacts.json",
+          "pointer": "/facts/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/units/USD/110",
+          "value": 61858000000,
+          "accession": "0000950170-24-048288",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax"
+        }
+      ],
+      "note": "Direct three-month fact; cutoff after annual calendar evidence exists."
+    },
+    {
+      "id": "nvda-reported-q3",
+      "issuer": "nvda",
+      "metric": "revenue",
+      "as_of": "2024-03-01T00:00:00Z",
+      "query": {
+        "fiscal_year": 2024,
+        "period": "Q3"
+      },
+      "represented_period": {
+        "start": "2023-07-31",
+        "end": "2023-10-29"
+      },
+      "expected_state": "resolved",
+      "expected_value": 18120000000,
+      "expected_sources": [
+        {
+          "file": "nvda_companyfacts.json",
+          "pointer": "/facts/us-gaap/Revenues/units/USD/251",
+          "value": 18120000000,
+          "accession": "0001045810-23-000227",
+          "concept": "Revenues"
+        }
+      ],
+      "note": "Direct three-month fact; cutoff after annual calendar evidence exists."
+    },
+    {
+      "id": "aapl-comparative-first_reported",
+      "issuer": "aapl",
+      "metric": "revenue",
+      "as_of": "2024-11-15T00:00:00Z",
+      "query": {
+        "fiscal_year": 2023,
+        "period": "FY",
+        "revision_policy": "first_reported"
+      },
+      "represented_period": {
+        "start": "2022-09-25",
+        "end": "2023-09-30"
+      },
+      "expected_state": "resolved",
+      "expected_value": 383285000000,
+      "expected_sources": [
+        {
+          "file": "aapl_companyfacts.json",
+          "pointer": "/facts/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/units/USD/86",
+          "value": 383285000000,
+          "accession": "0000320193-23-000106",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax"
+        }
+      ],
+      "note": "Same represented period repeated in comparative annual report; fiscal 2023 despite raw fy=2024."
+    },
+    {
+      "id": "aapl-comparative-latest_available",
+      "issuer": "aapl",
+      "metric": "revenue",
+      "as_of": "2024-11-15T00:00:00Z",
+      "query": {
+        "fiscal_year": 2023,
+        "period": "FY",
+        "revision_policy": "latest_available"
+      },
+      "represented_period": {
+        "start": "2022-09-25",
+        "end": "2023-09-30"
+      },
+      "expected_state": "resolved",
+      "expected_value": 383285000000,
+      "expected_sources": [
+        {
+          "file": "aapl_companyfacts.json",
+          "pointer": "/facts/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/units/USD/87",
+          "value": 383285000000,
+          "accession": "0000320193-24-000123",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax"
+        }
+      ],
+      "note": "Same represented period repeated in comparative annual report; fiscal 2023 despite raw fy=2024."
+    },
+    {
+      "id": "aapl-comparative-all_available",
+      "issuer": "aapl",
+      "metric": "revenue",
+      "as_of": "2024-11-15T00:00:00Z",
+      "query": {
+        "fiscal_year": 2023,
+        "period": "FY",
+        "revision_policy": "all_available"
+      },
+      "represented_period": {
+        "start": "2022-09-25",
+        "end": "2023-09-30"
+      },
+      "expected_state": "resolved",
+      "expected_value": 383285000000,
+      "expected_sources": [
+        {
+          "file": "aapl_companyfacts.json",
+          "pointer": "/facts/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/units/USD/86",
+          "value": 383285000000,
+          "accession": "0000320193-23-000106",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax"
+        },
+        {
+          "file": "aapl_companyfacts.json",
+          "pointer": "/facts/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/units/USD/87",
+          "value": 383285000000,
+          "accession": "0000320193-24-000123",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax"
+        }
+      ],
+      "note": "Same represented period repeated in comparative annual report; fiscal 2023 despite raw fy=2024."
+    },
+    {
+      "id": "aapl-before-filing",
+      "issuer": "aapl",
+      "metric": "revenue",
+      "as_of": "2024-11-01T09:00:00Z",
+      "query": {
+        "fiscal_year": 2024,
+        "period": "FY"
+      },
+      "represented_period": {
+        "start": "2023-10-01",
+        "end": "2024-09-28"
+      },
+      "expected_state": "unavailable",
+      "expected_value": null,
+      "expected_sources": [],
+      "note": "Before annual acceptance; future annual facts cannot establish this result."
+    },
+    {
+      "id": "aapl-quarter-before-annual-anchor",
+      "issuer": "aapl",
+      "metric": "revenue",
+      "as_of": "2024-08-15T00:00:00Z",
+      "query": {
+        "start": "2024-03-31",
+        "end": "2024-06-29"
+      },
+      "represented_period": {
+        "start": "2024-03-31",
+        "end": "2024-06-29"
+      },
+      "expected_state": "ambiguous_period",
+      "expected_value": null,
+      "expected_sources": [
+        {
+          "file": "aapl_companyfacts.json",
+          "pointer": "/facts/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/units/USD/97",
+          "value": 85777000000,
+          "accession": "0000320193-24-000081",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax"
+        }
+      ],
+      "note": "Reported value exists; current-year annual anchor is not yet available."
+    }
+  ]
+}
