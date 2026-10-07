@@ -42,6 +42,16 @@ class MetricResult:
     mapping_policy: str = "lowest-numeric-priority; distinct-concepts-never-assumed-equivalent"
     source_type: Literal["reported"] = "reported"
 
+    evidence_snapshot_id: str | None = None
+
+    @property
+    def evidence_mode(self) -> str:
+        return (
+            "exact_pinned_snapshot"
+            if self.evidence_snapshot_id
+            else "unsnapshotted_explicit_inputs"
+        )
+
 
 def _date(value):
     try:

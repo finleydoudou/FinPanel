@@ -130,7 +130,17 @@ def main(argv: list[str] | None = None) -> int:
     from finpanel.xbrl.cli import add_commands, run
 
     add_commands(commands)
+    from finpanel.snapshots.cli import (
+        add_commands as snapshot_commands,
+    )
+    from finpanel.snapshots.cli import (
+        command as snapshot_command,
+    )
+
+    snapshot_commands(commands)
     args = parser.parse_args(argv)
+    if args.command in {"snapshots", "reproduce"}:
+        return snapshot_command(args)
     if args.command == "xbrl":
         if args.limit < 0:
             parser.error("--limit must be nonnegative")

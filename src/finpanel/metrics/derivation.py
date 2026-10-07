@@ -1,6 +1,6 @@
 """Strict same-concept cumulative arithmetic above the reported canonical engine."""
 
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from datetime import datetime, timedelta
 from typing import Literal
 
@@ -43,7 +43,7 @@ def operand_eligibility(
         reasons.append("unsupported_quarter_formula")
     if a.metric not in DERIVABLE_METRICS or b.metric not in DERIVABLE_METRICS:
         reasons.append("unsupported_derived_metric")
-    for name in ("cik", "metric", "as_of", "revision_policy"):
+    for name in ("cik", "metric", "as_of", "revision_policy", "evidence_snapshot_id"):
         if getattr(a, name) != getattr(b, name):
             reasons.append(f"{name}_mismatch")
     if a.unit is not None and b.unit is not None and a.unit != b.unit:
@@ -117,7 +117,7 @@ def operand_eligibility(
             )
         except ValidationError:
             return OperandEligibility("ineligible", ("invalid_canonical_evidence",))
-        if r != verified:
+        if replace(r, evidence_snapshot_id=None) != verified:
             return OperandEligibility("ineligible", ("canonical_resolution_mismatch",))
     if len(windows[0]) != 1 or windows[0] != windows[1]:
         return OperandEligibility("ineligible", ("fiscal_calendar_mismatch",))
@@ -235,6 +235,8 @@ def derive_operands(
 ) -> QuarterDerivation:
     """Revalidate canonical resolutions before using their values as operands."""
     _request(fiscal_year, quarter, minuend.revision_policy)
+    if minuend.evidence_snapshot_id != subtrahend.evidence_snapshot_id:
+        raise ValidationError("Arithmetic operands must belong to the same evidence snapshot")
 
     check = operand_eligibility(minuend, subtrahend, fiscal_year=fiscal_year, quarter=quarter)
     status, reasons = check.status, check.reasons
@@ -266,6 +268,7 @@ def derive_operands(
         ready,
         reasons,
         diagnostics,
+        evidence_snapshot_id=minuend.evidence_snapshot_id,
     )
 
 

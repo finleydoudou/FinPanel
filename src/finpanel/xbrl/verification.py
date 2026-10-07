@@ -32,6 +32,16 @@ class SourceVerification:
     diagnostics: tuple[str, ...]
     temporal_contract: str = "filing_date_and_retrieval_time_bounded; no_backdated_verification"
 
+    evidence_snapshot_id: str | None = None
+
+    @property
+    def evidence_mode(self) -> str:
+        return (
+            "exact_pinned_snapshot"
+            if self.evidence_snapshot_id
+            else "unsnapshotted_explicit_inputs"
+        )
+
 
 def _taxonomy(namespace, taxonomy):
     patterns = {

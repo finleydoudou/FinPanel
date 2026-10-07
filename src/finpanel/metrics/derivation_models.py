@@ -65,6 +65,16 @@ class QuarterDerivation:
     source_type: Literal["derived"] = "derived"
     policy: str = "exact-concept-reported-cumulative-difference-v1"
 
+    evidence_snapshot_id: str | None = None
+
+    @property
+    def evidence_mode(self) -> str:
+        return (
+            "exact_pinned_snapshot"
+            if self.evidence_snapshot_id
+            else "unsnapshotted_explicit_inputs"
+        )
+
 
 def exact_subtract(minuend: int | Decimal, subtrahend: int | Decimal) -> int | Decimal:
     """Subtract exact source numbers without inheriting a caller's Decimal rounding.

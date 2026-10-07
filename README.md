@@ -16,6 +16,7 @@ inspection, conservative resolution, and full provenance. Work Package 2 adds ex
 strictly bounded quarterly arithmetic. Reported-only remains the default; panels
 remain out of scope. Work Package 3 adds opt-in original filing XBRL discovery,
 context and numeric metadata, conservative matching and strict scope verification.
+Work Package 4 adds immutable evidence snapshots, explicit version selection and exact replay.
 
 ## Installation
 
@@ -1498,3 +1499,193 @@ explicit through verification envelopes; the default canonical API does not
 fetch original instances automatically. A possible Work Package 4 is versioned
 original-evidence coverage and snapshot selection, plus independently validated
 schema/context semantics where needed. It is not implemented here.
+
+## Work Package 4: versioned evidence and replay
+
+A historical information cutoff and a captured source version answer different
+questions. SEC aggregate responses are living datasets: a later response may
+reflect processing or corrections after a filing's acceptance. FinPanel preserves
+captured bytes; it does not recreate uncaptured historical SEC API states.
+
+| Axis | Meaning |
+|---|---|
+| `as_of` | Existing filing/fact/calendar information-eligibility cutoff |
+| `snapshot_id` | Exact declared collection of captured source versions |
+| Artifact `retrieved_at` | When those particular bytes were downloaded |
+| Receipt `executed_at` | When this local computation ran; excluded from semantic identity |
+
+A query with a 2020 information cutoff using evidence downloaded in 2026 still
+uses a **2026 capture**. It is not evidence of SEC's exact API state in 2020.
+WP3's separate conservative retrieval boundary for original-XBRL verification
+also remains intact. Snapshot capture time does not rewrite any information-time
+eligibility rule.
+
+### Immutable store and manifest contract
+
+`EvidenceStore` is separate from the ordinary `FileCache`. The existing cache's
+latest-pointer behavior remains unchanged. The immutable store contains:
+
+- `objects/<sha256>`: exact bytes, deduplicated across captures and URLs;
+- `captures/<capture_id>.json`: URL, family, normalized UTC retrieval timestamp,
+  byte hash/size, available ETag/Last-Modified/Content-Type, CIK/accession, raw
+  locator, authenticity label and raw schema version;
+- `snapshots/<snapshot_id>.json`: canonical collection and declared relationships.
+
+Writes use a flushed temporary file and atomic non-replacing hard-link
+publication on the same filesystem. Existing different bytes at an immutable
+path are an error, never overwritten or repaired. Hashes and lengths are checked
+on reads. Unreferenced objects can remain after interruption; they never form a
+valid partial snapshot. The store requires a filesystem supporting hard links.
+Raw objects are opaque bytes, so the format accommodates future captured bulk
+archives; this package does not add a downloader or archive parser.
+
+Supported source families distinguish submissions, historical submissions,
+Company Facts, Company Concept, filing directories/indexes, headers, filing text,
+XBRL instances, bulk archives and other SEC evidence. Only implemented JSON/text
+pipelines can consume them. Family labels alone do not add unsupported ingestion
+capabilities. Authenticity is a caller-supplied provenance declaration, not a
+cryptographic certification of SEC origin; synthetic mutations must be labeled
+`synthetic`.
+
+A snapshot allows one captured version per URL. It records source hashes,
+retrieval metadata, scope, required URLs, relationships, known missing sources,
+software/format identifiers and notes. Its ID is SHA-256 of deterministic manifest
+contents, excluding only the ID itself. Order of caller-supplied artifacts does
+not affect identity. `captured_through` is the maximum recorded retrieval time;
+local manifest creation uses a deterministic creation policy rather than inserting
+a volatile clock reading. This does not imply simultaneous acquisition across SEC
+endpoints. Duplicate retrievals with distinct metadata can yield distinct capture
+and snapshot identities while sharing the same raw object.
+
+Completeness is `complete_for_declared_scope` or `partial`; verification failures
+are `unverifiable` with explicit reasons. No state asserts complete SEC history.
+The authentic benchmark intentionally declares partial historical coverage.
+
+```python
+from finpanel.snapshots import EvidenceStore
+
+store = EvidenceStore("output/evidence-store")
+# raw is an existing RawResponse with its actual retrieval timestamp.
+artifact = store.capture(
+    raw, source_family="companyfacts", cik="0000320193", authenticity="authentic"
+)
+snapshot = store.create([artifact], scope="One Company Facts artifact", required_urls=[raw.url])
+assert store.verify(snapshot.snapshot_id).valid
+```
+
+### Selection and pinned execution
+
+`store.select` supports `exact`, `latest_captured`, and
+`latest_captured_no_later_than`. Non-exact selection requires a scope; bounded
+selection also requires `evidence_as_of`. Selection uses stored retrieval times,
+never filesystem modification times. Distinct snapshots tied at the latest capture
+time produce an explicit conflict. No eligible capture means unavailable, not a
+fabricated historical snapshot. Invalid manifests are not silently skipped.
+
+```python
+from finpanel import snapshots
+
+selected = store.select(
+    policy="latest_captured_no_later_than",
+    scope="My declared evidence scope",
+    evidence_as_of="2026-10-08T00:00:00Z",
+)
+pinned = snapshots.run(
+    store,
+    snapshot_id=selected.snapshot_id,
+    operation="resolve",
+    cik="320193",
+    metric="revenue",
+    as_of="2024-11-15T00:00:00Z",
+    parameters={"fiscal_year": 2024, "period": "FY"},
+)
+receipt = pinned.reproducibility
+replayed = snapshots.reproduce(receipt, store=store)
+```
+
+Pinned execution uses an offline, read-only client backed solely by the selected
+manifest. It never consults the mutable cache or substitutes newer objects.
+Missing required aggregate sources fail explicitly. Existing pipeline diagnostics
+for missing optional/history sources remain visible in results, receipt missing
+requests and snapshot completeness.
+
+Supported replay operations are `resolve`, `derive_quarter`, and `verify_fact`.
+Canonical and derived results expose `evidence_snapshot_id`; default calls expose
+`evidence_mode="unsnapshotted_explicit_inputs"` and a null snapshot ID. Existing
+positional constructors remain compatible. Pinned operations use one snapshot for
+both operands. The public operand-arithmetic API rejects differing snapshot IDs,
+including pinned/unpinned mixtures, and revalidates canonical data independently
+of this metadata. Snapshot IDs alone are not proof: receipts must verify against
+store bytes.
+
+Use `source_verification="best_effort"` or `"required"` to run WP3 verification
+within a pinned metric/derivation query. The default is `"off"`, preserving
+reported-only/WP2 contracts. Original-XBRL operations consume only manifest-pinned
+instances and metadata. A later local retrieval cannot replace an older pinned
+instance. As in WP3, the original filing lookup currently covers recent submissions;
+historical original-instance coverage can be explicitly unavailable.
+
+### Receipts, replay and audit bundles
+
+A receipt contains the normalized query, cutoff, revision/source policies,
+verification mode, snapshot identity, used artifact hashes/retrieval times,
+selected provenance pointers, result scalar/state/unit, operand snapshot IDs,
+contract identifiers, FinPanel code fingerprint and dependency/Python versions.
+It references evidence instead of embedding raw responses or XML trees.
+Execution time is stored separately from the deterministic semantic receipt hash.
+Equivalent normalized queries under the same code, contracts and snapshot produce
+the same semantic ID despite different execution times.
+
+Replay verifies the receipt and manifest, validates every snapshot object, checks
+software/contracts and reruns the supported query. It reports exact replay,
+semantic mismatch, incompatible software/contracts or explicit evidence failures.
+It does not install historical environments, fetch missing evidence or try a newer
+snapshot. Code fingerprints cover packaged Python source, not an assumed Git tag.
+
+```python
+snapshots.export_bundle(receipt, store=store, destination="output/audit", include_raw=False)
+# For portable raw evidence, select include_raw=True instead.
+```
+
+A **manifest-only bundle** contains the manifest, receipt and bundle metadata;
+replay still needs its referenced raw objects. A **self-contained bundle** also
+copies all immutable objects in the declared snapshot and can serve as an
+`EvidenceStore` root. Self-contained refers to evidence, not a recreated software
+environment. The completion marker is published only after included objects.
+Exports do not overwrite an existing differing file.
+
+### Offline tools and validation
+
+```bash
+finpanel snapshots list --store output/evidence-store
+finpanel snapshots inspect SNAPSHOT_ID --store output/evidence-store
+finpanel snapshots verify SNAPSHOT_ID --store output/evidence-store
+finpanel snapshots query SNAPSHOT_ID --store output/evidence-store \
+  --operation resolve --cik 320193 --metric revenue \
+  --as-of 2024-11-15T00:00:00Z --fiscal-year 2024 --period FY \
+  --receipt output/revenue-receipt.json
+finpanel reproduce output/revenue-receipt.json --store output/evidence-store
+python examples/validate_snapshots.py --output output/snapshot-validation.json
+```
+
+The fixture importer brings all 25 existing authentic artifacts (aggregate APIs,
+historical submissions, header, directories/indexes and original instances) under
+snapshot manifests without changing their bytes. No authentic artifacts were
+added or redownloaded. The benchmark creates two snapshots, 26 captured artifact
+records and 26 unique byte objects, with one explicitly synthetic aggregate
+correction. Three exact replay cases cover canonical revenue, derived revenue and
+original Assets verification. Manifest verification, corruption detection and
+pinned-old-versus-new checks pass with zero unexpected mismatches. Additional
+synthetic tests cover byte deduplication, interrupted writes, ties, schema failures,
+post-acceptance correction scenarios and no silent evidence substitution. These
+results measure reproducibility mechanics, not market-wide financial accuracy.
+
+Limitations and technical debt: local filesystem storage only; no acquisition
+or query transaction across live SEC endpoints, no historical environment
+recreation, no signatures or tamper-proof external attestation, no garbage
+collection, and no recovery/repair of corrupted objects. Timestamp selection
+trusts recorded local retrieval metadata and is not an assertion about SEC's
+publication clock. There is no reconstruction of uncaptured historical API state.
+A possible Work Package 5 is independent manifest/receipt schema conformance and
+portable environment verification, with carefully scoped historical filing
+coverage. It has not been implemented.

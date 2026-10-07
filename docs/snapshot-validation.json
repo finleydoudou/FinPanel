@@ -1,0 +1,14 @@
+{
+  "authentic_source_artifacts": 25,
+  "corruption_detected": true,
+  "deduplicated_objects": 26,
+  "manifest_verification": true,
+  "pinned_old_unchanged": true,
+  "population": "Existing authentic fixtures plus one explicitly synthetic aggregate correction; reproducibility mechanics only",
+  "replay_cases": 3,
+  "same_as_of_new_snapshot_changed": true,
+  "snapshots": 2,
+  "source_capture_records": 26,
+  "successful_replays": 3,
+  "unexpected_mismatches": 0
+}
