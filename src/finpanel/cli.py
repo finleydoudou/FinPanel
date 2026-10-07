@@ -94,7 +94,7 @@ def main(argv: list[str] | None = None) -> int:
             help="Exit 1 for source issues or verified inconsistencies",
         )
     metric_commands = commands.add_parser("metrics").add_subparsers(dest="action", required=True)
-    for action in ("candidates", "resolve"):
+    for action in ("candidates", "resolve", "derive-quarter", "compare-quarter", "resolve-quarter"):
         command = metric_commands.add_parser(action)
         command.add_argument("cik")
         command.add_argument("metric")
@@ -105,7 +105,19 @@ def main(argv: list[str] | None = None) -> int:
         command.add_argument("--output", type=Path)
         command.add_argument("--limit", type=int, default=5)
         command.add_argument("--strict", action="store_true")
-        if action == "resolve":
+        if action in {"derive-quarter", "compare-quarter", "resolve-quarter"}:
+            command.add_argument("--fiscal-year", type=int, required=True)
+            command.add_argument("--quarter", choices=("Q1", "Q2", "Q3", "Q4"), required=True)
+            command.add_argument(
+                "--revision-policy", choices=sorted(revisions.POLICIES), default="latest_available"
+            )
+            if action == "resolve-quarter":
+                command.add_argument(
+                    "--source-policy",
+                    choices=("reported_only", "reported_then_derived"),
+                    default="reported_only",
+                )
+        elif action == "resolve":
             command.add_argument("--fiscal-year", type=int)
             command.add_argument("--period")
             command.add_argument("--start")
@@ -487,6 +499,9 @@ def _asof_command(args: argparse.Namespace) -> int:
 def _metrics_command(args: argparse.Namespace) -> int:
     from finpanel import metrics
 
+    if args.action in {"derive-quarter", "compare-quarter", "resolve-quarter"}:
+        return _quarters_command(args)
+
     try:
         with SECClient(cache_dir=args.cache_dir, offline=args.offline) as client:
             report = metrics.candidates(
@@ -568,6 +583,129 @@ def _metrics_command(args: argparse.Namespace) -> int:
         return int(
             args.strict
             and (bool(source_issues) or summary["state"] not in {"resolved", "supported"})
+        )
+    except (FinPanelError, OSError) as exc:
+        print(f"finpanel: {exc}", file=sys.stderr)
+        return 2
+
+
+def _operand_summary(result, limit):
+    if result is None:
+        return None
+    return {
+        "state": result.state,
+        "source_type": result.source_type,
+        "value": result.value,
+        "unit": result.unit,
+        "represented_period": result.represented_period,
+        "as_of": result.as_of,
+        "revision_policy": result.revision_policy,
+        "selected": result.selected,
+        "conflicts": result.conflicts,
+        "diagnostics": result.diagnostics,
+        "target_rejections": result.target_rejections[:limit],
+        "source_issue_codes": sorted(
+            {
+                i.code
+                for v in result.candidates.evidence
+                for i in (*v.source_issues, *v.timeline_issues)
+            }
+        ),
+    }
+
+
+def _derivation_summary(result, limit):
+    return {
+        "state": result.status,
+        "source_type": result.source_type,
+        "metric": result.metric,
+        "cik": result.cik,
+        "fiscal_year": result.fiscal_year,
+        "quarter": result.quarter,
+        "contract": result.contract,
+        "value": result.value,
+        "unit": result.unit,
+        "target_interval": result.target_interval,
+        "as_of": result.as_of,
+        "revision_policy": result.revision_policy,
+        "availability": result.availability,
+        "reasons": result.reasons,
+        "diagnostics": result.diagnostics,
+        "minuend": _operand_summary(result.minuend, limit),
+        "subtrahend": _operand_summary(result.subtrahend, limit),
+    }
+
+
+def _quarters_command(args: argparse.Namespace) -> int:
+    from finpanel import metrics
+
+    try:
+        method = {
+            "derive-quarter": metrics.derive_quarter,
+            "compare-quarter": metrics.compare_quarter,
+            "resolve-quarter": metrics.resolve_quarter,
+        }[args.action]
+        extra = {"source_policy": args.source_policy} if args.action == "resolve-quarter" else {}
+        with SECClient(cache_dir=args.cache_dir, offline=args.offline) as client:
+            result = method(
+                args.cik,
+                args.metric,
+                fiscal_year=args.fiscal_year,
+                quarter=args.quarter,
+                as_of=args.as_of,
+                revision_policy=args.revision_policy,
+                client=client,
+                refresh=args.refresh,
+                **extra,
+            )
+        if args.action == "derive-quarter":
+            summary = _derivation_summary(result, args.limit)
+            operands = (result.minuend, result.subtrahend)
+        elif args.action == "compare-quarter":
+            summary = {
+                "state": result.status,
+                "reported": _operand_summary(result.reported, args.limit),
+                "derived": _derivation_summary(result.derived, args.limit),
+                "difference": result.difference,
+                "difference_formula": result.difference_formula,
+                "interpretation": result.interpretation,
+            }
+            operands = (result.reported, result.derived.minuend, result.derived.subtrahend)
+        else:
+            summary = {
+                "state": result.state,
+                "source_type": result.source_type,
+                "source_policy": result.source_policy,
+                "value": result.value,
+                "unit": result.unit,
+                "target_interval": result.target_interval,
+                "as_of": result.as_of,
+                "revision_policy": result.revision_policy,
+                "diagnostics": result.diagnostics,
+                "reported": _operand_summary(result.reported, args.limit),
+                "derived": _derivation_summary(result.derivation, args.limit)
+                if result.derivation
+                else None,
+            }
+            operands = (result.reported,)
+            if result.derivation:
+                operands += (result.derivation.minuend, result.derivation.subtrahend)
+        issues = {
+            i.code
+            for r in operands
+            if r is not None
+            for v in r.candidates.evidence
+            for i in (*v.source_issues, *v.timeline_issues)
+        }
+        if args.output:
+            atomic_write(args.output, dumps(result).encode())
+        print(dumps(summary), end="")
+        return int(
+            args.strict
+            and (
+                bool(issues)
+                or summary["state"] not in {"eligible", "resolved", "equal", "different"}
+            )
         )
     except (FinPanelError, OSError) as exc:
         print(f"finpanel: {exc}", file=sys.stderr)

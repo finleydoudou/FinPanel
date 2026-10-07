@@ -1,0 +1,1021 @@
+{
+  "methodology": "Literal expectations and raw pointers; source row extraction only, never resolver output. Synthetic adversarial cases are separately labeled.",
+  "authentic_cases": [
+    {
+      "id": "aapl-revenue-Q2-2024",
+      "issuer": "aapl",
+      "metric": "revenue",
+      "fiscal_year": 2024,
+      "quarter": "Q2",
+      "as_of": "2024-11-15T00:00:00Z",
+      "revision_policy": "latest_available",
+      "expected_status": "eligible",
+      "expected_value": 90753000000,
+      "target_interval": {
+        "start": "2023-12-31",
+        "end": "2024-03-30"
+      },
+      "minuend_sources": [
+        {
+          "pointer": "/facts/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/units/USD/91",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "accession": "0000320193-24-000069",
+          "value": 210328000000,
+          "start": "2023-10-01",
+          "end": "2024-03-30"
+        }
+      ],
+      "subtrahend_sources": [
+        {
+          "pointer": "/facts/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/units/USD/89",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "accession": "0000320193-24-000006",
+          "value": 119575000000,
+          "start": "2023-10-01",
+          "end": "2023-12-30"
+        }
+      ],
+      "note": "Literal difference of cumulative source amounts; no independent claim of accounting truth.",
+      "reported_source": {
+        "pointer": "/facts/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/units/USD/93",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "accession": "0000320193-24-000069",
+        "value": 90753000000,
+        "start": "2023-12-31",
+        "end": "2024-03-30"
+      },
+      "expected_comparison": "equal"
+    },
+    {
+      "id": "aapl-revenue-Q3-2024",
+      "issuer": "aapl",
+      "metric": "revenue",
+      "fiscal_year": 2024,
+      "quarter": "Q3",
+      "as_of": "2024-11-15T00:00:00Z",
+      "revision_policy": "latest_available",
+      "expected_status": "eligible",
+      "expected_value": 85777000000,
+      "target_interval": {
+        "start": "2024-03-31",
+        "end": "2024-06-29"
+      },
+      "minuend_sources": [
+        {
+          "pointer": "/facts/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/units/USD/95",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "accession": "0000320193-24-000081",
+          "value": 296105000000,
+          "start": "2023-10-01",
+          "end": "2024-06-29"
+        }
+      ],
+      "subtrahend_sources": [
+        {
+          "pointer": "/facts/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/units/USD/91",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "accession": "0000320193-24-000069",
+          "value": 210328000000,
+          "start": "2023-10-01",
+          "end": "2024-03-30"
+        }
+      ],
+      "note": "Literal difference of cumulative source amounts; no independent claim of accounting truth.",
+      "reported_source": {
+        "pointer": "/facts/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/units/USD/97",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "accession": "0000320193-24-000081",
+        "value": 85777000000,
+        "start": "2024-03-31",
+        "end": "2024-06-29"
+      },
+      "expected_comparison": "equal"
+    },
+    {
+      "id": "aapl-revenue-Q4-2024",
+      "issuer": "aapl",
+      "metric": "revenue",
+      "fiscal_year": 2024,
+      "quarter": "Q4",
+      "as_of": "2024-11-15T00:00:00Z",
+      "revision_policy": "latest_available",
+      "expected_status": "eligible",
+      "expected_value": 94930000000,
+      "target_interval": {
+        "start": "2024-06-30",
+        "end": "2024-09-28"
+      },
+      "minuend_sources": [
+        {
+          "pointer": "/facts/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/units/USD/99",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "accession": "0000320193-24-000123",
+          "value": 391035000000,
+          "start": "2023-10-01",
+          "end": "2024-09-28"
+        }
+      ],
+      "subtrahend_sources": [
+        {
+          "pointer": "/facts/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/units/USD/95",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "accession": "0000320193-24-000081",
+          "value": 296105000000,
+          "start": "2023-10-01",
+          "end": "2024-06-29"
+        }
+      ],
+      "note": "Literal difference of cumulative source amounts; no independent claim of accounting truth."
+    },
+    {
+      "id": "aapl-net_income-Q4-2024",
+      "issuer": "aapl",
+      "metric": "net_income",
+      "fiscal_year": 2024,
+      "quarter": "Q4",
+      "as_of": "2024-11-15T00:00:00Z",
+      "revision_policy": "latest_available",
+      "expected_status": "eligible",
+      "expected_value": 14736000000,
+      "target_interval": {
+        "start": "2024-06-30",
+        "end": "2024-09-28"
+      },
+      "minuend_sources": [
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/320",
+          "concept": "NetIncomeLoss",
+          "accession": "0000320193-24-000123",
+          "value": 93736000000,
+          "start": "2023-10-01",
+          "end": "2024-09-28"
+        }
+      ],
+      "subtrahend_sources": [
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/316",
+          "concept": "NetIncomeLoss",
+          "accession": "0000320193-24-000081",
+          "value": 79000000000,
+          "start": "2023-10-01",
+          "end": "2024-06-29"
+        }
+      ],
+      "note": "Literal difference of cumulative source amounts; no independent claim of accounting truth."
+    },
+    {
+      "id": "aapl-operating_cash_flow-Q2-2024",
+      "issuer": "aapl",
+      "metric": "operating_cash_flow",
+      "fiscal_year": 2024,
+      "quarter": "Q2",
+      "as_of": "2024-11-15T00:00:00Z",
+      "revision_policy": "latest_available",
+      "expected_status": "eligible",
+      "expected_value": 22690000000,
+      "target_interval": {
+        "start": "2023-12-31",
+        "end": "2024-03-30"
+      },
+      "minuend_sources": [
+        {
+          "pointer": "/facts/us-gaap/NetCashProvidedByUsedInOperatingActivities/units/USD/118",
+          "concept": "NetCashProvidedByUsedInOperatingActivities",
+          "accession": "0000320193-24-000069",
+          "value": 62585000000,
+          "start": "2023-10-01",
+          "end": "2024-03-30"
+        }
+      ],
+      "subtrahend_sources": [
+        {
+          "pointer": "/facts/us-gaap/NetCashProvidedByUsedInOperatingActivities/units/USD/116",
+          "concept": "NetCashProvidedByUsedInOperatingActivities",
+          "accession": "0000320193-24-000006",
+          "value": 39895000000,
+          "start": "2023-10-01",
+          "end": "2023-12-30"
+        }
+      ],
+      "note": "Literal difference of cumulative source amounts; no independent claim of accounting truth."
+    },
+    {
+      "id": "aapl-operating_cash_flow-Q3-2024",
+      "issuer": "aapl",
+      "metric": "operating_cash_flow",
+      "fiscal_year": 2024,
+      "quarter": "Q3",
+      "as_of": "2024-11-15T00:00:00Z",
+      "revision_policy": "latest_available",
+      "expected_status": "eligible",
+      "expected_value": 28858000000,
+      "target_interval": {
+        "start": "2024-03-31",
+        "end": "2024-06-29"
+      },
+      "minuend_sources": [
+        {
+          "pointer": "/facts/us-gaap/NetCashProvidedByUsedInOperatingActivities/units/USD/120",
+          "concept": "NetCashProvidedByUsedInOperatingActivities",
+          "accession": "0000320193-24-000081",
+          "value": 91443000000,
+          "start": "2023-10-01",
+          "end": "2024-06-29"
+        }
+      ],
+      "subtrahend_sources": [
+        {
+          "pointer": "/facts/us-gaap/NetCashProvidedByUsedInOperatingActivities/units/USD/118",
+          "concept": "NetCashProvidedByUsedInOperatingActivities",
+          "accession": "0000320193-24-000069",
+          "value": 62585000000,
+          "start": "2023-10-01",
+          "end": "2024-03-30"
+        }
+      ],
+      "note": "Literal difference of cumulative source amounts; no independent claim of accounting truth."
+    },
+    {
+      "id": "aapl-operating_cash_flow-Q4-2024",
+      "issuer": "aapl",
+      "metric": "operating_cash_flow",
+      "fiscal_year": 2024,
+      "quarter": "Q4",
+      "as_of": "2024-11-15T00:00:00Z",
+      "revision_policy": "latest_available",
+      "expected_status": "eligible",
+      "expected_value": 26811000000,
+      "target_interval": {
+        "start": "2024-06-30",
+        "end": "2024-09-28"
+      },
+      "minuend_sources": [
+        {
+          "pointer": "/facts/us-gaap/NetCashProvidedByUsedInOperatingActivities/units/USD/122",
+          "concept": "NetCashProvidedByUsedInOperatingActivities",
+          "accession": "0000320193-24-000123",
+          "value": 118254000000,
+          "start": "2023-10-01",
+          "end": "2024-09-28"
+        }
+      ],
+      "subtrahend_sources": [
+        {
+          "pointer": "/facts/us-gaap/NetCashProvidedByUsedInOperatingActivities/units/USD/120",
+          "concept": "NetCashProvidedByUsedInOperatingActivities",
+          "accession": "0000320193-24-000081",
+          "value": 91443000000,
+          "start": "2023-10-01",
+          "end": "2024-06-29"
+        }
+      ],
+      "note": "Literal difference of cumulative source amounts; no independent claim of accounting truth."
+    },
+    {
+      "id": "msft-revenue-Q2-2024",
+      "issuer": "msft",
+      "metric": "revenue",
+      "fiscal_year": 2024,
+      "quarter": "Q2",
+      "as_of": "2024-08-15T00:00:00Z",
+      "revision_policy": "latest_available",
+      "expected_status": "eligible",
+      "expected_value": 62020000000,
+      "target_interval": {
+        "start": "2023-10-01",
+        "end": "2023-12-31"
+      },
+      "minuend_sources": [
+        {
+          "pointer": "/facts/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/units/USD/104",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "accession": "0000950170-24-008814",
+          "value": 118537000000,
+          "start": "2023-07-01",
+          "end": "2023-12-31"
+        }
+      ],
+      "subtrahend_sources": [
+        {
+          "pointer": "/facts/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/units/USD/102",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "accession": "0000950170-23-054855",
+          "value": 56517000000,
+          "start": "2023-07-01",
+          "end": "2023-09-30"
+        }
+      ],
+      "note": "Literal difference of cumulative source amounts; no independent claim of accounting truth.",
+      "reported_source": {
+        "pointer": "/facts/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/units/USD/106",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "accession": "0000950170-24-008814",
+        "value": 62020000000,
+        "start": "2023-10-01",
+        "end": "2023-12-31"
+      },
+      "expected_comparison": "equal"
+    },
+    {
+      "id": "msft-revenue-Q3-2024",
+      "issuer": "msft",
+      "metric": "revenue",
+      "fiscal_year": 2024,
+      "quarter": "Q3",
+      "as_of": "2024-08-15T00:00:00Z",
+      "revision_policy": "latest_available",
+      "expected_status": "eligible",
+      "expected_value": 61858000000,
+      "target_interval": {
+        "start": "2024-01-01",
+        "end": "2024-03-31"
+      },
+      "minuend_sources": [
+        {
+          "pointer": "/facts/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/units/USD/108",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "accession": "0000950170-24-048288",
+          "value": 180395000000,
+          "start": "2023-07-01",
+          "end": "2024-03-31"
+        }
+      ],
+      "subtrahend_sources": [
+        {
+          "pointer": "/facts/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/units/USD/104",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "accession": "0000950170-24-008814",
+          "value": 118537000000,
+          "start": "2023-07-01",
+          "end": "2023-12-31"
+        }
+      ],
+      "note": "Literal difference of cumulative source amounts; no independent claim of accounting truth.",
+      "reported_source": {
+        "pointer": "/facts/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/units/USD/110",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "accession": "0000950170-24-048288",
+        "value": 61858000000,
+        "start": "2024-01-01",
+        "end": "2024-03-31"
+      },
+      "expected_comparison": "equal"
+    },
+    {
+      "id": "msft-revenue-Q4-2024",
+      "issuer": "msft",
+      "metric": "revenue",
+      "fiscal_year": 2024,
+      "quarter": "Q4",
+      "as_of": "2024-08-15T00:00:00Z",
+      "revision_policy": "latest_available",
+      "expected_status": "eligible",
+      "expected_value": 64727000000,
+      "target_interval": {
+        "start": "2024-04-01",
+        "end": "2024-06-30"
+      },
+      "minuend_sources": [
+        {
+          "pointer": "/facts/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/units/USD/112",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "accession": "0000950170-24-087843",
+          "value": 245122000000,
+          "start": "2023-07-01",
+          "end": "2024-06-30"
+        }
+      ],
+      "subtrahend_sources": [
+        {
+          "pointer": "/facts/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/units/USD/108",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "accession": "0000950170-24-048288",
+          "value": 180395000000,
+          "start": "2023-07-01",
+          "end": "2024-03-31"
+        }
+      ],
+      "note": "Literal difference of cumulative source amounts; no independent claim of accounting truth."
+    },
+    {
+      "id": "msft-net_income-Q3-2024",
+      "issuer": "msft",
+      "metric": "net_income",
+      "fiscal_year": 2024,
+      "quarter": "Q3",
+      "as_of": "2024-08-15T00:00:00Z",
+      "revision_policy": "latest_available",
+      "expected_status": "eligible",
+      "expected_value": 21939000000,
+      "target_interval": {
+        "start": "2024-01-01",
+        "end": "2024-03-31"
+      },
+      "minuend_sources": [
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/314",
+          "concept": "NetIncomeLoss",
+          "accession": "0000950170-24-048288",
+          "value": 66100000000,
+          "start": "2023-07-01",
+          "end": "2024-03-31"
+        }
+      ],
+      "subtrahend_sources": [
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/310",
+          "concept": "NetIncomeLoss",
+          "accession": "0000950170-24-008814",
+          "value": 44161000000,
+          "start": "2023-07-01",
+          "end": "2023-12-31"
+        }
+      ],
+      "note": "Literal difference of cumulative source amounts; no independent claim of accounting truth."
+    },
+    {
+      "id": "msft-operating_cash_flow-Q4-2024",
+      "issuer": "msft",
+      "metric": "operating_cash_flow",
+      "fiscal_year": 2024,
+      "quarter": "Q4",
+      "as_of": "2024-08-15T00:00:00Z",
+      "revision_policy": "latest_available",
+      "expected_status": "eligible",
+      "expected_value": 37195000000,
+      "target_interval": {
+        "start": "2024-04-01",
+        "end": "2024-06-30"
+      },
+      "minuend_sources": [
+        {
+          "pointer": "/facts/us-gaap/NetCashProvidedByUsedInOperatingActivities/units/USD/148",
+          "concept": "NetCashProvidedByUsedInOperatingActivities",
+          "accession": "0000950170-24-087843",
+          "value": 118548000000,
+          "start": "2023-07-01",
+          "end": "2024-06-30"
+        }
+      ],
+      "subtrahend_sources": [
+        {
+          "pointer": "/facts/us-gaap/NetCashProvidedByUsedInOperatingActivities/units/USD/144",
+          "concept": "NetCashProvidedByUsedInOperatingActivities",
+          "accession": "0000950170-24-048288",
+          "value": 81353000000,
+          "start": "2023-07-01",
+          "end": "2024-03-31"
+        }
+      ],
+      "note": "Literal difference of cumulative source amounts; no independent claim of accounting truth."
+    },
+    {
+      "id": "nvda-revenue-Q2-2024",
+      "issuer": "nvda",
+      "metric": "revenue",
+      "fiscal_year": 2024,
+      "quarter": "Q2",
+      "as_of": "2024-03-01T00:00:00Z",
+      "revision_policy": "latest_available",
+      "expected_status": "eligible",
+      "expected_value": 13507000000,
+      "target_interval": {
+        "start": "2023-05-01",
+        "end": "2023-07-30"
+      },
+      "minuend_sources": [
+        {
+          "pointer": "/facts/us-gaap/Revenues/units/USD/245",
+          "concept": "Revenues",
+          "accession": "0001045810-23-000175",
+          "value": 20699000000,
+          "start": "2023-01-30",
+          "end": "2023-07-30"
+        }
+      ],
+      "subtrahend_sources": [
+        {
+          "pointer": "/facts/us-gaap/Revenues/units/USD/243",
+          "concept": "Revenues",
+          "accession": "0001045810-23-000093",
+          "value": 7192000000,
+          "start": "2023-01-30",
+          "end": "2023-04-30"
+        }
+      ],
+      "note": "Literal difference of cumulative source amounts; no independent claim of accounting truth.",
+      "reported_source": {
+        "pointer": "/facts/us-gaap/Revenues/units/USD/247",
+        "concept": "Revenues",
+        "accession": "0001045810-23-000175",
+        "value": 13507000000,
+        "start": "2023-05-01",
+        "end": "2023-07-30"
+      },
+      "expected_comparison": "equal"
+    },
+    {
+      "id": "nvda-revenue-Q3-2024",
+      "issuer": "nvda",
+      "metric": "revenue",
+      "fiscal_year": 2024,
+      "quarter": "Q3",
+      "as_of": "2024-03-01T00:00:00Z",
+      "revision_policy": "latest_available",
+      "expected_status": "eligible",
+      "expected_value": 18120000000,
+      "target_interval": {
+        "start": "2023-07-31",
+        "end": "2023-10-29"
+      },
+      "minuend_sources": [
+        {
+          "pointer": "/facts/us-gaap/Revenues/units/USD/249",
+          "concept": "Revenues",
+          "accession": "0001045810-23-000227",
+          "value": 38819000000,
+          "start": "2023-01-30",
+          "end": "2023-10-29"
+        }
+      ],
+      "subtrahend_sources": [
+        {
+          "pointer": "/facts/us-gaap/Revenues/units/USD/245",
+          "concept": "Revenues",
+          "accession": "0001045810-23-000175",
+          "value": 20699000000,
+          "start": "2023-01-30",
+          "end": "2023-07-30"
+        }
+      ],
+      "note": "Literal difference of cumulative source amounts; no independent claim of accounting truth.",
+      "reported_source": {
+        "pointer": "/facts/us-gaap/Revenues/units/USD/251",
+        "concept": "Revenues",
+        "accession": "0001045810-23-000227",
+        "value": 18120000000,
+        "start": "2023-07-31",
+        "end": "2023-10-29"
+      },
+      "expected_comparison": "equal"
+    },
+    {
+      "id": "nvda-revenue-Q4-2024",
+      "issuer": "nvda",
+      "metric": "revenue",
+      "fiscal_year": 2024,
+      "quarter": "Q4",
+      "as_of": "2024-03-01T00:00:00Z",
+      "revision_policy": "latest_available",
+      "expected_status": "eligible",
+      "expected_value": 22103000000,
+      "target_interval": {
+        "start": "2023-10-30",
+        "end": "2024-01-28"
+      },
+      "minuend_sources": [
+        {
+          "pointer": "/facts/us-gaap/Revenues/units/USD/253",
+          "concept": "Revenues",
+          "accession": "0001045810-24-000029",
+          "value": 60922000000,
+          "start": "2023-01-30",
+          "end": "2024-01-28"
+        }
+      ],
+      "subtrahend_sources": [
+        {
+          "pointer": "/facts/us-gaap/Revenues/units/USD/249",
+          "concept": "Revenues",
+          "accession": "0001045810-23-000227",
+          "value": 38819000000,
+          "start": "2023-01-30",
+          "end": "2023-10-29"
+        }
+      ],
+      "note": "Literal difference of cumulative source amounts; no independent claim of accounting truth."
+    },
+    {
+      "id": "nvda-net_income-Q4-2024",
+      "issuer": "nvda",
+      "metric": "net_income",
+      "fiscal_year": 2024,
+      "quarter": "Q4",
+      "as_of": "2024-03-01T00:00:00Z",
+      "revision_policy": "latest_available",
+      "expected_status": "eligible",
+      "expected_value": 12285000000,
+      "target_interval": {
+        "start": "2023-10-30",
+        "end": "2024-01-28"
+      },
+      "minuend_sources": [
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/284",
+          "concept": "NetIncomeLoss",
+          "accession": "0001045810-24-000029",
+          "value": 29760000000,
+          "start": "2023-01-30",
+          "end": "2024-01-28"
+        }
+      ],
+      "subtrahend_sources": [
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/280",
+          "concept": "NetIncomeLoss",
+          "accession": "0001045810-23-000227",
+          "value": 17475000000,
+          "start": "2023-01-30",
+          "end": "2023-10-29"
+        }
+      ],
+      "note": "Literal difference of cumulative source amounts; no independent claim of accounting truth."
+    },
+    {
+      "id": "nvda-operating_cash_flow-Q4-2024",
+      "issuer": "nvda",
+      "metric": "operating_cash_flow",
+      "fiscal_year": 2024,
+      "quarter": "Q4",
+      "as_of": "2024-03-01T00:00:00Z",
+      "revision_policy": "latest_available",
+      "expected_status": "eligible",
+      "expected_value": 11499000000,
+      "target_interval": {
+        "start": "2023-10-30",
+        "end": "2024-01-28"
+      },
+      "minuend_sources": [
+        {
+          "pointer": "/facts/us-gaap/NetCashProvidedByUsedInOperatingActivities/units/USD/142",
+          "concept": "NetCashProvidedByUsedInOperatingActivities",
+          "accession": "0001045810-24-000029",
+          "value": 28090000000,
+          "start": "2023-01-30",
+          "end": "2024-01-28"
+        }
+      ],
+      "subtrahend_sources": [
+        {
+          "pointer": "/facts/us-gaap/NetCashProvidedByUsedInOperatingActivities/units/USD/140",
+          "concept": "NetCashProvidedByUsedInOperatingActivities",
+          "accession": "0001045810-23-000227",
+          "value": 16591000000,
+          "start": "2023-01-30",
+          "end": "2023-10-29"
+        }
+      ],
+      "note": "Literal difference of cumulative source amounts; no independent claim of accounting truth."
+    },
+    {
+      "id": "wmt-revenue-Q4-2024",
+      "issuer": "wmt",
+      "metric": "revenue",
+      "fiscal_year": 2024,
+      "quarter": "Q4",
+      "as_of": "2024-04-01T00:00:00Z",
+      "revision_policy": "latest_available",
+      "expected_status": "conflicted",
+      "expected_value": null,
+      "target_interval": {
+        "start": "2023-11-01",
+        "end": "2024-01-31"
+      },
+      "minuend_sources": [
+        {
+          "pointer": "/facts/us-gaap/Revenues/units/USD/266",
+          "concept": "Revenues",
+          "accession": "0000104169-24-000056",
+          "value": 648125000000,
+          "start": "2023-02-01",
+          "end": "2024-01-31"
+        },
+        {
+          "pointer": "/facts/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/units/USD/93",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "accession": "0000104169-24-000056",
+          "value": 642637000000,
+          "start": "2023-02-01",
+          "end": "2024-01-31"
+        }
+      ],
+      "subtrahend_sources": [
+        {
+          "pointer": "/facts/us-gaap/Revenues/units/USD/262",
+          "concept": "Revenues",
+          "accession": "0000104169-23-000132",
+          "value": 474737000000,
+          "start": "2023-02-01",
+          "end": "2023-10-31"
+        },
+        {
+          "pointer": "/facts/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/units/USD/89",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "accession": "0000104169-23-000132",
+          "value": 470723000000,
+          "start": "2023-02-01",
+          "end": "2023-10-31"
+        }
+      ],
+      "note": "Both total revenue and ASC 606 revenue exist; canonical scope conflict prevents arithmetic."
+    },
+    {
+      "id": "wmt-net_income-Q4-2024",
+      "issuer": "wmt",
+      "metric": "net_income",
+      "fiscal_year": 2024,
+      "quarter": "Q4",
+      "as_of": "2024-04-01T00:00:00Z",
+      "revision_policy": "latest_available",
+      "expected_status": "eligible",
+      "expected_value": 5494000000,
+      "target_interval": {
+        "start": "2023-11-01",
+        "end": "2024-01-31"
+      },
+      "minuend_sources": [
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/286",
+          "concept": "NetIncomeLoss",
+          "accession": "0000104169-24-000056",
+          "value": 15511000000,
+          "start": "2023-02-01",
+          "end": "2024-01-31"
+        }
+      ],
+      "subtrahend_sources": [
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/282",
+          "concept": "NetIncomeLoss",
+          "accession": "0000104169-23-000132",
+          "value": 10017000000,
+          "start": "2023-02-01",
+          "end": "2023-10-31"
+        }
+      ],
+      "note": "Literal difference of cumulative source amounts; no independent claim of accounting truth."
+    },
+    {
+      "id": "wmt-operating_cash_flow-Q4-2024",
+      "issuer": "wmt",
+      "metric": "operating_cash_flow",
+      "fiscal_year": 2024,
+      "quarter": "Q4",
+      "as_of": "2024-04-01T00:00:00Z",
+      "revision_policy": "latest_available",
+      "expected_status": "eligible",
+      "expected_value": 16712000000,
+      "target_interval": {
+        "start": "2023-11-01",
+        "end": "2024-01-31"
+      },
+      "minuend_sources": [
+        {
+          "pointer": "/facts/us-gaap/NetCashProvidedByUsedInOperatingActivities/units/USD/138",
+          "concept": "NetCashProvidedByUsedInOperatingActivities",
+          "accession": "0000104169-24-000056",
+          "value": 35726000000,
+          "start": "2023-02-01",
+          "end": "2024-01-31"
+        }
+      ],
+      "subtrahend_sources": [
+        {
+          "pointer": "/facts/us-gaap/NetCashProvidedByUsedInOperatingActivities/units/USD/136",
+          "concept": "NetCashProvidedByUsedInOperatingActivities",
+          "accession": "0000104169-23-000132",
+          "value": 19014000000,
+          "start": "2023-02-01",
+          "end": "2023-10-31"
+        }
+      ],
+      "note": "Literal difference of cumulative source amounts; no independent claim of accounting truth."
+    },
+    {
+      "id": "aapl-53-week-Q4-first_reported",
+      "issuer": "aapl",
+      "metric": "revenue",
+      "fiscal_year": 2023,
+      "quarter": "Q4",
+      "as_of": "2024-11-15T00:00:00Z",
+      "revision_policy": "first_reported",
+      "expected_status": "eligible",
+      "expected_value": 89498000000,
+      "target_interval": {
+        "start": "2023-07-02",
+        "end": "2023-09-30"
+      },
+      "minuend_sources": [
+        {
+          "pointer": "/facts/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/units/USD/86",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "accession": "0000320193-23-000106",
+          "value": 383285000000,
+          "start": "2022-09-25",
+          "end": "2023-09-30"
+        }
+      ],
+      "subtrahend_sources": [
+        {
+          "pointer": "/facts/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/units/USD/82",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "accession": "0000320193-23-000077",
+          "value": 293787000000,
+          "start": "2022-09-25",
+          "end": "2023-07-01"
+        }
+      ],
+      "note": "371-day fiscal year; later comparative repetitions, not a claim of value restatement."
+    },
+    {
+      "id": "aapl-53-week-Q4-latest_available",
+      "issuer": "aapl",
+      "metric": "revenue",
+      "fiscal_year": 2023,
+      "quarter": "Q4",
+      "as_of": "2024-11-15T00:00:00Z",
+      "revision_policy": "latest_available",
+      "expected_status": "eligible",
+      "expected_value": 89498000000,
+      "target_interval": {
+        "start": "2023-07-02",
+        "end": "2023-09-30"
+      },
+      "minuend_sources": [
+        {
+          "pointer": "/facts/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/units/USD/87",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "accession": "0000320193-24-000123",
+          "value": 383285000000,
+          "start": "2022-09-25",
+          "end": "2023-09-30"
+        }
+      ],
+      "subtrahend_sources": [
+        {
+          "pointer": "/facts/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/units/USD/83",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "accession": "0000320193-24-000081",
+          "value": 293787000000,
+          "start": "2022-09-25",
+          "end": "2023-07-01"
+        }
+      ],
+      "note": "371-day fiscal year; later comparative repetitions, not a claim of value restatement."
+    },
+    {
+      "id": "aapl-53-week-Q4-all_available",
+      "issuer": "aapl",
+      "metric": "revenue",
+      "fiscal_year": 2023,
+      "quarter": "Q4",
+      "as_of": "2024-11-15T00:00:00Z",
+      "revision_policy": "all_available",
+      "expected_status": "eligible",
+      "expected_value": 89498000000,
+      "target_interval": {
+        "start": "2023-07-02",
+        "end": "2023-09-30"
+      },
+      "minuend_sources": [
+        {
+          "pointer": "/facts/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/units/USD/86",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "accession": "0000320193-23-000106",
+          "value": 383285000000,
+          "start": "2022-09-25",
+          "end": "2023-09-30"
+        },
+        {
+          "pointer": "/facts/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/units/USD/87",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "accession": "0000320193-24-000123",
+          "value": 383285000000,
+          "start": "2022-09-25",
+          "end": "2023-09-30"
+        }
+      ],
+      "subtrahend_sources": [
+        {
+          "pointer": "/facts/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/units/USD/82",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "accession": "0000320193-23-000077",
+          "value": 293787000000,
+          "start": "2022-09-25",
+          "end": "2023-07-01"
+        },
+        {
+          "pointer": "/facts/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/units/USD/83",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "accession": "0000320193-24-000081",
+          "value": 293787000000,
+          "start": "2022-09-25",
+          "end": "2023-07-01"
+        }
+      ],
+      "note": "371-day fiscal year; later comparative repetitions, not a claim of value restatement."
+    },
+    {
+      "id": "aapl-before-required-filing",
+      "issuer": "aapl",
+      "metric": "revenue",
+      "fiscal_year": 2024,
+      "quarter": "Q4",
+      "as_of": "2024-07-01T00:00:00Z",
+      "revision_policy": "latest_available",
+      "expected_status": "insufficient_evidence",
+      "expected_value": null,
+      "target_interval": {
+        "start": "2024-06-30",
+        "end": "2024-09-28"
+      },
+      "minuend_sources": [
+        {
+          "pointer": "/facts/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/units/USD/99",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "accession": "0000320193-24-000123",
+          "value": 391035000000,
+          "start": "2023-10-01",
+          "end": "2024-09-28"
+        }
+      ],
+      "subtrahend_sources": [
+        {
+          "pointer": "/facts/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/units/USD/95",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "accession": "0000320193-24-000081",
+          "value": 296105000000,
+          "start": "2023-10-01",
+          "end": "2024-06-29"
+        }
+      ],
+      "note": "FY and YTD-Q3 not yet filed.",
+      "expected_comparison": "not_comparable"
+    },
+    {
+      "id": "aapl-quarter-before-calendar",
+      "issuer": "aapl",
+      "metric": "revenue",
+      "fiscal_year": 2024,
+      "quarter": "Q3",
+      "as_of": "2024-08-15T00:00:00Z",
+      "revision_policy": "latest_available",
+      "expected_status": "insufficient_evidence",
+      "expected_value": null,
+      "target_interval": {
+        "start": "2024-03-31",
+        "end": "2024-06-29"
+      },
+      "minuend_sources": [
+        {
+          "pointer": "/facts/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/units/USD/95",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "accession": "0000320193-24-000081",
+          "value": 296105000000,
+          "start": "2023-10-01",
+          "end": "2024-06-29"
+        }
+      ],
+      "subtrahend_sources": [
+        {
+          "pointer": "/facts/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/units/USD/91",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "accession": "0000320193-24-000069",
+          "value": 210328000000,
+          "start": "2023-10-01",
+          "end": "2024-03-30"
+        }
+      ],
+      "note": "Cumulative facts filed, but fiscal 2024 annual anchor is future evidence.",
+      "reported_source": {
+        "pointer": "/facts/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/units/USD/97",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "accession": "0000320193-24-000081",
+        "value": 85777000000,
+        "start": "2024-03-31",
+        "end": "2024-06-29"
+      },
+      "expected_comparison": "not_comparable"
+    }
+  ],
+  "synthetic_guards": [
+    {
+      "id": "cross-concept",
+      "mutation": "Two independently resolved canonical revenue operands use Revenues and SalesRevenueNet.",
+      "expected_status": "ineligible",
+      "expected_reason": "exact_concept_mismatch"
+    },
+    {
+      "id": "cross-unit",
+      "mutation": "Change subtrahend canonical unit to EUR; reject before arithmetic or trusting the altered result.",
+      "expected_status": "ineligible",
+      "expected_reason": "unit_mismatch"
+    },
+    {
+      "id": "interval-start",
+      "mutation": "Change subtrahend normalized start; reject before arithmetic or trusting the altered result.",
+      "expected_status": "ineligible",
+      "expected_reason": "fiscal_start_mismatch"
+    }
+  ]
+}

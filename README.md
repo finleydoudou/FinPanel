@@ -12,7 +12,8 @@ Phase 0D interprets reported fiscal periods with explicit evidence and uncertain
 Phase 0E bounds evidence by a historical cutoff and exposes temporal revision contracts.
 Authentic SEC fixtures are tested offline alongside separate synthetic edge cases.
 Work Package 1 adds six explicitly mapped reported metrics with as-of-safe candidate
-inspection, conservative resolution, and full provenance. Derived quarters and panels
+inspection, conservative resolution, and full provenance. Work Package 2 adds explicit,
+strictly bounded quarterly arithmetic. Reported-only remains the default; panels
 remain out of scope.
 
 ## Installation
@@ -738,8 +739,8 @@ Technical debt includes historical calendar transitions, finer conflict scope,
 more periodType/context evidence, compact export references, and explicit timing
 constraints for calendar evidence. Phase 0E supplies the explicit boundary described
 below; the existing Phase 0D API retains its retrospective meaning. The canonical
-metric layer is described under Work Package 1 below. Subtraction-derived quarters,
-TTM, ratios, prices, trading and GUI remain unimplemented.
+metric layer is described under Work Package 1 below, and explicit quarter derivation
+under Work Package 2. TTM, ratios, prices, trading and GUI remain unimplemented.
 
 
 ## As-of evidence and revision contracts (Phase 0E)
@@ -1119,14 +1120,203 @@ fixtures were added or changed. The Apple CLI tests separately use its existing
 complete cached history. See `docs/canonical-validation.json` for the frozen
 summary. This sample is not evidence of broad issuer or cross-market accuracy.
 
-FinPanel still does **not** derive missing quarterly values or build full research
-panels. There is no Q2/H1 subtraction, Q3/9M subtraction, Q4 derivation, TTM, ratios,
-EPS normalization, segment mapping, industry-specific expansion, FX, prices,
-trading or GUI. A possible Work Package 2 is an explicitly separate derived-quarter
-contract with compatible fiscal intervals, source/revision/currency safeguards
-and full derivation provenance. It has not been started.
+The Work Package 1 resolver remains reported-only. The separate Work Package 2
+APIs below add explicit quarter reconstruction under strict contracts. Full research
+panels, TTM, ratios, EPS normalization, segment mapping, industry-specific expansion,
+FX, prices, trading and GUI remain out of scope.
 
 Remaining debt includes original instance/dimension validation, versioned snapshots,
 broader issuer validation, richer evidence timing, compact audit exports and repeated
 parsing of the pinned raw snapshot by the existing exact-concept linker. These
 limitations are exposed rather than addressed by redesigning Phase 0 components.
+
+## Explicit derived quarters (Work Package 2)
+
+**A derived quarter is an arithmetic reconstruction, not an SEC-reported fact.**
+`MetricResult.source_type` explicitly identifies the reported path. A separate
+`QuarterDerivation` carries `source_type="derived"`, a formula contract, full
+canonical operand results, unit, target interval, cutoff, policy, eligibility
+status, readiness evidence and diagnostics. Failed derivations have no scalar.
+
+Only `revenue`, `net_income` and `operating_cash_flow` are derivable. Instant assets,
+liabilities and cash balances cannot be subtracted into quarterly flows.
+
+| Target | Permitted formula | Derivation type |
+| --- | --- | --- |
+| Q2 | YTD-Q2 − YTD-Q1 | `ytd_difference` |
+| Q3 | YTD-Q3 − YTD-Q2 | `ytd_difference` |
+| Q4 | FY − YTD-Q3 | `annual_residual` |
+
+The existing Q1 classification is both a single quarter and year-to-date; it supplies
+the YTD-Q1 operand as a reported value. Q1 subtraction, annual reconstruction and
+TTM are unsupported. **A Q4 residual is never described as reported Q4.**
+
+### Eligibility and arithmetic
+
+Both operands must resolve through the as-of-safe canonical engine under the same
+cutoff and revision policy. The low-level operand API revalidates the complete
+canonical result against its candidate report; two supplied numbers are not enough.
+The contract requires matching issuer, metric, supported `us-gaap` namespace,
+**exact XBRL concept**, USD unit, normalized fiscal year and observed fiscal window.
+Mapping two concepts to revenue does not authorize subtracting one from the other.
+Unsupported extensions, cross-concept arithmetic and currency conversion remain
+excluded.
+
+Intervals must share the fiscal-year start and have strictly ordered endpoints.
+Normalized operand kinds/labels must match the formula; the target begins one day
+after the shorter cumulative interval and ends with the longer interval. Annual
+residuals must end at the observed fiscal-year end. The engine uses the existing
+calendar interpretation, including its evidence and ambiguity, rather than making
+90/91/365-day assumptions. Tests cover non-calendar, 52/53-week and leap-year cases.
+Ambiguous periods, mismatched calendars, gaps in the asserted cumulative relationship
+and future supporting evidence prevent arithmetic.
+
+Integers remain integers. Decimal subtraction uses sufficient local precision so
+caller rounding settings cannot truncate the result. No binary floats are accepted.
+Negative reconstructed flows are allowed. Source numeric scale is retained where
+available; this does not manufacture XBRL `decimals` metadata or prove measurement
+precision. Company Facts does not provide complete original instance dimensions:
+`company_level_scope_only; original_instance_dimensions_not_proven_equal` remains
+visible in every evaluated derivation. No dimension-level equality is claimed.
+
+### Revision safety and readiness
+
+Statuses are `eligible`, `ineligible`, `conflicted` or `insufficient_evidence`.
+Only `eligible` carries a derived value. Exact reasons and both canonical operand
+results remain available, including unresolved candidates and provenance.
+
+- `first_reported` constructs a result from each uniquely earliest eligible
+  component. It does not claim that the resulting quarter was directly reported.
+- `latest_available` uses the latest eligible component at the requested cutoff.
+  If observed value revisions would mix operands from separate filings, the
+  derivation returns `unpaired_value_revision`. A shared filing must corroborate
+  the selected revised pair. Unpaired selected amendments conflict under every
+  policy, even if an original version is missing from the loaded evidence set.
+- `all_available` retains every selected source from both canonical results.
+  Unresolved values or ordering prevent a scalar. Agreement on compatible values
+  and intervals allows one derivation without generating a Cartesian product.
+
+Different original quarter filings are expected and can be used when the strict
+scope/geometry contract passes and no observed revision inconsistency blocks them.
+Diagnostics distinguish shared filings, cross-filing components and observed
+revision-state differences. These checks do not claim to prove an unobserved
+restatement history. Different cutoffs can legitimately produce different results
+when a compatible revised pair becomes eligible.
+
+`availability.derivable_as_of` records the requested cutoff at which the selected
+inputs are proven eligible. `selected_evidence_ready_at` is their maximum
+computational eligibility bound, including fiscal-calendar support, not an SEC
+publication timestamp or a claim about the earliest possible reconstruction.
+Date-only inputs retain that precision and use the existing next-SEC-local-day
+eligibility boundary; the output marks `includes_date_only`. A later annual calendar
+anchor can delay derivation even when both cumulative amounts were already filed.
+Known-future facts, filings, revisions and anchors never enter arithmetic.
+
+### APIs, preference and comparison
+
+```python
+from finpanel import metrics
+from finpanel.sec.client import SECClient
+
+with SECClient(offline=True, cache_dir="output/offline-provenance-cache") as client:
+    derived = metrics.derive_quarter(
+        "0000320193",
+        "revenue",
+        fiscal_year=2024,
+        quarter="Q4",
+        as_of="2024-11-15T00:00:00Z",
+        revision_policy="latest_available",
+        client=client,
+    )
+    comparison = metrics.compare_quarter(
+        "0000320193",
+        "revenue",
+        fiscal_year=2024,
+        quarter="Q3",
+        as_of="2024-11-15T00:00:00Z",
+        client=client,
+    )
+    preferred = metrics.resolve_quarter(
+        "0000320193",
+        "revenue",
+        fiscal_year=2024,
+        quarter="Q4",
+        as_of="2024-11-15T00:00:00Z",
+        source_policy="reported_then_derived",
+        client=client,
+    )
+```
+
+`metrics.resolve` is unchanged in value-selection behavior and remains reported-only.
+The new `resolve_quarter` also defaults to `reported_only`. Explicit
+`reported_then_derived` first prefers a uniquely resolved reported quarter. It
+attempts derivation only for an unavailable reported result without unresolved
+reported target evidence. Reported conflicts, unsupported observations and ambiguous
+periods are not repaired with subtraction. Q1 remains reported-only.
+
+For offline reuse, `derive_from_candidates`, `resolve_quarter_candidates` and
+`compare_quarter_candidates` share one bounded candidate set. `derive_operands`
+accepts two complete canonical results and independently rechecks scope, evidence,
+periods, cutoff and policy. Public loaders also accept the existing explicit
+`filing_timeline` argument; default history loading is not weakened.
+
+Comparison is an explicit inspection operation that retains both source types.
+Only matching concepts, units and target identities can produce a numeric
+`reported - derived` diagnostic. The result is `equal`, `different`,
+`not_comparable`, `scope_mismatch` or `interval_mismatch`. Differences may reflect
+adjustments, reclassification, revision effects or unobserved scope; no filing
+error or authoritative winner is inferred. A comparison cannot override the
+ordinary resolver's reported-data conflict.
+
+### Offline commands and validation
+
+```bash
+python examples/inspect_provenance.py
+finpanel metrics derive-quarter 0000320193 revenue \
+  --fiscal-year 2024 --quarter Q4 --as-of 2024-11-15T00:00:00Z \
+  --revision-policy latest_available --offline \
+  --cache-dir output/offline-provenance-cache
+finpanel metrics compare-quarter 0000320193 revenue \
+  --fiscal-year 2024 --quarter Q3 --as-of 2024-11-15T00:00:00Z \
+  --offline --cache-dir output/offline-provenance-cache
+finpanel metrics resolve-quarter 0000320193 revenue \
+  --fiscal-year 2024 --quarter Q4 --as-of 2024-11-15T00:00:00Z \
+  --source-policy reported_then_derived --offline \
+  --cache-dir output/offline-provenance-cache
+python examples/validate_derived_quarters.py --output output/derived-quarter-validation.json
+```
+
+Output includes the formula, operands, source types, values, concepts, accessions,
+periods, availability, supporting evidence and diagnostics. `--output` preserves
+complete results. `--limit` limits rejection previews, not selected operand sources.
+Normal responses exit 0; strict unresolved/source-issue checks exit 1; invalid
+inputs, offline cache misses and request failures exit 2. A diagnostic comparison
+difference alone is not treated as an error. Apple's existing history-range issue
+continues to make strict source checks exit 1.
+
+The golden set `tests/golden/derived_quarters.json` contains 25 authentic cases and
+three clearly separated synthetic guards. Expected numbers are literal differences
+of auditable frozen source rows, not generated by the derivation engine. Across
+AAPL, MSFT, WMT and NVDA the expected outcomes are 22 eligible derivations, one
+canonical revenue-scope conflict, two insufficient-evidence cases, and three
+synthetic scope/geometry rejections. Six authentic comparisons agree with directly
+reported quarters. Arithmetic identities are checked exactly; they establish
+arithmetic consistency, not independent accounting correctness.
+
+The benchmark reuses the unchanged recent-only snapshot loader and explicitly
+retains its coverage diagnostic. No authentic fixtures were added or changed.
+`docs/derived-quarter-validation.json` records the deterministic results. This
+four-issuer sample is not a general market accuracy estimate. Routine tests remain
+offline, including mutations of future facts/filings, unsupported alternatives,
+units, geometry and equally ranked observations.
+
+Remaining limitations and debt: current-snapshot availability proxies; missing
+original context/dimension identity and precision metadata; conservative annual
+anchor requirements; limited historical coverage; conservative revision-pairing
+rejections; repeated canonical verification/parsing and large audit exports.
+Full research panels, TTM, ratios, FX, EPS, segment/industry-specific metrics,
+market data, trading and UI are unimplemented.
+
+A proposed Work Package 3 is stronger source-context and revision-vintage evidence
+validation, including original XBRL dimensions and rounding metadata, before broader
+coverage or panel construction. It has not been started.

@@ -1,0 +1,20 @@
+{
+  "authentic_cases": 25,
+  "correctly_derived_expected_cases": 22,
+  "expected_conflicts": 1,
+  "expected_rejections": 5,
+  "failures": [],
+  "golden_cases": 28,
+  "issuers": 4,
+  "matched_statuses": {
+    "conflicted": 1,
+    "eligible": 22,
+    "ineligible": 3,
+    "insufficient_evidence": 2
+  },
+  "metrics": 3,
+  "scope": "Frozen recent filings, four US-GAAP issuers; identities prove arithmetic only, not accounting correctness",
+  "synthetic_guards": 3,
+  "title": "Derived-quarter validation",
+  "unexpected_mismatches": 0
+}

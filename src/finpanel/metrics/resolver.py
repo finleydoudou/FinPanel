@@ -40,6 +40,7 @@ class MetricResult:
     candidates: CandidateReport
     revision_groups: tuple[revisions.RevisionGroup, ...]
     mapping_policy: str = "lowest-numeric-priority; distinct-concepts-never-assumed-equivalent"
+    source_type: Literal["reported"] = "reported"
 
 
 def _date(value):
