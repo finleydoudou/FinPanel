@@ -4,7 +4,8 @@ FinPanel is open-source research infrastructure for auditable financial fundamen
 from SEC EDGAR. Its long-term goal is reconstruction of information available at a
 historical `as_of` date, with filing history and complete provenance.
 
-**FinPanel does NOT yet provide research-grade point-in-time financial panels.**
+**Work Package 5 provides an auditable long-form research panel workflow.**
+Validation covers four frozen issuers; it is not a market-wide coverage or accuracy claim.
 This repository implements Phase 0A raw ingestion and Phase 0B historical filing
 coverage, explicit availability precision, and filing-level as-of filtering.
 Phase 0C adds opt-in SEC header corroboration and auditable fact/context links.
@@ -13,10 +14,14 @@ Phase 0E bounds evidence by a historical cutoff and exposes temporal revision co
 Authentic SEC fixtures are tested offline alongside separate synthetic edge cases.
 Work Package 1 adds six explicitly mapped reported metrics with as-of-safe candidate
 inspection, conservative resolution, and full provenance. Work Package 2 adds explicit,
-strictly bounded quarterly arithmetic. Reported-only remains the default; panels
-remain out of scope. Work Package 3 adds opt-in original filing XBRL discovery,
+strictly bounded quarterly arithmetic. Existing metric APIs remain reported-only by default.
+Work Package 3 adds opt-in original filing XBRL discovery,
 context and numeric metadata, conservative matching and strict scope verification.
 Work Package 4 adds immutable evidence snapshots, explicit version selection and exact replay.
+Work Package 5 orchestrates these engines into explicit multi-company panels, coverage
+diagnostics, pinned replay, and exact CSV/Parquet/DuckDB exports.
+See the [research-panel workflow](docs/research-panels.md) and
+[offline example](examples/build_research_panel.py).
 
 ## Installation
 
@@ -91,8 +96,9 @@ print(len(result.records), len(result.issues))
   rejection and rejection of non-standard NaN/Infinity JSON.
 - `cli.py`: developer summaries and optional raw/normalized exports.
 
-No database, web UI or point-in-time resolver is implemented. Runtime dependencies
-are httpx and simplejson. Tests use pytest and httpx's in-memory MockTransport.
+The panel layer exports local analytical files; no hosted database or web UI is implemented.
+Runtime dependencies are httpx, simplejson, PyArrow and DuckDB. Tests use pytest and
+httpx's in-memory MockTransport. Routine validation requires no live SEC access.
 
 ## SEC sources and access
 
@@ -1123,8 +1129,8 @@ complete cached history. See `docs/canonical-validation.json` for the frozen
 summary. This sample is not evidence of broad issuer or cross-market accuracy.
 
 The Work Package 1 resolver remains reported-only. The separate Work Package 2
-APIs below add explicit quarter reconstruction under strict contracts. Full research
-panels, TTM, ratios, EPS normalization, segment mapping, industry-specific expansion,
+APIs below add explicit quarter reconstruction under strict contracts. WP5 now adds
+research panels. TTM, ratios, EPS normalization, segment mapping, industry-specific expansion,
 FX, prices, trading and GUI remain out of scope.
 
 Remaining debt includes original instance/dimension validation, versioned snapshots,
@@ -1316,12 +1322,11 @@ Remaining limitations and debt: current-snapshot availability proxies; missing
 original context/dimension identity and precision metadata; conservative annual
 anchor requirements; limited historical coverage; conservative revision-pairing
 rejections; repeated canonical verification/parsing and large audit exports.
-Full research panels, TTM, ratios, FX, EPS, segment/industry-specific metrics,
-market data, trading and UI are unimplemented.
+WP5 now adds research panels. TTM, ratios, FX, EPS, segment/industry-specific metrics,
+market data, trading and UI remain unimplemented.
 
-A proposed Work Package 3 is stronger source-context and revision-vintage evidence
-validation, including original XBRL dimensions and rounding metadata, before broader
-coverage or panel construction. It has not been started.
+Work Package 3 below implements stronger source-context and revision-vintage
+evidence validation, including original XBRL dimensions and rounding metadata.
 
 ## Work Package 3: original filing XBRL evidence
 
@@ -1686,6 +1691,6 @@ recreation, no signatures or tamper-proof external attestation, no garbage
 collection, and no recovery/repair of corrupted objects. Timestamp selection
 trusts recorded local retrieval metadata and is not an assertion about SEC's
 publication clock. There is no reconstruction of uncaptured historical API state.
-A possible Work Package 5 is independent manifest/receipt schema conformance and
-portable environment verification, with carefully scoped historical filing
-coverage. It has not been implemented.
+Work Package 5 adds research panels without changing these snapshot contracts.
+Independent external schema conformance and portable environment recreation remain
+future work; see [research panels](docs/research-panels.md) for current capabilities.

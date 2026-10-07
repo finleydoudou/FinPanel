@@ -3,5 +3,5 @@ recursive-include tests *.py *.json
 recursive-include tests/fixtures *.sgml
 recursive-include examples *.py
 
-recursive-include docs *.json
+recursive-include docs *.json *.md
 recursive-include tests/fixtures/xbrl *.xml *.html

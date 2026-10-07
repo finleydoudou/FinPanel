@@ -138,7 +138,13 @@ def main(argv: list[str] | None = None) -> int:
     )
 
     snapshot_commands(commands)
+    from finpanel.panel.cli import add_commands as panel_commands
+    from finpanel.panel.cli import command as panel_command
+
+    panel_commands(commands)
     args = parser.parse_args(argv)
+    if args.command == "panel":
+        return panel_command(args)
     if args.command in {"snapshots", "reproduce"}:
         return snapshot_command(args)
     if args.command == "xbrl":

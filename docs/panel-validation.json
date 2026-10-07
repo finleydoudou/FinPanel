@@ -1,0 +1,321 @@
+{
+  "as_of": [
+    "2024-08-15T00:00:00+00:00",
+    "2024-11-15T00:00:00+00:00"
+  ],
+  "authentic_artifacts": 25,
+  "checks": [
+    {
+      "case": "aapl-explicit-end-dates",
+      "passed": true
+    },
+    {
+      "case": "msft-explicit-end-dates",
+      "passed": true
+    },
+    {
+      "case": "wmt-explicit-end-dates",
+      "passed": true
+    },
+    {
+      "case": "nvda-explicit-end-dates",
+      "passed": true
+    },
+    {
+      "case": "aapl-revenue-2024",
+      "passed": true
+    },
+    {
+      "case": "aapl-revenue-2024/facts/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/units/USD/99",
+      "passed": true
+    },
+    {
+      "case": "aapl-net_income-2024",
+      "passed": true
+    },
+    {
+      "case": "aapl-net_income-2024/facts/us-gaap/NetIncomeLoss/units/USD/320",
+      "passed": true
+    },
+    {
+      "case": "aapl-assets-2024",
+      "passed": true
+    },
+    {
+      "case": "aapl-assets-2024/facts/us-gaap/Assets/units/USD/131",
+      "passed": true
+    },
+    {
+      "case": "aapl-liabilities-2024",
+      "passed": true
+    },
+    {
+      "case": "aapl-liabilities-2024/facts/us-gaap/Liabilities/units/USD/129",
+      "passed": true
+    },
+    {
+      "case": "aapl-cash_and_cash_equivalents-2024",
+      "passed": true
+    },
+    {
+      "case": "aapl-cash_and_cash_equivalents-2024/facts/us-gaap/CashAndCashEquivalentsAtCarryingValue/units/USD/213",
+      "passed": true
+    },
+    {
+      "case": "aapl-operating_cash_flow-2024",
+      "passed": true
+    },
+    {
+      "case": "aapl-operating_cash_flow-2024/facts/us-gaap/NetCashProvidedByUsedInOperatingActivities/units/USD/122",
+      "passed": true
+    },
+    {
+      "case": "msft-revenue-2024",
+      "passed": true
+    },
+    {
+      "case": "msft-revenue-2024/facts/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/units/USD/112",
+      "passed": true
+    },
+    {
+      "case": "msft-net_income-2024",
+      "passed": true
+    },
+    {
+      "case": "msft-net_income-2024/facts/us-gaap/NetIncomeLoss/units/USD/318",
+      "passed": true
+    },
+    {
+      "case": "msft-assets-2024",
+      "passed": true
+    },
+    {
+      "case": "msft-assets-2024/facts/us-gaap/Assets/units/USD/124",
+      "passed": true
+    },
+    {
+      "case": "msft-liabilities-2024",
+      "passed": true
+    },
+    {
+      "case": "msft-liabilities-2024/facts/us-gaap/Liabilities/units/USD/116",
+      "passed": true
+    },
+    {
+      "case": "msft-cash_and_cash_equivalents-2024",
+      "passed": true
+    },
+    {
+      "case": "msft-cash_and_cash_equivalents-2024/facts/us-gaap/CashAndCashEquivalentsAtCarryingValue/units/USD/248",
+      "passed": true
+    },
+    {
+      "case": "msft-operating_cash_flow-2024",
+      "passed": true
+    },
+    {
+      "case": "msft-operating_cash_flow-2024/facts/us-gaap/NetCashProvidedByUsedInOperatingActivities/units/USD/148",
+      "passed": true
+    },
+    {
+      "case": "wmt-revenue-2024",
+      "passed": true
+    },
+    {
+      "case": "wmt-revenue-2024/facts/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/units/USD/93",
+      "passed": true
+    },
+    {
+      "case": "wmt-revenue-2024/facts/us-gaap/Revenues/units/USD/266",
+      "passed": true
+    },
+    {
+      "case": "wmt-net_income-2024",
+      "passed": true
+    },
+    {
+      "case": "wmt-net_income-2024/facts/us-gaap/NetIncomeLoss/units/USD/286",
+      "passed": true
+    },
+    {
+      "case": "wmt-assets-2024",
+      "passed": true
+    },
+    {
+      "case": "wmt-assets-2024/facts/us-gaap/Assets/units/USD/180",
+      "passed": true
+    },
+    {
+      "case": "wmt-liabilities-2024",
+      "passed": true
+    },
+    {
+      "case": "wmt-cash_and_cash_equivalents-2024",
+      "passed": true
+    },
+    {
+      "case": "wmt-cash_and_cash_equivalents-2024/facts/us-gaap/CashAndCashEquivalentsAtCarryingValue/units/USD/203",
+      "passed": true
+    },
+    {
+      "case": "wmt-operating_cash_flow-2024",
+      "passed": true
+    },
+    {
+      "case": "wmt-operating_cash_flow-2024/facts/us-gaap/NetCashProvidedByUsedInOperatingActivities/units/USD/138",
+      "passed": true
+    },
+    {
+      "case": "nvda-revenue-2024",
+      "passed": true
+    },
+    {
+      "case": "nvda-revenue-2024/facts/us-gaap/Revenues/units/USD/253",
+      "passed": true
+    },
+    {
+      "case": "nvda-net_income-2024",
+      "passed": true
+    },
+    {
+      "case": "nvda-net_income-2024/facts/us-gaap/NetIncomeLoss/units/USD/284",
+      "passed": true
+    },
+    {
+      "case": "nvda-assets-2024",
+      "passed": true
+    },
+    {
+      "case": "nvda-assets-2024/facts/us-gaap/Assets/units/USD/117",
+      "passed": true
+    },
+    {
+      "case": "nvda-liabilities-2024",
+      "passed": true
+    },
+    {
+      "case": "nvda-liabilities-2024/facts/us-gaap/Liabilities/units/USD/65",
+      "passed": true
+    },
+    {
+      "case": "nvda-cash_and_cash_equivalents-2024",
+      "passed": true
+    },
+    {
+      "case": "nvda-cash_and_cash_equivalents-2024/facts/us-gaap/CashAndCashEquivalentsAtCarryingValue/units/USD/198",
+      "passed": true
+    },
+    {
+      "case": "nvda-operating_cash_flow-2024",
+      "passed": true
+    },
+    {
+      "case": "nvda-operating_cash_flow-2024/facts/us-gaap/NetCashProvidedByUsedInOperatingActivities/units/USD/142",
+      "passed": true
+    },
+    {
+      "case": "reported-quarter",
+      "passed": true
+    },
+    {
+      "case": "aapl-revenue-Q4-2024",
+      "passed": true
+    },
+    {
+      "case": "aapl-revenue-Q4-2024/facts/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/units/USD/99",
+      "passed": true
+    },
+    {
+      "case": "aapl-revenue-Q4-2024/facts/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/units/USD/95",
+      "passed": true
+    },
+    {
+      "case": "aapl-operating_cash_flow-Q2-2024",
+      "passed": true
+    },
+    {
+      "case": "aapl-operating_cash_flow-Q2-2024/facts/us-gaap/NetCashProvidedByUsedInOperatingActivities/units/USD/118",
+      "passed": true
+    },
+    {
+      "case": "aapl-operating_cash_flow-Q2-2024/facts/us-gaap/NetCashProvidedByUsedInOperatingActivities/units/USD/116",
+      "passed": true
+    },
+    {
+      "case": "aapl-operating_cash_flow-Q3-2024",
+      "passed": true
+    },
+    {
+      "case": "aapl-operating_cash_flow-Q3-2024/facts/us-gaap/NetCashProvidedByUsedInOperatingActivities/units/USD/120",
+      "passed": true
+    },
+    {
+      "case": "aapl-operating_cash_flow-Q3-2024/facts/us-gaap/NetCashProvidedByUsedInOperatingActivities/units/USD/118",
+      "passed": true
+    },
+    {
+      "case": "aapl-operating_cash_flow-Q4-2024",
+      "passed": true
+    },
+    {
+      "case": "aapl-operating_cash_flow-Q4-2024/facts/us-gaap/NetCashProvidedByUsedInOperatingActivities/units/USD/122",
+      "passed": true
+    },
+    {
+      "case": "aapl-operating_cash_flow-Q4-2024/facts/us-gaap/NetCashProvidedByUsedInOperatingActivities/units/USD/120",
+      "passed": true
+    },
+    {
+      "case": "before-annual-availability",
+      "passed": true
+    },
+    {
+      "case": "before-calendar-anchor",
+      "passed": true
+    },
+    {
+      "case": "one-pinned-snapshot",
+      "passed": true
+    },
+    {
+      "case": "historical-original-source-limitation",
+      "passed": true
+    },
+    {
+      "case": "best-effort-preserves-explicit-source-limitation",
+      "passed": true
+    }
+  ],
+  "duckdb_counts_match": true,
+  "export_round_trips": {
+    "csv": true,
+    "duckdb": true,
+    "parquet": true
+  },
+  "fiscal_years": [
+    2023,
+    2024
+  ],
+  "metrics": [
+    "assets",
+    "cash_and_cash_equivalents",
+    "liabilities",
+    "net_income",
+    "operating_cash_flow",
+    "revenue"
+  ],
+  "population": "AAPL/MSFT/WMT/NVDA; architecture validation, not market-wide accuracy",
+  "replay_cases": 1,
+  "requested_cells": 480,
+  "states": {
+    "ambiguous_period": 21,
+    "conflicted": 28,
+    "insufficient_evidence": 3,
+    "resolved_derived": 45,
+    "resolved_reported": 324,
+    "unavailable": 59
+  },
+  "successful_replays": 1,
+  "timeline_scope": "recent_only; missing referenced history is not silently loaded",
+  "unexpected_mismatches": 0
+}
