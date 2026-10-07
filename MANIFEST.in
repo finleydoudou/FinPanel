@@ -4,3 +4,4 @@ recursive-include tests/fixtures *.sgml
 recursive-include examples *.py
 
 recursive-include docs *.json
+recursive-include tests/fixtures/xbrl *.xml *.html

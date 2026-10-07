@@ -127,7 +127,14 @@ def main(argv: list[str] | None = None) -> int:
             )
         else:
             command.add_argument("--inspect-concept", action="append", default=[])
+    from finpanel.xbrl.cli import add_commands, run
+
+    add_commands(commands)
     args = parser.parse_args(argv)
+    if args.command == "xbrl":
+        if args.limit < 0:
+            parser.error("--limit must be nonnegative")
+        return run(args)
     if args.command == "metrics":
         if args.limit < 0:
             parser.error("--limit must be nonnegative")

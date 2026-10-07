@@ -1,0 +1,338 @@
+{
+  "cases": [
+    {
+      "companyfacts_source": {
+        "pointer": "/facts/us-gaap/Assets/units/USD/128",
+        "response_sha256": "73a86c6aedc31f77cac2ea4df5f80f0b3bd7e6eb58bb4e01444fbedf3afb9c43",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json"
+      },
+      "errors": [],
+      "id": "aapl-q1-assets",
+      "original_sources": [
+        {
+          "pointer": "/xbrli:xbrl/*[267]",
+          "response_sha256": "45433174feb5835a8a817896cebc506c2dd3706fb3a71d14949ba59c3c0cb79a",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000006/aapl-20231230_htm.xml"
+        }
+      ],
+      "state": "verified_unique"
+    },
+    {
+      "companyfacts_source": {
+        "pointer": "/facts/us-gaap/Assets/units/USD/129",
+        "response_sha256": "73a86c6aedc31f77cac2ea4df5f80f0b3bd7e6eb58bb4e01444fbedf3afb9c43",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json"
+      },
+      "errors": [],
+      "id": "aapl-q2-assets",
+      "original_sources": [
+        {
+          "pointer": "/xbrli:xbrl/*[367]",
+          "response_sha256": "6a6318f1bf275a66f13906081d4bd122a815a57ead52a72c5b8b7c9c42c8df33",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000069/aapl-20240330_htm.xml"
+        }
+      ],
+      "state": "verified_unique"
+    },
+    {
+      "companyfacts_source": {
+        "pointer": "/facts/us-gaap/Assets/units/USD/124",
+        "response_sha256": "73a86c6aedc31f77cac2ea4df5f80f0b3bd7e6eb58bb4e01444fbedf3afb9c43",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json"
+      },
+      "errors": [],
+      "id": "aapl-q1-comparative-assets",
+      "original_sources": [
+        {
+          "pointer": "/xbrli:xbrl/*[268]",
+          "response_sha256": "45433174feb5835a8a817896cebc506c2dd3706fb3a71d14949ba59c3c0cb79a",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000006/aapl-20231230_htm.xml"
+        }
+      ],
+      "state": "verified_unique"
+    },
+    {
+      "companyfacts_source": {
+        "pointer": "/facts/us-gaap/Assets/units/USD/125",
+        "response_sha256": "73a86c6aedc31f77cac2ea4df5f80f0b3bd7e6eb58bb4e01444fbedf3afb9c43",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json"
+      },
+      "errors": [],
+      "id": "aapl-q2-repeated-comparative-assets",
+      "original_sources": [
+        {
+          "pointer": "/xbrli:xbrl/*[368]",
+          "response_sha256": "6a6318f1bf275a66f13906081d4bd122a815a57ead52a72c5b8b7c9c42c8df33",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000069/aapl-20240330_htm.xml"
+        }
+      ],
+      "state": "verified_unique"
+    },
+    {
+      "companyfacts_source": {
+        "pointer": "/facts/us-gaap/NetCashProvidedByUsedInOperatingActivities/units/USD/116",
+        "response_sha256": "73a86c6aedc31f77cac2ea4df5f80f0b3bd7e6eb58bb4e01444fbedf3afb9c43",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json"
+      },
+      "errors": [],
+      "id": "aapl-q1-cfo",
+      "original_sources": [
+        {
+          "pointer": "/xbrli:xbrl/*[363]",
+          "response_sha256": "45433174feb5835a8a817896cebc506c2dd3706fb3a71d14949ba59c3c0cb79a",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000006/aapl-20231230_htm.xml"
+        }
+      ],
+      "state": "verified_unique"
+    },
+    {
+      "companyfacts_source": {
+        "pointer": "/facts/us-gaap/NetCashProvidedByUsedInOperatingActivities/units/USD/118",
+        "response_sha256": "73a86c6aedc31f77cac2ea4df5f80f0b3bd7e6eb58bb4e01444fbedf3afb9c43",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json"
+      },
+      "errors": [],
+      "id": "aapl-q2-cfo",
+      "original_sources": [
+        {
+          "pointer": "/xbrli:xbrl/*[499]",
+          "response_sha256": "6a6318f1bf275a66f13906081d4bd122a815a57ead52a72c5b8b7c9c42c8df33",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000069/aapl-20240330_htm.xml"
+        }
+      ],
+      "state": "verified_unique"
+    },
+    {
+      "companyfacts_source": {
+        "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/312",
+        "response_sha256": "73a86c6aedc31f77cac2ea4df5f80f0b3bd7e6eb58bb4e01444fbedf3afb9c43",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json"
+      },
+      "errors": [],
+      "id": "aapl-ambiguous-income",
+      "original_sources": [
+        {
+          "pointer": "/xbrli:xbrl/*[287]",
+          "response_sha256": "6a6318f1bf275a66f13906081d4bd122a815a57ead52a72c5b8b7c9c42c8df33",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000069/aapl-20240330_htm.xml"
+        },
+        {
+          "pointer": "/xbrli:xbrl/*[307]",
+          "response_sha256": "6a6318f1bf275a66f13906081d4bd122a815a57ead52a72c5b8b7c9c42c8df33",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000069/aapl-20240330_htm.xml"
+        },
+        {
+          "pointer": "/xbrli:xbrl/*[439]",
+          "response_sha256": "6a6318f1bf275a66f13906081d4bd122a815a57ead52a72c5b8b7c9c42c8df33",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000069/aapl-20240330_htm.xml"
+        },
+        {
+          "pointer": "/xbrli:xbrl/*[479]",
+          "response_sha256": "6a6318f1bf275a66f13906081d4bd122a815a57ead52a72c5b8b7c9c42c8df33",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000069/aapl-20240330_htm.xml"
+        },
+        {
+          "pointer": "/xbrli:xbrl/*[576]",
+          "response_sha256": "6a6318f1bf275a66f13906081d4bd122a815a57ead52a72c5b8b7c9c42c8df33",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000069/aapl-20240330_htm.xml"
+        }
+      ],
+      "state": "ambiguous_match"
+    },
+    {
+      "companyfacts_source": {
+        "pointer": "/facts/us-gaap/Assets/units/USD/123",
+        "response_sha256": "f8aae2965b20ad0df44bdf7ccbedf797d275b6b8dc030154a7a311361bb7246f",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json"
+      },
+      "errors": [],
+      "id": "msft-assets",
+      "original_sources": [
+        {
+          "pointer": "/xbrli:xbrl/*[599]",
+          "response_sha256": "71418a74997fdf5437d399b5e578d1b66497bd026fd7d4fce7dbfc119db28711",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000095017024048288/msft-20240331_htm.xml"
+        }
+      ],
+      "state": "verified_unique"
+    },
+    {
+      "companyfacts_source": {
+        "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/316",
+        "response_sha256": "f8aae2965b20ad0df44bdf7ccbedf797d275b6b8dc030154a7a311361bb7246f",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json"
+      },
+      "errors": [],
+      "id": "msft-ambiguous-income",
+      "original_sources": [
+        {
+          "pointer": "/xbrli:xbrl/*[525]",
+          "response_sha256": "71418a74997fdf5437d399b5e578d1b66497bd026fd7d4fce7dbfc119db28711",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000095017024048288/msft-20240331_htm.xml"
+        },
+        {
+          "pointer": "/xbrli:xbrl/*[545]",
+          "response_sha256": "71418a74997fdf5437d399b5e578d1b66497bd026fd7d4fce7dbfc119db28711",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000095017024048288/msft-20240331_htm.xml"
+        },
+        {
+          "pointer": "/xbrli:xbrl/*[645]",
+          "response_sha256": "71418a74997fdf5437d399b5e578d1b66497bd026fd7d4fce7dbfc119db28711",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000095017024048288/msft-20240331_htm.xml"
+        },
+        {
+          "pointer": "/xbrli:xbrl/*[809]",
+          "response_sha256": "71418a74997fdf5437d399b5e578d1b66497bd026fd7d4fce7dbfc119db28711",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000095017024048288/msft-20240331_htm.xml"
+        },
+        {
+          "pointer": "/xbrli:xbrl/*[866]",
+          "response_sha256": "71418a74997fdf5437d399b5e578d1b66497bd026fd7d4fce7dbfc119db28711",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000095017024048288/msft-20240331_htm.xml"
+        }
+      ],
+      "state": "ambiguous_match"
+    },
+    {
+      "companyfacts_source": {
+        "pointer": "/facts/us-gaap/Assets/units/USD/188",
+        "response_sha256": "54ec3fbf36dc203dd00a0333396b3df2b6695ecdf6cbb19b6ec41b053d86b517",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000104169.json"
+      },
+      "errors": [],
+      "id": "wmt-assets",
+      "original_sources": [
+        {
+          "pointer": "/xbrli:xbrl/*[470]",
+          "response_sha256": "0edec31bd11b13e5e53047a75838cd4be6de7fe52fdb838eeba1856391e4f1d0",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/104169/000010416924000141/wmt-20240731_htm.xml"
+        }
+      ],
+      "state": "verified_unique"
+    },
+    {
+      "companyfacts_source": {
+        "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/295",
+        "response_sha256": "54ec3fbf36dc203dd00a0333396b3df2b6695ecdf6cbb19b6ec41b053d86b517",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000104169.json"
+      },
+      "errors": [],
+      "id": "wmt-equivalent-income",
+      "original_sources": [
+        {
+          "pointer": "/xbrli:xbrl/*[372]",
+          "response_sha256": "0edec31bd11b13e5e53047a75838cd4be6de7fe52fdb838eeba1856391e4f1d0",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/104169/000010416924000141/wmt-20240731_htm.xml"
+        },
+        {
+          "pointer": "/xbrli:xbrl/*[404]",
+          "response_sha256": "0edec31bd11b13e5e53047a75838cd4be6de7fe52fdb838eeba1856391e4f1d0",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/104169/000010416924000141/wmt-20240731_htm.xml"
+        },
+        {
+          "pointer": "/xbrli:xbrl/*[792]",
+          "response_sha256": "0edec31bd11b13e5e53047a75838cd4be6de7fe52fdb838eeba1856391e4f1d0",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/104169/000010416924000141/wmt-20240731_htm.xml"
+        }
+      ],
+      "state": "verified_multiple_equivalent"
+    },
+    {
+      "companyfacts_source": {
+        "pointer": "/facts/us-gaap/Assets/units/USD/123",
+        "response_sha256": "19ef503a5770f5660964b3c3aea6937579d9b359da344afe6a9adf59c63d26ff",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json"
+      },
+      "errors": [],
+      "id": "nvda-assets",
+      "original_sources": [
+        {
+          "pointer": "/xbrli:xbrl/*[411]",
+          "response_sha256": "86dcf5b9c831afb58bd4635c5f38531a5a587086048ae1703bb95a1893baa564",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000264/nvda-20240728_htm.xml"
+        }
+      ],
+      "state": "verified_unique"
+    },
+    {
+      "companyfacts_source": {
+        "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/292",
+        "response_sha256": "19ef503a5770f5660964b3c3aea6937579d9b359da344afe6a9adf59c63d26ff",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json"
+      },
+      "errors": [],
+      "id": "nvda-ambiguous-income",
+      "original_sources": [
+        {
+          "pointer": "/xbrli:xbrl/*[339]",
+          "response_sha256": "86dcf5b9c831afb58bd4635c5f38531a5a587086048ae1703bb95a1893baa564",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000264/nvda-20240728_htm.xml"
+        },
+        {
+          "pointer": "/xbrli:xbrl/*[359]",
+          "response_sha256": "86dcf5b9c831afb58bd4635c5f38531a5a587086048ae1703bb95a1893baa564",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000264/nvda-20240728_htm.xml"
+        },
+        {
+          "pointer": "/xbrli:xbrl/*[451]",
+          "response_sha256": "86dcf5b9c831afb58bd4635c5f38531a5a587086048ae1703bb95a1893baa564",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000264/nvda-20240728_htm.xml"
+        },
+        {
+          "pointer": "/xbrli:xbrl/*[452]",
+          "response_sha256": "86dcf5b9c831afb58bd4635c5f38531a5a587086048ae1703bb95a1893baa564",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000264/nvda-20240728_htm.xml"
+        },
+        {
+          "pointer": "/xbrli:xbrl/*[714]",
+          "response_sha256": "86dcf5b9c831afb58bd4635c5f38531a5a587086048ae1703bb95a1893baa564",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000264/nvda-20240728_htm.xml"
+        }
+      ],
+      "state": "ambiguous_match"
+    },
+    {
+      "companyfacts_source": {
+        "pointer": "/facts/us-gaap/Assets/units/USD/129",
+        "response_sha256": "73a86c6aedc31f77cac2ea4df5f80f0b3bd7e6eb58bb4e01444fbedf3afb9c43",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json"
+      },
+      "errors": [],
+      "id": "historical-source-not-yet-retrieved",
+      "original_sources": [],
+      "state": "instance_unavailable"
+    },
+    {
+      "companyfacts_source": {
+        "pointer": "/facts/us-gaap/Assets/units/USD/130",
+        "response_sha256": "73a86c6aedc31f77cac2ea4df5f80f0b3bd7e6eb58bb4e01444fbedf3afb9c43",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json"
+      },
+      "errors": [],
+      "id": "unfrozen-accession",
+      "original_sources": [],
+      "state": "instance_unavailable"
+    }
+  ],
+  "dimensioned_cases": 3,
+  "facts_checked": 15,
+  "filings": 5,
+  "issuers": [
+    "AAPL",
+    "MSFT",
+    "NVDA",
+    "WMT"
+  ],
+  "original_instance_files": 5,
+  "population": "Manually selected USD observations in five frozen 2024 filings; one intentionally unavailable accession and one historical retrieval boundary. No market-wide accuracy claim; dimensioned and undimensioned counts may overlap.",
+  "states": {
+    "ambiguous_match": 3,
+    "instance_unavailable": 2,
+    "source_mismatch": 0,
+    "unsupported": 0,
+    "verified_multiple_equivalent": 1,
+    "verified_unique": 9
+  },
+  "undimensioned_cases": 13,
+  "unexpected_mismatches": 0
+}

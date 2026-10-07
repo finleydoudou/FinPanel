@@ -14,7 +14,8 @@ Authentic SEC fixtures are tested offline alongside separate synthetic edge case
 Work Package 1 adds six explicitly mapped reported metrics with as-of-safe candidate
 inspection, conservative resolution, and full provenance. Work Package 2 adds explicit,
 strictly bounded quarterly arithmetic. Reported-only remains the default; panels
-remain out of scope.
+remain out of scope. Work Package 3 adds opt-in original filing XBRL discovery,
+context and numeric metadata, conservative matching and strict scope verification.
 
 ## Installation
 
@@ -1320,3 +1321,180 @@ market data, trading and UI are unimplemented.
 A proposed Work Package 3 is stronger source-context and revision-vintage evidence
 validation, including original XBRL dimensions and rounding metadata, before broader
 coverage or panel construction. It has not been started.
+
+## Work Package 3: original filing XBRL evidence
+
+Company Facts observations identify an accession, concept, unit and represented
+period, but do not provide original `contextRef`, dimensions or XBRL numeric
+accuracy attributes. `finpanel.xbrl` adds a separate, opt-in evidence layer. It
+never manufactures those fields from Company Facts or rewrites a source scalar.
+Existing WP1/WP2 APIs and their default selection contracts are unchanged.
+
+### Discovery and raw evidence
+
+`xbrl.discover(filing, client=client)` takes an existing typed `Filing` record.
+It reads the official SEC archive `index.json`, checks the directory's issuer and
+accession, then joins its filenames to declarations in the accession's SEC
+filing-index HTML metadata table. EX-101 type declarations identify the schema
+and linkbases; EX-101.INS and the SEC's explicit “EXTRACTED XBRL INSTANCE DOCUMENT”
+declaration identify instances. Filename extensions alone never prove type.
+The filing's primary-document field identifies its primary document. Unknown
+files remain `other`. The index HTML is metadata, not a rendered-filing fact
+extraction fallback. Unlisted or unsupported instance representations remain
+unavailable. Multiple declared instances are all inspected, never chosen by size
+or by which one yields a desired value.
+
+`SECClient.filing_document` uses the existing rate limiter, retry policy and
+content-addressed cache. It restricts requests to an exact SEC archive directory;
+redirects and arbitrary external URLs are unsupported. Raw UTF-8 bytes, source
+URLs, hashes and retrieval timestamps are retained. Cached raw artifacts do not
+imply semantic validation. Source documents not yet downloaded have null content
+hash/retrieval fields; this is explicit absence, not a hash of a different file.
+
+```python
+from finpanel import xbrl
+from finpanel.sec import parse_submissions
+from finpanel.sec.client import SECClient
+
+with SECClient(offline=True) as client:
+    filings = parse_submissions(client.submissions("320193")).records
+    filing = next(f for f in filings if f.accession_number == "0000320193-24-000069")
+    inventory, instances = xbrl.inspect_filing(filing, client=client)
+
+# observation is an existing typed FactObservation, not an invented scalar.
+verification = xbrl.verify_fact(observation, instances=instances, as_of="2026-10-08T00:00:00Z")
+contexts = xbrl.context_for_fact(verification)  # all matches, not an arbitrary winner
+```
+
+### Context identity, dimensions and numeric metadata
+
+The narrow XBRL 2.1 reader preserves original IDs separately from deterministic
+SHA-256 context fingerprints. Identity includes entity/scheme, period type and
+exact dates, expanded namespace QNames for dimensions and members, segment vs
+scenario placement, and preserved other scope content. A second scope fingerprint
+excludes the period for checking cumulative operands. Namespace aliases and XML
+IDs alone do not establish different economic contexts. Unknown structures stay
+unknown and do not earn strict verification. The original XML subtree and a
+source-document hash plus root-child locator remain available for audit.
+
+Dimensions are `undimensioned`, `explicit`, `typed`, or `unknown`. Undimensioned
+means no dimensions observed in a supported context; it does **not** prove a
+universal consolidation/accounting meaning. Typed XML and other segment/scenario
+content are preserved, but their schema-defined semantics are not interpreted.
+Strict matching refuses such unsupported context semantics. Units retain original
+IDs, namespace-expanded numerator/denominator measures and deterministic identity.
+
+Numeric facts retain raw lexical text, exact `Decimal`, unit, nil status, all
+attributes, `decimals` and `precision`. For a supported integer `decimals=d`, the
+rounding quantum is `10**(-d)`; `INF` means exact numeric accuracy, and missing
+metadata stays unspecified. Half a quantum is exposed only as an uncertainty
+magnitude diagnostic. `precision` is retained without inferring an accuracy
+interval. Unsupported numeric syntax or contradictory accuracy attributes are
+explicit. No binary float conversion, rounding correction or tolerance-based
+conflict suppression is performed. Exact equality contracts remain unchanged.
+These choices follow the [XBRL 2.1 specification](https://www.xbrl.org/Specification/XBRL-2.1/REC-2003-12-31/XBRL-2.1-REC-2003-12-31%2Bcorrected-errata-2013-02-20.html)
+and the [XBRL Dimensions specification](https://xbrl.org/specification/dimensions/rec-2012-01-25/dimensions-rec-2006-09-18%2Bcorrected-errata-2012-01-25-clean.html);
+this parser is not a full XBRL conformance validator.
+
+### Matching and historical boundaries
+
+`verify_fact` requires the same issuer/accession, compatible filing metadata,
+recognized exact taxonomy namespace family, exact concept, original entity,
+unit, period shape/dates and exact scalar. It retains same-concept candidate
+facts and every rejection reason, plus complete eligible instance evidence.
+Matching only by value is impossible. Period checks report consistency without
+changing existing fiscal classifications. Contexts with equal dates or values
+remain distinct when their scopes differ.
+
+States are `verified_unique`, `verified_multiple_equivalent`, `ambiguous_match`,
+`source_mismatch`, `instance_unavailable`, and `unsupported`. Equivalent matches
+must agree on full context identity, unit, concept, value and numeric metadata.
+Unsupported plausible alternatives block unique success. All matching contexts
+and locators remain visible, including different dimensional scopes.
+
+Verification uses a conservative **knowledge-time boundary**: both the original
+artifact and its discovery metadata must have been retrieved by the requested
+cutoff, and the filing date must already have passed its conservative date-only
+boundary. Thus an instance retrieved in October 2026 cannot retroactively verify
+a May 2024 result, even if its accession is from 2024. An old filing inspected
+with a later cutoff can be verified; this is not a claim that FinPanel had those
+bytes earlier. Future/foreign filing instances are excluded from returned
+verification evidence as well as matching. This intentionally favors historical
+immutability over backdated coverage. Cache snapshots and retrieval metadata must
+be retained to reproduce knowledge-time queries; the latest cache pointer alone
+is not a historical snapshot selector.
+
+### Canonical, derived-quarter and revision integration
+
+`xbrl.verify_metric(result, instances=..., source_verification="best_effort")`
+returns an additive envelope with the original `MetricResult`, every considered
+candidate's verification, selected evidence and diagnostics. Best effort retains
+the existing scalar/state. `source_verification="required"` withholds the envelope
+scalar unless every selected fact has unambiguous undimensioned original
+verification. It never changes revision winners or hides the original result.
+
+`xbrl.verify_derivation(derivation, instances=..., source_verification="required")`
+checks selected operand entity, dimensions and units in addition to their exact
+source-period matches and the existing WP2 fiscal/interval contract. Missing
+original evidence is explicitly unknown; best effort preserves WP2 behavior in
+that case. Proven scope differences, original-source conflicts or dimensioned
+arithmetic reject the enriched derivation. No segment aggregation is supported,
+even if both operands use the same dimension. Original WP2 values/provenance
+remain inspectable, and default `metrics.derive_quarter` behavior is unchanged.
+
+`xbrl.revision_evidence(result, instances=...)` enriches each original revision
+group with source contexts, dimensions, precision, source documents and original
+availability. It labels scope as `same_scope_compatible`, `scope_different`, or
+`original_context_unknown`, preserving selected observation IDs and ordering.
+Value changes and rounding metadata never independently change winners. This
+work package does not add rounding-tolerance reconciliation.
+
+### Offline inspection and validation population
+
+```bash
+finpanel xbrl filing 0000320193-24-000069 --cik 320193 --offline
+finpanel xbrl contexts 0000320193-24-000069 --cik 320193 --offline --limit 5
+finpanel xbrl verify-fact 0000320193-24-000069 --cik 320193 --offline \
+  --concept Assets --end 2024-03-30 --as-of 2026-10-08T00:00:00Z --strict
+python examples/validate_xbrl.py --output output/xbrl-evidence-validation.json
+```
+
+These inspection commands require the corresponding sources already cached.
+`filing` and `contexts` explicitly report retrospective inventories; `verify-fact`
+requires an as-of cutoff. `--output` saves the full evidence/decision report,
+while terminal previews omit raw XML trees. `--strict` makes failed or ambiguous
+verification exit nonzero. The CLI currently locates accessions in recent
+submissions; older filings can use the Python API with an existing historical
+`Filing` record. Offline missing sources fail explicitly, without live fallback.
+The benchmark seeds a temporary cache from manifests and never contacts SEC.
+
+The new fixture manifest stores 15 raw artifacts: five generated XML instances,
+five directory JSON inventories, and five filing-index HTML documents. They cover
+AAPL 2024 Q1/Q2, MSFT 2024 Q3, WMT 2025 Q2 and NVDA 2025 Q2 (issuer fiscal labels).
+These are the supported instance representations explicitly declared by their
+SEC indexes; no smaller alternate instance was listed. Four XML files range
+from about 0.67–1.39 MB. Microsoft's generated instance is about 7.34 MB, largely
+because of embedded text-block facts; it is retained once, unmodified, rather
+than trimming it and claiming raw provenance. No primary HTML filings or full
+submission packages were frozen. Existing authentic fixtures remain unchanged.
+
+The manually transcribed 15-case golden population checks original values,
+context IDs and decimals, including instant/duration facts, repeated comparative
+assets, authentic dimensional ambiguity and explicit missing coverage. Results:
+9 unique, 1 equivalent-multiple, 3 ambiguous and 2 unavailable; zero unexpected
+mismatches. Three cases include dimensional matches and thirteen include
+undimensioned matches (counts overlap). A separate authentic Apple Q2 operating
+cash-flow derivation verifies both operand scopes and the exact difference
+22,690,000,000 USD. Synthetic and mutated-byte tests separately test mismatches,
+typed dimensions and historical leakage; mutations are never saved as authentic.
+This small deliberate population is **not** a market-wide accuracy estimate.
+
+Limitations and technical debt: no inline HTML fact parser, schema loading,
+full XBRL validation, taxonomy dimension defaults, typed-dimension equivalence,
+non-date periods, extension-taxonomy matching, or segment aggregation. Unknown
+facts do not gain fabricated context evidence. Coverage outside these five
+instances is unverified until authentic evidence is supplied. Integration is
+explicit through verification envelopes; the default canonical API does not
+fetch original instances automatically. A possible Work Package 4 is versioned
+original-evidence coverage and snapshot selection, plus independently validated
+schema/context semantics where needed. It is not implemented here.

@@ -1,0 +1,20 @@
+{
+  "basis": "Values and context IDs transcribed by direct inspection of original XML, independently of matching code. Matching equivalent repeats requires same context scope and numeric metadata. Net income ambiguity intentionally retained.",
+  "cases": [
+    {"id":"aapl-q1-assets","cik":"0000320193","accession":"0000320193-24-000006","concept":"Assets","start":null,"end":"2023-12-30","value":353514000000,"state":"verified_unique","contexts":["c-17"]},
+    {"id":"aapl-q2-assets","cik":"0000320193","accession":"0000320193-24-000069","concept":"Assets","start":null,"end":"2024-03-30","value":337411000000,"state":"verified_unique","contexts":["c-23"]},
+    {"id":"aapl-q1-comparative-assets","cik":"0000320193","accession":"0000320193-24-000006","concept":"Assets","start":null,"end":"2023-09-30","value":352583000000,"state":"verified_unique","contexts":["c-18"]},
+    {"id":"aapl-q2-repeated-comparative-assets","cik":"0000320193","accession":"0000320193-24-000069","concept":"Assets","start":null,"end":"2023-09-30","value":352583000000,"state":"verified_unique","contexts":["c-24"]},
+    {"id":"aapl-q1-cfo","cik":"0000320193","accession":"0000320193-24-000006","concept":"NetCashProvidedByUsedInOperatingActivities","start":"2023-10-01","end":"2023-12-30","value":39895000000,"state":"verified_unique","contexts":["c-1"]},
+    {"id":"aapl-q2-cfo","cik":"0000320193","accession":"0000320193-24-000069","concept":"NetCashProvidedByUsedInOperatingActivities","start":"2023-10-01","end":"2024-03-30","value":62585000000,"state":"verified_unique","contexts":["c-1"]},
+    {"id":"aapl-ambiguous-income","cik":"0000320193","accession":"0000320193-24-000069","concept":"NetIncomeLoss","start":"2023-10-01","end":"2024-03-30","value":57552000000,"state":"ambiguous_match","contexts":["c-1","c-44"]},
+    {"id":"msft-assets","cik":"0000789019","accession":"0000950170-24-048288","concept":"Assets","start":null,"end":"2024-03-31","value":484275000000,"state":"verified_unique","contexts":["C_d918dde2-d111-4521-a0ca-0c09218fda0d"]},
+    {"id":"msft-ambiguous-income","cik":"0000789019","accession":"0000950170-24-048288","concept":"NetIncomeLoss","start":"2024-01-01","end":"2024-03-31","value":21939000000,"state":"ambiguous_match","contexts":["C_a2d4882c-16ef-4eef-8599-7bb7014adb07","C_753a4eaa-8f60-4088-9a07-f33f4e34d69b"]},
+    {"id":"wmt-assets","cik":"0000104169","accession":"0000104169-24-000141","concept":"Assets","start":null,"end":"2024-07-31","value":254440000000,"state":"verified_unique","contexts":["c-16"]},
+    {"id":"wmt-equivalent-income","cik":"0000104169","accession":"0000104169-24-000141","concept":"NetIncomeLoss","start":"2024-05-01","end":"2024-07-31","value":4501000000,"state":"verified_multiple_equivalent","contexts":["c-13"]},
+    {"id":"nvda-assets","cik":"0001045810","accession":"0001045810-24-000264","concept":"Assets","start":null,"end":"2024-07-28","value":85227000000,"state":"verified_unique","contexts":["c-6"]},
+    {"id":"nvda-ambiguous-income","cik":"0001045810","accession":"0001045810-24-000264","concept":"NetIncomeLoss","start":"2024-04-29","end":"2024-07-28","value":16599000000,"state":"ambiguous_match","contexts":["c-3","c-13"]},
+    {"id":"historical-source-not-yet-retrieved","cik":"0000320193","accession":"0000320193-24-000069","concept":"Assets","start":null,"end":"2024-03-30","value":337411000000,"as_of":"2024-05-05T00:00:00Z","state":"instance_unavailable","contexts":[]},
+    {"id":"unfrozen-accession","cik":"0000320193","accession":"0000320193-24-000081","concept":"Assets","start":null,"end":"2024-06-29","value":331612000000,"state":"instance_unavailable","contexts":[]}
+  ]
+}

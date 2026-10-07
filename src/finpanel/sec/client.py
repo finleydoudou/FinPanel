@@ -133,6 +133,25 @@ class SECClient:
         )
         return self._get(url, refresh, header=True)
 
+    def filing_document(
+        self, cik: str | int, accession: str, filename: str, *, refresh: bool = False
+    ) -> RawResponse:
+        """Fetch an archive artifact through the same cache, limiter and retry policy.
+
+        Filenames must come from official discovery metadata; no external URLs,
+        nested paths, query strings or redirects are accepted here.
+        """
+        cik = normalize_cik(cik)
+        if not re.fullmatch(r"[0-9]{10}-[0-9]{2}-[0-9]{6}", accession):
+            raise ValidationError("Invalid SEC accession number")
+        if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9_.-]*", filename) or ".." in filename:
+            raise ValidationError("Invalid SEC archive filename")
+        url = (
+            f"https://www.sec.gov/Archives/edgar/data/{int(cik)}/"
+            f"{accession.replace('-', '')}/{filename}"
+        )
+        return self._get(url, refresh, artifact=True)
+
     def _retry_after(self, value: str | None) -> float:
         if value is None:
             return 0.0
@@ -149,7 +168,13 @@ class SECClient:
                 return 0.0
 
     def _get(
-        self, url: str, refresh: bool, *, historical: bool = False, header: bool = False
+        self,
+        url: str,
+        refresh: bool,
+        *,
+        historical: bool = False,
+        header: bool = False,
+        artifact: bool = False,
     ) -> RawResponse:
         if self.offline and refresh:
             raise ValidationError("Cannot refresh SEC responses in offline mode")
@@ -165,7 +190,7 @@ class SECClient:
             try:
                 response = (
                     self._http.get(url, headers={"Accept": "text/plain"})
-                    if header
+                    if header or artifact
                     else self._http.get(url)
                 )
             except (httpx.TimeoutException, httpx.NetworkError, httpx.RemoteProtocolError) as exc:
@@ -197,6 +222,9 @@ class SECClient:
                     status=response.status_code,
                 )
             raw = RawResponse(url, response.content, self.now().isoformat(), dict(response.headers))
+            if artifact:
+                raw = RawResponse(url, raw.body, raw.retrieved_at, raw.headers, raw_format="text")
+                return self.cache.put(raw)
             if header:
                 raw = RawResponse(
                     url, response.content, raw.retrieved_at, raw.headers, raw_format="text"
