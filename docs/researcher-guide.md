@@ -2,41 +2,17 @@
 
 ## Public release user — no checkout required
 
-The [v0.1.0-alpha GitHub pre-release](https://github.com/finleydoudou/FinPanel/releases/tag/v0.1.0-alpha)
-is available as Python package **0.1.0a1**, for **Python 3.12**. It is not on PyPI.
+The published [a1 GitHub pre-release](https://github.com/finleydoudou/FinPanel/releases/tag/v0.1.0-alpha)
+remains package `0.1.0a1`. Its [versioned installation instructions](https://github.com/finleydoudou/FinPanel/blob/07f3e16fcf18019b16e5ac25d575e646d126c570/README.md#installation)
+still apply and its assets have not been replaced.
 
-1. Open the release and download `finpanel-0.1.0a1-py3-none-any.whl`.
-2. Optionally download `SHA256SUMS.txt` and verify the wheel (recommended).
-   The [README installation section](../README.md#installation) gives macOS,
-   Linux and PowerShell commands. Compare the printed hash with the wheel's row;
-   verification is not automatic. Stop on a mismatch.
-3. Open a terminal in the download folder. Create and activate a clean environment:
-
-```bash
-# macOS/Linux
-python3.12 -m venv .venv
-source .venv/bin/activate
-```
-
-```powershell
-# Windows PowerShell
-py -3.12 -m venv .venv
-.\.venv\Scripts\Activate.ps1
-```
-
-4. Install the downloaded wheel and verify the version:
-
-```bash
-python -m pip install ./finpanel-0.1.0a1-py3-none-any.whl
-python -c "import finpanel; print(finpanel.__version__)"
-python -m finpanel.cli --help
-```
-
-Expected version: `0.1.0a1`. Dependency installation may access PyPI; the FinPanel
-package is the GitHub asset. If PowerShell activation is unavailable, use
-`.\.venv\Scripts\python.exe` in place of `python` without changing execution policy.
-Continue with the frozen Quick Start below. No developer checkout or local build
-artifacts are required.
+This source tree prepares **0.1.0a2**, intended tag **v0.1.0-alpha.2**, not a
+published a2 release. Candidate recipients should use the
+[a2 wheel installation instructions](../README.md#installation): verify the supplied
+checksum, create a clean Python 3.12 environment, install
+`finpanel-0.1.0a2-py3-none-any.whl`, and confirm `finpanel.__version__ == "0.1.0a2"`.
+No production PyPI installation is advertised. TestPyPI rehearsal instructions and
+its account/setup gates are in [publishing preparation](publishing.md).
 
 ## Developer source user
 
@@ -47,7 +23,7 @@ git clone https://github.com/finleydoudou/FinPanel.git
 cd FinPanel
 ```
 
-Create and activate a Python 3.12 environment using the platform commands above,
+Create and activate a Python 3.12 environment using the platform commands in the README,
 then run from the cloned repository root:
 
 ```bash
@@ -55,7 +31,7 @@ python -m pip install .
 ```
 
 This installs the cloned revision, which may be newer than the published alpha.
-To inspect the exact release source, select `v0.1.0-alpha` in the clone before
+To inspect the exact release source, select `v0.1.0-alpha` for a1 in the clone before
 installing. The public release workflow uses the wheel, not `pip install .`.
 
 ## Frozen Quick Start

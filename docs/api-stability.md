@@ -53,9 +53,10 @@ artifacts and receipts rather than depending on those implementation details.
 
 ## Version and replay
 
-The prepared PEP 440 version is `0.1.0a1`; a corresponding future SemVer prerelease
-tag is `v0.1.0-alpha`. This is an explicit project mapping to the first Python alpha
-`0.1.0a1`; packaging tools must use the latter. No tag/publication is authorized. Receipt identity
+The prepared PEP 440 version is `0.1.0a2`, mapped to intended tag
+`v0.1.0-alpha.2`. This is a documentation/packaging refresh, not a new financial
+contract. The published a1 tag/package remain unchanged. Production publication
+requires separate authorization. Receipt identity
 includes the package version, source hash, Python patch version, and exact relevant
 JSON/transport dependency versions. An older WP6 receipt intentionally requires its
 original matching software for exact replay. Updating the package does not silently

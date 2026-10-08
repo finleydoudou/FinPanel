@@ -1,0 +1,65 @@
+name: TestPyPI release rehearsal
+on:
+  workflow_dispatch:
+    inputs:
+      candidate_sha:
+        description: Exact commit already passing the three-platform Python checks
+        required: true
+permissions:
+  contents: read
+concurrency:
+  group: testpypi-release
+  cancel-in-progress: false
+jobs:
+  build:
+    if: github.ref == 'refs/tags/v0.1.0-alpha.2' && vars.FINPANEL_TESTPYPI_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: read
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.12'
+      - name: Verify exact tagged candidate and completed CI
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EXPECTED_SHA: ${{ inputs.candidate_sha }}
+        run: |
+          [[ "$EXPECTED_SHA" =~ ^[0-9a-f]{40}$ ]]
+          test "$(git rev-parse HEAD)" = "$EXPECTED_SHA"
+          test "$(python -c 'import tomllib; print(tomllib.load(open("pyproject.toml", "rb"))["project"]["version"])')" = '0.1.0a2'
+          gh api "repos/$GITHUB_REPOSITORY/actions/workflows/tests.yml/runs?head_sha=$EXPECTED_SHA&event=push" > /tmp/ci-runs.json
+          python -c 'import json; runs=json.load(open("/tmp/ci-runs.json"))["workflow_runs"]; assert any(r["conclusion"] == "success" and r["head_branch"] == "main" for r in runs), "Required three-platform CI has not passed"'
+      - run: python -m pip install build
+      - run: python -m build
+      - run: sha256sum dist/* > SHA256SUMS.txt
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: a2-distributions
+          path: dist/
+          if-no-files-found: error
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: a2-checksums
+          path: SHA256SUMS.txt
+  publish-testpypi:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: testpypi
+      url: https://test.pypi.org/p/finpanel
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: a2-distributions
+          path: dist/
+      - name: Publish only to TestPyPI through OIDC
+        uses: pypa/gh-action-pypi-publish@dc37677b2e1c63e2034f94d8a5b11f265b73ba33 # release/v1
+        with:
+          repository-url: https://test.pypi.org/legacy/

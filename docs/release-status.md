@@ -1,5 +1,16 @@
 # Current alpha release status
 
+## A2 preparation
+
+The source/candidate package is **0.1.0a2**, intended tag **v0.1.0-alpha.2**.
+This is a documentation/metadata refresh with no financial contract changes.
+A2 gates must pass independently on the same candidate commit before any TestPyPI
+rehearsal; neither an a2 tag nor public GitHub release is created by preparation.
+See [a2 preparation notes](release-a2-notes.md) and [publishing gates](publishing.md).
+Production PyPI publication has not occurred.
+
+## Published a1 (unchanged)
+
 [FinPanel v0.1.0-alpha](https://github.com/finleydoudou/FinPanel/releases/tag/v0.1.0-alpha)
 is a published **GitHub pre-release**, not a stable production release.
 

@@ -26,7 +26,7 @@ assert datetime(2024, 1, 1, tzinfo=SEC_DAY_ZONE).utcoffset().total_seconds() == 
 assert datetime(2024, 7, 1, tzinfo=SEC_DAY_ZONE).utcoffset().total_seconds() == -14400
 from finpanel.example import build_example
 assert Path(finpanel.__file__).resolve().is_relative_to(Path(sys.prefix).resolve())
-assert finpanel.__version__ == '0.1.0a1'
+assert finpanel.__version__ == '0.1.0a2'
 def denied(*args, **kwargs):
     raise AssertionError('Clean example attempted network')
 httpx.Client.send = denied

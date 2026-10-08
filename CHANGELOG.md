@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.1.0a2 — preparation, not yet published
+
+Intended tag: `v0.1.0-alpha.2`. This is a documentation/packaging synchronization
+update: corrected public GitHub installation instructions, researcher guide and
+release-status documentation now accompany refreshed wheel metadata and embedded
+README. README links are absolute for package-index rendering.
+
+No financial/accounting semantics, metric contracts, revision, as-of or provenance
+behavior changed. The versioned software identity changes; old receipts still
+require their original matching software. A1 tags and assets are preserved.
+
+
 ## 0.1.0a1 — GitHub alpha pre-release (2026-10-08)
 
 Published [GitHub pre-release v0.1.0-alpha](https://github.com/finleydoudou/FinPanel/releases/tag/v0.1.0-alpha) (first alpha).

@@ -36,7 +36,7 @@ def test_version_and_release_metadata_agree():
     import tomllib
 
     data = tomllib.loads((Path(__file__).parents[1] / "pyproject.toml").read_text())
-    assert __version__ == data["project"]["version"] == "0.1.0a1"
+    assert __version__ == data["project"]["version"] == "0.1.0a2"
     assert data["project"]["requires-python"] == ">=3.12,<3.13"
     assert set(panel.__all__) >= {"PanelRequest", "PeriodEnd", "build", "export", "reproduce"}
 
