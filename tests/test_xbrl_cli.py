@@ -49,11 +49,28 @@ def test_offline_commands_and_exports(cache, tmp_path, capsys, action):
     assert main(args) == 0
     result = json.loads(capsys.readouterr().out)
     assert result["accession"] == "0000320193-24-000069"
-    assert output.exists() and json.loads(output.read_text())
+    assert output.exists() and json.loads(output.read_text(encoding="utf-8"))
     if action == "verify-fact":
         assert result["verifications"][0]["state"] == "verified_unique"
     if action == "contexts":
         assert len(result["contexts"]) == 1 and "raw_xml" not in result["contexts"][0]
+
+
+@pytest.mark.parametrize("action", ["filing", "verify-fact"])
+def test_exports_with_windows_default_encoding(cache, tmp_path, capsys, monkeypatch, action):
+    read_text = Path.read_text
+
+    def windows_read_text(path, encoding=None, errors=None):
+        return read_text(path, encoding=encoding or "cp1252", errors=errors)
+
+    # Exercise the real export assertions under Windows' non-UTF-8 default.
+    monkeypatch.setattr(Path, "read_text", windows_read_text)
+    test_offline_commands_and_exports(cache, tmp_path, capsys, action)
+    raw = (tmp_path / "export.json").read_bytes()
+    assert json.loads(raw.decode("utf-8"))
+    # Authentic narrative text makes this a non-vacuous encoding regression.
+    with pytest.raises(UnicodeDecodeError):
+        raw.decode("cp1252")
 
 
 def test_ambiguous_strict_exit(cache, capsys):
