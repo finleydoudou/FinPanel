@@ -7,7 +7,7 @@ from datetime import UTC, datetime
 from hashlib import sha256
 from pathlib import Path
 
-from finpanel import metrics, xbrl
+from finpanel import __version__, metrics, xbrl
 from finpanel.errors import FinPanelError
 from finpanel.models import Provenance
 from finpanel.sec import parse_companyfacts, parse_submissions
@@ -31,7 +31,7 @@ def software_identity():
         for p in sorted(root.rglob("*.py"))
     }
     return {
-        "finpanel": "0.1.0",
+        "finpanel": __version__,
         "code_sha256": digest(code),
         "python": platform.python_version(),
         "dependencies": {

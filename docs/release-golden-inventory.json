@@ -1,0 +1,39 @@
+{
+  "format": "finpanel-release-golden-inventory-v1",
+  "ledgers": [
+    {
+      "expectations": 32,
+      "file": "tests/golden/canonical.json",
+      "key": "cases",
+      "ledger_hash": "c1bf80b81d1363e7dce420a30abb144388cb040e28dff8653d538e3c93ba337d"
+    },
+    {
+      "expectations": 25,
+      "file": "tests/golden/derived_quarters.json",
+      "key": "authentic_cases",
+      "ledger_hash": "9b9d93edb3af2755ad2ddc1b773ef790dc4544d0d51742d38d6a38765e6c5ef4"
+    },
+    {
+      "expectations": 156,
+      "file": "tests/golden/broad.json",
+      "key": "cases",
+      "ledger_hash": "03ff1f839fc9a5ff0efd7214fab60d30a126755a141b4d90ddcb4d7e4cf0cdcd"
+    },
+    {
+      "expectations": 22,
+      "file": "tests/golden/release-calendar.json",
+      "key": "cases",
+      "ledger_hash": "0c58092212ed995a63d78ab755289b46b76220f824ec7563398e4bc1e2364dcf"
+    },
+    {
+      "expectations": 20,
+      "file": "tests/golden/release-revisions.json",
+      "key": "cases",
+      "ledger_hash": "91a8d0cd154bc81cf1135489b48da8325a321f6d3c015587c9890770b7df10dd"
+    }
+  ],
+  "meaning": "Distinct authored contract expectations, not distinct accounting restatements or unique financial cells. Policy/cutoff contrasts count separately; synthetic guards, extra operand checks, source XML checks, and replay checks excluded from this conservative total.",
+  "new_calendar_expectations": 22,
+  "new_revision_expectations": 20,
+  "total_expectations": 255
+}

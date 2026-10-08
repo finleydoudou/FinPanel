@@ -28,6 +28,10 @@ def add_commands(commands):
         p.add_argument("--snapshot", required=True)
         p.add_argument("--output", type=Path, required=True)
         if action == "broad":
+            p.add_argument("--resume", action="store_true")
+            p.add_argument("--checkpoint", type=Path)
+            p.add_argument("--issuer", action="append", dest="subset")
+            p.add_argument("--workers", type=int, default=1)
             p.add_argument("--config", type=Path)
             p.add_argument("--universe", type=Path)
             p.add_argument("--tier", choices=["A", "B"], default="B")
@@ -79,6 +83,10 @@ def command(args):
                 manifest=loads(args.universe.read_bytes()) if args.universe else None,
                 tier=args.tier,
                 limit=args.limit,
+                resume=args.resume,
+                checkpoint=args.checkpoint,
+                subset=args.subset,
+                workers=args.workers,
             )
             print(dumps({"performance": performance}))
         print(dumps({k: v for k, v in result.items() if k not in {"findings", "receipts"}}))

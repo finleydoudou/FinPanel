@@ -9,7 +9,7 @@ from pathlib import Path
 from tempfile import TemporaryDirectory
 
 from finpanel.errors import ValidationError
-from finpanel.panel.engine import row_record
+from finpanel.panel.engine import PanelResult, row_record
 from finpanel.panel.models import SCHEMA, PanelRow
 from finpanel.serialization import dumps, loads
 from finpanel.snapshots.store import digest
@@ -109,7 +109,7 @@ def _arrow(result):
     return pa.Table.from_pylist(records(result), schema=schema)
 
 
-def export(result, destination, *, format=None):
+def export(result: PanelResult, destination: str | Path, *, format: str | None = None) -> Path:
     """Create a new export and required metadata/provenance sidecars; never overwrite.
 
     CSV bytes are stable for equal semantic rows. Container bytes are not promised;
@@ -198,7 +198,7 @@ def export(result, destination, *, format=None):
         staging.cleanup()
 
 
-def read_export(path, *, format=None):
+def read_export(path: str | Path, *, format: str | None = None) -> list[dict]:
     """Read and verify semantic rows against the mandatory metadata sidecar."""
     path = Path(path)
     format = format or path.suffix.lstrip(".")

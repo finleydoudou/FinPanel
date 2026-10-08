@@ -15,7 +15,7 @@ from finpanel.sec import parse_submissions
 from finpanel.sec.client import SECClient
 from finpanel.sec.submissions import discover_historical_submissions
 from finpanel.snapshots.pipeline import CONTRACTS, _PinnedCache, _provenance, software_identity
-from finpanel.snapshots.store import SnapshotError, digest
+from finpanel.snapshots.store import EvidenceStore, SnapshotError, digest
 
 
 class PanelBuildError(FinPanelError):
@@ -238,7 +238,13 @@ def _reason_codes(state, result, reasons):
     return tuple(sorted(codes))
 
 
-def build(request: PanelRequest | None = None, *, store=None, client=None, **grid) -> PanelResult:
+def build(
+    request: PanelRequest | None = None,
+    *,
+    store: EvidenceStore | None = None,
+    client: SECClient | None = None,
+    **grid,
+) -> PanelResult:
     """Build every requested cell; pinned mode disallows any external client/fallback.
 
     One exact snapshot ID serves the entire dataset. Select latest/scope manifests
@@ -557,7 +563,7 @@ def _build(request, client, snapshot, cache):
     )
 
 
-def reproduce(receipt: PanelReceipt, *, store):
+def reproduce(receipt: PanelReceipt, *, store: EvidenceStore) -> PanelResult:
     """Fail closed on missing/corrupt evidence, changed software, or semantic mismatch."""
     if digest(receipt.semantic) != receipt.receipt_id or receipt.semantic.get("format") != SCHEMA:
         raise SnapshotError("Panel receipt integrity/format failure")

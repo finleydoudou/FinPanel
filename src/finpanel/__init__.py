@@ -1,3 +1,3 @@
-"""FinPanel: raw ingestion only; no point-in-time reconstruction yet."""
+"""Reproducible point-in-time SEC fundamentals for financial research."""
 
-__version__ = "0.1.0"
+__version__ = "0.1.0a1"

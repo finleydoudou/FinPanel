@@ -1,0 +1,5157 @@
+{
+  "category_count": 14,
+  "category_distribution": {
+    "business_services": 1,
+    "communications": 5,
+    "consumer_discretionary": 5,
+    "consumer_staples": 11,
+    "energy": 8,
+    "healthcare": 12,
+    "industrials": 10,
+    "large_retail": 5,
+    "manufacturing": 6,
+    "materials": 2,
+    "retail": 6,
+    "technology": 18,
+    "transportation": 4,
+    "utilities": 7
+  },
+  "coverage_by": {
+    "calendar_characteristics": {
+      "Current SEC FYE 0103; historical windows independently bounded": {
+        "resolved": 192,
+        "states": {
+          "ambiguous_period": 12,
+          "insufficient_evidence": 12,
+          "resolved_derived": 22,
+          "resolved_reported": 170,
+          "unavailable": 24
+        },
+        "total": 240
+      },
+      "Current SEC FYE 0129; historical windows independently bounded": {
+        "resolved": 154,
+        "states": {
+          "ambiguous_period": 6,
+          "insufficient_evidence": 18,
+          "resolved_derived": 30,
+          "resolved_reported": 124,
+          "unavailable": 62
+        },
+        "total": 240
+      },
+      "Current SEC FYE 0130; historical windows independently bounded": {
+        "resolved": 180,
+        "states": {
+          "ambiguous_period": 20,
+          "resolved_derived": 20,
+          "resolved_reported": 160,
+          "unavailable": 40
+        },
+        "total": 240
+      },
+      "Current SEC FYE 0131; historical windows independently bounded": {
+        "resolved": 1008,
+        "states": {
+          "ambiguous_period": 16,
+          "conflicted": 40,
+          "insufficient_evidence": 36,
+          "resolved_derived": 152,
+          "resolved_reported": 856,
+          "unavailable": 100
+        },
+        "total": 1200
+      },
+      "Current SEC FYE 0201; historical windows independently bounded": {
+        "resolved": 386,
+        "states": {
+          "ambiguous_period": 34,
+          "conflicted": 8,
+          "insufficient_evidence": 66,
+          "resolved_derived": 66,
+          "resolved_reported": 320,
+          "unavailable": 226
+        },
+        "total": 720
+      },
+      "Current SEC FYE 0530; historical windows independently bounded": {
+        "resolved": 208,
+        "states": {
+          "ambiguous_period": 32,
+          "resolved_derived": 24,
+          "resolved_reported": 184
+        },
+        "total": 240
+      },
+      "Current SEC FYE 0531; historical windows independently bounded": {
+        "resolved": 584,
+        "states": {
+          "ambiguous_period": 8,
+          "conflicted": 8,
+          "resolved_derived": 112,
+          "resolved_reported": 472,
+          "unavailable": 120
+        },
+        "total": 720
+      },
+      "Current SEC FYE 0628; historical windows independently bounded": {
+        "resolved": 198,
+        "states": {
+          "ambiguous_period": 18,
+          "insufficient_evidence": 6,
+          "resolved_derived": 30,
+          "resolved_reported": 168,
+          "unavailable": 18
+        },
+        "total": 240
+      },
+      "Current SEC FYE 0630; historical windows independently bounded": {
+        "resolved": 988,
+        "states": {
+          "ambiguous_period": 70,
+          "insufficient_evidence": 34,
+          "resolved_derived": 138,
+          "resolved_reported": 850,
+          "unavailable": 96,
+          "unsupported": 12
+        },
+        "total": 1200
+      },
+      "Current SEC FYE 0725; historical windows independently bounded": {
+        "resolved": 198,
+        "states": {
+          "ambiguous_period": 18,
+          "insufficient_evidence": 6,
+          "resolved_derived": 30,
+          "resolved_reported": 168,
+          "unavailable": 18
+        },
+        "total": 240
+      },
+      "Current SEC FYE 0731; historical windows independently bounded": {
+        "resolved": 182,
+        "states": {
+          "ambiguous_period": 22,
+          "conflicted": 12,
+          "insufficient_evidence": 6,
+          "resolved_derived": 24,
+          "resolved_reported": 158,
+          "unavailable": 18
+        },
+        "total": 240
+      },
+      "Current SEC FYE 0803; historical windows independently bounded": {
+        "resolved": 198,
+        "states": {
+          "ambiguous_period": 18,
+          "insufficient_evidence": 6,
+          "resolved_derived": 30,
+          "resolved_reported": 168,
+          "unavailable": 18
+        },
+        "total": 240
+      },
+      "Current SEC FYE 0829; historical windows independently bounded": {
+        "resolved": 162,
+        "states": {
+          "ambiguous_period": 18,
+          "insufficient_evidence": 6,
+          "resolved_derived": 30,
+          "resolved_reported": 132,
+          "unavailable": 54
+        },
+        "total": 240
+      },
+      "Current SEC FYE 0830; historical windows independently bounded": {
+        "resolved": 168,
+        "states": {
+          "ambiguous_period": 18,
+          "conflicted": 30,
+          "insufficient_evidence": 6,
+          "resolved_derived": 24,
+          "resolved_reported": 144,
+          "unavailable": 18
+        },
+        "total": 240
+      },
+      "Current SEC FYE 0903; historical windows independently bounded": {
+        "resolved": 198,
+        "states": {
+          "ambiguous_period": 18,
+          "insufficient_evidence": 6,
+          "resolved_derived": 30,
+          "resolved_reported": 168,
+          "unavailable": 18
+        },
+        "total": 240
+      },
+      "Current SEC FYE 0926; historical windows independently bounded": {
+        "resolved": 198,
+        "states": {
+          "ambiguous_period": 18,
+          "insufficient_evidence": 6,
+          "resolved_derived": 30,
+          "resolved_reported": 168,
+          "unavailable": 18
+        },
+        "total": 240
+      },
+      "Current SEC FYE 0927; historical windows independently bounded": {
+        "resolved": 198,
+        "states": {
+          "ambiguous_period": 18,
+          "insufficient_evidence": 6,
+          "resolved_derived": 30,
+          "resolved_reported": 168,
+          "unavailable": 18
+        },
+        "total": 240
+      },
+      "Current SEC FYE 0928; historical windows independently bounded": {
+        "resolved": 158,
+        "states": {
+          "ambiguous_period": 18,
+          "conflicted": 4,
+          "insufficient_evidence": 6,
+          "resolved_derived": 26,
+          "resolved_reported": 132,
+          "unavailable": 54
+        },
+        "total": 240
+      },
+      "Current SEC FYE 0930; historical windows independently bounded": {
+        "resolved": 455,
+        "states": {
+          "ambiguous_period": 72,
+          "conflicted": 1,
+          "insufficient_evidence": 24,
+          "resolved_derived": 59,
+          "resolved_reported": 396,
+          "unavailable": 168
+        },
+        "total": 720
+      },
+      "Current SEC FYE 1003; historical windows independently bounded": {
+        "resolved": 283,
+        "states": {
+          "ambiguous_period": 48,
+          "conflicted": 3,
+          "insufficient_evidence": 28,
+          "resolved_derived": 37,
+          "resolved_reported": 246,
+          "unavailable": 118
+        },
+        "total": 480
+      },
+      "Current SEC FYE 1026; historical windows independently bounded": {
+        "resolved": 192,
+        "states": {
+          "ambiguous_period": 12,
+          "insufficient_evidence": 12,
+          "resolved_derived": 30,
+          "resolved_reported": 162,
+          "unavailable": 24
+        },
+        "total": 240
+      },
+      "Current SEC FYE 1101; historical windows independently bounded": {
+        "resolved": 356,
+        "states": {
+          "ambiguous_period": 22,
+          "insufficient_evidence": 42,
+          "resolved_derived": 54,
+          "resolved_reported": 302,
+          "unavailable": 60
+        },
+        "total": 480
+      },
+      "Current SEC FYE 1127; historical windows independently bounded": {
+        "resolved": 192,
+        "states": {
+          "ambiguous_period": 12,
+          "insufficient_evidence": 12,
+          "resolved_derived": 30,
+          "resolved_reported": 162,
+          "unavailable": 24
+        },
+        "total": 240
+      },
+      "Current SEC FYE 1226; historical windows independently bounded": {
+        "resolved": 484,
+        "states": {
+          "ambiguous_period": 36,
+          "insufficient_evidence": 60,
+          "resolved_derived": 80,
+          "resolved_reported": 404,
+          "unavailable": 128,
+          "unsupported": 12
+        },
+        "total": 720
+      },
+      "Current SEC FYE 1227; historical windows independently bounded": {
+        "resolved": 124,
+        "states": {
+          "ambiguous_period": 12,
+          "insufficient_evidence": 12,
+          "resolved_derived": 30,
+          "resolved_reported": 94,
+          "unavailable": 92
+        },
+        "total": 240
+      },
+      "Current SEC FYE 1231; historical windows independently bounded": {
+        "resolved": 9062,
+        "states": {
+          "ambiguous_period": 906,
+          "conflicted": 206,
+          "insufficient_evidence": 920,
+          "resolved_derived": 1402,
+          "resolved_reported": 7660,
+          "unavailable": 2574,
+          "unsupported": 12
+        },
+        "total": 13680
+      }
+    },
+    "category": {
+      "business_services": {
+        "resolved": 134,
+        "states": {
+          "ambiguous_period": 58,
+          "insufficient_evidence": 6,
+          "resolved_derived": 10,
+          "resolved_reported": 124,
+          "unavailable": 30,
+          "unsupported": 12
+        },
+        "total": 240
+      },
+      "communications": {
+        "resolved": 845,
+        "states": {
+          "ambiguous_period": 90,
+          "conflicted": 1,
+          "insufficient_evidence": 70,
+          "resolved_derived": 111,
+          "resolved_reported": 734,
+          "unavailable": 194
+        },
+        "total": 1200
+      },
+      "consumer_discretionary": {
+        "resolved": 781,
+        "states": {
+          "ambiguous_period": 90,
+          "conflicted": 7,
+          "insufficient_evidence": 54,
+          "resolved_derived": 117,
+          "resolved_reported": 664,
+          "unavailable": 268
+        },
+        "total": 1200
+      },
+      "consumer_staples": {
+        "resolved": 1880,
+        "states": {
+          "ambiguous_period": 174,
+          "conflicted": 14,
+          "insufficient_evidence": 122,
+          "resolved_derived": 306,
+          "resolved_reported": 1574,
+          "unavailable": 438,
+          "unsupported": 12
+        },
+        "total": 2640
+      },
+      "energy": {
+        "resolved": 1330,
+        "states": {
+          "ambiguous_period": 100,
+          "conflicted": 60,
+          "insufficient_evidence": 116,
+          "resolved_derived": 222,
+          "resolved_reported": 1108,
+          "unavailable": 314
+        },
+        "total": 1920
+      },
+      "healthcare": {
+        "resolved": 1962,
+        "states": {
+          "ambiguous_period": 162,
+          "conflicted": 10,
+          "insufficient_evidence": 168,
+          "resolved_derived": 312,
+          "resolved_reported": 1650,
+          "unavailable": 578
+        },
+        "total": 2880
+      },
+      "industrials": {
+        "resolved": 1453,
+        "states": {
+          "ambiguous_period": 180,
+          "conflicted": 11,
+          "insufficient_evidence": 180,
+          "resolved_derived": 221,
+          "resolved_reported": 1232,
+          "unavailable": 576
+        },
+        "total": 2400
+      },
+      "large_retail": {
+        "resolved": 818,
+        "states": {
+          "ambiguous_period": 40,
+          "conflicted": 70,
+          "insufficient_evidence": 60,
+          "resolved_derived": 138,
+          "resolved_reported": 680,
+          "unavailable": 212
+        },
+        "total": 1200
+      },
+      "manufacturing": {
+        "resolved": 994,
+        "states": {
+          "ambiguous_period": 108,
+          "conflicted": 54,
+          "insufficient_evidence": 72,
+          "resolved_derived": 156,
+          "resolved_reported": 838,
+          "unavailable": 212
+        },
+        "total": 1440
+      },
+      "materials": {
+        "resolved": 290,
+        "states": {
+          "ambiguous_period": 72,
+          "insufficient_evidence": 30,
+          "resolved_derived": 30,
+          "resolved_reported": 260,
+          "unavailable": 88
+        },
+        "total": 480
+      },
+      "retail": {
+        "resolved": 880,
+        "states": {
+          "ambiguous_period": 98,
+          "conflicted": 8,
+          "insufficient_evidence": 100,
+          "resolved_derived": 136,
+          "resolved_reported": 744,
+          "unavailable": 342,
+          "unsupported": 12
+        },
+        "total": 1440
+      },
+      "technology": {
+        "resolved": 3594,
+        "states": {
+          "ambiguous_period": 206,
+          "conflicted": 20,
+          "insufficient_evidence": 138,
+          "resolved_derived": 534,
+          "resolved_reported": 3060,
+          "unavailable": 362
+        },
+        "total": 4320
+      },
+      "transportation": {
+        "resolved": 707,
+        "states": {
+          "ambiguous_period": 36,
+          "conflicted": 1,
+          "insufficient_evidence": 36,
+          "resolved_derived": 125,
+          "resolved_reported": 582,
+          "unavailable": 180
+        },
+        "total": 960
+      },
+      "utilities": {
+        "resolved": 1038,
+        "states": {
+          "ambiguous_period": 88,
+          "conflicted": 56,
+          "insufficient_evidence": 184,
+          "resolved_derived": 152,
+          "resolved_reported": 886,
+          "unavailable": 314
+        },
+        "total": 1680
+      }
+    },
+    "cik": {
+      "0000001800": {
+        "resolved": 158,
+        "states": {
+          "ambiguous_period": 12,
+          "insufficient_evidence": 12,
+          "resolved_derived": 30,
+          "resolved_reported": 128,
+          "unavailable": 58
+        },
+        "total": 240
+      },
+      "0000002488": {
+        "resolved": 158,
+        "states": {
+          "ambiguous_period": 12,
+          "insufficient_evidence": 12,
+          "resolved_derived": 30,
+          "resolved_reported": 128,
+          "unavailable": 58
+        },
+        "total": 240
+      },
+      "0000002969": {
+        "resolved": 168,
+        "states": {
+          "ambiguous_period": 36,
+          "insufficient_evidence": 12,
+          "resolved_derived": 12,
+          "resolved_reported": 156,
+          "unavailable": 24
+        },
+        "total": 240
+      },
+      "0000004904": {
+        "resolved": 154,
+        "states": {
+          "ambiguous_period": 26,
+          "conflicted": 2,
+          "insufficient_evidence": 24,
+          "resolved_derived": 20,
+          "resolved_reported": 134,
+          "unavailable": 34
+        },
+        "total": 240
+      },
+      "0000006951": {
+        "resolved": 192,
+        "states": {
+          "ambiguous_period": 12,
+          "insufficient_evidence": 12,
+          "resolved_derived": 30,
+          "resolved_reported": 162,
+          "unavailable": 24
+        },
+        "total": 240
+      },
+      "0000007084": {
+        "resolved": 130,
+        "states": {
+          "ambiguous_period": 28,
+          "conflicted": 12,
+          "insufficient_evidence": 12,
+          "resolved_derived": 16,
+          "resolved_reported": 114,
+          "unavailable": 58
+        },
+        "total": 240
+      },
+      "0000012659": {
+        "resolved": 134,
+        "states": {
+          "ambiguous_period": 58,
+          "insufficient_evidence": 6,
+          "resolved_derived": 10,
+          "resolved_reported": 124,
+          "unavailable": 30,
+          "unsupported": 12
+        },
+        "total": 240
+      },
+      "0000012927": {
+        "resolved": 192,
+        "states": {
+          "ambiguous_period": 12,
+          "insufficient_evidence": 12,
+          "resolved_derived": 30,
+          "resolved_reported": 162,
+          "unavailable": 24
+        },
+        "total": 240
+      },
+      "0000014272": {
+        "resolved": 192,
+        "states": {
+          "ambiguous_period": 12,
+          "insufficient_evidence": 12,
+          "resolved_derived": 30,
+          "resolved_reported": 162,
+          "unavailable": 24
+        },
+        "total": 240
+      },
+      "0000016732": {
+        "resolved": 198,
+        "states": {
+          "ambiguous_period": 18,
+          "insufficient_evidence": 6,
+          "resolved_derived": 30,
+          "resolved_reported": 168,
+          "unavailable": 18
+        },
+        "total": 240
+      },
+      "0000018230": {
+        "resolved": 162,
+        "states": {
+          "ambiguous_period": 8,
+          "insufficient_evidence": 32,
+          "resolved_derived": 24,
+          "resolved_reported": 138,
+          "unavailable": 38
+        },
+        "total": 240
+      },
+      "0000021344": {
+        "resolved": 158,
+        "states": {
+          "ambiguous_period": 12,
+          "insufficient_evidence": 12,
+          "resolved_derived": 30,
+          "resolved_reported": 128,
+          "unavailable": 58
+        },
+        "total": 240
+      },
+      "0000021665": {
+        "resolved": 192,
+        "states": {
+          "ambiguous_period": 12,
+          "insufficient_evidence": 12,
+          "resolved_derived": 30,
+          "resolved_reported": 162,
+          "unavailable": 24
+        },
+        "total": 240
+      },
+      "0000027419": {
+        "resolved": 118,
+        "states": {
+          "ambiguous_period": 10,
+          "insufficient_evidence": 18,
+          "resolved_derived": 22,
+          "resolved_reported": 96,
+          "unavailable": 94
+        },
+        "total": 240
+      },
+      "0000029534": {
+        "resolved": 154,
+        "states": {
+          "ambiguous_period": 6,
+          "insufficient_evidence": 18,
+          "resolved_derived": 30,
+          "resolved_reported": 124,
+          "unavailable": 62
+        },
+        "total": 240
+      },
+      "0000029905": {
+        "resolved": 113,
+        "states": {
+          "ambiguous_period": 16,
+          "conflicted": 1,
+          "insufficient_evidence": 16,
+          "resolved_derived": 23,
+          "resolved_reported": 90,
+          "unavailable": 94
+        },
+        "total": 240
+      },
+      "0000032604": {
+        "resolved": 126,
+        "states": {
+          "ambiguous_period": 18,
+          "insufficient_evidence": 6,
+          "resolved_derived": 18,
+          "resolved_reported": 108,
+          "unavailable": 90
+        },
+        "total": 240
+      },
+      "0000034088": {
+        "resolved": 184,
+        "states": {
+          "ambiguous_period": 20,
+          "insufficient_evidence": 12,
+          "resolved_derived": 30,
+          "resolved_reported": 154,
+          "unavailable": 24
+        },
+        "total": 240
+      },
+      "0000037996": {
+        "resolved": 162,
+        "states": {
+          "ambiguous_period": 30,
+          "conflicted": 12,
+          "insufficient_evidence": 12,
+          "resolved_derived": 18,
+          "resolved_reported": 144,
+          "unavailable": 24
+        },
+        "total": 240
+      },
+      "0000040545": {
+        "resolved": 123,
+        "states": {
+          "ambiguous_period": 42,
+          "conflicted": 5,
+          "insufficient_evidence": 12,
+          "resolved_derived": 13,
+          "resolved_reported": 110,
+          "unavailable": 58
+        },
+        "total": 240
+      },
+      "0000040704": {
+        "resolved": 208,
+        "states": {
+          "ambiguous_period": 32,
+          "resolved_derived": 24,
+          "resolved_reported": 184
+        },
+        "total": 240
+      },
+      "0000047111": {
+        "resolved": 158,
+        "states": {
+          "ambiguous_period": 12,
+          "insufficient_evidence": 12,
+          "resolved_derived": 30,
+          "resolved_reported": 128,
+          "unavailable": 58
+        },
+        "total": 240
+      },
+      "0000049826": {
+        "resolved": 112,
+        "states": {
+          "ambiguous_period": 8,
+          "insufficient_evidence": 44,
+          "resolved_derived": 20,
+          "resolved_reported": 92,
+          "unavailable": 76
+        },
+        "total": 240
+      },
+      "0000050863": {
+        "resolved": 124,
+        "states": {
+          "ambiguous_period": 12,
+          "insufficient_evidence": 12,
+          "resolved_derived": 30,
+          "resolved_reported": 94,
+          "unavailable": 92
+        },
+        "total": 240
+      },
+      "0000051143": {
+        "resolved": 192,
+        "states": {
+          "ambiguous_period": 12,
+          "insufficient_evidence": 12,
+          "resolved_derived": 30,
+          "resolved_reported": 162,
+          "unavailable": 24
+        },
+        "total": 240
+      },
+      "0000055785": {
+        "resolved": 158,
+        "states": {
+          "ambiguous_period": 12,
+          "insufficient_evidence": 12,
+          "resolved_derived": 30,
+          "resolved_reported": 128,
+          "unavailable": 58
+        },
+        "total": 240
+      },
+      "0000059478": {
+        "resolved": 158,
+        "states": {
+          "ambiguous_period": 12,
+          "insufficient_evidence": 12,
+          "resolved_derived": 30,
+          "resolved_reported": 128,
+          "unavailable": 58
+        },
+        "total": 240
+      },
+      "0000060667": {
+        "resolved": 186,
+        "states": {
+          "ambiguous_period": 6,
+          "insufficient_evidence": 18,
+          "resolved_derived": 30,
+          "resolved_reported": 156,
+          "unavailable": 30
+        },
+        "total": 240
+      },
+      "0000063276": {
+        "resolved": 158,
+        "states": {
+          "ambiguous_period": 12,
+          "insufficient_evidence": 12,
+          "resolved_derived": 30,
+          "resolved_reported": 128,
+          "unavailable": 58
+        },
+        "total": 240
+      },
+      "0000063908": {
+        "resolved": 155,
+        "states": {
+          "ambiguous_period": 12,
+          "conflicted": 3,
+          "insufficient_evidence": 12,
+          "resolved_derived": 15,
+          "resolved_reported": 140,
+          "unavailable": 58
+        },
+        "total": 240
+      },
+      "0000066740": {
+        "resolved": 144,
+        "states": {
+          "ambiguous_period": 22,
+          "conflicted": 4,
+          "insufficient_evidence": 12,
+          "resolved_derived": 22,
+          "resolved_reported": 122,
+          "unavailable": 58
+        },
+        "total": 240
+      },
+      "0000076334": {
+        "resolved": 174,
+        "states": {
+          "ambiguous_period": 12,
+          "insufficient_evidence": 28,
+          "resolved_derived": 24,
+          "resolved_reported": 150,
+          "unavailable": 26
+        },
+        "total": 240
+      },
+      "0000077476": {
+        "resolved": 192,
+        "states": {
+          "ambiguous_period": 12,
+          "insufficient_evidence": 12,
+          "resolved_derived": 30,
+          "resolved_reported": 162,
+          "unavailable": 24
+        },
+        "total": 240
+      },
+      "0000078003": {
+        "resolved": 184,
+        "states": {
+          "ambiguous_period": 16,
+          "conflicted": 4,
+          "insufficient_evidence": 12,
+          "resolved_derived": 26,
+          "resolved_reported": 158,
+          "unavailable": 24
+        },
+        "total": 240
+      },
+      "0000080424": {
+        "resolved": 200,
+        "states": {
+          "resolved_derived": 40,
+          "resolved_reported": 160,
+          "unavailable": 40
+        },
+        "total": 240
+      },
+      "0000087347": {
+        "resolved": 158,
+        "states": {
+          "ambiguous_period": 12,
+          "insufficient_evidence": 12,
+          "resolved_derived": 30,
+          "resolved_reported": 128,
+          "unavailable": 58
+        },
+        "total": 240
+      },
+      "0000092122": {
+        "resolved": 162,
+        "states": {
+          "ambiguous_period": 8,
+          "insufficient_evidence": 32,
+          "resolved_derived": 24,
+          "resolved_reported": 138,
+          "unavailable": 38
+        },
+        "total": 240
+      },
+      "0000093410": {
+        "resolved": 156,
+        "states": {
+          "ambiguous_period": 12,
+          "conflicted": 30,
+          "insufficient_evidence": 12,
+          "resolved_derived": 24,
+          "resolved_reported": 132,
+          "unavailable": 30
+        },
+        "total": 240
+      },
+      "0000097476": {
+        "resolved": 192,
+        "states": {
+          "ambiguous_period": 12,
+          "insufficient_evidence": 12,
+          "resolved_derived": 30,
+          "resolved_reported": 162,
+          "unavailable": 24
+        },
+        "total": 240
+      },
+      "0000097745": {
+        "resolved": 128,
+        "states": {
+          "ambiguous_period": 8,
+          "insufficient_evidence": 32,
+          "resolved_derived": 24,
+          "resolved_reported": 104,
+          "unavailable": 72
+        },
+        "total": 240
+      },
+      "0000100493": {
+        "resolved": 152,
+        "states": {
+          "ambiguous_period": 24,
+          "conflicted": 2,
+          "insufficient_evidence": 8,
+          "resolved_derived": 26,
+          "resolved_reported": 126,
+          "unavailable": 54
+        },
+        "total": 240
+      },
+      "0000100885": {
+        "resolved": 192,
+        "states": {
+          "ambiguous_period": 12,
+          "insufficient_evidence": 12,
+          "resolved_derived": 30,
+          "resolved_reported": 162,
+          "unavailable": 24
+        },
+        "total": 240
+      },
+      "0000104169": {
+        "resolved": 160,
+        "states": {
+          "conflicted": 40,
+          "resolved_derived": 32,
+          "resolved_reported": 128,
+          "unavailable": 40
+        },
+        "total": 240
+      },
+      "0000109198": {
+        "resolved": 152,
+        "states": {
+          "conflicted": 8,
+          "insufficient_evidence": 24,
+          "resolved_derived": 24,
+          "resolved_reported": 128,
+          "unavailable": 56
+        },
+        "total": 240
+      },
+      "0000200406": {
+        "resolved": 192,
+        "states": {
+          "ambiguous_period": 12,
+          "insufficient_evidence": 12,
+          "resolved_derived": 22,
+          "resolved_reported": 170,
+          "unavailable": 24
+        },
+        "total": 240
+      },
+      "0000277948": {
+        "resolved": 157,
+        "states": {
+          "ambiguous_period": 12,
+          "conflicted": 1,
+          "insufficient_evidence": 12,
+          "resolved_derived": 25,
+          "resolved_reported": 132,
+          "unavailable": 58
+        },
+        "total": 240
+      },
+      "0000310158": {
+        "resolved": 132,
+        "states": {
+          "ambiguous_period": 30,
+          "insufficient_evidence": 16,
+          "resolved_derived": 12,
+          "resolved_reported": 120,
+          "unavailable": 62
+        },
+        "total": 240
+      },
+      "0000315189": {
+        "resolved": 192,
+        "states": {
+          "ambiguous_period": 12,
+          "insufficient_evidence": 12,
+          "resolved_derived": 30,
+          "resolved_reported": 162,
+          "unavailable": 24
+        },
+        "total": 240
+      },
+      "0000318154": {
+        "resolved": 158,
+        "states": {
+          "ambiguous_period": 12,
+          "insufficient_evidence": 12,
+          "resolved_derived": 30,
+          "resolved_reported": 128,
+          "unavailable": 58
+        },
+        "total": 240
+      },
+      "0000319201": {
+        "resolved": 240,
+        "states": {
+          "resolved_derived": 40,
+          "resolved_reported": 200
+        },
+        "total": 240
+      },
+      "0000320187": {
+        "resolved": 200,
+        "states": {
+          "resolved_derived": 40,
+          "resolved_reported": 160,
+          "unavailable": 40
+        },
+        "total": 240
+      },
+      "0000320193": {
+        "resolved": 198,
+        "states": {
+          "ambiguous_period": 18,
+          "insufficient_evidence": 6,
+          "resolved_derived": 30,
+          "resolved_reported": 168,
+          "unavailable": 18
+        },
+        "total": 240
+      },
+      "0000354950": {
+        "resolved": 186,
+        "states": {
+          "ambiguous_period": 6,
+          "insufficient_evidence": 18,
+          "resolved_derived": 30,
+          "resolved_reported": 156,
+          "unavailable": 30
+        },
+        "total": 240
+      },
+      "0000707549": {
+        "resolved": 198,
+        "states": {
+          "ambiguous_period": 18,
+          "insufficient_evidence": 6,
+          "resolved_derived": 30,
+          "resolved_reported": 168,
+          "unavailable": 18
+        },
+        "total": 240
+      },
+      "0000715957": {
+        "resolved": 168,
+        "states": {
+          "ambiguous_period": 12,
+          "conflicted": 24,
+          "insufficient_evidence": 12,
+          "resolved_derived": 18,
+          "resolved_reported": 150,
+          "unavailable": 24
+        },
+        "total": 240
+      },
+      "0000723125": {
+        "resolved": 198,
+        "states": {
+          "ambiguous_period": 18,
+          "insufficient_evidence": 6,
+          "resolved_derived": 30,
+          "resolved_reported": 168,
+          "unavailable": 18
+        },
+        "total": 240
+      },
+      "0000745732": {
+        "resolved": 116,
+        "states": {
+          "ambiguous_period": 24,
+          "insufficient_evidence": 24,
+          "resolved_derived": 20,
+          "resolved_reported": 96,
+          "unavailable": 76
+        },
+        "total": 240
+      },
+      "0000753308": {
+        "resolved": 162,
+        "states": {
+          "ambiguous_period": 8,
+          "insufficient_evidence": 32,
+          "resolved_derived": 24,
+          "resolved_reported": 138,
+          "unavailable": 38
+        },
+        "total": 240
+      },
+      "0000764478": {
+        "resolved": 180,
+        "states": {
+          "ambiguous_period": 20,
+          "resolved_derived": 20,
+          "resolved_reported": 160,
+          "unavailable": 40
+        },
+        "total": 240
+      },
+      "0000773840": {
+        "resolved": 146,
+        "states": {
+          "ambiguous_period": 24,
+          "insufficient_evidence": 12,
+          "resolved_derived": 18,
+          "resolved_reported": 128,
+          "unavailable": 58
+        },
+        "total": 240
+      },
+      "0000789019": {
+        "resolved": 240,
+        "states": {
+          "resolved_derived": 24,
+          "resolved_reported": 216
+        },
+        "total": 240
+      },
+      "0000796343": {
+        "resolved": 192,
+        "states": {
+          "ambiguous_period": 12,
+          "insufficient_evidence": 12,
+          "resolved_derived": 30,
+          "resolved_reported": 162,
+          "unavailable": 24
+        },
+        "total": 240
+      },
+      "0000804328": {
+        "resolved": 198,
+        "states": {
+          "ambiguous_period": 18,
+          "insufficient_evidence": 6,
+          "resolved_derived": 30,
+          "resolved_reported": 168,
+          "unavailable": 18
+        },
+        "total": 240
+      },
+      "0000821189": {
+        "resolved": 158,
+        "states": {
+          "ambiguous_period": 12,
+          "insufficient_evidence": 12,
+          "resolved_derived": 30,
+          "resolved_reported": 128,
+          "unavailable": 58
+        },
+        "total": 240
+      },
+      "0000823768": {
+        "resolved": 192,
+        "states": {
+          "ambiguous_period": 12,
+          "insufficient_evidence": 12,
+          "resolved_derived": 30,
+          "resolved_reported": 162,
+          "unavailable": 24
+        },
+        "total": 240
+      },
+      "0000829224": {
+        "resolved": 158,
+        "states": {
+          "ambiguous_period": 18,
+          "conflicted": 4,
+          "insufficient_evidence": 6,
+          "resolved_derived": 26,
+          "resolved_reported": 132,
+          "unavailable": 54
+        },
+        "total": 240
+      },
+      "0000858877": {
+        "resolved": 198,
+        "states": {
+          "ambiguous_period": 18,
+          "insufficient_evidence": 6,
+          "resolved_derived": 30,
+          "resolved_reported": 168,
+          "unavailable": 18
+        },
+        "total": 240
+      },
+      "0000866787": {
+        "resolved": 162,
+        "states": {
+          "ambiguous_period": 18,
+          "insufficient_evidence": 6,
+          "resolved_derived": 30,
+          "resolved_reported": 132,
+          "unavailable": 54
+        },
+        "total": 240
+      },
+      "0000872589": {
+        "resolved": 192,
+        "states": {
+          "ambiguous_period": 12,
+          "insufficient_evidence": 12,
+          "resolved_derived": 30,
+          "resolved_reported": 162,
+          "unavailable": 24
+        },
+        "total": 240
+      },
+      "0000882095": {
+        "resolved": 124,
+        "states": {
+          "ambiguous_period": 12,
+          "insufficient_evidence": 12,
+          "resolved_derived": 30,
+          "resolved_reported": 94,
+          "unavailable": 92
+        },
+        "total": 240
+      },
+      "0000896878": {
+        "resolved": 182,
+        "states": {
+          "ambiguous_period": 22,
+          "conflicted": 12,
+          "insufficient_evidence": 6,
+          "resolved_derived": 24,
+          "resolved_reported": 158,
+          "unavailable": 18
+        },
+        "total": 240
+      },
+      "0000898173": {
+        "resolved": 116,
+        "states": {
+          "ambiguous_period": 30,
+          "insufficient_evidence": 28,
+          "resolved_derived": 12,
+          "resolved_reported": 104,
+          "unavailable": 54,
+          "unsupported": 12
+        },
+        "total": 240
+      },
+      "0000909832": {
+        "resolved": 168,
+        "states": {
+          "ambiguous_period": 18,
+          "conflicted": 30,
+          "insufficient_evidence": 6,
+          "resolved_derived": 24,
+          "resolved_reported": 144,
+          "unavailable": 18
+        },
+        "total": 240
+      },
+      "0001018724": {
+        "resolved": 110,
+        "states": {
+          "ambiguous_period": 48,
+          "insufficient_evidence": 24,
+          "resolved_derived": 6,
+          "resolved_reported": 104,
+          "unavailable": 58
+        },
+        "total": 240
+      },
+      "0001024478": {
+        "resolved": 161,
+        "states": {
+          "ambiguous_period": 18,
+          "conflicted": 1,
+          "insufficient_evidence": 6,
+          "resolved_derived": 29,
+          "resolved_reported": 132,
+          "unavailable": 54
+        },
+        "total": 240
+      },
+      "0001032208": {
+        "resolved": 110,
+        "states": {
+          "ambiguous_period": 18,
+          "conflicted": 30,
+          "insufficient_evidence": 20,
+          "resolved_derived": 18,
+          "resolved_reported": 92,
+          "unavailable": 62
+        },
+        "total": 240
+      },
+      "0001035002": {
+        "resolved": 128,
+        "states": {
+          "ambiguous_period": 8,
+          "insufficient_evidence": 32,
+          "resolved_derived": 24,
+          "resolved_reported": 104,
+          "unavailable": 72
+        },
+        "total": 240
+      },
+      "0001035267": {
+        "resolved": 192,
+        "states": {
+          "ambiguous_period": 12,
+          "insufficient_evidence": 12,
+          "resolved_derived": 30,
+          "resolved_reported": 162,
+          "unavailable": 24
+        },
+        "total": 240
+      },
+      "0001045810": {
+        "resolved": 236,
+        "states": {
+          "ambiguous_period": 4,
+          "resolved_derived": 36,
+          "resolved_reported": 200
+        },
+        "total": 240
+      },
+      "0001048911": {
+        "resolved": 200,
+        "states": {
+          "resolved_derived": 40,
+          "resolved_reported": 160,
+          "unavailable": 40
+        },
+        "total": 240
+      },
+      "0001065280": {
+        "resolved": 192,
+        "states": {
+          "ambiguous_period": 12,
+          "insufficient_evidence": 12,
+          "resolved_derived": 18,
+          "resolved_reported": 174,
+          "unavailable": 24
+        },
+        "total": 240
+      },
+      "0001090727": {
+        "resolved": 158,
+        "states": {
+          "ambiguous_period": 12,
+          "insufficient_evidence": 12,
+          "resolved_derived": 30,
+          "resolved_reported": 128,
+          "unavailable": 58
+        },
+        "total": 240
+      },
+      "0001108524": {
+        "resolved": 240,
+        "states": {
+          "resolved_derived": 24,
+          "resolved_reported": 216
+        },
+        "total": 240
+      },
+      "0001109357": {
+        "resolved": 162,
+        "states": {
+          "ambiguous_period": 8,
+          "insufficient_evidence": 32,
+          "resolved_derived": 24,
+          "resolved_reported": 138,
+          "unavailable": 38
+        },
+        "total": 240
+      },
+      "0001163165": {
+        "resolved": 162,
+        "states": {
+          "ambiguous_period": 12,
+          "conflicted": 30,
+          "insufficient_evidence": 12,
+          "resolved_derived": 24,
+          "resolved_reported": 138,
+          "unavailable": 24
+        },
+        "total": 240
+      },
+      "0001166691": {
+        "resolved": 142,
+        "states": {
+          "ambiguous_period": 26,
+          "insufficient_evidence": 14,
+          "resolved_derived": 26,
+          "resolved_reported": 116,
+          "unavailable": 58
+        },
+        "total": 240
+      },
+      "0001318605": {
+        "resolved": 162,
+        "states": {
+          "ambiguous_period": 30,
+          "conflicted": 12,
+          "insufficient_evidence": 12,
+          "resolved_derived": 24,
+          "resolved_reported": 138,
+          "unavailable": 24
+        },
+        "total": 240
+      },
+      "0001326160": {
+        "resolved": 120,
+        "states": {
+          "ambiguous_period": 8,
+          "insufficient_evidence": 32,
+          "resolved_derived": 24,
+          "resolved_reported": 96,
+          "unavailable": 80
+        },
+        "total": 240
+      },
+      "0001326801": {
+        "resolved": 192,
+        "states": {
+          "ambiguous_period": 12,
+          "insufficient_evidence": 12,
+          "resolved_derived": 30,
+          "resolved_reported": 162,
+          "unavailable": 24
+        },
+        "total": 240
+      },
+      "0001341439": {
+        "resolved": 184,
+        "states": {
+          "ambiguous_period": 8,
+          "conflicted": 8,
+          "resolved_derived": 32,
+          "resolved_reported": 152,
+          "unavailable": 40
+        },
+        "total": 240
+      },
+      "0001373715": {
+        "resolved": 192,
+        "states": {
+          "ambiguous_period": 12,
+          "insufficient_evidence": 12,
+          "resolved_derived": 30,
+          "resolved_reported": 162,
+          "unavailable": 24
+        },
+        "total": 240
+      },
+      "0001467858": {
+        "resolved": 162,
+        "states": {
+          "ambiguous_period": 12,
+          "conflicted": 30,
+          "insufficient_evidence": 12,
+          "resolved_derived": 24,
+          "resolved_reported": 138,
+          "unavailable": 24
+        },
+        "total": 240
+      },
+      "0001510295": {
+        "resolved": 192,
+        "states": {
+          "ambiguous_period": 12,
+          "insufficient_evidence": 12,
+          "resolved_derived": 30,
+          "resolved_reported": 162,
+          "unavailable": 24
+        },
+        "total": 240
+      },
+      "0001534701": {
+        "resolved": 192,
+        "states": {
+          "ambiguous_period": 12,
+          "insufficient_evidence": 12,
+          "resolved_derived": 30,
+          "resolved_reported": 162,
+          "unavailable": 24
+        },
+        "total": 240
+      },
+      "0001551152": {
+        "resolved": 152,
+        "states": {
+          "ambiguous_period": 12,
+          "conflicted": 6,
+          "insufficient_evidence": 12,
+          "resolved_derived": 18,
+          "resolved_reported": 134,
+          "unavailable": 58
+        },
+        "total": 240
+      },
+      "0001637459": {
+        "resolved": 134,
+        "states": {
+          "ambiguous_period": 12,
+          "insufficient_evidence": 36,
+          "resolved_derived": 20,
+          "resolved_reported": 114,
+          "unavailable": 46,
+          "unsupported": 12
+        },
+        "total": 240
+      },
+      "0001652044": {
+        "resolved": 188,
+        "states": {
+          "ambiguous_period": 16,
+          "insufficient_evidence": 12,
+          "resolved_derived": 26,
+          "resolved_reported": 162,
+          "unavailable": 24
+        },
+        "total": 240
+      },
+      "0001730168": {
+        "resolved": 164,
+        "states": {
+          "ambiguous_period": 10,
+          "insufficient_evidence": 30,
+          "resolved_derived": 24,
+          "resolved_reported": 140,
+          "unavailable": 36
+        },
+        "total": 240
+      },
+      "0001744489": {
+        "resolved": 131,
+        "states": {
+          "ambiguous_period": 24,
+          "conflicted": 1,
+          "insufficient_evidence": 20,
+          "resolved_derived": 11,
+          "resolved_reported": 120,
+          "unavailable": 64
+        },
+        "total": 240
+      },
+      "0001751788": {
+        "resolved": 122,
+        "states": {
+          "ambiguous_period": 36,
+          "insufficient_evidence": 18,
+          "resolved_derived": 18,
+          "resolved_reported": 104,
+          "unavailable": 64
+        },
+        "total": 240
+      }
+    },
+    "metric": {
+      "assets": {
+        "resolved": 3480,
+        "states": {
+          "resolved_reported": 3480,
+          "unavailable": 508,
+          "unsupported": 12
+        },
+        "total": 4000
+      },
+      "cash_and_cash_equivalents": {
+        "resolved": 3050,
+        "states": {
+          "resolved_reported": 3050,
+          "unavailable": 938,
+          "unsupported": 12
+        },
+        "total": 4000
+      },
+      "liabilities": {
+        "resolved": 2088,
+        "states": {
+          "resolved_reported": 2088,
+          "unavailable": 1900,
+          "unsupported": 12
+        },
+        "total": 4000
+      },
+      "net_income": {
+        "resolved": 2724,
+        "states": {
+          "ambiguous_period": 472,
+          "conflicted": 4,
+          "insufficient_evidence": 504,
+          "resolved_derived": 478,
+          "resolved_reported": 2246,
+          "unavailable": 296
+        },
+        "total": 4000
+      },
+      "operating_cash_flow": {
+        "resolved": 2910,
+        "states": {
+          "ambiguous_period": 484,
+          "conflicted": 22,
+          "insufficient_evidence": 376,
+          "resolved_derived": 1664,
+          "resolved_reported": 1246,
+          "unavailable": 208
+        },
+        "total": 4000
+      },
+      "revenue": {
+        "resolved": 2454,
+        "states": {
+          "ambiguous_period": 546,
+          "conflicted": 286,
+          "insufficient_evidence": 456,
+          "resolved_derived": 428,
+          "resolved_reported": 2026,
+          "unavailable": 258
+        },
+        "total": 4000
+      }
+    },
+    "period": {
+      "FY": {
+        "resolved": 3170,
+        "states": {
+          "ambiguous_period": 52,
+          "conflicted": 88,
+          "resolved_reported": 3170,
+          "unavailable": 1490
+        },
+        "total": 4800
+      },
+      "Q1": {
+        "resolved": 3604,
+        "states": {
+          "ambiguous_period": 572,
+          "conflicted": 48,
+          "resolved_reported": 3604,
+          "unavailable": 552,
+          "unsupported": 24
+        },
+        "total": 4800
+      },
+      "Q2": {
+        "resolved": 3558,
+        "states": {
+          "ambiguous_period": 576,
+          "conflicted": 58,
+          "insufficient_evidence": 158,
+          "resolved_derived": 540,
+          "resolved_reported": 3018,
+          "unavailable": 438,
+          "unsupported": 12
+        },
+        "total": 4800
+      },
+      "Q3": {
+        "resolved": 3266,
+        "states": {
+          "ambiguous_period": 188,
+          "conflicted": 58,
+          "insufficient_evidence": 520,
+          "resolved_derived": 544,
+          "resolved_reported": 2722,
+          "unavailable": 768
+        },
+        "total": 4800
+      },
+      "Q4": {
+        "resolved": 3108,
+        "states": {
+          "ambiguous_period": 114,
+          "conflicted": 60,
+          "insufficient_evidence": 658,
+          "resolved_derived": 1486,
+          "resolved_reported": 1622,
+          "unavailable": 860
+        },
+        "total": 4800
+      }
+    },
+    "revision_policy": {
+      "first_reported": {
+        "resolved": 8367,
+        "states": {
+          "ambiguous_period": 751,
+          "conflicted": 142,
+          "insufficient_evidence": 668,
+          "resolved_derived": 1299,
+          "resolved_reported": 7068,
+          "unavailable": 2054,
+          "unsupported": 18
+        },
+        "total": 12000
+      },
+      "latest_available": {
+        "resolved": 8339,
+        "states": {
+          "ambiguous_period": 751,
+          "conflicted": 170,
+          "insufficient_evidence": 668,
+          "resolved_derived": 1271,
+          "resolved_reported": 7068,
+          "unavailable": 2054,
+          "unsupported": 18
+        },
+        "total": 12000
+      }
+    }
+  },
+  "coverage_meaning": "Scalar availability in this purposive population, not correctness or market-wide accuracy.",
+  "failure_categories": {
+    "ambiguous_fiscal_period": 2060,
+    "conflicting_observations": 312,
+    "incompatible_revision_operands": 23,
+    "insufficient_cumulative_facts": 1414,
+    "not_available_as_of": 3878,
+    "unsupported_concept": 1548,
+    "unsupported_request": 36
+  },
+  "findings_by_kind": {
+    "expected_conservatism": 7294,
+    "resolved": 16706
+  },
+  "format": "finpanel-release-scale-summary-v1",
+  "invariant_checks": 2435238,
+  "issuer_count": 100,
+  "measurements": [
+    {
+      "candidate_builds": 1200,
+      "candidate_reuses": 10800,
+      "issuer_batches": 50,
+      "process_peak_rss_mib": 880.03125,
+      "raw_response_reuses": 1100,
+      "resumed": false,
+      "reuse": [
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 993
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 993
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 833
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 913
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 993
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 817
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 705
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 993
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 993
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 953
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 1025
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 993
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 993
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 969
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 1033
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 961
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 761
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 993
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 873
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 801
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 769
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 993
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 1073
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 993
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 228
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 1714
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 993
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 993
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 1033
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 993
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 897
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 865
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 993
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 993
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 897
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 1025
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 993
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 1025
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 921
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 993
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 1025
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 881
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 993
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 929
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 1121
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 865
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 961
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 865
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 993
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 993
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 212
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 1706
+          }
+        }
+      ],
+      "snapshot_loads": 702,
+      "snapshot_object_reads": 103311,
+      "source_parse_hits": 5650,
+      "source_parses": 50,
+      "verified_completed_units": 50,
+      "wall_seconds": 2353.232624458,
+      "workers": 1
+    },
+    {
+      "candidate_builds": 1200,
+      "candidate_reuses": 10800,
+      "issuer_batches": 50,
+      "process_peak_rss_mib": 976.109375,
+      "raw_response_reuses": 1100,
+      "resumed": false,
+      "reuse": [
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 1025
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 953
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 1033
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 953
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 801
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 953
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 212
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 1578
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 1089
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 801
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 833
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 897
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 993
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 953
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 993
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 993
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 953
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 953
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 953
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 993
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 993
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 881
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 857
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 881
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 849
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 953
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 905
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 1089
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 993
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 929
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 1025
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 897
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 993
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 897
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 1025
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 244
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 1730
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 921
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 849
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 196
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 1602
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 993
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 833
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 993
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 921
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 993
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 993
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 801
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 1049
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 897
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 1017
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 865
+          }
+        },
+        {
+          "builds": {
+            "companyfacts_parse": 1,
+            "revision_analysis": 130
+          },
+          "hits": {
+            "companyfacts_parse": 113,
+            "revision_analysis": 825
+          }
+        }
+      ],
+      "snapshot_loads": 702,
+      "snapshot_object_reads": 103265,
+      "source_parse_hits": 5650,
+      "source_parses": 50,
+      "verified_completed_units": 50,
+      "wall_seconds": 2328.2404377089997,
+      "workers": 1
+    }
+  ],
+  "observed_calendar_cohorts": {
+    "evidence": [
+      {
+        "cik": "0000001800",
+        "cohort": "calendar_year",
+        "source_sha256": "5d751f73769f5c0a1f9bee0de16cb39d8961cf3f1ebb5558d555bb2678afb4ff",
+        "windows": [
+          [
+            "2022-01-01",
+            "2022-12-31",
+            365
+          ],
+          [
+            "2023-01-01",
+            "2023-12-31",
+            365
+          ],
+          [
+            "2024-01-01",
+            "2024-12-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0000002488",
+        "cohort": "53_week_observed",
+        "source_sha256": "21a29c75076d90fced568785d855fc427a15c7458bc0bb153a9dedd88ad3349e",
+        "windows": [
+          [
+            "2021-12-26",
+            "2022-12-31",
+            371
+          ],
+          [
+            "2023-01-01",
+            "2023-12-30",
+            364
+          ],
+          [
+            "2023-12-31",
+            "2024-12-28",
+            364
+          ]
+        ]
+      },
+      {
+        "cik": "0000002969",
+        "cohort": "noncalendar_annual",
+        "source_sha256": "b950a51ccd6520b9874e8452b9be9d2a43736bf24b7ea2413c44d34cf72a623a",
+        "windows": [
+          [
+            "2021-10-01",
+            "2022-09-30",
+            365
+          ],
+          [
+            "2022-10-01",
+            "2023-09-30",
+            365
+          ],
+          [
+            "2023-10-01",
+            "2024-09-30",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0000004904",
+        "cohort": "calendar_year",
+        "source_sha256": "c9040e99381d768142f28e73688dbd888766a5619dd7f701d653a7905d17b84d",
+        "windows": [
+          [
+            "2022-01-01",
+            "2022-12-31",
+            365
+          ],
+          [
+            "2023-01-01",
+            "2023-12-31",
+            365
+          ],
+          [
+            "2024-01-01",
+            "2024-12-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0000006951",
+        "cohort": "52_week_observed",
+        "source_sha256": "65ecfedd5bfd3768d30286b52badee080c655cc8d1077524bdb6ca8928380fa7",
+        "windows": [
+          [
+            "2021-11-01",
+            "2022-10-30",
+            364
+          ],
+          [
+            "2022-10-31",
+            "2023-10-29",
+            364
+          ],
+          [
+            "2023-10-30",
+            "2024-10-27",
+            364
+          ]
+        ]
+      },
+      {
+        "cik": "0000007084",
+        "cohort": "calendar_year",
+        "source_sha256": "143a6bf88adeafcd9eeb218722dd5059584ff25dd15b7d056712930c735567ea",
+        "windows": [
+          [
+            "2022-01-01",
+            "2022-12-31",
+            365
+          ],
+          [
+            "2023-01-01",
+            "2023-12-31",
+            365
+          ],
+          [
+            "2024-01-01",
+            "2024-12-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0000012659",
+        "cohort": "noncalendar_annual",
+        "source_sha256": "06e056b0473fb43c4b6cdb5d54573cc51c7a34dd6db11864864dd21f575d7a4b",
+        "windows": [
+          [
+            "2021-07-01",
+            "2022-06-30",
+            365
+          ],
+          [
+            "2022-07-01",
+            "2023-06-30",
+            365
+          ],
+          [
+            "2023-07-01",
+            "2024-06-30",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0000012927",
+        "cohort": "calendar_year",
+        "source_sha256": "0c63f1ae7cc10b3c27e0c94f2add0c461e6293036dd4e52e52ae6dbb6f206e15",
+        "windows": [
+          [
+            "2022-01-01",
+            "2022-12-31",
+            365
+          ],
+          [
+            "2023-01-01",
+            "2023-12-31",
+            365
+          ],
+          [
+            "2024-01-01",
+            "2024-12-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0000014272",
+        "cohort": "calendar_year",
+        "source_sha256": "a18ba88ed8f92b7f0cbc4d83a6db14b8fba95a5721f7f83a6306ca843ad40c2f",
+        "windows": [
+          [
+            "2022-01-01",
+            "2022-12-31",
+            365
+          ],
+          [
+            "2023-01-01",
+            "2023-12-31",
+            365
+          ],
+          [
+            "2024-01-01",
+            "2024-12-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0000016732",
+        "cohort": "52_week_observed",
+        "source_sha256": "7fe30aa1d0907099e195b1a37f491261e5ed59d466e4174f53215b5f1c345bb4",
+        "windows": [
+          [
+            "2021-08-02",
+            "2022-07-31",
+            364
+          ],
+          [
+            "2022-08-01",
+            "2023-07-30",
+            364
+          ],
+          [
+            "2023-07-31",
+            "2024-07-28",
+            364
+          ]
+        ]
+      },
+      {
+        "cik": "0000018230",
+        "cohort": "calendar_year",
+        "source_sha256": "01ddc6ffa741f0a7da440e2949b2ed19cec14fab35435a398e3f3d0100019715",
+        "windows": [
+          [
+            "2022-01-01",
+            "2022-12-31",
+            365
+          ],
+          [
+            "2023-01-01",
+            "2023-12-31",
+            365
+          ],
+          [
+            "2024-01-01",
+            "2024-12-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0000021344",
+        "cohort": "calendar_year",
+        "source_sha256": "53d363a9aa3071406cda9857654358f4dca42e174a1defb8cc1ce9ad2a4c9e40",
+        "windows": [
+          [
+            "2022-01-01",
+            "2022-12-31",
+            365
+          ],
+          [
+            "2023-01-01",
+            "2023-12-31",
+            365
+          ],
+          [
+            "2024-01-01",
+            "2024-12-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0000021665",
+        "cohort": "calendar_year",
+        "source_sha256": "450c2668961565047c7745ff5df5d38b40cc57d6940c48fe8f32dca13100f96d",
+        "windows": [
+          [
+            "2022-01-01",
+            "2022-12-31",
+            365
+          ],
+          [
+            "2023-01-01",
+            "2023-12-31",
+            365
+          ],
+          [
+            "2024-01-01",
+            "2024-12-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0000027419",
+        "cohort": "53_week_observed",
+        "source_sha256": "eb15a2cd524e99ff27675db78840d039ec4a68b9cc2dcb10accbcb299933a487",
+        "windows": [
+          [
+            "2021-01-31",
+            "2022-01-29",
+            364
+          ],
+          [
+            "2022-01-30",
+            "2023-01-28",
+            364
+          ],
+          [
+            "2023-01-29",
+            "2024-02-03",
+            371
+          ],
+          [
+            "2024-02-04",
+            "2025-02-01",
+            364
+          ]
+        ]
+      },
+      {
+        "cik": "0000029534",
+        "cohort": "53_week_observed",
+        "source_sha256": "16157a14c6c91f04a8b3e89ccedfc91ee0d5ea6978f8c6ed1d25d8cfe73541cf",
+        "windows": [
+          [
+            "2021-01-30",
+            "2022-01-28",
+            364
+          ],
+          [
+            "2022-01-29",
+            "2023-02-03",
+            371
+          ],
+          [
+            "2023-02-04",
+            "2024-02-02",
+            364
+          ],
+          [
+            "2024-02-03",
+            "2025-01-31",
+            364
+          ]
+        ]
+      },
+      {
+        "cik": "0000029905",
+        "cohort": "calendar_year",
+        "source_sha256": "a91cc758b810966dc29303a97a401b26ab5a5467973cff6c8c61472536abdc4c",
+        "windows": [
+          [
+            "2022-01-01",
+            "2022-12-31",
+            365
+          ],
+          [
+            "2023-01-01",
+            "2023-12-31",
+            365
+          ],
+          [
+            "2024-01-01",
+            "2024-12-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0000032604",
+        "cohort": "noncalendar_annual",
+        "source_sha256": "195bcbf29fba4dfc4715c44e24c71f9da3bbca9c4d04f1166fd3a9ec661df27b",
+        "windows": [
+          [
+            "2021-10-01",
+            "2022-09-30",
+            365
+          ],
+          [
+            "2022-10-01",
+            "2023-09-30",
+            365
+          ],
+          [
+            "2023-10-01",
+            "2024-09-30",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0000034088",
+        "cohort": "calendar_year",
+        "source_sha256": "9b95535419e5662e3deed01de803e83deead477a4c81316e1c45186368fdd8b8",
+        "windows": [
+          [
+            "2022-01-01",
+            "2022-12-31",
+            365
+          ],
+          [
+            "2023-01-01",
+            "2023-12-31",
+            365
+          ],
+          [
+            "2024-01-01",
+            "2024-12-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0000037996",
+        "cohort": "calendar_year",
+        "source_sha256": "db9621054cffb365bcb65cde1f53e4161fb26ac56ebf8a95b9066b3d2375203e",
+        "windows": [
+          [
+            "2022-01-01",
+            "2022-12-31",
+            365
+          ],
+          [
+            "2023-01-01",
+            "2023-12-31",
+            365
+          ],
+          [
+            "2024-01-01",
+            "2024-12-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0000040545",
+        "cohort": "calendar_year",
+        "source_sha256": "8c18acb17bbe0760fae6205c5df75b805480c58d4d1dbbabeba206d9ca36e1e3",
+        "windows": [
+          [
+            "2022-01-01",
+            "2022-12-31",
+            365
+          ],
+          [
+            "2023-01-01",
+            "2023-12-31",
+            365
+          ],
+          [
+            "2024-01-01",
+            "2024-12-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0000040704",
+        "cohort": "52_week_observed",
+        "source_sha256": "3dd0552f7e909fcef40d3d99b413e9fa360fd1110ebbce0ce507ed71e611aeda",
+        "windows": [
+          [
+            "2021-05-31",
+            "2022-05-29",
+            364
+          ],
+          [
+            "2022-05-30",
+            "2023-05-28",
+            364
+          ],
+          [
+            "2023-05-29",
+            "2024-05-26",
+            364
+          ]
+        ]
+      },
+      {
+        "cik": "0000047111",
+        "cohort": "calendar_year",
+        "source_sha256": "83d796de405903e86aacc31ab69ba5c0071939fe1195754576c1ba9b03cdf52c",
+        "windows": [
+          [
+            "2022-01-01",
+            "2022-12-31",
+            365
+          ],
+          [
+            "2023-01-01",
+            "2023-12-31",
+            365
+          ],
+          [
+            "2024-01-01",
+            "2024-12-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0000049826",
+        "cohort": "calendar_year",
+        "source_sha256": "93020fcf7c220cd160cf54605d3290782169ab1d62d0cc787988c7520bd4bf9a",
+        "windows": [
+          [
+            "2022-01-01",
+            "2022-12-31",
+            365
+          ],
+          [
+            "2023-01-01",
+            "2023-12-31",
+            365
+          ],
+          [
+            "2024-01-01",
+            "2024-12-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0000050863",
+        "cohort": "53_week_observed",
+        "source_sha256": "70056711b8b04d3a27e4a42b6d86e26f85ddaa3d59e480039d66ccfb353eb0b8",
+        "windows": [
+          [
+            "2021-12-26",
+            "2022-12-31",
+            371
+          ],
+          [
+            "2023-01-01",
+            "2023-12-30",
+            364
+          ],
+          [
+            "2023-12-31",
+            "2024-12-28",
+            364
+          ]
+        ]
+      },
+      {
+        "cik": "0000051143",
+        "cohort": "calendar_year",
+        "source_sha256": "1660477fa5713e5749c3038cf22b3c776414acfc6e1e721d1772c91101dc5e5c",
+        "windows": [
+          [
+            "2022-01-01",
+            "2022-12-31",
+            365
+          ],
+          [
+            "2023-01-01",
+            "2023-12-31",
+            365
+          ],
+          [
+            "2024-01-01",
+            "2024-12-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0000055785",
+        "cohort": "calendar_year",
+        "source_sha256": "20a44ed6a1f55fa51c786121735a8e3de8269d63c3584ad87844514756d04e18",
+        "windows": [
+          [
+            "2022-01-01",
+            "2022-12-31",
+            365
+          ],
+          [
+            "2023-01-01",
+            "2023-12-31",
+            365
+          ],
+          [
+            "2024-01-01",
+            "2024-12-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0000059478",
+        "cohort": "calendar_year",
+        "source_sha256": "3fe29099e6efaef9acac95711c271de1a644602939ea18487e29708310985942",
+        "windows": [
+          [
+            "2022-01-01",
+            "2022-12-31",
+            365
+          ],
+          [
+            "2023-01-01",
+            "2023-12-31",
+            365
+          ],
+          [
+            "2024-01-01",
+            "2024-12-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0000060667",
+        "cohort": "53_week_observed",
+        "source_sha256": "7912551d61433f5e7e863ac602ebf24ee1484699e10aa556534f0055fff2ea7d",
+        "windows": [
+          [
+            "2021-01-30",
+            "2022-01-28",
+            364
+          ],
+          [
+            "2022-01-29",
+            "2023-02-03",
+            371
+          ],
+          [
+            "2023-02-04",
+            "2024-02-02",
+            364
+          ],
+          [
+            "2024-02-03",
+            "2025-01-31",
+            364
+          ]
+        ]
+      },
+      {
+        "cik": "0000063276",
+        "cohort": "calendar_year",
+        "source_sha256": "b5b67c2c769d57e73c0289c7fa5e8b30ca9a9429dbc289556ff3670622c84161",
+        "windows": [
+          [
+            "2022-01-01",
+            "2022-12-31",
+            365
+          ],
+          [
+            "2023-01-01",
+            "2023-12-31",
+            365
+          ],
+          [
+            "2024-01-01",
+            "2024-12-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0000063908",
+        "cohort": "calendar_year",
+        "source_sha256": "0394e814d75510be107679b026e2df6e5d02d4f2029166911aa4924f9556681f",
+        "windows": [
+          [
+            "2022-01-01",
+            "2022-12-31",
+            365
+          ],
+          [
+            "2023-01-01",
+            "2023-12-31",
+            365
+          ],
+          [
+            "2024-01-01",
+            "2024-12-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0000066740",
+        "cohort": "calendar_year",
+        "source_sha256": "571391ded2a92e8cb1e7be5c22f3ac192f7fe9d4cada2dbdb985261297e6ecd4",
+        "windows": [
+          [
+            "2022-01-01",
+            "2022-12-31",
+            365
+          ],
+          [
+            "2023-01-01",
+            "2023-12-31",
+            365
+          ],
+          [
+            "2024-01-01",
+            "2024-12-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0000076334",
+        "cohort": "noncalendar_annual",
+        "source_sha256": "68a9b3259484f47aa5f0c1556cb4446e0cd100821ad6c66be8064a1b7026df0e",
+        "windows": [
+          [
+            "2021-07-01",
+            "2022-06-30",
+            365
+          ],
+          [
+            "2022-07-01",
+            "2023-06-30",
+            365
+          ],
+          [
+            "2023-07-01",
+            "2024-06-30",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0000077476",
+        "cohort": "53_week_observed",
+        "source_sha256": "7694c322779ef273d15b3791729e5f2d261ce6ed1839be8ff014a33f537375be",
+        "windows": [
+          [
+            "2021-12-26",
+            "2022-12-31",
+            371
+          ],
+          [
+            "2023-01-01",
+            "2023-12-30",
+            364
+          ],
+          [
+            "2023-12-31",
+            "2024-12-28",
+            364
+          ]
+        ]
+      },
+      {
+        "cik": "0000078003",
+        "cohort": "calendar_year",
+        "source_sha256": "bd072131f9dcf001f22e843fded5910c2c7fc178e2a739ce0c58b1934e84d566",
+        "windows": [
+          [
+            "2022-01-01",
+            "2022-12-31",
+            365
+          ],
+          [
+            "2023-01-01",
+            "2023-12-31",
+            365
+          ],
+          [
+            "2024-01-01",
+            "2024-12-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0000080424",
+        "cohort": "noncalendar_annual",
+        "source_sha256": "606ad7056b611e91cfab9f7568b747404405772add188600efa5ccda5824f3d8",
+        "windows": [
+          [
+            "2021-07-01",
+            "2022-06-30",
+            365
+          ],
+          [
+            "2022-07-01",
+            "2023-06-30",
+            365
+          ],
+          [
+            "2023-07-01",
+            "2024-06-30",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0000087347",
+        "cohort": "calendar_year",
+        "source_sha256": "8ae73ad4b096441afa9626e414020b112e1b1f3434938b01d26ea0aae504a822",
+        "windows": [
+          [
+            "2022-01-01",
+            "2022-12-31",
+            365
+          ],
+          [
+            "2023-01-01",
+            "2023-12-31",
+            365
+          ],
+          [
+            "2024-01-01",
+            "2024-12-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0000092122",
+        "cohort": "calendar_year",
+        "source_sha256": "8a5eaa0e10d41a4bc087833509ed5f2e2983630e9d33d9151d8a9157551febc3",
+        "windows": [
+          [
+            "2022-01-01",
+            "2022-12-31",
+            365
+          ],
+          [
+            "2023-01-01",
+            "2023-12-31",
+            365
+          ],
+          [
+            "2024-01-01",
+            "2024-12-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0000093410",
+        "cohort": "calendar_year",
+        "source_sha256": "c09b160603412cb45acf1bb9bf3732e531dedfb548afa0e275fd8aefd7ab397e",
+        "windows": [
+          [
+            "2022-01-01",
+            "2022-12-31",
+            365
+          ],
+          [
+            "2023-01-01",
+            "2023-12-31",
+            365
+          ],
+          [
+            "2024-01-01",
+            "2024-12-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0000097476",
+        "cohort": "calendar_year",
+        "source_sha256": "5ee95bf56949988a4beaf0598e3acb0a012867228760cd9462a1c9e72526446f",
+        "windows": [
+          [
+            "2022-01-01",
+            "2022-12-31",
+            365
+          ],
+          [
+            "2023-01-01",
+            "2023-12-31",
+            365
+          ],
+          [
+            "2024-01-01",
+            "2024-12-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0000097745",
+        "cohort": "calendar_year",
+        "source_sha256": "4d98ebd4c91521f5d90f032834b8dec04f78b30758a214be33e6cbba68fa766a",
+        "windows": [
+          [
+            "2022-01-01",
+            "2022-12-31",
+            365
+          ],
+          [
+            "2023-01-01",
+            "2023-12-31",
+            365
+          ],
+          [
+            "2024-01-01",
+            "2024-12-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0000100493",
+        "cohort": "52_week_observed",
+        "source_sha256": "24a6a5c4789b2f7a7b07b229d2158838c030e4cccd2ff08f8158ec56c35b96b1",
+        "windows": [
+          [
+            "2021-10-03",
+            "2022-10-01",
+            364
+          ],
+          [
+            "2022-10-02",
+            "2023-09-30",
+            364
+          ],
+          [
+            "2023-10-01",
+            "2024-09-28",
+            364
+          ]
+        ]
+      },
+      {
+        "cik": "0000100885",
+        "cohort": "calendar_year",
+        "source_sha256": "99d22f8aa6dd31f102b2691ce5c53ef872908bb7b50860d153e6efbc6eef2b61",
+        "windows": [
+          [
+            "2022-01-01",
+            "2022-12-31",
+            365
+          ],
+          [
+            "2023-01-01",
+            "2023-12-31",
+            365
+          ],
+          [
+            "2024-01-01",
+            "2024-12-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0000104169",
+        "cohort": "noncalendar_annual",
+        "source_sha256": "54ec3fbf36dc203dd00a0333396b3df2b6695ecdf6cbb19b6ec41b053d86b517",
+        "windows": [
+          [
+            "2021-02-01",
+            "2022-01-31",
+            365
+          ],
+          [
+            "2022-02-01",
+            "2023-01-31",
+            365
+          ],
+          [
+            "2023-02-01",
+            "2024-01-31",
+            365
+          ],
+          [
+            "2024-02-01",
+            "2025-01-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0000109198",
+        "cohort": "53_week_observed",
+        "source_sha256": "1b8f7be3fed954f682ae56ebe9c56a245f4df3640b92181a2d44d6e086a4905b",
+        "windows": [
+          [
+            "2021-01-31",
+            "2022-01-29",
+            364
+          ],
+          [
+            "2022-01-30",
+            "2023-01-28",
+            364
+          ],
+          [
+            "2023-01-29",
+            "2024-02-03",
+            371
+          ]
+        ]
+      },
+      {
+        "cik": "0000200406",
+        "cohort": "52_week_observed",
+        "source_sha256": "7141c0c988fa1d30f779687b4c78ab561e19aa5990a58ad86a66467d0a783980",
+        "windows": [
+          [
+            "2021-01-04",
+            "2022-01-02",
+            364
+          ],
+          [
+            "2022-01-03",
+            "2023-01-01",
+            364
+          ],
+          [
+            "2023-01-02",
+            "2023-12-31",
+            364
+          ],
+          [
+            "2024-01-01",
+            "2024-12-29",
+            364
+          ]
+        ]
+      },
+      {
+        "cik": "0000277948",
+        "cohort": "calendar_year",
+        "source_sha256": "85aa75ecd9ce76a5596f7973f2b41e953e022e056f9883bf9aec2190b7f43d0e",
+        "windows": [
+          [
+            "2022-01-01",
+            "2022-12-31",
+            365
+          ],
+          [
+            "2023-01-01",
+            "2023-12-31",
+            365
+          ],
+          [
+            "2024-01-01",
+            "2024-12-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0000310158",
+        "cohort": "calendar_year",
+        "source_sha256": "de2e92301923703e6aee247c42c0cf2f1b741118ebca221fbaa5dc0e47644bd7",
+        "windows": [
+          [
+            "2022-01-01",
+            "2022-12-31",
+            365
+          ],
+          [
+            "2023-01-01",
+            "2023-12-31",
+            365
+          ],
+          [
+            "2024-01-01",
+            "2024-12-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0000315189",
+        "cohort": "52_week_observed",
+        "source_sha256": "b845478ca3e2c2a83471cfb92524b33d83ec47fd3c1c68614f3f2487f1606b6c",
+        "windows": [
+          [
+            "2021-11-01",
+            "2022-10-30",
+            364
+          ],
+          [
+            "2022-10-31",
+            "2023-10-29",
+            364
+          ],
+          [
+            "2023-10-30",
+            "2024-10-27",
+            364
+          ]
+        ]
+      },
+      {
+        "cik": "0000318154",
+        "cohort": "calendar_year",
+        "source_sha256": "fdf5906752dbed7151b14f5e765db25e75393cedef4a2582d976623b49e2e4c7",
+        "windows": [
+          [
+            "2022-01-01",
+            "2022-12-31",
+            365
+          ],
+          [
+            "2023-01-01",
+            "2023-12-31",
+            365
+          ],
+          [
+            "2024-01-01",
+            "2024-12-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0000319201",
+        "cohort": "noncalendar_annual",
+        "source_sha256": "2198d006cb99f6983557cb6747cbcc7802b6c72eef9eacd482840607d97995df",
+        "windows": [
+          [
+            "2021-07-01",
+            "2022-06-30",
+            365
+          ],
+          [
+            "2022-07-01",
+            "2023-06-30",
+            365
+          ],
+          [
+            "2023-07-01",
+            "2024-06-30",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0000320187",
+        "cohort": "noncalendar_annual",
+        "source_sha256": "d7aeceae21e6649e163d195729849349b27d909ab1a6eb4630a7c0c227acd890",
+        "windows": [
+          [
+            "2021-06-01",
+            "2022-05-31",
+            365
+          ],
+          [
+            "2022-06-01",
+            "2023-05-31",
+            365
+          ],
+          [
+            "2023-06-01",
+            "2024-05-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0000320193",
+        "cohort": "53_week_observed",
+        "source_sha256": "73a86c6aedc31f77cac2ea4df5f80f0b3bd7e6eb58bb4e01444fbedf3afb9c43",
+        "windows": [
+          [
+            "2021-09-26",
+            "2022-09-24",
+            364
+          ],
+          [
+            "2022-09-25",
+            "2023-09-30",
+            371
+          ],
+          [
+            "2023-10-01",
+            "2024-09-28",
+            364
+          ]
+        ]
+      },
+      {
+        "cik": "0000354950",
+        "cohort": "53_week_observed",
+        "source_sha256": "aaf03befa1695d87ce1252bc08ca278b65be63782e46dc0b2858aab7a32c1be2",
+        "windows": [
+          [
+            "2021-02-01",
+            "2022-01-30",
+            364
+          ],
+          [
+            "2022-01-31",
+            "2023-01-29",
+            364
+          ],
+          [
+            "2023-01-30",
+            "2024-01-28",
+            364
+          ],
+          [
+            "2024-01-29",
+            "2025-02-02",
+            371
+          ]
+        ]
+      },
+      {
+        "cik": "0000707549",
+        "cohort": "53_week_observed",
+        "source_sha256": "7ba34e55ee4bb0512afd14805895a554951f4d948ee28e2db41b44f44ad0b1dc",
+        "windows": [
+          [
+            "2021-06-28",
+            "2022-06-26",
+            364
+          ],
+          [
+            "2022-06-27",
+            "2023-06-25",
+            364
+          ],
+          [
+            "2023-06-26",
+            "2024-06-30",
+            371
+          ]
+        ]
+      },
+      {
+        "cik": "0000715957",
+        "cohort": "calendar_year",
+        "source_sha256": "a675a88ae458df679704cef7e50039e00032d0dc9b5e55f1f05ccc9294f09bcc",
+        "windows": [
+          [
+            "2022-01-01",
+            "2022-12-31",
+            365
+          ],
+          [
+            "2023-01-01",
+            "2023-12-31",
+            365
+          ],
+          [
+            "2024-01-01",
+            "2024-12-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0000723125",
+        "cohort": "52_week_observed",
+        "source_sha256": "a8b088c2111daef36536e53c81fef4c0f01220c64933e126a665b00a9257f882",
+        "windows": [
+          [
+            "2021-09-03",
+            "2022-09-01",
+            364
+          ],
+          [
+            "2022-09-02",
+            "2023-08-31",
+            364
+          ],
+          [
+            "2023-09-01",
+            "2024-08-29",
+            364
+          ]
+        ]
+      },
+      {
+        "cik": "0000745732",
+        "cohort": "53_week_observed",
+        "source_sha256": "6310bb034c7b7b228799f757b5117d1e6a173af3ff6304b656e851f492ccfaf9",
+        "windows": [
+          [
+            "2021-01-31",
+            "2022-01-29",
+            364
+          ],
+          [
+            "2022-01-30",
+            "2023-01-28",
+            364
+          ],
+          [
+            "2023-01-29",
+            "2024-02-03",
+            371
+          ]
+        ]
+      },
+      {
+        "cik": "0000753308",
+        "cohort": "calendar_year",
+        "source_sha256": "99e84510f602363147dc6c83321aa76859e185d0807019d1efc9e0da60491954",
+        "windows": [
+          [
+            "2022-01-01",
+            "2022-12-31",
+            365
+          ],
+          [
+            "2023-01-01",
+            "2023-12-31",
+            365
+          ],
+          [
+            "2024-01-01",
+            "2024-12-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0000764478",
+        "cohort": "53_week_observed",
+        "source_sha256": "c9cd833d8edc99921ff5d5fb26d6b5b7ef2a2109ebbba7107fb1a4127c3c7149",
+        "windows": [
+          [
+            "2021-01-31",
+            "2022-01-29",
+            364
+          ],
+          [
+            "2022-01-30",
+            "2023-01-28",
+            364
+          ],
+          [
+            "2023-01-29",
+            "2024-02-03",
+            371
+          ],
+          [
+            "2024-02-04",
+            "2025-02-01",
+            364
+          ]
+        ]
+      },
+      {
+        "cik": "0000773840",
+        "cohort": "calendar_year",
+        "source_sha256": "3ec36b94bcfb6c163227a5568ea524a2d714baae79e205929933cdb69ae3bcf7",
+        "windows": [
+          [
+            "2022-01-01",
+            "2022-12-31",
+            365
+          ],
+          [
+            "2023-01-01",
+            "2023-12-31",
+            365
+          ],
+          [
+            "2024-01-01",
+            "2024-12-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0000789019",
+        "cohort": "noncalendar_annual",
+        "source_sha256": "f8aae2965b20ad0df44bdf7ccbedf797d275b6b8dc030154a7a311361bb7246f",
+        "windows": [
+          [
+            "2021-07-01",
+            "2022-06-30",
+            365
+          ],
+          [
+            "2022-07-01",
+            "2023-06-30",
+            365
+          ],
+          [
+            "2023-07-01",
+            "2024-06-30",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0000796343",
+        "cohort": "52_week_observed",
+        "source_sha256": "86a5689aa9aa7b0f9e95be21b48b0305376e014c8dbf3b8bb3b4b131f1b6a0c4",
+        "windows": [
+          [
+            "2021-12-04",
+            "2022-12-02",
+            364
+          ],
+          [
+            "2022-12-03",
+            "2023-12-01",
+            364
+          ],
+          [
+            "2023-12-02",
+            "2024-11-29",
+            364
+          ]
+        ]
+      },
+      {
+        "cik": "0000804328",
+        "cohort": "53_week_observed",
+        "source_sha256": "bb7a668b9d54074b397cd3ada697e4db1ab09a0f8fd7837ef83cf5345a9728f2",
+        "windows": [
+          [
+            "2021-09-27",
+            "2022-09-25",
+            364
+          ],
+          [
+            "2022-09-26",
+            "2023-09-24",
+            364
+          ],
+          [
+            "2023-09-25",
+            "2024-09-29",
+            371
+          ]
+        ]
+      },
+      {
+        "cik": "0000821189",
+        "cohort": "calendar_year",
+        "source_sha256": "79f3107794b95507caaecb0a0817c98eca48a6cf6986fa1e01879c164c7b3da3",
+        "windows": [
+          [
+            "2022-01-01",
+            "2022-12-31",
+            365
+          ],
+          [
+            "2023-01-01",
+            "2023-12-31",
+            365
+          ],
+          [
+            "2024-01-01",
+            "2024-12-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0000823768",
+        "cohort": "calendar_year",
+        "source_sha256": "83672003d7cb177ccd772467684a05c7471ded8af93c0f7ed59b9e7a2cd97119",
+        "windows": [
+          [
+            "2022-01-01",
+            "2022-12-31",
+            365
+          ],
+          [
+            "2023-01-01",
+            "2023-12-31",
+            365
+          ],
+          [
+            "2024-01-01",
+            "2024-12-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0000829224",
+        "cohort": "52_week_observed",
+        "source_sha256": "2488674b57020c5281665b0ff271a29da71da64a2c9fa66bec6a9118772970bb",
+        "windows": [
+          [
+            "2021-10-04",
+            "2022-10-02",
+            364
+          ],
+          [
+            "2022-10-03",
+            "2023-10-01",
+            364
+          ],
+          [
+            "2023-10-02",
+            "2024-09-29",
+            364
+          ]
+        ]
+      },
+      {
+        "cik": "0000858877",
+        "cohort": "52_week_observed",
+        "source_sha256": "f9f6cfb3c04bb8102552f121868831471a474165074ccc7c539f6f80f19d1b99",
+        "windows": [
+          [
+            "2021-08-01",
+            "2022-07-30",
+            364
+          ],
+          [
+            "2022-07-31",
+            "2023-07-29",
+            364
+          ],
+          [
+            "2023-07-30",
+            "2024-07-27",
+            364
+          ]
+        ]
+      },
+      {
+        "cik": "0000866787",
+        "cohort": "53_week_observed",
+        "source_sha256": "0e652965cdc4fd7aa88190116e50474ffbf31ea6b4451b50b3b784af0eadc4d6",
+        "windows": [
+          [
+            "2021-08-29",
+            "2022-08-27",
+            364
+          ],
+          [
+            "2022-08-28",
+            "2023-08-26",
+            364
+          ],
+          [
+            "2023-08-27",
+            "2024-08-31",
+            371
+          ]
+        ]
+      },
+      {
+        "cik": "0000872589",
+        "cohort": "calendar_year",
+        "source_sha256": "8ac8537cd8b5e571e7f527aae3e223c6a7cdab1260fd8035e278ac184b4901b4",
+        "windows": [
+          [
+            "2022-01-01",
+            "2022-12-31",
+            365
+          ],
+          [
+            "2023-01-01",
+            "2023-12-31",
+            365
+          ],
+          [
+            "2024-01-01",
+            "2024-12-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0000882095",
+        "cohort": "calendar_year",
+        "source_sha256": "5703fd84d6e3d00697ac60bc3d7ded9306be2a9f36170a342858b8e6417506f0",
+        "windows": [
+          [
+            "2022-01-01",
+            "2022-12-31",
+            365
+          ],
+          [
+            "2023-01-01",
+            "2023-12-31",
+            365
+          ],
+          [
+            "2024-01-01",
+            "2024-12-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0000896878",
+        "cohort": "noncalendar_annual",
+        "source_sha256": "456f89ae1757bb5a6ee0990f8b759e3d694222b0107c33ee4b163ee85a478d8a",
+        "windows": [
+          [
+            "2021-08-01",
+            "2022-07-31",
+            365
+          ],
+          [
+            "2022-08-01",
+            "2023-07-31",
+            365
+          ],
+          [
+            "2023-08-01",
+            "2024-07-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0000898173",
+        "cohort": "calendar_year",
+        "source_sha256": "29a5e7ccfb4acae0edb20b5c9f9bd6dd8c68ca08da883bb2ae34ad1c5e43ec77",
+        "windows": [
+          [
+            "2022-01-01",
+            "2022-12-31",
+            365
+          ],
+          [
+            "2023-01-01",
+            "2023-12-31",
+            365
+          ],
+          [
+            "2024-01-01",
+            "2024-12-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0000909832",
+        "cohort": "53_week_observed",
+        "source_sha256": "b675ced201b27ede2b0d26ca6fd873befe96a1afa9679339a2d0b964187dcdff",
+        "windows": [
+          [
+            "2021-08-30",
+            "2022-08-28",
+            364
+          ],
+          [
+            "2022-08-29",
+            "2023-09-03",
+            371
+          ],
+          [
+            "2023-09-04",
+            "2024-09-01",
+            364
+          ]
+        ]
+      },
+      {
+        "cik": "0001018724",
+        "cohort": "calendar_year",
+        "source_sha256": "7549fb68446eee40e1f50a166fa06b2d2ee6349e07c8553a4828757e032d3cd4",
+        "windows": [
+          [
+            "2022-01-01",
+            "2022-12-31",
+            365
+          ],
+          [
+            "2023-01-01",
+            "2023-12-31",
+            365
+          ],
+          [
+            "2024-01-01",
+            "2024-12-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0001024478",
+        "cohort": "noncalendar_annual",
+        "source_sha256": "3a514cb5eea60c9984f6597cd4eafdc6500a57af0307461f00d4f2dccfaa1446",
+        "windows": [
+          [
+            "2021-10-01",
+            "2022-09-30",
+            365
+          ],
+          [
+            "2022-10-01",
+            "2023-09-30",
+            365
+          ],
+          [
+            "2023-10-01",
+            "2024-09-30",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0001032208",
+        "cohort": "calendar_year",
+        "source_sha256": "f7e87ebb996c534892ab4c214373b88cb828346e2a732371a209b3bec01b49af",
+        "windows": [
+          [
+            "2022-01-01",
+            "2022-12-31",
+            365
+          ],
+          [
+            "2023-01-01",
+            "2023-12-31",
+            365
+          ],
+          [
+            "2024-01-01",
+            "2024-12-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0001035002",
+        "cohort": "calendar_year",
+        "source_sha256": "d58ab6797025bd0f4e03b03c90f34905c2234e9f28749500726ec867d5443eb5",
+        "windows": [
+          [
+            "2022-01-01",
+            "2022-12-31",
+            365
+          ],
+          [
+            "2023-01-01",
+            "2023-12-31",
+            365
+          ],
+          [
+            "2024-01-01",
+            "2024-12-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0001035267",
+        "cohort": "calendar_year",
+        "source_sha256": "b386a39dc2989008a01e4be5e12444e330e3a98b86c714e3b063b246235db44b",
+        "windows": [
+          [
+            "2022-01-01",
+            "2022-12-31",
+            365
+          ],
+          [
+            "2023-01-01",
+            "2023-12-31",
+            365
+          ],
+          [
+            "2024-01-01",
+            "2024-12-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0001045810",
+        "cohort": "52_week_observed",
+        "source_sha256": "19ef503a5770f5660964b3c3aea6937579d9b359da344afe6a9adf59c63d26ff",
+        "windows": [
+          [
+            "2021-02-01",
+            "2022-01-30",
+            364
+          ],
+          [
+            "2022-01-31",
+            "2023-01-29",
+            364
+          ],
+          [
+            "2023-01-30",
+            "2024-01-28",
+            364
+          ],
+          [
+            "2024-01-29",
+            "2025-01-26",
+            364
+          ]
+        ]
+      },
+      {
+        "cik": "0001048911",
+        "cohort": "noncalendar_annual",
+        "source_sha256": "58923c65a8c280db392ba069685c0fca42538dcece88cc22b8a6492f838923c2",
+        "windows": [
+          [
+            "2021-06-01",
+            "2022-05-31",
+            365
+          ],
+          [
+            "2022-06-01",
+            "2023-05-31",
+            365
+          ],
+          [
+            "2023-06-01",
+            "2024-05-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0001065280",
+        "cohort": "calendar_year",
+        "source_sha256": "00f3449073d90dfa3aec4e384de24b70d92d897f90c67d6bca61f23e33d38634",
+        "windows": [
+          [
+            "2022-01-01",
+            "2022-12-31",
+            365
+          ],
+          [
+            "2023-01-01",
+            "2023-12-31",
+            365
+          ],
+          [
+            "2024-01-01",
+            "2024-12-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0001090727",
+        "cohort": "calendar_year",
+        "source_sha256": "19a5c39708df843df0ecefb17c8a53b8920ee8e43f64d0572b5dac0c167da90d",
+        "windows": [
+          [
+            "2022-01-01",
+            "2022-12-31",
+            365
+          ],
+          [
+            "2023-01-01",
+            "2023-12-31",
+            365
+          ],
+          [
+            "2024-01-01",
+            "2024-12-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0001108524",
+        "cohort": "noncalendar_annual",
+        "source_sha256": "c36bddafd22061dfe573fa22199074d882196f6667cf641eb30c8cec5a340ae5",
+        "windows": [
+          [
+            "2021-02-01",
+            "2022-01-31",
+            365
+          ],
+          [
+            "2022-02-01",
+            "2023-01-31",
+            365
+          ],
+          [
+            "2023-02-01",
+            "2024-01-31",
+            365
+          ],
+          [
+            "2024-02-01",
+            "2025-01-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0001109357",
+        "cohort": "calendar_year",
+        "source_sha256": "ef3c1307410a62e1ab5b578fd3fece7a0a2fb431b8e0af8227be6d23df3328c2",
+        "windows": [
+          [
+            "2022-01-01",
+            "2022-12-31",
+            365
+          ],
+          [
+            "2023-01-01",
+            "2023-12-31",
+            365
+          ],
+          [
+            "2024-01-01",
+            "2024-12-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0001163165",
+        "cohort": "calendar_year",
+        "source_sha256": "cccc8afe3602880e8f2909266e778aa195b42e745da669a801925c593720d2fc",
+        "windows": [
+          [
+            "2022-01-01",
+            "2022-12-31",
+            365
+          ],
+          [
+            "2023-01-01",
+            "2023-12-31",
+            365
+          ],
+          [
+            "2024-01-01",
+            "2024-12-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0001166691",
+        "cohort": "calendar_year",
+        "source_sha256": "4931cbdeb5c78061844fd07853321766ae28733a65d5aab5b39175943ce45dfc",
+        "windows": [
+          [
+            "2022-01-01",
+            "2022-12-31",
+            365
+          ],
+          [
+            "2023-01-01",
+            "2023-12-31",
+            365
+          ],
+          [
+            "2024-01-01",
+            "2024-12-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0001318605",
+        "cohort": "calendar_year",
+        "source_sha256": "d0c2b9288d027a6d735039a6fe874a348b65a7fdbc6c133130666c777c885204",
+        "windows": [
+          [
+            "2022-01-01",
+            "2022-12-31",
+            365
+          ],
+          [
+            "2023-01-01",
+            "2023-12-31",
+            365
+          ],
+          [
+            "2024-01-01",
+            "2024-12-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0001326160",
+        "cohort": "calendar_year",
+        "source_sha256": "1e94bb53863e9fef2f5554a229aa7e0ebc197e06c759b5879db6137d8f1b1b3d",
+        "windows": [
+          [
+            "2022-01-01",
+            "2022-12-31",
+            365
+          ],
+          [
+            "2023-01-01",
+            "2023-12-31",
+            365
+          ],
+          [
+            "2024-01-01",
+            "2024-12-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0001326801",
+        "cohort": "calendar_year",
+        "source_sha256": "7518e76d6dac2d016e1a3d1dec1cc55ff9ea3bdd58a151b16fcaa067a6c9d94e",
+        "windows": [
+          [
+            "2022-01-01",
+            "2022-12-31",
+            365
+          ],
+          [
+            "2023-01-01",
+            "2023-12-31",
+            365
+          ],
+          [
+            "2024-01-01",
+            "2024-12-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0001341439",
+        "cohort": "noncalendar_annual",
+        "source_sha256": "65523545f040abaea1dfcf321da2a5aec85e7f34387244b0ffcb26e4c8707f7d",
+        "windows": [
+          [
+            "2021-06-01",
+            "2022-05-31",
+            365
+          ],
+          [
+            "2022-06-01",
+            "2023-05-31",
+            365
+          ],
+          [
+            "2023-06-01",
+            "2024-05-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0001373715",
+        "cohort": "calendar_year",
+        "source_sha256": "1131b67e8d2d6cd6415cafa82c8874cb2139016e4c8d7e04b1728837a8bbec2c",
+        "windows": [
+          [
+            "2022-01-01",
+            "2022-12-31",
+            365
+          ],
+          [
+            "2023-01-01",
+            "2023-12-31",
+            365
+          ],
+          [
+            "2024-01-01",
+            "2024-12-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0001467858",
+        "cohort": "calendar_year",
+        "source_sha256": "0aadbfd12c0d97ba9743acec6b3ad5b0b6082fab7fbc8f1edbbb7d38fe050e38",
+        "windows": [
+          [
+            "2022-01-01",
+            "2022-12-31",
+            365
+          ],
+          [
+            "2023-01-01",
+            "2023-12-31",
+            365
+          ],
+          [
+            "2024-01-01",
+            "2024-12-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0001510295",
+        "cohort": "calendar_year",
+        "source_sha256": "959e8816abb188a8475cc8bdaca0862c7fbe5e3bba650152fcb4f83ea821d849",
+        "windows": [
+          [
+            "2022-01-01",
+            "2022-12-31",
+            365
+          ],
+          [
+            "2023-01-01",
+            "2023-12-31",
+            365
+          ],
+          [
+            "2024-01-01",
+            "2024-12-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0001534701",
+        "cohort": "calendar_year",
+        "source_sha256": "3028219aae0a803439eec9cf0b3d541801320ce121e9d404858405ee31de09e6",
+        "windows": [
+          [
+            "2022-01-01",
+            "2022-12-31",
+            365
+          ],
+          [
+            "2023-01-01",
+            "2023-12-31",
+            365
+          ],
+          [
+            "2024-01-01",
+            "2024-12-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0001551152",
+        "cohort": "calendar_year",
+        "source_sha256": "1fa00a2de3a0434fb2ebba8b1678cc379b16dc435a4f3e5c696efb7f9029698a",
+        "windows": [
+          [
+            "2022-01-01",
+            "2022-12-31",
+            365
+          ],
+          [
+            "2023-01-01",
+            "2023-12-31",
+            365
+          ],
+          [
+            "2024-01-01",
+            "2024-12-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0001637459",
+        "cohort": "53_week_observed",
+        "source_sha256": "8fad66c16e535f7749f19126a986a9f43a087ca2472d063fa7742106196d88ac",
+        "windows": [
+          [
+            "2021-12-26",
+            "2022-12-31",
+            371
+          ],
+          [
+            "2023-01-01",
+            "2023-12-30",
+            364
+          ],
+          [
+            "2023-12-31",
+            "2024-12-28",
+            364
+          ]
+        ]
+      },
+      {
+        "cik": "0001652044",
+        "cohort": "calendar_year",
+        "source_sha256": "a017f26ee88cb4a639d1c1ddb06d53b4afe22f0ac89cabec7cd67c88919fe1c5",
+        "windows": [
+          [
+            "2022-01-01",
+            "2022-12-31",
+            365
+          ],
+          [
+            "2023-01-01",
+            "2023-12-31",
+            365
+          ],
+          [
+            "2024-01-01",
+            "2024-12-31",
+            366
+          ]
+        ]
+      },
+      {
+        "cik": "0001730168",
+        "cohort": "53_week_observed",
+        "source_sha256": "3bdb6644c12addf1e63c4dc861008d7804fbf3d3f5aa6eb9b97f72c0e89a7adf",
+        "windows": [
+          [
+            "2021-11-01",
+            "2022-10-30",
+            364
+          ],
+          [
+            "2022-10-31",
+            "2023-10-29",
+            364
+          ],
+          [
+            "2023-10-30",
+            "2024-11-03",
+            371
+          ]
+        ]
+      },
+      {
+        "cik": "0001744489",
+        "cohort": "52_week_observed",
+        "source_sha256": "f737e2272b6fb76cda801a8a5d493621a917ad4f73e0752b4ab14ffda694a57b",
+        "windows": [
+          [
+            "2021-10-03",
+            "2022-10-01",
+            364
+          ],
+          [
+            "2022-10-02",
+            "2023-09-30",
+            364
+          ],
+          [
+            "2023-10-01",
+            "2024-09-28",
+            364
+          ]
+        ]
+      },
+      {
+        "cik": "0001751788",
+        "cohort": "calendar_year",
+        "source_sha256": "ff212d1e276fc1525ccac4101dadeadea5bb44ba5237a584a53d06d89535b823",
+        "windows": [
+          [
+            "2022-01-01",
+            "2022-12-31",
+            365
+          ],
+          [
+            "2023-01-01",
+            "2023-12-31",
+            365
+          ],
+          [
+            "2024-01-01",
+            "2024-12-31",
+            366
+          ]
+        ]
+      }
+    ],
+    "method": "Retrospective descriptive cohorts from raw annual-duration contexts ending in the benchmark era and filed before the final cutoff; not fiscal labels or accuracy claims.",
+    "states": {
+      "52_week_observed": {
+        "ambiguous_period": 204,
+        "conflicted": 7,
+        "insufficient_evidence": 100,
+        "resolved_derived": 325,
+        "resolved_reported": 1922,
+        "unavailable": 322
+      },
+      "53_week_observed": {
+        "ambiguous_period": 220,
+        "conflicted": 38,
+        "insufficient_evidence": 252,
+        "resolved_derived": 454,
+        "resolved_reported": 2334,
+        "unavailable": 770,
+        "unsupported": 12
+      },
+      "calendar_year": {
+        "ambiguous_period": 906,
+        "conflicted": 206,
+        "insufficient_evidence": 920,
+        "resolved_derived": 1402,
+        "resolved_reported": 7660,
+        "unavailable": 2574,
+        "unsupported": 12
+      },
+      "noncalendar_annual": {
+        "ambiguous_period": 172,
+        "conflicted": 61,
+        "insufficient_evidence": 64,
+        "resolved_derived": 389,
+        "resolved_reported": 2220,
+        "unavailable": 442,
+        "unsupported": 12
+      }
+    }
+  },
+  "observed_cells": 24000,
+  "query": {
+    "as_of": [
+      "2024-08-15T00:00:00Z",
+      "2025-04-01T00:00:00Z"
+    ],
+    "fiscal_years": [
+      2023,
+      2024
+    ],
+    "periods": [
+      "FY",
+      "Q1",
+      "Q2",
+      "Q3",
+      "Q4"
+    ],
+    "replay": true,
+    "reuse": true,
+    "revision_policies": [
+      "first_reported",
+      "latest_available"
+    ],
+    "source_verification": true,
+    "timeline_scope": "complete"
+  },
+  "requested_cells": 24000,
+  "semantic_dataset_hash": "1c1bca621c7e8b92a2a6e7ab1e6f2eec697e597e9e14098bdb79fb8a37e0b3f1",
+  "shards": [
+    {
+      "job_id": "6e4d600ce56f8dc391856b23bf44b200eaeb69d19393b8bf1a2502d122bcb4b5",
+      "report_hash": "5712219362b88799f39b8c4edb449eef9d0e52deb837fb3cf3a79e78ce1b805f",
+      "semantic_dataset_hash": "9bdc958cc2862c35852d18d03610f8a353d1622fc0199f37c74cc7de8d4e0244"
+    },
+    {
+      "job_id": "7936e48d5183ccd22e348f6e9f2770c57b05f99a9b7934fcc10f7ffd1e22c962",
+      "report_hash": "53b21d30ad511bb0b4e2c505e487be6cfa83758311e1dc7c6008961f0b555b84",
+      "semantic_dataset_hash": "2ec6633f0164170b9a19dc9be694ce51ab84fe71ad2b02e95ab012b9dd8d8ffa"
+    }
+  ],
+  "snapshot_id": "7ee0bbe49b267ce50d63bf1f45bc4f62b017a195db7e2fcefe99c3dc68669ef0",
+  "software": {
+    "code_sha256": "c3756cfba783ccd3d11df39f3a8f24fdeb47cf6edf75876f3cc8369ec090e0ad",
+    "dependencies": {
+      "httpx": "0.28.1",
+      "simplejson": "4.2.0"
+    },
+    "finpanel": "0.1.0a1",
+    "python": "3.12.14"
+  },
+  "source_verification_queries": 200,
+  "source_verification_states": {
+    "instance_unavailable": 187,
+    "verified_multiple_equivalent": 7,
+    "verified_unique": 6
+  },
+  "states": {
+    "ambiguous_period": 1502,
+    "conflicted": 312,
+    "insufficient_evidence": 1336,
+    "resolved_derived": 2570,
+    "resolved_reported": 14136,
+    "source_verification_failed": 0,
+    "unavailable": 4108,
+    "unsupported": 36
+  },
+  "successful_replays": 200,
+  "timing_context": "Two independent serial jobs ran concurrently, alongside regression and mutation checks; shard wall times are not an isolated speed benchmark.",
+  "unexpected_mismatches": 0,
+  "universe_hash": "8e4ed849d6430d4bbd663a8b43bc361086edd63f318fe25a2cb0ab92219b4916"
+}

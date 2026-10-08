@@ -1,0 +1,1007 @@
+{
+  "checks": [
+    {
+      "cik": "0000001800",
+      "companyfacts_sha256": "5d751f73769f5c0a1f9bee0de16cb39d8961cf3f1ebb5558d555bb2678afb4ff",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "2834",
+      "ticker": "ABT"
+    },
+    {
+      "cik": "0000002488",
+      "companyfacts_sha256": "21a29c75076d90fced568785d855fc427a15c7458bc0bb153a9dedd88ad3349e",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "3674",
+      "ticker": "AMD"
+    },
+    {
+      "cik": "0000002969",
+      "companyfacts_sha256": "b950a51ccd6520b9874e8452b9be9d2a43736bf24b7ea2413c44d34cf72a623a",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "2810",
+      "ticker": "APD"
+    },
+    {
+      "cik": "0000004904",
+      "companyfacts_sha256": "c9040e99381d768142f28e73688dbd888766a5619dd7f701d653a7905d17b84d",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "4911",
+      "ticker": "AEP"
+    },
+    {
+      "cik": "0000006951",
+      "companyfacts_sha256": "65ecfedd5bfd3768d30286b52badee080c655cc8d1077524bdb6ca8928380fa7",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "3674",
+      "ticker": "AMAT"
+    },
+    {
+      "cik": "0000007084",
+      "companyfacts_sha256": "143a6bf88adeafcd9eeb218722dd5059584ff25dd15b7d056712930c735567ea",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "2070",
+      "ticker": "ADM"
+    },
+    {
+      "cik": "0000012659",
+      "companyfacts_sha256": "06e056b0473fb43c4b6cdb5d54573cc51c7a34dd6db11864864dd21f575d7a4b",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "7200",
+      "ticker": "HRB"
+    },
+    {
+      "cik": "0000012927",
+      "companyfacts_sha256": "0c63f1ae7cc10b3c27e0c94f2add0c461e6293036dd4e52e52ae6dbb6f206e15",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "3721",
+      "ticker": "BA"
+    },
+    {
+      "cik": "0000014272",
+      "companyfacts_sha256": "a18ba88ed8f92b7f0cbc4d83a6db14b8fba95a5721f7f83a6306ca843ad40c2f",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "2834",
+      "ticker": "BMY"
+    },
+    {
+      "cik": "0000016732",
+      "companyfacts_sha256": "7fe30aa1d0907099e195b1a37f491261e5ed59d466e4174f53215b5f1c345bb4",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "2000",
+      "ticker": "CPB"
+    },
+    {
+      "cik": "0000018230",
+      "companyfacts_sha256": "01ddc6ffa741f0a7da440e2949b2ed19cec14fab35435a398e3f3d0100019715",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "3531",
+      "ticker": "CAT"
+    },
+    {
+      "cik": "0000021344",
+      "companyfacts_sha256": "53d363a9aa3071406cda9857654358f4dca42e174a1defb8cc1ce9ad2a4c9e40",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "2080",
+      "ticker": "KO"
+    },
+    {
+      "cik": "0000021665",
+      "companyfacts_sha256": "450c2668961565047c7745ff5df5d38b40cc57d6940c48fe8f32dca13100f96d",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "2844",
+      "ticker": "CL"
+    },
+    {
+      "cik": "0000027419",
+      "companyfacts_sha256": "eb15a2cd524e99ff27675db78840d039ec4a68b9cc2dcb10accbcb299933a487",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "5331",
+      "ticker": "TGT"
+    },
+    {
+      "cik": "0000029534",
+      "companyfacts_sha256": "16157a14c6c91f04a8b3e89ccedfc91ee0d5ea6978f8c6ed1d25d8cfe73541cf",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "5331",
+      "ticker": "DG"
+    },
+    {
+      "cik": "0000029905",
+      "companyfacts_sha256": "a91cc758b810966dc29303a97a401b26ab5a5467973cff6c8c61472536abdc4c",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "3530",
+      "ticker": "DOV"
+    },
+    {
+      "cik": "0000032604",
+      "companyfacts_sha256": "195bcbf29fba4dfc4715c44e24c71f9da3bbca9c4d04f1166fd3a9ec661df27b",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "3600",
+      "ticker": "EMR"
+    },
+    {
+      "cik": "0000034088",
+      "companyfacts_sha256": "9b95535419e5662e3deed01de803e83deead477a4c81316e1c45186368fdd8b8",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "2911",
+      "ticker": "XOM"
+    },
+    {
+      "cik": "0000037996",
+      "companyfacts_sha256": "db9621054cffb365bcb65cde1f53e4161fb26ac56ebf8a95b9066b3d2375203e",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "3711",
+      "ticker": "F"
+    },
+    {
+      "cik": "0000040545",
+      "companyfacts_sha256": "8c18acb17bbe0760fae6205c5df75b805480c58d4d1dbbabeba206d9ca36e1e3",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "3600",
+      "ticker": "GE"
+    },
+    {
+      "cik": "0000040704",
+      "companyfacts_sha256": "3dd0552f7e909fcef40d3d99b413e9fa360fd1110ebbce0ce507ed71e611aeda",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "2040",
+      "ticker": "GIS"
+    },
+    {
+      "cik": "0000047111",
+      "companyfacts_sha256": "83d796de405903e86aacc31ab69ba5c0071939fe1195754576c1ba9b03cdf52c",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "2060",
+      "ticker": "HSY"
+    },
+    {
+      "cik": "0000049826",
+      "companyfacts_sha256": "93020fcf7c220cd160cf54605d3290782169ab1d62d0cc787988c7520bd4bf9a",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "3560",
+      "ticker": "ITW"
+    },
+    {
+      "cik": "0000050863",
+      "companyfacts_sha256": "70056711b8b04d3a27e4a42b6d86e26f85ddaa3d59e480039d66ccfb353eb0b8",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "3674",
+      "ticker": "INTC"
+    },
+    {
+      "cik": "0000051143",
+      "companyfacts_sha256": "1660477fa5713e5749c3038cf22b3c776414acfc6e1e721d1772c91101dc5e5c",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "3570",
+      "ticker": "IBM"
+    },
+    {
+      "cik": "0000055785",
+      "companyfacts_sha256": "20a44ed6a1f55fa51c786121735a8e3de8269d63c3584ad87844514756d04e18",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "2670",
+      "ticker": "KMB"
+    },
+    {
+      "cik": "0000059478",
+      "companyfacts_sha256": "3fe29099e6efaef9acac95711c271de1a644602939ea18487e29708310985942",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "2834",
+      "ticker": "LLY"
+    },
+    {
+      "cik": "0000060667",
+      "companyfacts_sha256": "7912551d61433f5e7e863ac602ebf24ee1484699e10aa556534f0055fff2ea7d",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "5211",
+      "ticker": "LOW"
+    },
+    {
+      "cik": "0000063276",
+      "companyfacts_sha256": "b5b67c2c769d57e73c0289c7fa5e8b30ca9a9429dbc289556ff3670622c84161",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "3942",
+      "ticker": "MAT"
+    },
+    {
+      "cik": "0000063908",
+      "companyfacts_sha256": "0394e814d75510be107679b026e2df6e5d02d4f2029166911aa4924f9556681f",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "5812",
+      "ticker": "MCD"
+    },
+    {
+      "cik": "0000066740",
+      "companyfacts_sha256": "571391ded2a92e8cb1e7be5c22f3ac192f7fe9d4cada2dbdb985261297e6ecd4",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "3841",
+      "ticker": "MMM"
+    },
+    {
+      "cik": "0000076334",
+      "companyfacts_sha256": "68a9b3259484f47aa5f0c1556cb4446e0cd100821ad6c66be8064a1b7026df0e",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "3490",
+      "ticker": "PH"
+    },
+    {
+      "cik": "0000077476",
+      "companyfacts_sha256": "7694c322779ef273d15b3791729e5f2d261ce6ed1839be8ff014a33f537375be",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "2080",
+      "ticker": "PEP"
+    },
+    {
+      "cik": "0000078003",
+      "companyfacts_sha256": "bd072131f9dcf001f22e843fded5910c2c7fc178e2a739ce0c58b1934e84d566",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "2834",
+      "ticker": "PFE"
+    },
+    {
+      "cik": "0000080424",
+      "companyfacts_sha256": "606ad7056b611e91cfab9f7568b747404405772add188600efa5ccda5824f3d8",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "2840",
+      "ticker": "PG"
+    },
+    {
+      "cik": "0000087347",
+      "companyfacts_sha256": "8ae73ad4b096441afa9626e414020b112e1b1f3434938b01d26ea0aae504a822",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "1389",
+      "ticker": "SLB"
+    },
+    {
+      "cik": "0000092122",
+      "companyfacts_sha256": "8a5eaa0e10d41a4bc087833509ed5f2e2983630e9d33d9151d8a9157551febc3",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "4911",
+      "ticker": "SO"
+    },
+    {
+      "cik": "0000093410",
+      "companyfacts_sha256": "c09b160603412cb45acf1bb9bf3732e531dedfb548afa0e275fd8aefd7ab397e",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "2911",
+      "ticker": "CVX"
+    },
+    {
+      "cik": "0000097476",
+      "companyfacts_sha256": "5ee95bf56949988a4beaf0598e3acb0a012867228760cd9462a1c9e72526446f",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "3674",
+      "ticker": "TXN"
+    },
+    {
+      "cik": "0000097745",
+      "companyfacts_sha256": "4d98ebd4c91521f5d90f032834b8dec04f78b30758a214be33e6cbba68fa766a",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "3829",
+      "ticker": "TMO"
+    },
+    {
+      "cik": "0000100493",
+      "companyfacts_sha256": "24a6a5c4789b2f7a7b07b229d2158838c030e4cccd2ff08f8158ec56c35b96b1",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "2015",
+      "ticker": "TSN"
+    },
+    {
+      "cik": "0000100885",
+      "companyfacts_sha256": "99d22f8aa6dd31f102b2691ce5c53ef872908bb7b50860d153e6efbc6eef2b61",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "4011",
+      "ticker": "UNP"
+    },
+    {
+      "cik": "0000104169",
+      "companyfacts_sha256": "54ec3fbf36dc203dd00a0333396b3df2b6695ecdf6cbb19b6ec41b053d86b517",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "5331",
+      "ticker": "WMT"
+    },
+    {
+      "cik": "0000109198",
+      "companyfacts_sha256": "1b8f7be3fed954f682ae56ebe9c56a245f4df3640b92181a2d44d6e086a4905b",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "5651",
+      "ticker": "TJX"
+    },
+    {
+      "cik": "0000200406",
+      "companyfacts_sha256": "7141c0c988fa1d30f779687b4c78ab561e19aa5990a58ad86a66467d0a783980",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "2834",
+      "ticker": "JNJ"
+    },
+    {
+      "cik": "0000277948",
+      "companyfacts_sha256": "85aa75ecd9ce76a5596f7973f2b41e953e022e056f9883bf9aec2190b7f43d0e",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "4011",
+      "ticker": "CSX"
+    },
+    {
+      "cik": "0000310158",
+      "companyfacts_sha256": "de2e92301923703e6aee247c42c0cf2f1b741118ebca221fbaa5dc0e47644bd7",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "2834",
+      "ticker": "MRK"
+    },
+    {
+      "cik": "0000315189",
+      "companyfacts_sha256": "b845478ca3e2c2a83471cfb92524b33d83ec47fd3c1c68614f3f2487f1606b6c",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "3523",
+      "ticker": "DE"
+    },
+    {
+      "cik": "0000318154",
+      "companyfacts_sha256": "fdf5906752dbed7151b14f5e765db25e75393cedef4a2582d976623b49e2e4c7",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "2836",
+      "ticker": "AMGN"
+    },
+    {
+      "cik": "0000319201",
+      "companyfacts_sha256": "2198d006cb99f6983557cb6747cbcc7802b6c72eef9eacd482840607d97995df",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "3827",
+      "ticker": "KLAC"
+    },
+    {
+      "cik": "0000320187",
+      "companyfacts_sha256": "d7aeceae21e6649e163d195729849349b27d909ab1a6eb4630a7c0c227acd890",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "3021",
+      "ticker": "NKE"
+    },
+    {
+      "cik": "0000320193",
+      "companyfacts_sha256": "73a86c6aedc31f77cac2ea4df5f80f0b3bd7e6eb58bb4e01444fbedf3afb9c43",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "3571",
+      "ticker": "AAPL"
+    },
+    {
+      "cik": "0000354950",
+      "companyfacts_sha256": "aaf03befa1695d87ce1252bc08ca278b65be63782e46dc0b2858aab7a32c1be2",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "5211",
+      "ticker": "HD"
+    },
+    {
+      "cik": "0000707549",
+      "companyfacts_sha256": "7ba34e55ee4bb0512afd14805895a554951f4d948ee28e2db41b44f44ad0b1dc",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "3559",
+      "ticker": "LRCX"
+    },
+    {
+      "cik": "0000715957",
+      "companyfacts_sha256": "a675a88ae458df679704cef7e50039e00032d0dc9b5e55f1f05ccc9294f09bcc",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "4911",
+      "ticker": "D"
+    },
+    {
+      "cik": "0000723125",
+      "companyfacts_sha256": "a8b088c2111daef36536e53c81fef4c0f01220c64933e126a665b00a9257f882",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "3674",
+      "ticker": "MU"
+    },
+    {
+      "cik": "0000745732",
+      "companyfacts_sha256": "6310bb034c7b7b228799f757b5117d1e6a173af3ff6304b656e851f492ccfaf9",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "5651",
+      "ticker": "ROST"
+    },
+    {
+      "cik": "0000753308",
+      "companyfacts_sha256": "99e84510f602363147dc6c83321aa76859e185d0807019d1efc9e0da60491954",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "4911",
+      "ticker": "NEE"
+    },
+    {
+      "cik": "0000764478",
+      "companyfacts_sha256": "c9cd833d8edc99921ff5d5fb26d6b5b7ef2a2109ebbba7107fb1a4127c3c7149",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "5731",
+      "ticker": "BBY"
+    },
+    {
+      "cik": "0000773840",
+      "companyfacts_sha256": "3ec36b94bcfb6c163227a5568ea524a2d714baae79e205929933cdb69ae3bcf7",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "3724",
+      "ticker": "HON"
+    },
+    {
+      "cik": "0000789019",
+      "companyfacts_sha256": "f8aae2965b20ad0df44bdf7ccbedf797d275b6b8dc030154a7a311361bb7246f",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "7372",
+      "ticker": "MSFT"
+    },
+    {
+      "cik": "0000796343",
+      "companyfacts_sha256": "86a5689aa9aa7b0f9e95be21b48b0305376e014c8dbf3b8bb3b4b131f1b6a0c4",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "7372",
+      "ticker": "ADBE"
+    },
+    {
+      "cik": "0000804328",
+      "companyfacts_sha256": "bb7a668b9d54074b397cd3ada697e4db1ab09a0f8fd7837ef83cf5345a9728f2",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "3663",
+      "ticker": "QCOM"
+    },
+    {
+      "cik": "0000821189",
+      "companyfacts_sha256": "79f3107794b95507caaecb0a0817c98eca48a6cf6986fa1e01879c164c7b3da3",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "1311",
+      "ticker": "EOG"
+    },
+    {
+      "cik": "0000823768",
+      "companyfacts_sha256": "83672003d7cb177ccd772467684a05c7471ded8af93c0f7ed59b9e7a2cd97119",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "4953",
+      "ticker": "WM"
+    },
+    {
+      "cik": "0000829224",
+      "companyfacts_sha256": "2488674b57020c5281665b0ff271a29da71da64a2c9fa66bec6a9118772970bb",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "5810",
+      "ticker": "SBUX"
+    },
+    {
+      "cik": "0000858877",
+      "companyfacts_sha256": "f9f6cfb3c04bb8102552f121868831471a474165074ccc7c539f6f80f19d1b99",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "3576",
+      "ticker": "CSCO"
+    },
+    {
+      "cik": "0000866787",
+      "companyfacts_sha256": "0e652965cdc4fd7aa88190116e50474ffbf31ea6b4451b50b3b784af0eadc4d6",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "5531",
+      "ticker": "AZO"
+    },
+    {
+      "cik": "0000872589",
+      "companyfacts_sha256": "8ac8537cd8b5e571e7f527aae3e223c6a7cdab1260fd8035e278ac184b4901b4",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "2834",
+      "ticker": "REGN"
+    },
+    {
+      "cik": "0000882095",
+      "companyfacts_sha256": "5703fd84d6e3d00697ac60bc3d7ded9306be2a9f36170a342858b8e6417506f0",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "2836",
+      "ticker": "GILD"
+    },
+    {
+      "cik": "0000896878",
+      "companyfacts_sha256": "456f89ae1757bb5a6ee0990f8b759e3d694222b0107c33ee4b163ee85a478d8a",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "7372",
+      "ticker": "INTU"
+    },
+    {
+      "cik": "0000898173",
+      "companyfacts_sha256": "29a5e7ccfb4acae0edb20b5c9f9bd6dd8c68ca08da883bb2ae34ad1c5e43ec77",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "5531",
+      "ticker": "ORLY"
+    },
+    {
+      "cik": "0000909832",
+      "companyfacts_sha256": "b675ced201b27ede2b0d26ca6fd873befe96a1afa9679339a2d0b964187dcdff",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "5331",
+      "ticker": "COST"
+    },
+    {
+      "cik": "0001018724",
+      "companyfacts_sha256": "7549fb68446eee40e1f50a166fa06b2d2ee6349e07c8553a4828757e032d3cd4",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "5961",
+      "ticker": "AMZN"
+    },
+    {
+      "cik": "0001024478",
+      "companyfacts_sha256": "3a514cb5eea60c9984f6597cd4eafdc6500a57af0307461f00d4f2dccfaa1446",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "3829",
+      "ticker": "ROK"
+    },
+    {
+      "cik": "0001032208",
+      "companyfacts_sha256": "f7e87ebb996c534892ab4c214373b88cb828346e2a732371a209b3bec01b49af",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "4932",
+      "ticker": "SRE"
+    },
+    {
+      "cik": "0001035002",
+      "companyfacts_sha256": "d58ab6797025bd0f4e03b03c90f34905c2234e9f28749500726ec867d5443eb5",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "2911",
+      "ticker": "VLO"
+    },
+    {
+      "cik": "0001035267",
+      "companyfacts_sha256": "b386a39dc2989008a01e4be5e12444e330e3a98b86c714e3b063b246235db44b",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "3842",
+      "ticker": "ISRG"
+    },
+    {
+      "cik": "0001045810",
+      "companyfacts_sha256": "19ef503a5770f5660964b3c3aea6937579d9b359da344afe6a9adf59c63d26ff",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "3674",
+      "ticker": "NVDA"
+    },
+    {
+      "cik": "0001048911",
+      "companyfacts_sha256": "58923c65a8c280db392ba069685c0fca42538dcece88cc22b8a6492f838923c2",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "4513",
+      "ticker": "FDX"
+    },
+    {
+      "cik": "0001065280",
+      "companyfacts_sha256": "00f3449073d90dfa3aec4e384de24b70d92d897f90c67d6bca61f23e33d38634",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "7841",
+      "ticker": "NFLX"
+    },
+    {
+      "cik": "0001090727",
+      "companyfacts_sha256": "19a5c39708df843df0ecefb17c8a53b8920ee8e43f64d0572b5dac0c167da90d",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "4210",
+      "ticker": "UPS"
+    },
+    {
+      "cik": "0001108524",
+      "companyfacts_sha256": "c36bddafd22061dfe573fa22199074d882196f6667cf641eb30c8cec5a340ae5",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "7372",
+      "ticker": "CRM"
+    },
+    {
+      "cik": "0001109357",
+      "companyfacts_sha256": "ef3c1307410a62e1ab5b578fd3fece7a0a2fb431b8e0af8227be6d23df3328c2",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "4931",
+      "ticker": "EXC"
+    },
+    {
+      "cik": "0001163165",
+      "companyfacts_sha256": "cccc8afe3602880e8f2909266e778aa195b42e745da669a801925c593720d2fc",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "2911",
+      "ticker": "COP"
+    },
+    {
+      "cik": "0001166691",
+      "companyfacts_sha256": "4931cbdeb5c78061844fd07853321766ae28733a65d5aab5b39175943ce45dfc",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "4841",
+      "ticker": "CMCSA"
+    },
+    {
+      "cik": "0001318605",
+      "companyfacts_sha256": "d0c2b9288d027a6d735039a6fe874a348b65a7fdbc6c133130666c777c885204",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "3711",
+      "ticker": "TSLA"
+    },
+    {
+      "cik": "0001326160",
+      "companyfacts_sha256": "1e94bb53863e9fef2f5554a229aa7e0ebc197e06c759b5879db6137d8f1b1b3d",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "4931",
+      "ticker": "DUK"
+    },
+    {
+      "cik": "0001326801",
+      "companyfacts_sha256": "7518e76d6dac2d016e1a3d1dec1cc55ff9ea3bdd58a151b16fcaa067a6c9d94e",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "7370",
+      "ticker": "META"
+    },
+    {
+      "cik": "0001341439",
+      "companyfacts_sha256": "65523545f040abaea1dfcf321da2a5aec85e7f34387244b0ffcb26e4c8707f7d",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "7372",
+      "ticker": "ORCL"
+    },
+    {
+      "cik": "0001373715",
+      "companyfacts_sha256": "1131b67e8d2d6cd6415cafa82c8874cb2139016e4c8d7e04b1728837a8bbec2c",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "7372",
+      "ticker": "NOW"
+    },
+    {
+      "cik": "0001467858",
+      "companyfacts_sha256": "0aadbfd12c0d97ba9743acec6b3ad5b0b6082fab7fbc8f1edbbb7d38fe050e38",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "3711",
+      "ticker": "GM"
+    },
+    {
+      "cik": "0001510295",
+      "companyfacts_sha256": "959e8816abb188a8475cc8bdaca0862c7fbe5e3bba650152fcb4f83ea821d849",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "2911",
+      "ticker": "MPC"
+    },
+    {
+      "cik": "0001534701",
+      "companyfacts_sha256": "3028219aae0a803439eec9cf0b3d541801320ce121e9d404858405ee31de09e6",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "2911",
+      "ticker": "PSX"
+    },
+    {
+      "cik": "0001551152",
+      "companyfacts_sha256": "1fa00a2de3a0434fb2ebba8b1678cc379b16dc435a4f3e5c696efb7f9029698a",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "2834",
+      "ticker": "ABBV"
+    },
+    {
+      "cik": "0001637459",
+      "companyfacts_sha256": "8fad66c16e535f7749f19126a986a9f43a087ca2472d063fa7742106196d88ac",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "2030",
+      "ticker": "KHC"
+    },
+    {
+      "cik": "0001652044",
+      "companyfacts_sha256": "a017f26ee88cb4a639d1c1ddb06d53b4afe22f0ac89cabec7cd67c88919fe1c5",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "7370",
+      "ticker": "GOOG"
+    },
+    {
+      "cik": "0001730168",
+      "companyfacts_sha256": "3bdb6644c12addf1e63c4dc861008d7804fbf3d3f5aa6eb9b97f72c0e89a7adf",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "3674",
+      "ticker": "AVGO"
+    },
+    {
+      "cik": "0001744489",
+      "companyfacts_sha256": "f737e2272b6fb76cda801a8a5d493621a917ad4f73e0752b4ab14ffda694a57b",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "7990",
+      "ticker": "DIS"
+    },
+    {
+      "cik": "0001751788",
+      "companyfacts_sha256": "ff212d1e276fc1525ccac4101dadeadea5bb44ba5237a584a53d06d89535b823",
+      "has_10k": true,
+      "has_20f": false,
+      "has_ifrs": false,
+      "has_us_gaap": true,
+      "sic": "2821",
+      "ticker": "DOW"
+    }
+  ],
+  "issuer_count": 100,
+  "scope": "Purposive ordinary operating companies; SIC/forms/taxonomy checks plus category review, not security-master coverage",
+  "universe_hash": "8e4ed849d6430d4bbd663a8b43bc361086edd63f318fe25a2cb0ab92219b4916"
+}

@@ -8,3 +8,8 @@ recursive-include tests/fixtures/xbrl *.xml *.html
 
 recursive-include src/finpanel/validation *.json
 recursive-include tests/fixtures/broad *.gz
+
+include CHANGELOG.md THIRD_PARTY_NOTICES.md
+recursive-include tests/fixtures/release *.gz
+
+recursive-include scripts *.py

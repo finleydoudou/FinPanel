@@ -1,0 +1,1611 @@
+{
+  "checks": 500,
+  "failed": 0,
+  "issuer_count": 100,
+  "method": "Synthetic future value/fiscal-year mutations of frozen authentic observations. Compare earlier admitted records, calendar, and all three revision-policy groups. Illinois Tool Works and Exelon lack future NetIncomeLoss observations; their operating cash flow supplies non-vacuous replacement checks. Empty mutation attempts are not counted.",
+  "results": [
+    {
+      "checks": 5,
+      "cik": "0000001800",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 22,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000002488",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 26,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000002969",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 26,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000004904",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 4,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000006951",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 30,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000007084",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 43,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000012659",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 43,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000012927",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 26,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000014272",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 26,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000016732",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 34,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000018230",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 5,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000021344",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 25,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000021665",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 26,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000027419",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 63,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000029534",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 35,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000029905",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 26,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000032604",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 42,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000034088",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 27,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000037996",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 15,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000040545",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 34,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000040704",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 54,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000047111",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 26,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000049826",
+      "concept": "NetCashProvidedByUsedInOperatingActivities",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 18,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000050863",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 26,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000051143",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 26,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000055785",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 37,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000059478",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 26,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000060667",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 35,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000063276",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 43,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000063908",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 31,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000066740",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 34,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000076334",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 8,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000077476",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 29,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000078003",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 26,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000080424",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 26,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000087347",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 26,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000092122",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 13,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000093410",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 31,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000097476",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 26,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000097745",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 22,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000100493",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 26,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000100885",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 26,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000104169",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 40,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000109198",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 35,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000200406",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 26,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000277948",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 49,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000310158",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 31,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000315189",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 30,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000318154",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 35,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000319201",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 43,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000320187",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 33,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000320193",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 26,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000354950",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 35,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000707549",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 34,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000715957",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 38,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000723125",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 32,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000745732",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 49,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000753308",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 22,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000764478",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 35,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000773840",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 34,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000789019",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 29,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000796343",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 30,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000804328",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 26,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000821189",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 26,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000823768",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 26,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000829224",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 26,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000858877",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 29,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000866787",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 26,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000872589",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 43,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000882095",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 26,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000896878",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 32,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000898173",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 26,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0000909832",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 29,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0001018724",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 43,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0001024478",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 26,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0001032208",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 22,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0001035002",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 26,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0001035267",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 26,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0001045810",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 35,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0001048911",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 31,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0001065280",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 31,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0001090727",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 22,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0001108524",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 49,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0001109357",
+      "concept": "NetCashProvidedByUsedInOperatingActivities",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 16,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0001163165",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 26,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0001166691",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 26,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0001318605",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 29,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0001326160",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 22,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0001326801",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 31,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0001341439",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 33,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0001373715",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 31,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0001467858",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 31,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0001510295",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 26,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0001534701",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 26,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0001551152",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 28,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0001637459",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 26,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0001652044",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 31,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0001730168",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 3,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0001744489",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 26,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    },
+    {
+      "checks": 5,
+      "cik": "0001751788",
+      "concept": "NetIncomeLoss",
+      "cutoff": "2024-08-15T00:00:00Z",
+      "exercised": true,
+      "mutated_future_observations": 16,
+      "outcomes": {
+        "all_available": true,
+        "calendar": true,
+        "first_reported": true,
+        "latest_available": true,
+        "records": true
+      },
+      "passed": true
+    }
+  ],
+  "snapshot_id": "7ee0bbe49b267ce50d63bf1f45bc4f62b017a195db7e2fcefe99c3dc68669ef0",
+  "unexercised": 0,
+  "universe_hash": "8e4ed849d6430d4bbd663a8b43bc361086edd63f318fe25a2cb0ab92219b4916"
+}

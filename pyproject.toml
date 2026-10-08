@@ -4,12 +4,25 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "finpanel"
-version = "0.1.0"
-description = "Auditable raw SEC ingestion for financial research"
+version = "0.1.0a1"
+description = "Research infrastructure for reproducible point-in-time SEC fundamentals"
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.12,<3.13"
 license = "MIT"
-dependencies = ["httpx>=0.28,<0.29", "simplejson>=3.19,<5", "pyarrow>=18,<24", "duckdb>=1.5,<2"]
+license-files = ["LICENSE", "THIRD_PARTY_NOTICES.md"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+]
+
+dependencies = ["httpx>=0.28,<0.29", "simplejson>=3.19,<5", "pyarrow>=18,<24", "duckdb>=1.5,<2", "tzdata>=2024.1"]
+
+[project.urls]
+Repository = "https://github.com/finleydoudou/FinPanel"
+Issues = "https://github.com/finleydoudou/FinPanel/issues"
+Documentation = "https://github.com/finleydoudou/FinPanel#readme"
 
 [project.optional-dependencies]
 dev = ["pytest>=8,<10", "ruff>=0.11,<1", "build>=1,<2"]
@@ -30,3 +43,6 @@ line-length = 100
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B"]
+
+[tool.setuptools.package-data]
+"finpanel" = ["example_data/*.json", "example_data/*.gz"]

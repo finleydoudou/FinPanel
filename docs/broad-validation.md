@@ -53,9 +53,10 @@ finpanel validate broad --store output/broad-corpus/evidence \
   --snapshot SNAPSHOT_ID --output output/broad-run
 ```
 
-Acquisition supports checkpoint resume; the benchmark runner currently requires a
-new output directory after interruption. Completed partial outputs remain intact,
-but batch-level benchmark resume is not yet implemented.
+The WP6 benchmark required a new directory after interruption. WP7 now adds verified
+issuer-boundary resume; see [resumable validation](resumable-validation.md). The
+measurements on this page remain the original WP6 baseline. Acquisition resumes
+independently of benchmark execution.
 
 Use the same acquisition destination and selection parameters to resume. A changed
 selection requires a separate acquisition directory. Ford's provisional selection

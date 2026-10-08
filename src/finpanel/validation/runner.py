@@ -5,7 +5,7 @@ import platform
 import subprocess
 import time
 from collections import Counter
-from dataclasses import asdict, dataclass
+from dataclasses import asdict, dataclass, replace
 from pathlib import Path
 
 from finpanel import metrics, panel
@@ -16,6 +16,7 @@ from finpanel.panel.models import STATES
 from finpanel.serialization import dumps
 from finpanel.snapshots.pipeline import software_identity
 from finpanel.snapshots.store import EvidenceStore, digest
+from finpanel.validation.checkpoints import CONTRACT, Checkpoint, job_lock
 from finpanel.validation.invariants import check_panel
 from finpanel.validation.taxonomy import classify
 from finpanel.validation.universe import selection, universe, universe_hash
@@ -98,150 +99,273 @@ def peak_memory():
         return None
 
 
-def run(store, snapshot_id, destination, *, manifest=None, config=None, tier="B", limit=None):
-    """Offline only. New destination required; publish report after all issuer batches."""
+def coverage_breakdown(cells, issuers):
+    """Availability counts, never correctness estimates, over every returned state."""
+    metadata = {i["cik"]: i for i in issuers}
+    output = {}
+    for axis in (
+        "cik",
+        "category",
+        "metric",
+        "period",
+        "calendar_characteristics",
+        "revision_policy",
+    ):
+        buckets = {}
+        for cell in cells:
+            key = str(cell.get(axis, metadata[cell["cik"]].get(axis, "unknown")))
+            counts = buckets.setdefault(key, Counter())
+            counts[cell["state"]] += 1
+        output[axis] = {
+            key: dict(
+                total=sum(counts.values()),
+                resolved=sum(v for k, v in counts.items() if k.startswith("resolved_")),
+                states=dict(sorted(counts.items())),
+            )
+            for key, counts in sorted(buckets.items())
+        }
+    return output
+
+
+def _run(
+    store,
+    snapshot_id,
+    destination,
+    *,
+    manifest=None,
+    config=None,
+    tier="B",
+    limit=None,
+    resume=False,
+    checkpoint=None,
+    subset=None,
+    workers=1,
+):
+    """Offline issuer batches, with verified resume and deterministic final semantics.
+
+    Worker count is explicitly one: serial execution bounds evidence memory. Failures
+    are terminal recorded units; rerun with a new job to retry after fixing evidence.
+    """
+    if type(workers) is not int or workers != 1:
+        raise ValidationError("Only one deterministic validation worker is currently supported")
     started = time.perf_counter()
     store = MeasuredStore(store.root)
     data = universe() if manifest is None else manifest
     issuers = selection(data, tier=tier, limit=limit)
+    if subset is not None:
+        requested = set(subset)
+        if not requested or requested - {i["cik"] for i in issuers}:
+            raise ValidationError("Issuer subset must be nonempty and belong to selected universe")
+        issuers = tuple(i for i in issuers if i["cik"] in requested)
+    if not issuers:
+        raise ValidationError("No issuers selected")
     config = config or BenchmarkConfig()
+    if set(config.periods) - set(panel.models.PERIODS):
+        raise ValidationError("Unknown benchmark period")
+    config = replace(
+        config,
+        fiscal_years=tuple(sorted(set(config.fiscal_years))),
+        periods=tuple(p for p in panel.models.PERIODS if p in config.periods),
+        as_of=tuple(sorted(set(config.as_of))),
+        revision_policies=tuple(sorted(set(config.revision_policies))),
+    )
+    if not config.periods or not config.revision_policies:
+        raise ValidationError("Benchmark periods and policies must be nonempty")
+    if any(
+        type(getattr(config, name)) is not bool
+        for name in ("reuse", "replay", "source_verification")
+    ):
+        raise ValidationError("Benchmark boolean options require true or false")
+    for policy in config.revision_policies:
+        panel.PanelRequest(
+            entities=(issuers[0]["cik"],),
+            metrics=tuple(metrics.REGISTRY),
+            fiscal_years=config.fiscal_years,
+            periods=config.periods,
+            as_of=config.as_of,
+            revision_policy=policy,
+            timeline_scope=config.timeline_scope,
+        )
     snapshot = store.select(snapshot_id=snapshot_id)
     out = Path(destination)
-    if out.exists():
-        raise ValidationError("Benchmark output must be a new directory")
-    out.mkdir(parents=True)
-    states = Counter()
-    categories = Counter()
-    kinds = Counter()
-    findings = []
-    batch_hashes = []
-    receipts = []
-    cells = []
-    performance = []
-    invariant_count = 0
-    replays = 0
-    reuse_stats = []
-    failures = []
-    verification_states = Counter()
+    job = dict(
+        universe_hash=universe_hash(data),
+        issuers=[i["cik"] for i in issuers],
+        metrics=list(metrics.REGISTRY),
+        query=asdict(config),
+        tier=tier,
+        snapshot_id=snapshot_id,
+        source_manifest_hash=digest(snapshot.manifest),
+        evidence_mode="exact_pinned_snapshot",
+        software=software_identity(),
+        validation_contract=CONTRACT,
+    )
+    progress = Checkpoint(out, checkpoint, job, resume=resume)
+    states = Counter(progress.state.get("states", {}))
+    categories = Counter(progress.state.get("categories", {}))
+    kinds = Counter(progress.state.get("kinds", {}))
+    findings = list(progress.state.get("findings", []))
+    batch_hashes = list(progress.state.get("batch_hashes", []))
+    receipts = list(progress.state.get("receipts", []))
+    cells = list(progress.state.get("cells", []))
+    performance = list(progress.state.get("performance", []))
+    invariant_count = int(progress.state.get("invariant_count", 0))
+    replays = int(progress.state.get("replays", 0))
+    reuse_stats = list(progress.state.get("reuse_stats", []))
+    failures = list(progress.state.get("failures", []))
+    verification_states = Counter(progress.state.get("verification_states", {}))
     for issuer in issuers:
         cik = issuer["cik"]
-        ends = explicit_ends(store, snapshot_id, cik, config.fiscal_years, config.periods)
-        with evaluation_reuse(enabled=config.reuse) as reuse:
-            for policy in config.revision_policies:
-                request = panel.PanelRequest(
-                    entities=(cik,),
-                    metrics=tuple(metrics.REGISTRY),
-                    fiscal_years=config.fiscal_years,
-                    periods=config.periods,
-                    as_of=config.as_of,
-                    revision_policy=policy,
-                    snapshot_id=snapshot_id,
-                    period_ends=ends,
-                    timeline_scope=config.timeline_scope,
-                )
-                try:
-                    result = panel.build(request, store=store)
-                    checks = check_panel(result, store)
-                    invariant_count += checks["checks"]
-                    failures.extend(checks["failures"])
-                    states.update(r.state for r in result.rows)
-                    for row in result.rows:
-                        finding = classify(
-                            row, result.provenance[row.row_id], result.results.get(row.row_id)
-                        )
-                        kinds[finding["kind"]] += 1
-                        categories.update(finding["categories"])
-                        record = dict(
-                            cik=cik,
-                            row_id=row.row_id,
-                            revision_policy=policy,
-                            state=row.state,
-                            **finding,
-                        )
-                        if finding["kind"] != "resolved":
-                            findings.append(record)
-                        if finding["kind"] == "unexpected_failure":
-                            failures.append(record)
-                        cells.append(row_record(row))
-                    folder = out / cik / policy
-                    folder.mkdir(parents=True)
-                    panel.export(result, folder / "panel.parquet")
-                    (folder / "receipt.json").write_text(dumps(result.receipt))
-                    receipts.append(
-                        {"cik": cik, "policy": policy, "receipt_id": result.receipt.receipt_id}
-                    )
-                    batch_hashes.append(result.receipt.semantic["row_hash"])
-                    performance.append(result.performance)
-                    if config.replay:
-                        replayed = panel.reproduce(result.receipt, store=store)
-                        if replayed.receipt.receipt_id != result.receipt.receipt_id:
-                            failures.append(
-                                {
-                                    "cik": cik,
-                                    "category": "internal_invariant_violation",
-                                    "code": "replay_mismatch",
-                                }
-                            )
-                        else:
-                            replays += 1
-                        del replayed
-                    del result
-                except Exception as exc:
-                    failures.append(
-                        {
-                            "cik": cik,
-                            "policy": policy,
-                            "category": "parser_source_defect"
-                            if isinstance(exc, FinPanelError)
-                            else "internal_invariant_violation",
-                            "error_type": type(exc).__name__,
-                        }
-                    )
-            if config.source_verification:
-                # Evidence-vintage check is separate from historical financial cutoffs.
-                verify = panel.build(
-                    panel.PanelRequest(
+        if cik in progress.completed:
+            continue
+        progress.prepare(cik)
+        try:
+            ends = explicit_ends(store, snapshot_id, cik, config.fiscal_years, config.periods)
+            with evaluation_reuse(enabled=config.reuse) as reuse:
+                for policy in config.revision_policies:
+                    request = panel.PanelRequest(
                         entities=(cik,),
-                        metrics=("assets",),
+                        metrics=tuple(metrics.REGISTRY),
                         fiscal_years=config.fiscal_years,
-                        periods=("FY",),
-                        as_of=(snapshot.manifest["captured_through"],),
+                        periods=config.periods,
+                        as_of=config.as_of,
+                        revision_policy=policy,
                         snapshot_id=snapshot_id,
-                        source_verification="best_effort",
-                        revision_policy="first_reported",
+                        period_ends=ends,
                         timeline_scope=config.timeline_scope,
-                        period_ends=tuple(e for e in ends if e.period == "FY"),
-                    ),
-                    store=store,
-                )
-                source_checks = check_panel(verify, store)
-                invariant_count += source_checks["checks"]
-                failures.extend(source_checks["failures"])
-                verification_states.update(r.verification_state for r in verify.rows)
-                for row in verify.rows:
-                    if "source_mismatch" in row.verification_state:
+                    )
+                    try:
+                        result = panel.build(request, store=store)
+                        checks = check_panel(result, store)
+                        invariant_count += checks["checks"]
+                        failures.extend(checks["failures"])
+                        states.update(r.state for r in result.rows)
+                        for row in result.rows:
+                            finding = classify(
+                                row, result.provenance[row.row_id], result.results.get(row.row_id)
+                            )
+                            kinds[finding["kind"]] += 1
+                            categories.update(finding["categories"])
+                            record = dict(
+                                cik=cik,
+                                row_id=row.row_id,
+                                revision_policy=policy,
+                                state=row.state,
+                                **finding,
+                            )
+                            if finding["kind"] != "resolved":
+                                findings.append(record)
+                            if finding["kind"] == "unexpected_failure":
+                                failures.append(record)
+                            cells.append(row_record(row))
+                        folder = out / cik / policy
+                        folder.mkdir(parents=True)
+                        panel.export(result, folder / "panel.parquet")
+                        (folder / "receipt.json").write_text(dumps(result.receipt))
+                        receipts.append(
+                            {"cik": cik, "policy": policy, "receipt_id": result.receipt.receipt_id}
+                        )
+                        batch_hashes.append(result.receipt.semantic["row_hash"])
+                        performance.append(result.performance)
+                        if config.replay:
+                            replayed = panel.reproduce(result.receipt, store=store)
+                            if replayed.receipt.receipt_id != result.receipt.receipt_id:
+                                failures.append(
+                                    {
+                                        "cik": cik,
+                                        "category": "internal_invariant_violation",
+                                        "code": "replay_mismatch",
+                                    }
+                                )
+                            else:
+                                replays += 1
+                            del replayed
+                        del result
+                    except Exception as exc:
                         failures.append(
                             {
                                 "cik": cik,
-                                "row_id": row.row_id,
-                                "category": "source_match_ambiguity",
-                                "code": "cross_layer_source_mismatch",
+                                "policy": policy,
+                                "category": "parser_source_defect"
+                                if isinstance(exc, FinPanelError)
+                                else "internal_invariant_violation",
+                                "error_type": type(exc).__name__,
                             }
                         )
-                (out / cik / "source-verification.json").write_text(
-                    dumps(
-                        {
-                            "rows": verify.rows,
-                            "provenance": verify.provenance,
-                            "receipt": verify.receipt,
-                        }
+                if config.source_verification:
+                    # Evidence-vintage check is separate from historical financial cutoffs.
+                    verify = panel.build(
+                        panel.PanelRequest(
+                            entities=(cik,),
+                            metrics=("assets",),
+                            fiscal_years=config.fiscal_years,
+                            periods=("FY",),
+                            as_of=(snapshot.manifest["captured_through"],),
+                            snapshot_id=snapshot_id,
+                            source_verification="best_effort",
+                            revision_policy="first_reported",
+                            timeline_scope=config.timeline_scope,
+                            period_ends=tuple(e for e in ends if e.period == "FY"),
+                        ),
+                        store=store,
                     )
+                    source_checks = check_panel(verify, store)
+                    invariant_count += source_checks["checks"]
+                    failures.extend(source_checks["failures"])
+                    verification_states.update(r.verification_state for r in verify.rows)
+                    for row in verify.rows:
+                        if "source_mismatch" in row.verification_state:
+                            failures.append(
+                                {
+                                    "cik": cik,
+                                    "row_id": row.row_id,
+                                    "category": "source_match_ambiguity",
+                                    "code": "cross_layer_source_mismatch",
+                                }
+                            )
+                    (out / cik / "source-verification.json").write_text(
+                        dumps(
+                            {
+                                "rows": verify.rows,
+                                "provenance": verify.provenance,
+                                "receipt": verify.receipt,
+                            }
+                        )
+                    )
+                    del verify
+            reuse_stats.append(reuse.statistics())
+        except Exception as exc:
+            failures.append(
+                dict(
+                    cik=cik,
+                    category="batch_execution_failure",
+                    error_type=type(exc).__name__,
+                    disposition="terminal_recorded",
                 )
-                del verify
-        reuse_stats.append(reuse.statistics())
+            )
+        progress.complete(
+            cik,
+            dict(
+                states=states,
+                categories=categories,
+                kinds=kinds,
+                findings=findings,
+                batch_hashes=batch_hashes,
+                receipts=receipts,
+                cells=cells,
+                performance=performance,
+                invariant_count=invariant_count,
+                replays=replays,
+                reuse_stats=reuse_stats,
+                failures=failures,
+                verification_states=verification_states,
+            ),
+        )
         gc.collect()
     report = {
         "format": "finpanel-broad-validation-v1",
+        "job_id": progress.job_id,
+        "validation_contract": CONTRACT,
         "universe_hash": universe_hash(data),
         "tier": tier,
         "issuer_count": len(issuers),
@@ -256,6 +380,7 @@ def run(store, snapshot_id, destination, *, manifest=None, config=None, tier="B"
         * len(config.as_of)
         * len(metrics.REGISTRY),
         "observed_cells": len(cells),
+        "coverage_by": coverage_breakdown(cells, issuers),
         "states": {state: states[state] for state in sorted(STATES)},
         "findings_by_kind": dict(sorted(kinds.items())),
         "failure_categories": dict(sorted(categories.items())),
@@ -275,6 +400,7 @@ def run(store, snapshot_id, destination, *, manifest=None, config=None, tier="B"
     }
     receipt = {
         "format": "finpanel-benchmark-receipt-v1",
+        "job_id": progress.job_id,
         "universe_hash": universe_hash(data),
         "snapshot_id": snapshot_id,
         "query": asdict(config),
@@ -304,6 +430,8 @@ def run(store, snapshot_id, destination, *, manifest=None, config=None, tier="B"
         "source_parses": sum(s["builds"].get("companyfacts_parse", 0) for s in reuse_stats),
         "source_parse_hits": sum(s["hits"].get("companyfacts_parse", 0) for s in reuse_stats),
         "workers": 1,
+        "resumed": resume,
+        "verified_completed_units": len(progress.completed),
         "issuer_batches": len(issuers),
     }
     for filename, value in [
@@ -314,3 +442,41 @@ def run(store, snapshot_id, destination, *, manifest=None, config=None, tier="B"
     ]:
         (out / filename).write_text(dumps(value))
     return report, receipt, measurement
+
+
+def run(
+    store,
+    snapshot_id,
+    destination,
+    *,
+    manifest=None,
+    config=None,
+    tier="B",
+    limit=None,
+    resume=False,
+    checkpoint=None,
+    subset=None,
+    workers=1,
+):
+    """Run or resume one offline validation job with an exclusive writer lock.
+
+    See BenchmarkConfig for semantic inputs. Checkpoint incompatibility or output
+    corruption raises ValidationError; recorded issuer failures appear in the report.
+    Only workers=1 is supported. Issuer subsets use canonical ten-digit CIKs.
+    """
+    target = Path(checkpoint) if checkpoint else Path(destination)
+    lock = target.parent / ("." + target.name + ".validation.lock")
+    with job_lock(lock):
+        return _run(
+            store,
+            snapshot_id,
+            destination,
+            manifest=manifest,
+            config=config,
+            tier=tier,
+            limit=limit,
+            resume=resume,
+            checkpoint=checkpoint,
+            subset=subset,
+            workers=workers,
+        )

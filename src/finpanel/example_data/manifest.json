@@ -1,0 +1,84 @@
+{
+  "artifacts": [
+    {
+      "artifact": {
+        "accession": null,
+        "authenticity": "authentic",
+        "capture_id": "9027074deed11668138a6772ebef7325e7058cd01c53bd637114da49d882ad4f",
+        "cik": "0000012659",
+        "http_metadata": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "locator": "objects/06e056b0473fb43c4b6cdb5d54573cc51c7a34dd6db11864864dd21f575d7a4b",
+        "parser_schema": "raw-bytes-v1",
+        "raw_format": "json",
+        "raw_unmodified": true,
+        "retrieved_at": "2026-10-08T02:34:30.803401+00:00",
+        "sha256": "06e056b0473fb43c4b6cdb5d54573cc51c7a34dd6db11864864dd21f575d7a4b",
+        "size": 4625407,
+        "source_family": "companyfacts",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000012659.json"
+      },
+      "compressed_sha256": "53033bcf9309655e0fef225e0f7d746fb3032ec9a38638e6f37f20023d1d2cea",
+      "filename": "0000012659_companyfacts_06e056b0473f.gz"
+    },
+    {
+      "artifact": {
+        "accession": null,
+        "authenticity": "authentic",
+        "capture_id": "d939a79c5f0d4f0511b5be08a4aae5a06eb049fd700a21c9e780550bc61aa17a",
+        "cik": "0000012659",
+        "http_metadata": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "locator": "objects/19f80cc024c7919f4dd9cfb6dfc8b4402eae1e5347ee5045ba77d0ea6c1f8710",
+        "parser_schema": "raw-bytes-v1",
+        "raw_format": "json",
+        "raw_unmodified": true,
+        "retrieved_at": "2026-10-08T02:34:28.394468+00:00",
+        "sha256": "19f80cc024c7919f4dd9cfb6dfc8b4402eae1e5347ee5045ba77d0ea6c1f8710",
+        "size": 201587,
+        "source_family": "historical_submissions",
+        "source_url": "https://data.sec.gov/submissions/CIK0000012659-submissions-001.json"
+      },
+      "compressed_sha256": "7e57747e7b8fcaa609736fb0f4f735a821e8518f9610df4f204e6450770613c6",
+      "filename": "0000012659_historical_submissions_19f80cc024c7.gz"
+    },
+    {
+      "artifact": {
+        "accession": null,
+        "authenticity": "authentic",
+        "capture_id": "a22e425486f3451483eccea98f72469e19694094fb39b9a8baa5b63b371d7fba",
+        "cik": "0000012659",
+        "http_metadata": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "locator": "objects/b19e8cc459866caf01665e7885351011cee0b2070108d1a8046c1dcb7b630a58",
+        "parser_schema": "raw-bytes-v1",
+        "raw_format": "json",
+        "raw_unmodified": true,
+        "retrieved_at": "2026-10-08T02:34:27.566427+00:00",
+        "sha256": "b19e8cc459866caf01665e7885351011cee0b2070108d1a8046c1dcb7b630a58",
+        "size": 151860,
+        "source_family": "submissions",
+        "source_url": "https://data.sec.gov/submissions/CIK0000012659.json"
+      },
+      "compressed_sha256": "cf0ea2d795a2168397c5a8ee901bee7320b321a3e3a81c5ef290365334cf361b",
+      "filename": "0000012659_submissions_b19e8cc45986.gz"
+    }
+  ],
+  "format": "finpanel-authentic-fixtures-v1",
+  "incompleteness": [
+    "No original XBRL instance included; aggregate context scope is not original-source verification."
+  ],
+  "scope": "Frozen HRB aggregate evidence for offline researcher onboarding"
+}

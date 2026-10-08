@@ -1,0 +1,565 @@
+{
+  "method": "Raw SEC contexts and filing report dates; expected labels authored independently of FinPanel output.",
+  "cases": [
+    {
+      "id": "calendar-01",
+      "fixture": "release",
+      "cik": "0000012659",
+      "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+      "source_sha256": "06e056b0473fb43c4b6cdb5d54573cc51c7a34dd6db11864864dd21f575d7a4b",
+      "pointer": "/facts/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/units/USD/44",
+      "literal": {
+        "start": "2020-05-01",
+        "end": "2021-04-30",
+        "val": 3413987000,
+        "accn": "0001838862-21-000028",
+        "fy": 2021,
+        "fp": "FY",
+        "form": "10-K",
+        "filed": "2021-06-15"
+      },
+      "cutoff": "2022-08-17T12:00:00Z",
+      "expected": {
+        "kind": "annual",
+        "year": 2021,
+        "label": "FY",
+        "days": 365
+      },
+      "reason": "Original dates and report ends distinguish old annual, 61-day transition, and new annual. Current June FYE cannot backfill April history."
+    },
+    {
+      "id": "calendar-02",
+      "fixture": "release",
+      "cik": "0000012659",
+      "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+      "source_sha256": "06e056b0473fb43c4b6cdb5d54573cc51c7a34dd6db11864864dd21f575d7a4b",
+      "pointer": "/facts/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/units/USD/47",
+      "literal": {
+        "start": "2021-05-01",
+        "end": "2021-06-30",
+        "val": 466106000,
+        "accn": "0001838862-21-000036",
+        "fy": 2021,
+        "fp": "FY",
+        "form": "10-QT",
+        "filed": "2021-08-09"
+      },
+      "cutoff": "2022-08-17T12:00:00Z",
+      "expected": {
+        "kind": "other_duration",
+        "year": null,
+        "label": null,
+        "days": 61
+      },
+      "reason": "Original dates and report ends distinguish old annual, 61-day transition, and new annual. Current June FYE cannot backfill April history."
+    },
+    {
+      "id": "calendar-03",
+      "fixture": "release",
+      "cik": "0000012659",
+      "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+      "source_sha256": "06e056b0473fb43c4b6cdb5d54573cc51c7a34dd6db11864864dd21f575d7a4b",
+      "pointer": "/facts/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/units/USD/60",
+      "literal": {
+        "start": "2021-07-01",
+        "end": "2022-06-30",
+        "val": 3463270000,
+        "accn": "0001838862-22-000028",
+        "fy": 2022,
+        "fp": "FY",
+        "form": "10-K",
+        "filed": "2022-08-16"
+      },
+      "cutoff": "2022-08-17T12:00:00Z",
+      "expected": {
+        "kind": "annual",
+        "year": 2022,
+        "label": "FY",
+        "days": 365
+      },
+      "reason": "Original dates and report ends distinguish old annual, 61-day transition, and new annual. Current June FYE cannot backfill April history."
+    },
+    {
+      "id": "calendar-04",
+      "fixture": "release",
+      "cik": "0000012659",
+      "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+      "source_sha256": "06e056b0473fb43c4b6cdb5d54573cc51c7a34dd6db11864864dd21f575d7a4b",
+      "pointer": "/facts/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/units/USD/47",
+      "literal": {
+        "start": "2021-05-01",
+        "end": "2021-06-30",
+        "val": 466106000,
+        "accn": "0001838862-21-000036",
+        "fy": 2021,
+        "fp": "FY",
+        "form": "10-QT",
+        "filed": "2021-08-09"
+      },
+      "cutoff": "2021-08-08T12:00:00Z",
+      "expected": {
+        "absent": true
+      },
+      "reason": "Transition filing was not yet public; no future facts permitted."
+    },
+    {
+      "id": "calendar-05",
+      "fixture": "release",
+      "cik": "0000012659",
+      "concept": "NetIncomeLoss",
+      "source_sha256": "06e056b0473fb43c4b6cdb5d54573cc51c7a34dd6db11864864dd21f575d7a4b",
+      "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/257",
+      "literal": {
+        "start": "2020-05-01",
+        "end": "2021-04-30",
+        "val": 583791000,
+        "accn": "0001838862-21-000028",
+        "fy": 2021,
+        "fp": "FY",
+        "form": "10-K",
+        "filed": "2021-06-15"
+      },
+      "cutoff": "2022-08-17T12:00:00Z",
+      "expected": {
+        "kind": "annual",
+        "year": 2021,
+        "label": "FY",
+        "days": 365
+      },
+      "reason": "Original dates and report ends distinguish old annual, 61-day transition, and new annual. Current June FYE cannot backfill April history."
+    },
+    {
+      "id": "calendar-06",
+      "fixture": "release",
+      "cik": "0000012659",
+      "concept": "NetIncomeLoss",
+      "source_sha256": "06e056b0473fb43c4b6cdb5d54573cc51c7a34dd6db11864864dd21f575d7a4b",
+      "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/260",
+      "literal": {
+        "start": "2021-05-01",
+        "end": "2021-06-30",
+        "val": 89610000,
+        "accn": "0001838862-21-000036",
+        "fy": 2021,
+        "fp": "FY",
+        "form": "10-QT",
+        "filed": "2021-08-09"
+      },
+      "cutoff": "2022-08-17T12:00:00Z",
+      "expected": {
+        "kind": "other_duration",
+        "year": null,
+        "label": null,
+        "days": 61
+      },
+      "reason": "Original dates and report ends distinguish old annual, 61-day transition, and new annual. Current June FYE cannot backfill April history."
+    },
+    {
+      "id": "calendar-07",
+      "fixture": "release",
+      "cik": "0000012659",
+      "concept": "NetIncomeLoss",
+      "source_sha256": "06e056b0473fb43c4b6cdb5d54573cc51c7a34dd6db11864864dd21f575d7a4b",
+      "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/279",
+      "literal": {
+        "start": "2021-07-01",
+        "end": "2022-06-30",
+        "val": 553674000,
+        "accn": "0001838862-22-000028",
+        "fy": 2022,
+        "fp": "FY",
+        "form": "10-K",
+        "filed": "2022-08-16"
+      },
+      "cutoff": "2022-08-17T12:00:00Z",
+      "expected": {
+        "kind": "annual",
+        "year": 2022,
+        "label": "FY",
+        "days": 365
+      },
+      "reason": "Original dates and report ends distinguish old annual, 61-day transition, and new annual. Current June FYE cannot backfill April history."
+    },
+    {
+      "id": "calendar-08",
+      "fixture": "release",
+      "cik": "0000012659",
+      "concept": "NetIncomeLoss",
+      "source_sha256": "06e056b0473fb43c4b6cdb5d54573cc51c7a34dd6db11864864dd21f575d7a4b",
+      "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/260",
+      "literal": {
+        "start": "2021-05-01",
+        "end": "2021-06-30",
+        "val": 89610000,
+        "accn": "0001838862-21-000036",
+        "fy": 2021,
+        "fp": "FY",
+        "form": "10-QT",
+        "filed": "2021-08-09"
+      },
+      "cutoff": "2021-08-08T12:00:00Z",
+      "expected": {
+        "absent": true
+      },
+      "reason": "Transition filing was not yet public; no future facts permitted."
+    },
+    {
+      "id": "calendar-09",
+      "fixture": "release",
+      "cik": "0000012659",
+      "concept": "NetCashProvidedByUsedInOperatingActivities",
+      "source_sha256": "06e056b0473fb43c4b6cdb5d54573cc51c7a34dd6db11864864dd21f575d7a4b",
+      "pointer": "/facts/us-gaap/NetCashProvidedByUsedInOperatingActivities/units/USD/115",
+      "literal": {
+        "start": "2020-05-01",
+        "end": "2021-04-30",
+        "val": 625928000,
+        "accn": "0001838862-21-000028",
+        "fy": 2021,
+        "fp": "FY",
+        "form": "10-K",
+        "filed": "2021-06-15"
+      },
+      "cutoff": "2022-08-17T12:00:00Z",
+      "expected": {
+        "kind": "annual",
+        "year": 2021,
+        "label": "FY",
+        "days": 365
+      },
+      "reason": "Original dates and report ends distinguish old annual, 61-day transition, and new annual. Current June FYE cannot backfill April history."
+    },
+    {
+      "id": "calendar-10",
+      "fixture": "release",
+      "cik": "0000012659",
+      "concept": "NetCashProvidedByUsedInOperatingActivities",
+      "source_sha256": "06e056b0473fb43c4b6cdb5d54573cc51c7a34dd6db11864864dd21f575d7a4b",
+      "pointer": "/facts/us-gaap/NetCashProvidedByUsedInOperatingActivities/units/USD/118",
+      "literal": {
+        "start": "2021-05-01",
+        "end": "2021-06-30",
+        "val": 34826000,
+        "accn": "0001838862-21-000036",
+        "fy": 2021,
+        "fp": "FY",
+        "form": "10-QT",
+        "filed": "2021-08-09"
+      },
+      "cutoff": "2022-08-17T12:00:00Z",
+      "expected": {
+        "kind": "other_duration",
+        "year": null,
+        "label": null,
+        "days": 61
+      },
+      "reason": "Original dates and report ends distinguish old annual, 61-day transition, and new annual. Current June FYE cannot backfill April history."
+    },
+    {
+      "id": "calendar-11",
+      "fixture": "release",
+      "cik": "0000012659",
+      "concept": "NetCashProvidedByUsedInOperatingActivities",
+      "source_sha256": "06e056b0473fb43c4b6cdb5d54573cc51c7a34dd6db11864864dd21f575d7a4b",
+      "pointer": "/facts/us-gaap/NetCashProvidedByUsedInOperatingActivities/units/USD/127",
+      "literal": {
+        "start": "2021-07-01",
+        "end": "2022-06-30",
+        "val": 808537000,
+        "accn": "0001838862-22-000028",
+        "fy": 2022,
+        "fp": "FY",
+        "form": "10-K",
+        "filed": "2022-08-16"
+      },
+      "cutoff": "2022-08-17T12:00:00Z",
+      "expected": {
+        "kind": "annual",
+        "year": 2022,
+        "label": "FY",
+        "days": 365
+      },
+      "reason": "Original dates and report ends distinguish old annual, 61-day transition, and new annual. Current June FYE cannot backfill April history."
+    },
+    {
+      "id": "calendar-12",
+      "fixture": "release",
+      "cik": "0000012659",
+      "concept": "NetCashProvidedByUsedInOperatingActivities",
+      "source_sha256": "06e056b0473fb43c4b6cdb5d54573cc51c7a34dd6db11864864dd21f575d7a4b",
+      "pointer": "/facts/us-gaap/NetCashProvidedByUsedInOperatingActivities/units/USD/118",
+      "literal": {
+        "start": "2021-05-01",
+        "end": "2021-06-30",
+        "val": 34826000,
+        "accn": "0001838862-21-000036",
+        "fy": 2021,
+        "fp": "FY",
+        "form": "10-QT",
+        "filed": "2021-08-09"
+      },
+      "cutoff": "2021-08-08T12:00:00Z",
+      "expected": {
+        "absent": true
+      },
+      "reason": "Transition filing was not yet public; no future facts permitted."
+    },
+    {
+      "id": "calendar-13",
+      "fixture": "release",
+      "cik": "0000012659",
+      "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+      "source_sha256": "06e056b0473fb43c4b6cdb5d54573cc51c7a34dd6db11864864dd21f575d7a4b",
+      "pointer": "/facts/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/units/USD/50",
+      "literal": {
+        "start": "2021-07-01",
+        "end": "2021-09-30",
+        "val": 192624000,
+        "accn": "0001838862-21-000049",
+        "fy": 2021,
+        "fp": "FY",
+        "form": "10-Q",
+        "filed": "2021-11-04"
+      },
+      "cutoff": "2021-11-05T12:00:00Z",
+      "expected": {
+        "kind": "ambiguous",
+        "year": null,
+        "label": null,
+        "days": 92
+      },
+      "reason": "First quarter after transition has no admitted full-year window; filing fy/fp cannot manufacture the new calendar."
+    },
+    {
+      "id": "calendar-14",
+      "fixture": "release",
+      "cik": "0000012659",
+      "concept": "NetIncomeLoss",
+      "source_sha256": "06e056b0473fb43c4b6cdb5d54573cc51c7a34dd6db11864864dd21f575d7a4b",
+      "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/263",
+      "literal": {
+        "start": "2021-07-01",
+        "end": "2021-09-30",
+        "val": -151601000,
+        "accn": "0001838862-21-000049",
+        "fy": 2021,
+        "fp": "FY",
+        "form": "10-Q",
+        "filed": "2021-11-04"
+      },
+      "cutoff": "2021-11-05T12:00:00Z",
+      "expected": {
+        "kind": "ambiguous",
+        "year": null,
+        "label": null,
+        "days": 92
+      },
+      "reason": "First quarter after transition has no admitted full-year window; filing fy/fp cannot manufacture the new calendar."
+    },
+    {
+      "id": "calendar-15",
+      "fixture": "broad",
+      "cik": "0000027419",
+      "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+      "source_sha256": "eb15a2cd524e99ff27675db78840d039ec4a68b9cc2dcb10accbcb299933a487",
+      "pointer": "/facts/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/units/USD/99",
+      "literal": {
+        "start": "2023-01-29",
+        "end": "2024-02-03",
+        "val": 107412000000,
+        "accn": "0000027419-24-000032",
+        "fy": 2023,
+        "fp": "FY",
+        "form": "10-K",
+        "filed": "2024-03-13"
+      },
+      "cutoff": "2025-04-01T12:00:00Z",
+      "expected": {
+        "kind": "annual",
+        "year": 2023,
+        "label": "FY",
+        "days": 371
+      },
+      "reason": "Calendar arithmetic from exact annual dates and contemporaneous 10-K report end; no calendar-year approximation."
+    },
+    {
+      "id": "calendar-16",
+      "fixture": "broad",
+      "cik": "0000027419",
+      "concept": "NetIncomeLoss",
+      "source_sha256": "eb15a2cd524e99ff27675db78840d039ec4a68b9cc2dcb10accbcb299933a487",
+      "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/116",
+      "literal": {
+        "start": "2023-01-29",
+        "end": "2024-02-03",
+        "val": 4138000000,
+        "accn": "0000027419-24-000032",
+        "fy": 2023,
+        "fp": "FY",
+        "form": "10-K",
+        "filed": "2024-03-13"
+      },
+      "cutoff": "2025-04-01T12:00:00Z",
+      "expected": {
+        "kind": "annual",
+        "year": 2023,
+        "label": "FY",
+        "days": 371
+      },
+      "reason": "Calendar arithmetic from exact annual dates and contemporaneous 10-K report end; no calendar-year approximation."
+    },
+    {
+      "id": "calendar-17",
+      "fixture": "broad",
+      "cik": "0000320187",
+      "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+      "source_sha256": "d7aeceae21e6649e163d195729849349b27d909ab1a6eb4630a7c0c227acd890",
+      "pointer": "/facts/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/units/USD/77",
+      "literal": {
+        "start": "2023-06-01",
+        "end": "2024-05-31",
+        "val": 51362000000,
+        "accn": "0000320187-24-000044",
+        "fy": 2024,
+        "fp": "FY",
+        "form": "10-K",
+        "filed": "2024-07-25"
+      },
+      "cutoff": "2025-04-01T12:00:00Z",
+      "expected": {
+        "kind": "annual",
+        "year": 2024,
+        "label": "FY",
+        "days": 366
+      },
+      "reason": "Calendar arithmetic from exact annual dates and contemporaneous 10-K report end; no calendar-year approximation."
+    },
+    {
+      "id": "calendar-18",
+      "fixture": "broad",
+      "cik": "0000320187",
+      "concept": "NetIncomeLoss",
+      "source_sha256": "d7aeceae21e6649e163d195729849349b27d909ab1a6eb4630a7c0c227acd890",
+      "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/210",
+      "literal": {
+        "start": "2023-06-01",
+        "end": "2024-05-31",
+        "val": 5700000000,
+        "accn": "0000320187-24-000044",
+        "fy": 2024,
+        "fp": "FY",
+        "form": "10-K",
+        "filed": "2024-07-25"
+      },
+      "cutoff": "2025-04-01T12:00:00Z",
+      "expected": {
+        "kind": "annual",
+        "year": 2024,
+        "label": "FY",
+        "days": 366
+      },
+      "reason": "Calendar arithmetic from exact annual dates and contemporaneous 10-K report end; no calendar-year approximation."
+    },
+    {
+      "id": "calendar-19",
+      "fixture": "broad",
+      "cik": "0000909832",
+      "concept": "Revenues",
+      "source_sha256": "b675ced201b27ede2b0d26ca6fd873befe96a1afa9679339a2d0b964187dcdff",
+      "pointer": "/facts/us-gaap/Revenues/units/USD/290",
+      "literal": {
+        "start": "2022-08-29",
+        "end": "2023-09-03",
+        "val": 242290000000,
+        "accn": "0000909832-23-000042",
+        "fy": 2023,
+        "fp": "FY",
+        "form": "10-K",
+        "filed": "2023-10-11"
+      },
+      "cutoff": "2025-04-01T12:00:00Z",
+      "expected": {
+        "kind": "annual",
+        "year": 2023,
+        "label": "FY",
+        "days": 371
+      },
+      "reason": "Calendar arithmetic from exact annual dates and contemporaneous 10-K report end; no calendar-year approximation."
+    },
+    {
+      "id": "calendar-20",
+      "fixture": "broad",
+      "cik": "0000909832",
+      "concept": "Revenues",
+      "source_sha256": "b675ced201b27ede2b0d26ca6fd873befe96a1afa9679339a2d0b964187dcdff",
+      "pointer": "/facts/us-gaap/Revenues/units/USD/306",
+      "literal": {
+        "start": "2023-09-04",
+        "end": "2024-09-01",
+        "val": 254453000000,
+        "accn": "0000909832-24-000049",
+        "fy": 2024,
+        "fp": "FY",
+        "form": "10-K",
+        "filed": "2024-10-09"
+      },
+      "cutoff": "2025-04-01T12:00:00Z",
+      "expected": {
+        "kind": "annual",
+        "year": 2024,
+        "label": "FY",
+        "days": 364
+      },
+      "reason": "Calendar arithmetic from exact annual dates and contemporaneous 10-K report end; no calendar-year approximation."
+    },
+    {
+      "id": "calendar-21",
+      "fixture": "broad",
+      "cik": "0000027419",
+      "concept": "NetIncomeLoss",
+      "source_sha256": "eb15a2cd524e99ff27675db78840d039ec4a68b9cc2dcb10accbcb299933a487",
+      "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/120",
+      "literal": {
+        "start": "2023-10-29",
+        "end": "2024-02-03",
+        "val": 1382000000,
+        "accn": "0000027419-24-000129",
+        "fy": 2024,
+        "fp": "Q1",
+        "form": "10-Q",
+        "filed": "2024-05-31"
+      },
+      "cutoff": "2024-06-01T12:00:00Z",
+      "expected": {
+        "kind": "single_quarter",
+        "year": 2023,
+        "label": "Q4",
+        "days": 98
+      },
+      "reason": "14-week final quarter in a 53-week year; comparative filing fy/fp must not overwrite observed fiscal-year boundaries."
+    },
+    {
+      "id": "calendar-22",
+      "fixture": "broad",
+      "cik": "0000027419",
+      "concept": "NetIncomeLoss",
+      "source_sha256": "eb15a2cd524e99ff27675db78840d039ec4a68b9cc2dcb10accbcb299933a487",
+      "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/120",
+      "literal": {
+        "start": "2023-10-29",
+        "end": "2024-02-03",
+        "val": 1382000000,
+        "accn": "0000027419-24-000129",
+        "fy": 2024,
+        "fp": "Q1",
+        "form": "10-Q",
+        "filed": "2024-05-31"
+      },
+      "cutoff": "2024-05-30T12:00:00Z",
+      "expected": {
+        "absent": true
+      },
+      "reason": "The specific comparative quarterly observation must be absent before its own filing is available."
+    }
+  ]
+}

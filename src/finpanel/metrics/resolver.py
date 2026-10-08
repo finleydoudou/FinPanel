@@ -267,6 +267,12 @@ def resolve(
     filing_timeline: FilingTimeline | None = None,
     refresh: bool = False,
 ) -> MetricResult:
+    """Resolve a directly reported metric at an explicit timezone-aware cutoff.
+
+    Unresolved evidence is returned as a typed state with no scalar. This function
+    never derives quarters; use resolve_quarter with an explicit source policy.
+    Invalid query arguments raise ValidationError. SEC/cache errors propagate.
+    """
     return resolve_candidates(
         candidates(
             cik,

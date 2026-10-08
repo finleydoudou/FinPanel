@@ -1,0 +1,1481 @@
+{
+  "method": "Literal values, exact contexts and chronological SEC filing order; no resolver-generated expectations. Formal restatement attribution limited to MAT narrative-defined periods.",
+  "cases": [
+    {
+      "id": "revision-01",
+      "cik": "0000063276",
+      "concept": "NetIncomeLoss",
+      "start": "2017-01-01",
+      "end": "2017-03-31",
+      "as_of": "2019-11-13T12:00:00Z",
+      "policy": "first_reported",
+      "expected_value": -113231000,
+      "expected_status": "resolved",
+      "case_kind": "first_original",
+      "sha256": "b5b67c2c769d57e73c0289c7fa5e8b30ca9a9429dbc289556ff3670622c84161",
+      "sources": [
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/171",
+          "literal": {
+            "start": "2017-01-01",
+            "end": "2017-03-31",
+            "val": -113231000,
+            "accn": "0001628280-17-004404",
+            "fy": 2017,
+            "fp": "Q1",
+            "form": "10-Q",
+            "filed": "2017-04-27"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/172",
+          "literal": {
+            "start": "2017-01-01",
+            "end": "2017-03-31",
+            "val": -113231000,
+            "accn": "0001628280-18-002322",
+            "fy": 2017,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2018-02-27"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/173",
+          "literal": {
+            "start": "2017-01-01",
+            "end": "2017-03-31",
+            "val": -113231000,
+            "accn": "0001628280-18-005116",
+            "fy": 2018,
+            "fp": "Q1",
+            "form": "10-Q",
+            "filed": "2018-04-26"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/174",
+          "literal": {
+            "start": "2017-01-01",
+            "end": "2017-03-31",
+            "val": -113231000,
+            "accn": "0001628280-19-001744",
+            "fy": 2018,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2019-02-22"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/175",
+          "literal": {
+            "start": "2017-01-01",
+            "end": "2017-03-31",
+            "val": -110956000,
+            "accn": "0001628280-19-013975",
+            "fy": 2018,
+            "fp": "FY",
+            "form": "10-K/A",
+            "filed": "2019-11-12",
+            "frame": "CY2017Q1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "revision-02",
+      "cik": "0000063276",
+      "concept": "NetIncomeLoss",
+      "start": "2017-01-01",
+      "end": "2017-03-31",
+      "as_of": "2019-11-13T12:00:00Z",
+      "policy": "latest_available",
+      "expected_value": -110956000,
+      "expected_status": "resolved",
+      "case_kind": "amended_latest",
+      "sha256": "b5b67c2c769d57e73c0289c7fa5e8b30ca9a9429dbc289556ff3670622c84161",
+      "sources": [
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/171",
+          "literal": {
+            "start": "2017-01-01",
+            "end": "2017-03-31",
+            "val": -113231000,
+            "accn": "0001628280-17-004404",
+            "fy": 2017,
+            "fp": "Q1",
+            "form": "10-Q",
+            "filed": "2017-04-27"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/172",
+          "literal": {
+            "start": "2017-01-01",
+            "end": "2017-03-31",
+            "val": -113231000,
+            "accn": "0001628280-18-002322",
+            "fy": 2017,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2018-02-27"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/173",
+          "literal": {
+            "start": "2017-01-01",
+            "end": "2017-03-31",
+            "val": -113231000,
+            "accn": "0001628280-18-005116",
+            "fy": 2018,
+            "fp": "Q1",
+            "form": "10-Q",
+            "filed": "2018-04-26"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/174",
+          "literal": {
+            "start": "2017-01-01",
+            "end": "2017-03-31",
+            "val": -113231000,
+            "accn": "0001628280-19-001744",
+            "fy": 2018,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2019-02-22"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/175",
+          "literal": {
+            "start": "2017-01-01",
+            "end": "2017-03-31",
+            "val": -110956000,
+            "accn": "0001628280-19-013975",
+            "fy": 2018,
+            "fp": "FY",
+            "form": "10-K/A",
+            "filed": "2019-11-12",
+            "frame": "CY2017Q1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "revision-03",
+      "cik": "0000063276",
+      "concept": "NetIncomeLoss",
+      "start": "2017-04-01",
+      "end": "2017-06-30",
+      "as_of": "2019-11-13T12:00:00Z",
+      "policy": "first_reported",
+      "expected_value": -56075000,
+      "expected_status": "resolved",
+      "case_kind": "first_original",
+      "sha256": "b5b67c2c769d57e73c0289c7fa5e8b30ca9a9429dbc289556ff3670622c84161",
+      "sources": [
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/178",
+          "literal": {
+            "start": "2017-04-01",
+            "end": "2017-06-30",
+            "val": -56075000,
+            "accn": "0001628280-17-007840",
+            "fy": 2017,
+            "fp": "Q2",
+            "form": "10-Q",
+            "filed": "2017-08-02"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/179",
+          "literal": {
+            "start": "2017-04-01",
+            "end": "2017-06-30",
+            "val": -56075000,
+            "accn": "0001628280-18-002322",
+            "fy": 2017,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2018-02-27"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/180",
+          "literal": {
+            "start": "2017-04-01",
+            "end": "2017-06-30",
+            "val": -56075000,
+            "accn": "0001628280-18-009592",
+            "fy": 2018,
+            "fp": "Q2",
+            "form": "10-Q",
+            "filed": "2018-07-25"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/181",
+          "literal": {
+            "start": "2017-04-01",
+            "end": "2017-06-30",
+            "val": -56075000,
+            "accn": "0001628280-19-001744",
+            "fy": 2018,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2019-02-22"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/182",
+          "literal": {
+            "start": "2017-04-01",
+            "end": "2017-06-30",
+            "val": -54885000,
+            "accn": "0001628280-19-013975",
+            "fy": 2018,
+            "fp": "FY",
+            "form": "10-K/A",
+            "filed": "2019-11-12",
+            "frame": "CY2017Q2"
+          }
+        }
+      ]
+    },
+    {
+      "id": "revision-04",
+      "cik": "0000063276",
+      "concept": "NetIncomeLoss",
+      "start": "2017-04-01",
+      "end": "2017-06-30",
+      "as_of": "2019-11-13T12:00:00Z",
+      "policy": "latest_available",
+      "expected_value": -54885000,
+      "expected_status": "resolved",
+      "case_kind": "amended_latest",
+      "sha256": "b5b67c2c769d57e73c0289c7fa5e8b30ca9a9429dbc289556ff3670622c84161",
+      "sources": [
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/178",
+          "literal": {
+            "start": "2017-04-01",
+            "end": "2017-06-30",
+            "val": -56075000,
+            "accn": "0001628280-17-007840",
+            "fy": 2017,
+            "fp": "Q2",
+            "form": "10-Q",
+            "filed": "2017-08-02"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/179",
+          "literal": {
+            "start": "2017-04-01",
+            "end": "2017-06-30",
+            "val": -56075000,
+            "accn": "0001628280-18-002322",
+            "fy": 2017,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2018-02-27"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/180",
+          "literal": {
+            "start": "2017-04-01",
+            "end": "2017-06-30",
+            "val": -56075000,
+            "accn": "0001628280-18-009592",
+            "fy": 2018,
+            "fp": "Q2",
+            "form": "10-Q",
+            "filed": "2018-07-25"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/181",
+          "literal": {
+            "start": "2017-04-01",
+            "end": "2017-06-30",
+            "val": -56075000,
+            "accn": "0001628280-19-001744",
+            "fy": 2018,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2019-02-22"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/182",
+          "literal": {
+            "start": "2017-04-01",
+            "end": "2017-06-30",
+            "val": -54885000,
+            "accn": "0001628280-19-013975",
+            "fy": 2018,
+            "fp": "FY",
+            "form": "10-K/A",
+            "filed": "2019-11-12",
+            "frame": "CY2017Q2"
+          }
+        }
+      ]
+    },
+    {
+      "id": "revision-05",
+      "cik": "0000063276",
+      "concept": "NetIncomeLoss",
+      "start": "2017-07-01",
+      "end": "2017-09-30",
+      "as_of": "2019-11-13T12:00:00Z",
+      "policy": "first_reported",
+      "expected_value": -603247000,
+      "expected_status": "resolved",
+      "case_kind": "first_original",
+      "sha256": "b5b67c2c769d57e73c0289c7fa5e8b30ca9a9429dbc289556ff3670622c84161",
+      "sources": [
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/186",
+          "literal": {
+            "start": "2017-07-01",
+            "end": "2017-09-30",
+            "val": -603247000,
+            "accn": "0001628280-17-010230",
+            "fy": 2017,
+            "fp": "Q3",
+            "form": "10-Q",
+            "filed": "2017-10-26"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/187",
+          "literal": {
+            "start": "2017-07-01",
+            "end": "2017-09-30",
+            "val": -603247000,
+            "accn": "0001628280-18-002322",
+            "fy": 2017,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2018-02-27"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/188",
+          "literal": {
+            "start": "2017-07-01",
+            "end": "2017-09-30",
+            "val": -603247000,
+            "accn": "0001628280-18-012921",
+            "fy": 2018,
+            "fp": "Q3",
+            "form": "10-Q",
+            "filed": "2018-10-25"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/189",
+          "literal": {
+            "start": "2017-07-01",
+            "end": "2017-09-30",
+            "val": -603247000,
+            "accn": "0001628280-19-001744",
+            "fy": 2018,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2019-02-22"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/190",
+          "literal": {
+            "start": "2017-07-01",
+            "end": "2017-09-30",
+            "val": -713445000,
+            "accn": "0001628280-19-013975",
+            "fy": 2018,
+            "fp": "FY",
+            "form": "10-K/A",
+            "filed": "2019-11-12",
+            "frame": "CY2017Q3"
+          }
+        }
+      ]
+    },
+    {
+      "id": "revision-06",
+      "cik": "0000063276",
+      "concept": "NetIncomeLoss",
+      "start": "2017-07-01",
+      "end": "2017-09-30",
+      "as_of": "2019-11-13T12:00:00Z",
+      "policy": "latest_available",
+      "expected_value": -713445000,
+      "expected_status": "resolved",
+      "case_kind": "amended_latest",
+      "sha256": "b5b67c2c769d57e73c0289c7fa5e8b30ca9a9429dbc289556ff3670622c84161",
+      "sources": [
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/186",
+          "literal": {
+            "start": "2017-07-01",
+            "end": "2017-09-30",
+            "val": -603247000,
+            "accn": "0001628280-17-010230",
+            "fy": 2017,
+            "fp": "Q3",
+            "form": "10-Q",
+            "filed": "2017-10-26"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/187",
+          "literal": {
+            "start": "2017-07-01",
+            "end": "2017-09-30",
+            "val": -603247000,
+            "accn": "0001628280-18-002322",
+            "fy": 2017,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2018-02-27"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/188",
+          "literal": {
+            "start": "2017-07-01",
+            "end": "2017-09-30",
+            "val": -603247000,
+            "accn": "0001628280-18-012921",
+            "fy": 2018,
+            "fp": "Q3",
+            "form": "10-Q",
+            "filed": "2018-10-25"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/189",
+          "literal": {
+            "start": "2017-07-01",
+            "end": "2017-09-30",
+            "val": -603247000,
+            "accn": "0001628280-19-001744",
+            "fy": 2018,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2019-02-22"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/190",
+          "literal": {
+            "start": "2017-07-01",
+            "end": "2017-09-30",
+            "val": -713445000,
+            "accn": "0001628280-19-013975",
+            "fy": 2018,
+            "fp": "FY",
+            "form": "10-K/A",
+            "filed": "2019-11-12",
+            "frame": "CY2017Q3"
+          }
+        }
+      ]
+    },
+    {
+      "id": "revision-07",
+      "cik": "0000063276",
+      "concept": "NetIncomeLoss",
+      "start": "2017-10-01",
+      "end": "2017-12-31",
+      "as_of": "2019-11-13T12:00:00Z",
+      "policy": "first_reported",
+      "expected_value": -281283000,
+      "expected_status": "resolved",
+      "case_kind": "first_original",
+      "sha256": "b5b67c2c769d57e73c0289c7fa5e8b30ca9a9429dbc289556ff3670622c84161",
+      "sources": [
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/195",
+          "literal": {
+            "start": "2017-10-01",
+            "end": "2017-12-31",
+            "val": -281283000,
+            "accn": "0001628280-18-002322",
+            "fy": 2017,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2018-02-27"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/196",
+          "literal": {
+            "start": "2017-10-01",
+            "end": "2017-12-31",
+            "val": -281283000,
+            "accn": "0001628280-19-001744",
+            "fy": 2018,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2019-02-22"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/197",
+          "literal": {
+            "start": "2017-10-01",
+            "end": "2017-12-31",
+            "val": -175293000,
+            "accn": "0001628280-19-013975",
+            "fy": 2018,
+            "fp": "FY",
+            "form": "10-K/A",
+            "filed": "2019-11-12",
+            "frame": "CY2017Q4"
+          }
+        }
+      ]
+    },
+    {
+      "id": "revision-08",
+      "cik": "0000063276",
+      "concept": "NetIncomeLoss",
+      "start": "2017-10-01",
+      "end": "2017-12-31",
+      "as_of": "2019-11-13T12:00:00Z",
+      "policy": "latest_available",
+      "expected_value": -175293000,
+      "expected_status": "resolved",
+      "case_kind": "amended_latest",
+      "sha256": "b5b67c2c769d57e73c0289c7fa5e8b30ca9a9429dbc289556ff3670622c84161",
+      "sources": [
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/195",
+          "literal": {
+            "start": "2017-10-01",
+            "end": "2017-12-31",
+            "val": -281283000,
+            "accn": "0001628280-18-002322",
+            "fy": 2017,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2018-02-27"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/196",
+          "literal": {
+            "start": "2017-10-01",
+            "end": "2017-12-31",
+            "val": -281283000,
+            "accn": "0001628280-19-001744",
+            "fy": 2018,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2019-02-22"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/197",
+          "literal": {
+            "start": "2017-10-01",
+            "end": "2017-12-31",
+            "val": -175293000,
+            "accn": "0001628280-19-013975",
+            "fy": 2018,
+            "fp": "FY",
+            "form": "10-K/A",
+            "filed": "2019-11-12",
+            "frame": "CY2017Q4"
+          }
+        }
+      ]
+    },
+    {
+      "id": "revision-09",
+      "cik": "0000063276",
+      "concept": "NetIncomeLoss",
+      "start": "2017-01-01",
+      "end": "2017-12-31",
+      "as_of": "2019-11-13T12:00:00Z",
+      "policy": "first_reported",
+      "expected_value": -1053836000,
+      "expected_status": "resolved",
+      "case_kind": "first_original",
+      "sha256": "b5b67c2c769d57e73c0289c7fa5e8b30ca9a9429dbc289556ff3670622c84161",
+      "sources": [
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/191",
+          "literal": {
+            "start": "2017-01-01",
+            "end": "2017-12-31",
+            "val": -1053836000,
+            "accn": "0001628280-18-002322",
+            "fy": 2017,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2018-02-27"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/192",
+          "literal": {
+            "start": "2017-01-01",
+            "end": "2017-12-31",
+            "val": -1053836000,
+            "accn": "0001628280-19-001744",
+            "fy": 2018,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2019-02-22"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/193",
+          "literal": {
+            "start": "2017-01-01",
+            "end": "2017-12-31",
+            "val": -1054579000,
+            "accn": "0001628280-19-013975",
+            "fy": 2018,
+            "fp": "FY",
+            "form": "10-K/A",
+            "filed": "2019-11-12"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/194",
+          "literal": {
+            "start": "2017-01-01",
+            "end": "2017-12-31",
+            "val": -1054579000,
+            "accn": "0001628280-20-002192",
+            "fy": 2019,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2020-02-25",
+            "frame": "CY2017"
+          }
+        }
+      ]
+    },
+    {
+      "id": "revision-10",
+      "cik": "0000063276",
+      "concept": "NetIncomeLoss",
+      "start": "2017-01-01",
+      "end": "2017-12-31",
+      "as_of": "2019-11-13T12:00:00Z",
+      "policy": "latest_available",
+      "expected_value": -1054579000,
+      "expected_status": "resolved",
+      "case_kind": "amended_latest",
+      "sha256": "b5b67c2c769d57e73c0289c7fa5e8b30ca9a9429dbc289556ff3670622c84161",
+      "sources": [
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/191",
+          "literal": {
+            "start": "2017-01-01",
+            "end": "2017-12-31",
+            "val": -1053836000,
+            "accn": "0001628280-18-002322",
+            "fy": 2017,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2018-02-27"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/192",
+          "literal": {
+            "start": "2017-01-01",
+            "end": "2017-12-31",
+            "val": -1053836000,
+            "accn": "0001628280-19-001744",
+            "fy": 2018,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2019-02-22"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/193",
+          "literal": {
+            "start": "2017-01-01",
+            "end": "2017-12-31",
+            "val": -1054579000,
+            "accn": "0001628280-19-013975",
+            "fy": 2018,
+            "fp": "FY",
+            "form": "10-K/A",
+            "filed": "2019-11-12"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/194",
+          "literal": {
+            "start": "2017-01-01",
+            "end": "2017-12-31",
+            "val": -1054579000,
+            "accn": "0001628280-20-002192",
+            "fy": 2019,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2020-02-25",
+            "frame": "CY2017"
+          }
+        }
+      ]
+    },
+    {
+      "id": "revision-11",
+      "cik": "0000063276",
+      "concept": "NetIncomeLoss",
+      "start": "2018-01-01",
+      "end": "2018-12-31",
+      "as_of": "2019-11-13T12:00:00Z",
+      "policy": "first_reported",
+      "expected_value": -530993000,
+      "expected_status": "resolved",
+      "case_kind": "first_original",
+      "sha256": "b5b67c2c769d57e73c0289c7fa5e8b30ca9a9429dbc289556ff3670622c84161",
+      "sources": [
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/221",
+          "literal": {
+            "start": "2018-01-01",
+            "end": "2018-12-31",
+            "val": -530993000,
+            "accn": "0001628280-19-001744",
+            "fy": 2018,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2019-02-22"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/222",
+          "literal": {
+            "start": "2018-01-01",
+            "end": "2018-12-31",
+            "val": -533299000,
+            "accn": "0001628280-19-013975",
+            "fy": 2018,
+            "fp": "FY",
+            "form": "10-K/A",
+            "filed": "2019-11-12"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/223",
+          "literal": {
+            "start": "2018-01-01",
+            "end": "2018-12-31",
+            "val": -533299000,
+            "accn": "0001628280-20-002192",
+            "fy": 2019,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2020-02-25"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/224",
+          "literal": {
+            "start": "2018-01-01",
+            "end": "2018-12-31",
+            "val": -533299000,
+            "accn": "0001628280-21-003197",
+            "fy": 2020,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2021-02-25",
+            "frame": "CY2018"
+          }
+        }
+      ]
+    },
+    {
+      "id": "revision-12",
+      "cik": "0000063276",
+      "concept": "NetIncomeLoss",
+      "start": "2018-01-01",
+      "end": "2018-12-31",
+      "as_of": "2019-11-13T12:00:00Z",
+      "policy": "latest_available",
+      "expected_value": -533299000,
+      "expected_status": "resolved",
+      "case_kind": "amended_latest",
+      "sha256": "b5b67c2c769d57e73c0289c7fa5e8b30ca9a9429dbc289556ff3670622c84161",
+      "sources": [
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/221",
+          "literal": {
+            "start": "2018-01-01",
+            "end": "2018-12-31",
+            "val": -530993000,
+            "accn": "0001628280-19-001744",
+            "fy": 2018,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2019-02-22"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/222",
+          "literal": {
+            "start": "2018-01-01",
+            "end": "2018-12-31",
+            "val": -533299000,
+            "accn": "0001628280-19-013975",
+            "fy": 2018,
+            "fp": "FY",
+            "form": "10-K/A",
+            "filed": "2019-11-12"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/223",
+          "literal": {
+            "start": "2018-01-01",
+            "end": "2018-12-31",
+            "val": -533299000,
+            "accn": "0001628280-20-002192",
+            "fy": 2019,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2020-02-25"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/224",
+          "literal": {
+            "start": "2018-01-01",
+            "end": "2018-12-31",
+            "val": -533299000,
+            "accn": "0001628280-21-003197",
+            "fy": 2020,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2021-02-25",
+            "frame": "CY2018"
+          }
+        }
+      ]
+    },
+    {
+      "id": "revision-13",
+      "cik": "0000063276",
+      "concept": "NetIncomeLoss",
+      "start": "2017-07-01",
+      "end": "2017-09-30",
+      "as_of": "2019-11-11T12:00:00Z",
+      "policy": "latest_available",
+      "expected_value": -603247000,
+      "expected_status": "resolved",
+      "case_kind": "pre_amendment",
+      "sha256": "b5b67c2c769d57e73c0289c7fa5e8b30ca9a9429dbc289556ff3670622c84161",
+      "sources": [
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/186",
+          "literal": {
+            "start": "2017-07-01",
+            "end": "2017-09-30",
+            "val": -603247000,
+            "accn": "0001628280-17-010230",
+            "fy": 2017,
+            "fp": "Q3",
+            "form": "10-Q",
+            "filed": "2017-10-26"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/187",
+          "literal": {
+            "start": "2017-07-01",
+            "end": "2017-09-30",
+            "val": -603247000,
+            "accn": "0001628280-18-002322",
+            "fy": 2017,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2018-02-27"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/188",
+          "literal": {
+            "start": "2017-07-01",
+            "end": "2017-09-30",
+            "val": -603247000,
+            "accn": "0001628280-18-012921",
+            "fy": 2018,
+            "fp": "Q3",
+            "form": "10-Q",
+            "filed": "2018-10-25"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/189",
+          "literal": {
+            "start": "2017-07-01",
+            "end": "2017-09-30",
+            "val": -603247000,
+            "accn": "0001628280-19-001744",
+            "fy": 2018,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2019-02-22"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/190",
+          "literal": {
+            "start": "2017-07-01",
+            "end": "2017-09-30",
+            "val": -713445000,
+            "accn": "0001628280-19-013975",
+            "fy": 2018,
+            "fp": "FY",
+            "form": "10-K/A",
+            "filed": "2019-11-12",
+            "frame": "CY2017Q3"
+          }
+        }
+      ]
+    },
+    {
+      "id": "revision-14",
+      "cik": "0000063276",
+      "concept": "NetIncomeLoss",
+      "start": "2017-07-01",
+      "end": "2017-09-30",
+      "as_of": "2019-11-13T12:00:00Z",
+      "policy": "all_available",
+      "expected_value": null,
+      "expected_status": "conflicted",
+      "case_kind": "incompatible_values",
+      "sha256": "b5b67c2c769d57e73c0289c7fa5e8b30ca9a9429dbc289556ff3670622c84161",
+      "sources": [
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/186",
+          "literal": {
+            "start": "2017-07-01",
+            "end": "2017-09-30",
+            "val": -603247000,
+            "accn": "0001628280-17-010230",
+            "fy": 2017,
+            "fp": "Q3",
+            "form": "10-Q",
+            "filed": "2017-10-26"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/187",
+          "literal": {
+            "start": "2017-07-01",
+            "end": "2017-09-30",
+            "val": -603247000,
+            "accn": "0001628280-18-002322",
+            "fy": 2017,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2018-02-27"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/188",
+          "literal": {
+            "start": "2017-07-01",
+            "end": "2017-09-30",
+            "val": -603247000,
+            "accn": "0001628280-18-012921",
+            "fy": 2018,
+            "fp": "Q3",
+            "form": "10-Q",
+            "filed": "2018-10-25"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/189",
+          "literal": {
+            "start": "2017-07-01",
+            "end": "2017-09-30",
+            "val": -603247000,
+            "accn": "0001628280-19-001744",
+            "fy": 2018,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2019-02-22"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/190",
+          "literal": {
+            "start": "2017-07-01",
+            "end": "2017-09-30",
+            "val": -713445000,
+            "accn": "0001628280-19-013975",
+            "fy": 2018,
+            "fp": "FY",
+            "form": "10-K/A",
+            "filed": "2019-11-12",
+            "frame": "CY2017Q3"
+          }
+        }
+      ]
+    },
+    {
+      "id": "revision-15",
+      "cik": "0001637459",
+      "concept": "NetIncomeLoss",
+      "start": "2017-01-01",
+      "end": "2017-12-30",
+      "as_of": "2019-06-08T12:00:00Z",
+      "policy": "first_reported",
+      "expected_value": 10999000000,
+      "expected_status": "resolved",
+      "case_kind": "first_original",
+      "sha256": "8fad66c16e535f7749f19126a986a9f43a087ca2472d063fa7742106196d88ac",
+      "sources": [
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/76",
+          "literal": {
+            "start": "2017-01-01",
+            "end": "2017-12-30",
+            "val": 10999000000,
+            "accn": "0001637459-18-000015",
+            "fy": 2017,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2018-02-16"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/77",
+          "literal": {
+            "start": "2017-01-01",
+            "end": "2017-12-30",
+            "val": 10941000000,
+            "accn": "0001637459-19-000049",
+            "fy": 2018,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2019-06-07"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/78",
+          "literal": {
+            "start": "2017-01-01",
+            "end": "2017-12-30",
+            "val": 10941000000,
+            "accn": "0001637459-20-000027",
+            "fy": 2019,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2020-02-14"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/79",
+          "literal": {
+            "start": "2017-01-01",
+            "end": "2017-12-30",
+            "val": 10941000000,
+            "accn": "0001637459-20-000168",
+            "fy": null,
+            "fp": null,
+            "form": "8-K",
+            "filed": "2020-11-13",
+            "frame": "CY2017"
+          }
+        }
+      ]
+    },
+    {
+      "id": "revision-16",
+      "cik": "0001637459",
+      "concept": "NetIncomeLoss",
+      "start": "2017-01-01",
+      "end": "2017-12-30",
+      "as_of": "2019-06-08T12:00:00Z",
+      "policy": "latest_available",
+      "expected_value": 10941000000,
+      "expected_status": "resolved",
+      "case_kind": "comparative_revision_cause_unasserted",
+      "sha256": "8fad66c16e535f7749f19126a986a9f43a087ca2472d063fa7742106196d88ac",
+      "sources": [
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/76",
+          "literal": {
+            "start": "2017-01-01",
+            "end": "2017-12-30",
+            "val": 10999000000,
+            "accn": "0001637459-18-000015",
+            "fy": 2017,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2018-02-16"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/77",
+          "literal": {
+            "start": "2017-01-01",
+            "end": "2017-12-30",
+            "val": 10941000000,
+            "accn": "0001637459-19-000049",
+            "fy": 2018,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2019-06-07"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/78",
+          "literal": {
+            "start": "2017-01-01",
+            "end": "2017-12-30",
+            "val": 10941000000,
+            "accn": "0001637459-20-000027",
+            "fy": 2019,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2020-02-14"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/79",
+          "literal": {
+            "start": "2017-01-01",
+            "end": "2017-12-30",
+            "val": 10941000000,
+            "accn": "0001637459-20-000168",
+            "fy": null,
+            "fp": null,
+            "form": "8-K",
+            "filed": "2020-11-13",
+            "frame": "CY2017"
+          }
+        }
+      ]
+    },
+    {
+      "id": "revision-17",
+      "cik": "0001637459",
+      "concept": "NetIncomeLoss",
+      "start": "2017-04-02",
+      "end": "2017-07-01",
+      "as_of": "2019-06-08T12:00:00Z",
+      "policy": "first_reported",
+      "expected_value": 1159000000,
+      "expected_status": "resolved",
+      "case_kind": "first_original",
+      "sha256": "8fad66c16e535f7749f19126a986a9f43a087ca2472d063fa7742106196d88ac",
+      "sources": [
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/64",
+          "literal": {
+            "start": "2017-04-02",
+            "end": "2017-07-01",
+            "val": 1159000000,
+            "accn": "0001637459-17-000101",
+            "fy": 2017,
+            "fp": "Q2",
+            "form": "10-Q",
+            "filed": "2017-08-04"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/65",
+          "literal": {
+            "start": "2017-04-02",
+            "end": "2017-07-01",
+            "val": 1159000000,
+            "accn": "0001637459-17-000117",
+            "fy": 2017,
+            "fp": "Q2",
+            "form": "10-Q/A",
+            "filed": "2017-11-07"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/66",
+          "literal": {
+            "start": "2017-04-02",
+            "end": "2017-07-01",
+            "val": 1159000000,
+            "accn": "0001637459-18-000015",
+            "fy": 2017,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2018-02-16"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/67",
+          "literal": {
+            "start": "2017-04-02",
+            "end": "2017-07-01",
+            "val": 1159000000,
+            "accn": "0001637459-18-000116",
+            "fy": 2018,
+            "fp": "Q2",
+            "form": "10-Q",
+            "filed": "2018-08-03"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/68",
+          "literal": {
+            "start": "2017-04-02",
+            "end": "2017-07-01",
+            "val": 1156000000,
+            "accn": "0001637459-19-000049",
+            "fy": 2018,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2019-06-07",
+            "frame": "CY2017Q2"
+          }
+        }
+      ]
+    },
+    {
+      "id": "revision-18",
+      "cik": "0001637459",
+      "concept": "NetIncomeLoss",
+      "start": "2017-04-02",
+      "end": "2017-07-01",
+      "as_of": "2019-06-08T12:00:00Z",
+      "policy": "latest_available",
+      "expected_value": 1156000000,
+      "expected_status": "resolved",
+      "case_kind": "comparative_revision_cause_unasserted",
+      "sha256": "8fad66c16e535f7749f19126a986a9f43a087ca2472d063fa7742106196d88ac",
+      "sources": [
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/64",
+          "literal": {
+            "start": "2017-04-02",
+            "end": "2017-07-01",
+            "val": 1159000000,
+            "accn": "0001637459-17-000101",
+            "fy": 2017,
+            "fp": "Q2",
+            "form": "10-Q",
+            "filed": "2017-08-04"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/65",
+          "literal": {
+            "start": "2017-04-02",
+            "end": "2017-07-01",
+            "val": 1159000000,
+            "accn": "0001637459-17-000117",
+            "fy": 2017,
+            "fp": "Q2",
+            "form": "10-Q/A",
+            "filed": "2017-11-07"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/66",
+          "literal": {
+            "start": "2017-04-02",
+            "end": "2017-07-01",
+            "val": 1159000000,
+            "accn": "0001637459-18-000015",
+            "fy": 2017,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2018-02-16"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/67",
+          "literal": {
+            "start": "2017-04-02",
+            "end": "2017-07-01",
+            "val": 1159000000,
+            "accn": "0001637459-18-000116",
+            "fy": 2018,
+            "fp": "Q2",
+            "form": "10-Q",
+            "filed": "2018-08-03"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/68",
+          "literal": {
+            "start": "2017-04-02",
+            "end": "2017-07-01",
+            "val": 1156000000,
+            "accn": "0001637459-19-000049",
+            "fy": 2018,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2019-06-07",
+            "frame": "CY2017Q2"
+          }
+        }
+      ]
+    },
+    {
+      "id": "revision-19",
+      "cik": "0001637459",
+      "concept": "NetIncomeLoss",
+      "start": "2017-01-01",
+      "end": "2017-04-01",
+      "as_of": "2018-06-01T12:00:00Z",
+      "policy": "latest_available",
+      "expected_value": 893000000,
+      "expected_status": "resolved",
+      "case_kind": "unchanged_amendment_and_comparative",
+      "sha256": "8fad66c16e535f7749f19126a986a9f43a087ca2472d063fa7742106196d88ac",
+      "sources": [
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/55",
+          "literal": {
+            "start": "2017-01-01",
+            "end": "2017-04-01",
+            "val": 893000000,
+            "accn": "0001637459-17-000081",
+            "fy": 2017,
+            "fp": "Q1",
+            "form": "10-Q",
+            "filed": "2017-05-04"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/56",
+          "literal": {
+            "start": "2017-01-01",
+            "end": "2017-04-01",
+            "val": 893000000,
+            "accn": "0001637459-17-000116",
+            "fy": 2017,
+            "fp": "Q1",
+            "form": "10-Q/A",
+            "filed": "2017-11-07"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/57",
+          "literal": {
+            "start": "2017-01-01",
+            "end": "2017-04-01",
+            "val": 893000000,
+            "accn": "0001637459-18-000015",
+            "fy": 2017,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2018-02-16"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/58",
+          "literal": {
+            "start": "2017-01-01",
+            "end": "2017-04-01",
+            "val": 893000000,
+            "accn": "0001637459-18-000099",
+            "fy": 2018,
+            "fp": "Q1",
+            "form": "10-Q",
+            "filed": "2018-05-03"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/59",
+          "literal": {
+            "start": "2017-01-01",
+            "end": "2017-04-01",
+            "val": 883000000,
+            "accn": "0001637459-19-000049",
+            "fy": 2018,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2019-06-07",
+            "frame": "CY2017Q1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "revision-20",
+      "cik": "0001637459",
+      "concept": "NetCashProvidedByUsedInOperatingActivities",
+      "start": "2017-01-01",
+      "end": "2017-07-01",
+      "as_of": "2019-06-08T12:00:00Z",
+      "policy": "latest_available",
+      "expected_value": -178000000,
+      "expected_status": "resolved",
+      "case_kind": "amended_cumulative_operand",
+      "sha256": "8fad66c16e535f7749f19126a986a9f43a087ca2472d063fa7742106196d88ac",
+      "sources": [
+        {
+          "pointer": "/facts/us-gaap/NetCashProvidedByUsedInOperatingActivities/units/USD/28",
+          "literal": {
+            "start": "2017-01-01",
+            "end": "2017-07-01",
+            "val": 891000000,
+            "accn": "0001637459-17-000101",
+            "fy": 2017,
+            "fp": "Q2",
+            "form": "10-Q",
+            "filed": "2017-08-04"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetCashProvidedByUsedInOperatingActivities/units/USD/29",
+          "literal": {
+            "start": "2017-01-01",
+            "end": "2017-07-01",
+            "val": -178000000,
+            "accn": "0001637459-17-000117",
+            "fy": 2017,
+            "fp": "Q2",
+            "form": "10-Q/A",
+            "filed": "2017-11-07"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetCashProvidedByUsedInOperatingActivities/units/USD/30",
+          "literal": {
+            "start": "2017-01-01",
+            "end": "2017-07-01",
+            "val": -178000000,
+            "accn": "0001637459-18-000116",
+            "fy": 2018,
+            "fp": "Q2",
+            "form": "10-Q",
+            "filed": "2018-08-03"
+          }
+        },
+        {
+          "pointer": "/facts/us-gaap/NetCashProvidedByUsedInOperatingActivities/units/USD/31",
+          "literal": {
+            "start": "2017-01-01",
+            "end": "2017-07-01",
+            "val": -178000000,
+            "accn": "0001637459-19-000049",
+            "fy": 2018,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2019-06-07"
+          }
+        }
+      ]
+    }
+  ]
+}

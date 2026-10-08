@@ -1,0 +1,18 @@
+{
+  "format": "finpanel-completed-resume-audit-v1",
+  "meaning": "Completed-job hash verification and skip audit; interruption equivalence is additionally covered by permanent tests.",
+  "shards": [
+    {
+      "shard": 0,
+      "completed_issuers": 50,
+      "semantic_files_byte_identical": true,
+      "resume_seconds": 2.0678702089999206
+    },
+    {
+      "shard": 1,
+      "completed_issuers": 50,
+      "semantic_files_byte_identical": true,
+      "resume_seconds": 2.067832583999916
+    }
+  ]
+}

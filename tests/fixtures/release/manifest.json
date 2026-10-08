@@ -1,0 +1,268 @@
+{
+  "artifacts": [
+    {
+      "artifact": {
+        "accession": null,
+        "authenticity": "authentic",
+        "capture_id": "9027074deed11668138a6772ebef7325e7058cd01c53bd637114da49d882ad4f",
+        "cik": "0000012659",
+        "http_metadata": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "locator": "objects/06e056b0473fb43c4b6cdb5d54573cc51c7a34dd6db11864864dd21f575d7a4b",
+        "parser_schema": "raw-bytes-v1",
+        "raw_format": "json",
+        "raw_unmodified": true,
+        "retrieved_at": "2026-10-08T02:34:30.803401+00:00",
+        "sha256": "06e056b0473fb43c4b6cdb5d54573cc51c7a34dd6db11864864dd21f575d7a4b",
+        "size": 4625407,
+        "source_family": "companyfacts",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000012659.json"
+      },
+      "compressed_sha256": "53033bcf9309655e0fef225e0f7d746fb3032ec9a38638e6f37f20023d1d2cea",
+      "filename": "0000012659_companyfacts_06e056b0473f.gz"
+    },
+    {
+      "artifact": {
+        "accession": null,
+        "authenticity": "authentic",
+        "capture_id": "d939a79c5f0d4f0511b5be08a4aae5a06eb049fd700a21c9e780550bc61aa17a",
+        "cik": "0000012659",
+        "http_metadata": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "locator": "objects/19f80cc024c7919f4dd9cfb6dfc8b4402eae1e5347ee5045ba77d0ea6c1f8710",
+        "parser_schema": "raw-bytes-v1",
+        "raw_format": "json",
+        "raw_unmodified": true,
+        "retrieved_at": "2026-10-08T02:34:28.394468+00:00",
+        "sha256": "19f80cc024c7919f4dd9cfb6dfc8b4402eae1e5347ee5045ba77d0ea6c1f8710",
+        "size": 201587,
+        "source_family": "historical_submissions",
+        "source_url": "https://data.sec.gov/submissions/CIK0000012659-submissions-001.json"
+      },
+      "compressed_sha256": "7e57747e7b8fcaa609736fb0f4f735a821e8518f9610df4f204e6450770613c6",
+      "filename": "0000012659_historical_submissions_19f80cc024c7.gz"
+    },
+    {
+      "artifact": {
+        "accession": "0001838862-21-000036",
+        "authenticity": "authentic",
+        "capture_id": "719d2830f58538566e755162450d5e3b19793bb536679554716ae3c1faa34038",
+        "cik": "0000012659",
+        "http_metadata": [
+          [
+            "content-type",
+            "text/html"
+          ],
+          [
+            "last-modified",
+            "Mon, 09 Aug 2021 20:14:26 GMT"
+          ]
+        ],
+        "locator": "objects/1edcd3bade4414af942ad3f233b78d1e8077ddddfb84d1dd999e8143666957e6",
+        "parser_schema": "raw-bytes-v1",
+        "raw_format": "text",
+        "raw_unmodified": true,
+        "retrieved_at": "2026-10-08T02:36:39.471928+00:00",
+        "sha256": "1edcd3bade4414af942ad3f233b78d1e8077ddddfb84d1dd999e8143666957e6",
+        "size": 1475090,
+        "source_family": "filing_text",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/12659/000183886221000036/hrb-20210630.htm"
+      },
+      "compressed_sha256": "947d5c5514e92d4c2edeaf4645018391e371e9574198ef1e8521cdb18d8ef3ef",
+      "filename": "0000012659_filing_text_1edcd3bade44.gz"
+    },
+    {
+      "artifact": {
+        "accession": null,
+        "authenticity": "authentic",
+        "capture_id": "a22e425486f3451483eccea98f72469e19694094fb39b9a8baa5b63b371d7fba",
+        "cik": "0000012659",
+        "http_metadata": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "locator": "objects/b19e8cc459866caf01665e7885351011cee0b2070108d1a8046c1dcb7b630a58",
+        "parser_schema": "raw-bytes-v1",
+        "raw_format": "json",
+        "raw_unmodified": true,
+        "retrieved_at": "2026-10-08T02:34:27.566427+00:00",
+        "sha256": "b19e8cc459866caf01665e7885351011cee0b2070108d1a8046c1dcb7b630a58",
+        "size": 151860,
+        "source_family": "submissions",
+        "source_url": "https://data.sec.gov/submissions/CIK0000012659.json"
+      },
+      "compressed_sha256": "cf0ea2d795a2168397c5a8ee901bee7320b321a3e3a81c5ef290365334cf361b",
+      "filename": "0000012659_submissions_b19e8cc45986.gz"
+    },
+    {
+      "artifact": {
+        "accession": null,
+        "authenticity": "authentic",
+        "capture_id": "55d65314663c8fa7b235c582a31f55dc3fab13f6499533e15e1d5127021ee41b",
+        "cik": "0000063276",
+        "http_metadata": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "locator": "objects/b5b67c2c769d57e73c0289c7fa5e8b30ca9a9429dbc289556ff3670622c84161",
+        "parser_schema": "raw-bytes-v1",
+        "raw_format": "json",
+        "raw_unmodified": true,
+        "retrieved_at": "2026-10-08T02:34:36.272357+00:00",
+        "sha256": "b5b67c2c769d57e73c0289c7fa5e8b30ca9a9429dbc289556ff3670622c84161",
+        "size": 4164495,
+        "source_family": "companyfacts",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000063276.json"
+      },
+      "compressed_sha256": "b1772c1ecb4f11a99a199a1abbfcd974537e4a47364c1830697d4e341f9b04b4",
+      "filename": "0000063276_companyfacts_b5b67c2c769d.gz"
+    },
+    {
+      "artifact": {
+        "accession": null,
+        "authenticity": "authentic",
+        "capture_id": "735b45cbc44291f78719e1f08749cbe897cf3500f50981016964df5d03e5c4d8",
+        "cik": "0000063276",
+        "http_metadata": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "locator": "objects/ca44cf06e2c59b4bdc58003d61ca33a52bcf7e7dd4d64ebbeb9f0b7ccb508241",
+        "parser_schema": "raw-bytes-v1",
+        "raw_format": "json",
+        "raw_unmodified": true,
+        "retrieved_at": "2026-10-08T02:34:34.386326+00:00",
+        "sha256": "ca44cf06e2c59b4bdc58003d61ca33a52bcf7e7dd4d64ebbeb9f0b7ccb508241",
+        "size": 229551,
+        "source_family": "historical_submissions",
+        "source_url": "https://data.sec.gov/submissions/CIK0000063276-submissions-001.json"
+      },
+      "compressed_sha256": "ac3cd968ba7d5f7926aa647f92c8e822b52e3bc139b9e73465b931e4bc9e25ca",
+      "filename": "0000063276_historical_submissions_ca44cf06e2c5.gz"
+    },
+    {
+      "artifact": {
+        "accession": "0001628280-19-013975",
+        "authenticity": "authentic",
+        "capture_id": "aaae74ca1f40b56dbca70ca71aeb0da33d3431a657822c9c5ceb40106f73564c",
+        "cik": "0000063276",
+        "http_metadata": [
+          [
+            "content-type",
+            "text/html"
+          ],
+          [
+            "last-modified",
+            "Tue, 12 Nov 2019 21:23:39 GMT"
+          ]
+        ],
+        "locator": "objects/39effbac53b74031dfc3ba7a1f51aa824731f999c08930b35dc4190fc895fdc0",
+        "parser_schema": "raw-bytes-v1",
+        "raw_format": "text",
+        "raw_unmodified": true,
+        "retrieved_at": "2026-10-08T02:36:40.203249+00:00",
+        "sha256": "39effbac53b74031dfc3ba7a1f51aa824731f999c08930b35dc4190fc895fdc0",
+        "size": 4296334,
+        "source_family": "filing_text",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/63276/000162828019013975/mat1231201810-ka.htm"
+      },
+      "compressed_sha256": "6eb0280782159fa67f2c0ac6e8beaa52d27bb9dbe2399c337c260dc88cce4b97",
+      "filename": "0000063276_filing_text_39effbac53b7.gz"
+    },
+    {
+      "artifact": {
+        "accession": null,
+        "authenticity": "authentic",
+        "capture_id": "052b362612036775908771a0ed0fe237dac937fdfeb69ad2c410081863f8c5c5",
+        "cik": "0000063276",
+        "http_metadata": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "locator": "objects/6196a56fba14bb2fc8a5948ff530d453b988a0c4a315d72fb51eb31e27b55784",
+        "parser_schema": "raw-bytes-v1",
+        "raw_format": "json",
+        "raw_unmodified": true,
+        "retrieved_at": "2026-10-08T02:34:31.903405+00:00",
+        "sha256": "6196a56fba14bb2fc8a5948ff530d453b988a0c4a315d72fb51eb31e27b55784",
+        "size": 163186,
+        "source_family": "submissions",
+        "source_url": "https://data.sec.gov/submissions/CIK0000063276.json"
+      },
+      "compressed_sha256": "3a7bfb4ba88461ecce6248724f3a7dfa6061f8d11054a6ab0da3f5886811765f",
+      "filename": "0000063276_submissions_6196a56fba14.gz"
+    },
+    {
+      "artifact": {
+        "accession": null,
+        "authenticity": "authentic",
+        "capture_id": "57702a1df1ed466d1e44936ed4eea71fcaa874cb04036f7ce0ef4c5795beacd4",
+        "cik": "0001637459",
+        "http_metadata": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "locator": "objects/8fad66c16e535f7749f19126a986a9f43a087ca2472d063fa7742106196d88ac",
+        "parser_schema": "raw-bytes-v1",
+        "raw_format": "json",
+        "raw_unmodified": true,
+        "retrieved_at": "2026-10-08T02:34:40.067834+00:00",
+        "sha256": "8fad66c16e535f7749f19126a986a9f43a087ca2472d063fa7742106196d88ac",
+        "size": 3417827,
+        "source_family": "companyfacts",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001637459.json"
+      },
+      "compressed_sha256": "ccdb04e808db7a5f08efd2bab3262adebfbd8d74e8792fb4df04da7daf8cf021",
+      "filename": "0001637459_companyfacts_8fad66c16e53.gz"
+    },
+    {
+      "artifact": {
+        "accession": null,
+        "authenticity": "authentic",
+        "capture_id": "ea3487e872efca0a38a1f7aca57fce46a0bb650e2b3142d6a20abda4e621876c",
+        "cik": "0001637459",
+        "http_metadata": [
+          [
+            "content-type",
+            "application/json"
+          ]
+        ],
+        "locator": "objects/2f168e869f783bead1f4d12bf89323e23400744cbcd4e68a231d8ff8783b316f",
+        "parser_schema": "raw-bytes-v1",
+        "raw_format": "json",
+        "raw_unmodified": true,
+        "retrieved_at": "2026-10-08T02:34:37.862745+00:00",
+        "sha256": "2f168e869f783bead1f4d12bf89323e23400744cbcd4e68a231d8ff8783b316f",
+        "size": 144011,
+        "source_family": "submissions",
+        "source_url": "https://data.sec.gov/submissions/CIK0001637459.json"
+      },
+      "compressed_sha256": "13742e47d3d722e88c558bd92417fe3b1417659a15bd767e52a91c1b9bcf78c9",
+      "filename": "0001637459_submissions_2f168e869f78.gz"
+    }
+  ],
+  "format": "finpanel-authentic-fixtures-v1",
+  "incompleteness": [
+    "CompanyFacts is an aggregate capture, not a historical vendor delivery feed.",
+    "Original narrative is available only for the declared HRB and MAT filings."
+  ],
+  "scope": "WP7 historical calendar and revision audit: HRB, MAT, KHC"
+}
