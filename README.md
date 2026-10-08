@@ -66,7 +66,10 @@ for measured results and remaining limits. Validation is a purposive sample, not
 proof of universal SEC correctness or market-wide support.
 
 The prepared package version is **0.1.0a1**, corresponding to a prospective
-`v0.1.0-alpha.1` tag. This work does not publish a package, tag, or GitHub Release.
+`v0.1.0-alpha` tag. The release label maps explicitly to Python package version
+`0.1.0a1` (first alpha); it is not an alternate version string for packaging tools.
+The [release-candidate gate](docs/release-candidate-gate.md) currently blocks tagging
+until the Windows fixes pass CI. No package, tag, or GitHub Release is published.
 Install from the checkout or a locally built artifact; PyPI availability is not claimed.
 
 ## Development

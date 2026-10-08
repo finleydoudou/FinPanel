@@ -1,5 +1,9 @@
 # Work Package 7 completion report
 
+Historical WP7 validation report. Current release acceptance and platform results
+are tracked in [the release-candidate gate](release-candidate-gate.md). Statements
+about the uncommitted/unpushed WP7 state below describe that earlier validation.
+
 WORK PACKAGE 7: COMPLETE — READY FOR v0.1.0-alpha RELEASE PREPARATION
 
 All six preparation gates passed. This classification authorizes no publication.
@@ -134,7 +138,7 @@ Other added documents cover historical audits, resume contracts, API stability,
 validation evidence, universe/temporal/golden/resume summaries, draft release notes,
 CHANGELOG and the formal [release checklist](release-checklist.md).
 
-The prepared version is `0.1.0a1`, corresponding to future `v0.1.0-alpha.1`.
+The prepared version is `0.1.0a1`, corresponding to future `v0.1.0-alpha`.
 All local preparation checks pass. Platform CI execution and review of issuer-authored
 narrative fixture distribution are explicitly deferred publication checks, not
 completed claims. No publication action was attempted.

@@ -2,6 +2,13 @@
 
 ## 0.1.0a1 — prepared, unreleased
 
+Intended public Git label: `v0.1.0-alpha` (first alpha). Use `0.1.0a1` in Python
+package metadata and dependency specifications; the label is an explicit mapping.
+
+- Preserve frozen evidence bytes during Git checkout on Windows.
+- Make optional example memory telemetry unavailable rather than failing when the
+  Unix `resource` module is absent. No accounting or provenance contract changed.
+
 - Prepare an alpha package for reproducible point-in-time SEC fundamentals.
 - Add authentic historical fiscal-calendar and revision/restatement audit ledgers,
   with conservative diagnostics and original narrative provenance.

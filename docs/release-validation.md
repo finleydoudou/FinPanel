@@ -1,5 +1,9 @@
 # Release candidate validation evidence
 
+Historical WP7 validation report. Current release acceptance and platform results
+are tracked in [the release-candidate gate](release-candidate-gate.md). Statements
+about the uncommitted/unpushed WP7 state below describe that earlier validation.
+
 WP7 validation is complete. These results describe a purposive, frozen research
 population and the contracts checked on it. Scalar coverage is not accuracy, and
 zero unexpected findings is not proof of universal accounting correctness.
@@ -179,7 +183,7 @@ rows/provenance, so disk and memory use grow with the requested grid.
 
 ## Package and release scope
 
-Prepared package version: **0.1.0a1**, prospective tag `v0.1.0-alpha.1`.
+Prepared package version: **0.1.0a1**, prospective tag `v0.1.0-alpha`.
 Wheel and sdist clean installs check isolated import, dependency consistency,
 CLI/module entry points, the frozen six-cell example, three export round trips,
 pinned replay, and timezone operation without a system IANA database.

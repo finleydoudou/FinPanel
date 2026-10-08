@@ -7,9 +7,7 @@ literal goldens, never the panel output. No fixture is edited or fabricated.
 """
 
 import argparse
-import resource
 import runpy
-import sys
 from dataclasses import replace
 from pathlib import Path
 
@@ -19,6 +17,7 @@ from finpanel import metrics, panel
 from finpanel.serialization import dumps, loads
 from finpanel.snapshots import EvidenceStore
 from finpanel.snapshots.store import digest
+from finpanel.validation.runner import peak_memory
 
 ROOT = Path(__file__).resolve().parents[1]
 ISSUERS = {"aapl": "0000320193", "msft": "0000789019", "wmt": "0000104169", "nvda": "0001045810"}
@@ -152,9 +151,8 @@ def benchmark(destination):
     performance = dict(result.performance)
     performance["rows"] = len(result.rows)
     # Process high-water mark, not an isolated allocation measurement.
-    performance["process_peak_rss_mib"] = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / (
-        1024**2 if sys.platform == "darwin" else 1024
-    )
+    # Unavailable on Windows; absence is not zero usage or a failed financial audit.
+    performance["process_peak_rss_mib"] = peak_memory()
     checks = expected_checks(result)
     round_trips = {}
     for fmt in ("csv", "parquet", "duckdb"):

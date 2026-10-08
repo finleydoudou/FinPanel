@@ -1,6 +1,6 @@
-# Draft release notes — v0.1.0-alpha.1
+# Draft release notes — v0.1.0-alpha
 
-**Unreleased preparation; not a publication announcement.** Package version: `0.1.0a1`.
+**Unreleased preparation; not a publication announcement.** Package version: `0.1.0a1`, explicitly mapped to the first-alpha Git label `v0.1.0-alpha`.
 
 FinPanel provides reproducible research panels from SEC fundamentals with explicit
 historical cutoffs, revision policies, source provenance, immutable snapshots, and
@@ -12,8 +12,9 @@ a 100-issuer purposive validation universe, and an installed offline example.
 See [measured validation](release-validation.md), [support policy](api-stability.md),
 and [the release checklist](release-checklist.md) before making claims about readiness.
 
-Python 3.12 is the declared support range. macOS is tested locally. Linux/Windows
-CI is configured but its WP7 results require the later authorized Git synchronization.
+Python 3.12 is the declared support range. macOS passed local checks and CI. Linux/Windows
+CI results and the blocking Windows fixes are recorded in the
+[release gate](release-candidate-gate.md). Local fixes still require CI validation.
 No bank/insurance/IFRS/segment/FX/pricing capability is claimed. Current SEC aggregate
 captures do not establish historical API delivery time. Original XBRL verification
 has explicit coverage limits. The included example resolves three of six cells;

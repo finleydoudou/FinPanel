@@ -1,0 +1,4 @@
+# Frozen source bytes are hash-verified evidence, not editable text.
+# Preserve their original line endings even when core.autocrlf is enabled.
+tests/fixtures/** -text
+src/finpanel/example_data/** -text

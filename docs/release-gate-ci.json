@@ -1,0 +1,42 @@
+{
+  "candidate_commit": "ce97d41378f2a11db711023db1aa8caf9978d054",
+  "run_url": "https://github.com/finleydoudou/FinPanel/actions/runs/37732279353",
+  "conclusion": "failure",
+  "platforms": [
+    {
+      "os": "macOS",
+      "python": "3.12.10",
+      "job_url": "https://github.com/finleydoudou/FinPanel/actions/runs/37732279353/job/113163881294",
+      "status": "success",
+      "passed": 810,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "build_and_clean_installs": "passed"
+    },
+    {
+      "os": "Windows",
+      "python": "3.12.10",
+      "job_url": "https://github.com/finleydoudou/FinPanel/actions/runs/37732279353/job/113163881465",
+      "status": "failure",
+      "passed": 771,
+      "failed": 2,
+      "errors": 37,
+      "skipped": 0,
+      "build_and_clean_installs": "not run after test failure"
+    },
+    {
+      "os": "Linux",
+      "python": "3.12.14",
+      "job_url": "https://github.com/finleydoudou/FinPanel/actions/runs/37732279353/job/113163881510",
+      "status": "success",
+      "passed": 810,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "build_and_clean_installs": "passed"
+    }
+  ],
+  "fixes_committed": false,
+  "fixed_windows_ci": "BLOCKED: local fixes require authorized commit/push before GitHub can execute them"
+}

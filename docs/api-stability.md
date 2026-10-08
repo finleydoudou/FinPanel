@@ -54,7 +54,8 @@ artifacts and receipts rather than depending on those implementation details.
 ## Version and replay
 
 The prepared PEP 440 version is `0.1.0a1`; a corresponding future SemVer prerelease
-tag would be `v0.1.0-alpha.1`. No tag/publication is part of WP7. Receipt identity
+tag is `v0.1.0-alpha`. This is an explicit project mapping to the first Python alpha
+`0.1.0a1`; packaging tools must use the latter. No tag/publication is authorized. Receipt identity
 includes the package version, source hash, Python patch version, and exact relevant
 JSON/transport dependency versions. An older WP6 receipt intentionally requires its
 original matching software for exact replay. Updating the package does not silently
@@ -82,11 +83,12 @@ timezone lookup and exercise winter/summer SEC offsets and the full example. Bin
 wheels and architecture availability matter for Arrow and DuckDB.
 
 Python **3.12 only** is declared for this alpha (`>=3.12,<3.13`); local validation uses
-3.12.14 on macOS arm64. Other Python minors are not claimed. The CI matrix now defines
+3.12.14 on macOS arm64. Other Python minors are not claimed. The CI matrix defines
 Python 3.12 on macOS, Linux, and Windows with permanent offline tests, builds, and
-clean artifact installs. The uncommitted WP7 matrix has not run on GitHub: only macOS
-has been executed here. Linux/Windows results remain an explicit pre-publication
-check, not completed evidence. There is no platform-specific accounting fork.
+clean artifact installs. The exact WP7 release-candidate run passed macOS and Linux but failed
+Windows on checkout byte conversion and a Unix-only example import. The release gate
+records each platform's final status; local fixes are not a Windows pass. There is
+no platform-specific accounting fork.
 
 `scripts/validate_install.py` installs wheel and sdist into separate new virtual
 environments, runs outside the checkout with isolated Python imports, checks the
