@@ -1,4 +1,11 @@
-# First-alpha release candidate gate
+# Historical record — First-alpha release candidate gate
+
+> **Historical, superseded record.** The original audit/draft below predates
+> publication and retains its original failures and pending actions.
+> [Current release status](release-status.md): `v0.1.0-alpha` is published on
+> GitHub at `30ffbbe658fbc517ec838ba499859ec05093283b`; final macOS/Linux/Windows
+> CI passed with 814 tests and 0 skipped on each platform. PyPI is not published.
+> The statements below are not current release blockers or installation guidance.
 
 RELEASE GATE: FAIL — BLOCKERS REMAIN
 

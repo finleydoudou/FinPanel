@@ -85,10 +85,13 @@ wheels and architecture availability matter for Arrow and DuckDB.
 Python **3.12 only** is declared for this alpha (`>=3.12,<3.13`); local validation uses
 3.12.14 on macOS arm64. Other Python minors are not claimed. The CI matrix defines
 Python 3.12 on macOS, Linux, and Windows with permanent offline tests, builds, and
-clean artifact installs. The exact WP7 release-candidate run passed macOS and Linux but failed
-Windows on checkout byte conversion and a Unix-only example import. The release gate
-records each platform's final status; local fixes are not a Windows pass. There is
-no platform-specific accounting fork.
+clean artifact installs. The final published release commit
+`30ffbbe658fbc517ec838ba499859ec05093283b` passed all three platforms with
+814 tests and 0 skipped per platform, including builds and clean installations.
+See [current release status](release-status.md) and its exact-commit CI link.
+The [earlier failed gate](release-candidate-gate.md) remains a historical record;
+its Windows failures were resolved before publication. There is no
+platform-specific accounting fork.
 
 `scripts/validate_install.py` installs wheel and sdist into separate new virtual
 environments, runs outside the checkout with isolated Python imports, checks the

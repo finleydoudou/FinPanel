@@ -1,7 +1,7 @@
 # Work Package 7 completion report
 
 Historical WP7 validation report. Current release acceptance and platform results
-are tracked in [the release-candidate gate](release-candidate-gate.md). Statements
+are tracked in [current release status](release-status.md). Statements
 about the uncommitted/unpushed WP7 state below describe that earlier validation.
 
 WORK PACKAGE 7: COMPLETE — READY FOR v0.1.0-alpha RELEASE PREPARATION

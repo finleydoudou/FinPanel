@@ -1,13 +1,78 @@
 # Researcher guide
 
-## Installation and a frozen quick start
+## Public release user — no checkout required
 
-Use Python 3.12 and `python -m pip install .` from this checkout, or install the
-locally built `dist/finpanel-0.1.0a1-py3-none-any.whl`. No PyPI release is asserted.
-Run `python -m finpanel.example output/quickstart` with a new destination. Bundled
-HRB SEC JSON responses are imported and verified by hash; no credentials or HTTP
-are used. The example writes six FY2022 cells, three resolved, with all unresolved
-states retained.
+The [v0.1.0-alpha GitHub pre-release](https://github.com/finleydoudou/FinPanel/releases/tag/v0.1.0-alpha)
+is available as Python package **0.1.0a1**, for **Python 3.12**. It is not on PyPI.
+
+1. Open the release and download `finpanel-0.1.0a1-py3-none-any.whl`.
+2. Optionally download `SHA256SUMS.txt` and verify the wheel (recommended).
+   The [README installation section](../README.md#installation) gives macOS,
+   Linux and PowerShell commands. Compare the printed hash with the wheel's row;
+   verification is not automatic. Stop on a mismatch.
+3. Open a terminal in the download folder. Create and activate a clean environment:
+
+```bash
+# macOS/Linux
+python3.12 -m venv .venv
+source .venv/bin/activate
+```
+
+```powershell
+# Windows PowerShell
+py -3.12 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+```
+
+4. Install the downloaded wheel and verify the version:
+
+```bash
+python -m pip install ./finpanel-0.1.0a1-py3-none-any.whl
+python -c "import finpanel; print(finpanel.__version__)"
+python -m finpanel.cli --help
+```
+
+Expected version: `0.1.0a1`. Dependency installation may access PyPI; the FinPanel
+package is the GitHub asset. If PowerShell activation is unavailable, use
+`.\.venv\Scripts\python.exe` in place of `python` without changing execution policy.
+Continue with the frozen Quick Start below. No developer checkout or local build
+artifacts are required.
+
+## Developer source user
+
+Use this separate workflow only when you intentionally want a source checkout:
+
+```bash
+git clone https://github.com/finleydoudou/FinPanel.git
+cd FinPanel
+```
+
+Create and activate a Python 3.12 environment using the platform commands above,
+then run from the cloned repository root:
+
+```bash
+python -m pip install .
+```
+
+This installs the cloned revision, which may be newer than the published alpha.
+To inspect the exact release source, select `v0.1.0-alpha` in the clone before
+installing. The public release workflow uses the wheel, not `pip install .`.
+
+## Frozen Quick Start
+
+After either installation workflow, run in your own working directory with a new
+destination:
+
+```bash
+python -m finpanel.example output/quickstart
+```
+
+Bundled HRB SEC JSON responses are imported and verified by hash; no SEC credentials,
+HTTP or private Tier B evidence are used. The example writes six FY2022 cells,
+three resolved, with all unresolved states retained. It creates CSV, Parquet and
+DuckDB exports, provenance sidecars and a reproducibility receipt. Three resolved
+cells describe coverage, not accuracy. [Current release status](release-status.md)
+records the passing macOS/Linux/Windows release CI; older gate reports are historical.
 
 ```python
 from pathlib import Path

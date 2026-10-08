@@ -1,8 +1,9 @@
 # Changelog
 
-## 0.1.0a1 — prepared, unreleased
+## 0.1.0a1 — GitHub alpha pre-release (2026-10-08)
 
-Intended public Git label: `v0.1.0-alpha` (first alpha). Use `0.1.0a1` in Python
+Published [GitHub pre-release v0.1.0-alpha](https://github.com/finleydoudou/FinPanel/releases/tag/v0.1.0-alpha) (first alpha).
+PyPI publication has not occurred. See [current release status](docs/release-status.md). Use `0.1.0a1` in Python
 package metadata and dependency specifications; the label is an explicit mapping.
 
 - Preserve frozen evidence bytes during Git checkout on Windows.

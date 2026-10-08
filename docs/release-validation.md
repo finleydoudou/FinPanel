@@ -1,7 +1,7 @@
 # Release candidate validation evidence
 
 Historical WP7 validation report. Current release acceptance and platform results
-are tracked in [the release-candidate gate](release-candidate-gate.md). Statements
+are tracked in [current release status](release-status.md). Statements
 about the uncommitted/unpushed WP7 state below describe that earlier validation.
 
 WP7 validation is complete. These results describe a purposive, frozen research
