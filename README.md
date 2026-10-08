@@ -4,8 +4,10 @@ FinPanel is open-source research infrastructure for auditable financial fundamen
 from SEC EDGAR. Its long-term goal is reconstruction of information available at a
 historical `as_of` date, with filing history and complete provenance.
 
-**Work Package 5 provides an auditable long-form research panel workflow.**
-Validation covers four frozen issuers; it is not a market-wide coverage or accuracy claim.
+**Work Package 6 adds broad offline coverage and scale validation.**
+The selected universe contains 50 ordinary US-GAAP issuers, with 13 additional
+frozen audited issuers. This is not a market-wide coverage or accuracy claim.
+See the [broad-validation report and workflow](docs/broad-validation.md).
 This repository implements Phase 0A raw ingestion and Phase 0B historical filing
 coverage, explicit availability precision, and filing-level as-of filtering.
 Phase 0C adds opt-in SEC header corroboration and auditable fact/context links.

@@ -1,0 +1,3897 @@
+{
+  "case_count": 156,
+  "findings": [
+    {
+      "actual_state": "unavailable",
+      "actual_value": null,
+      "cik": "0000012927",
+      "errors": [],
+      "expected_state": "unavailable",
+      "expected_value": null,
+      "id": "ba-before-fy2023",
+      "passed": true,
+      "reasons": [
+        "no_eligible_reported_observation"
+      ]
+    },
+    {
+      "actual_state": "resolved_derived",
+      "actual_value": 2875000000,
+      "cik": "0000012927",
+      "errors": [],
+      "expected_state": "resolved_derived",
+      "expected_value": 2875000000,
+      "id": "ba-fy2023-ocf-Q2",
+      "passed": true,
+      "reasons": [
+        "company_level_scope_only; original_instance_dimensions_not_proven_equal",
+        "constructed_from_first_reported_components; not_a_reported_quarter",
+        "cross_filing_operands",
+        "source_decimals_metadata_unavailable; arithmetic_precision_is_not_measurement_precision"
+      ]
+    },
+    {
+      "actual_state": "resolved_derived",
+      "actual_value": 22000000,
+      "cik": "0000012927",
+      "errors": [],
+      "expected_state": "resolved_derived",
+      "expected_value": 22000000,
+      "id": "ba-fy2023-ocf-Q3",
+      "passed": true,
+      "reasons": [
+        "company_level_scope_only; original_instance_dimensions_not_proven_equal",
+        "constructed_from_first_reported_components; not_a_reported_quarter",
+        "cross_filing_operands",
+        "source_decimals_metadata_unavailable; arithmetic_precision_is_not_measurement_precision"
+      ]
+    },
+    {
+      "actual_state": "resolved_derived",
+      "actual_value": 3381000000,
+      "cik": "0000012927",
+      "errors": [],
+      "expected_state": "resolved_derived",
+      "expected_value": 3381000000,
+      "id": "ba-fy2023-ocf-Q4",
+      "passed": true,
+      "reasons": [
+        "company_level_scope_only; original_instance_dimensions_not_proven_equal",
+        "constructed_from_first_reported_components; not_a_reported_quarter",
+        "cross_filing_operands",
+        "source_decimals_metadata_unavailable; arithmetic_precision_is_not_measurement_precision"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 77794000000,
+      "cik": "0000012927",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 77794000000,
+      "id": "ba-fy2023-revenue",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": -2222000000,
+      "cik": "0000012927",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": -2222000000,
+      "id": "ba-fy2023-net_income",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 5960000000,
+      "cik": "0000012927",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 5960000000,
+      "id": "ba-fy2023-operating_cash_flow",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 137012000000,
+      "cik": "0000012927",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 137012000000,
+      "id": "ba-fy2023-assets",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 154240000000,
+      "cik": "0000012927",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 154240000000,
+      "id": "ba-fy2023-liabilities",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 12691000000,
+      "cik": "0000012927",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 12691000000,
+      "id": "ba-fy2023-cash_and_cash_equivalents",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": -414000000,
+      "cik": "0000012927",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": -414000000,
+      "id": "ba-fy2023-q1-net-income",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "source_verification_failed",
+      "actual_value": null,
+      "cik": "0000012927",
+      "errors": [],
+      "expected_state": "source_verification_failed",
+      "expected_value": null,
+      "id": "ba-required-source-cutoff",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic",
+        "original_source_not_fully_verified",
+        "source_verification_failure",
+        "undimensioned_scope_not_proven"
+      ]
+    },
+    {
+      "actual_state": "unavailable",
+      "actual_value": null,
+      "cik": "0000027419",
+      "errors": [],
+      "expected_state": "unavailable",
+      "expected_value": null,
+      "id": "tgt-before-fy2023",
+      "passed": true,
+      "reasons": [
+        "no_eligible_reported_observation"
+      ]
+    },
+    {
+      "actual_state": "resolved_derived",
+      "actual_value": 2133000000,
+      "cik": "0000027419",
+      "errors": [],
+      "expected_state": "resolved_derived",
+      "expected_value": 2133000000,
+      "id": "tgt-fy2023-ocf-Q2",
+      "passed": true,
+      "reasons": [
+        "company_level_scope_only; original_instance_dimensions_not_proven_equal",
+        "constructed_from_first_reported_components; not_a_reported_quarter",
+        "cross_filing_operands",
+        "source_decimals_metadata_unavailable; arithmetic_precision_is_not_measurement_precision"
+      ]
+    },
+    {
+      "actual_state": "resolved_derived",
+      "actual_value": 1934000000,
+      "cik": "0000027419",
+      "errors": [],
+      "expected_state": "resolved_derived",
+      "expected_value": 1934000000,
+      "id": "tgt-fy2023-ocf-Q3",
+      "passed": true,
+      "reasons": [
+        "company_level_scope_only; original_instance_dimensions_not_proven_equal",
+        "constructed_from_first_reported_components; not_a_reported_quarter",
+        "cross_filing_operands",
+        "source_decimals_metadata_unavailable; arithmetic_precision_is_not_measurement_precision"
+      ]
+    },
+    {
+      "actual_state": "resolved_derived",
+      "actual_value": 3289000000,
+      "cik": "0000027419",
+      "errors": [],
+      "expected_state": "resolved_derived",
+      "expected_value": 3289000000,
+      "id": "tgt-fy2023-ocf-Q4",
+      "passed": true,
+      "reasons": [
+        "company_level_scope_only; original_instance_dimensions_not_proven_equal",
+        "constructed_from_first_reported_components; not_a_reported_quarter",
+        "cross_filing_operands",
+        "source_decimals_metadata_unavailable; arithmetic_precision_is_not_measurement_precision"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 107412000000,
+      "cik": "0000027419",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 107412000000,
+      "id": "tgt-fy2023-revenue",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 4138000000,
+      "cik": "0000027419",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 4138000000,
+      "id": "tgt-fy2023-net_income",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 8621000000,
+      "cik": "0000027419",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 8621000000,
+      "id": "tgt-fy2023-operating_cash_flow",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 55356000000,
+      "cik": "0000027419",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 55356000000,
+      "id": "tgt-fy2023-assets",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "unavailable",
+      "actual_value": null,
+      "cik": "0000027419",
+      "errors": [],
+      "expected_state": "unavailable",
+      "expected_value": null,
+      "id": "tgt-fy2023-liabilities",
+      "passed": true,
+      "reasons": [
+        "no_eligible_reported_observation"
+      ]
+    },
+    {
+      "actual_state": "unavailable",
+      "actual_value": null,
+      "cik": "0000027419",
+      "errors": [],
+      "expected_state": "unavailable",
+      "expected_value": null,
+      "id": "tgt-fy2023-cash_and_cash_equivalents",
+      "passed": true,
+      "reasons": [
+        "no_eligible_reported_observation"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 950000000,
+      "cik": "0000027419",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 950000000,
+      "id": "tgt-fy2023-q1-net-income",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "source_verification_failed",
+      "actual_value": null,
+      "cik": "0000027419",
+      "errors": [],
+      "expected_state": "source_verification_failed",
+      "expected_value": null,
+      "id": "tgt-required-source-cutoff",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic",
+        "original_source_not_fully_verified",
+        "source_verification_failure",
+        "undimensioned_scope_not_proven"
+      ]
+    },
+    {
+      "actual_state": "unavailable",
+      "actual_value": null,
+      "cik": "0000034088",
+      "errors": [],
+      "expected_state": "unavailable",
+      "expected_value": null,
+      "id": "xom-before-fy2023",
+      "passed": true,
+      "reasons": [
+        "no_eligible_reported_observation"
+      ]
+    },
+    {
+      "actual_state": "resolved_derived",
+      "actual_value": 9383000000,
+      "cik": "0000034088",
+      "errors": [],
+      "expected_state": "resolved_derived",
+      "expected_value": 9383000000,
+      "id": "xom-fy2023-ocf-Q2",
+      "passed": true,
+      "reasons": [
+        "company_level_scope_only; original_instance_dimensions_not_proven_equal",
+        "constructed_from_first_reported_components; not_a_reported_quarter",
+        "cross_filing_operands",
+        "source_decimals_metadata_unavailable; arithmetic_precision_is_not_measurement_precision"
+      ]
+    },
+    {
+      "actual_state": "resolved_derived",
+      "actual_value": 15963000000,
+      "cik": "0000034088",
+      "errors": [],
+      "expected_state": "resolved_derived",
+      "expected_value": 15963000000,
+      "id": "xom-fy2023-ocf-Q3",
+      "passed": true,
+      "reasons": [
+        "company_level_scope_only; original_instance_dimensions_not_proven_equal",
+        "constructed_from_first_reported_components; not_a_reported_quarter",
+        "cross_filing_operands",
+        "source_decimals_metadata_unavailable; arithmetic_precision_is_not_measurement_precision"
+      ]
+    },
+    {
+      "actual_state": "resolved_derived",
+      "actual_value": 13682000000,
+      "cik": "0000034088",
+      "errors": [],
+      "expected_state": "resolved_derived",
+      "expected_value": 13682000000,
+      "id": "xom-fy2023-ocf-Q4",
+      "passed": true,
+      "reasons": [
+        "company_level_scope_only; original_instance_dimensions_not_proven_equal",
+        "constructed_from_first_reported_components; not_a_reported_quarter",
+        "cross_filing_operands",
+        "source_decimals_metadata_unavailable; arithmetic_precision_is_not_measurement_precision"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 344582000000,
+      "cik": "0000034088",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 344582000000,
+      "id": "xom-fy2023-revenue",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 36010000000,
+      "cik": "0000034088",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 36010000000,
+      "id": "xom-fy2023-net_income",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 55369000000,
+      "cik": "0000034088",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 55369000000,
+      "id": "xom-fy2023-operating_cash_flow",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 376317000000,
+      "cik": "0000034088",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 376317000000,
+      "id": "xom-fy2023-assets",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 163779000000,
+      "cik": "0000034088",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 163779000000,
+      "id": "xom-fy2023-liabilities",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 31539000000,
+      "cik": "0000034088",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 31539000000,
+      "id": "xom-fy2023-cash_and_cash_equivalents",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 11430000000,
+      "cik": "0000034088",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 11430000000,
+      "id": "xom-fy2023-q1-net-income",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "source_verification_failed",
+      "actual_value": null,
+      "cik": "0000034088",
+      "errors": [],
+      "expected_state": "source_verification_failed",
+      "expected_value": null,
+      "id": "xom-required-source-cutoff",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic",
+        "original_source_not_fully_verified",
+        "source_verification_failure",
+        "undimensioned_scope_not_proven"
+      ]
+    },
+    {
+      "actual_state": "unavailable",
+      "actual_value": null,
+      "cik": "0000050863",
+      "errors": [],
+      "expected_state": "unavailable",
+      "expected_value": null,
+      "id": "intc-before-fy2023",
+      "passed": true,
+      "reasons": [
+        "no_eligible_reported_observation"
+      ]
+    },
+    {
+      "actual_state": "resolved_derived",
+      "actual_value": 2808000000,
+      "cik": "0000050863",
+      "errors": [],
+      "expected_state": "resolved_derived",
+      "expected_value": 2808000000,
+      "id": "intc-fy2023-ocf-Q2",
+      "passed": true,
+      "reasons": [
+        "company_level_scope_only; original_instance_dimensions_not_proven_equal",
+        "constructed_from_first_reported_components; not_a_reported_quarter",
+        "cross_filing_operands",
+        "source_decimals_metadata_unavailable; arithmetic_precision_is_not_measurement_precision"
+      ]
+    },
+    {
+      "actual_state": "resolved_derived",
+      "actual_value": 5824000000,
+      "cik": "0000050863",
+      "errors": [],
+      "expected_state": "resolved_derived",
+      "expected_value": 5824000000,
+      "id": "intc-fy2023-ocf-Q3",
+      "passed": true,
+      "reasons": [
+        "company_level_scope_only; original_instance_dimensions_not_proven_equal",
+        "constructed_from_first_reported_components; not_a_reported_quarter",
+        "cross_filing_operands",
+        "source_decimals_metadata_unavailable; arithmetic_precision_is_not_measurement_precision"
+      ]
+    },
+    {
+      "actual_state": "resolved_derived",
+      "actual_value": 4624000000,
+      "cik": "0000050863",
+      "errors": [],
+      "expected_state": "resolved_derived",
+      "expected_value": 4624000000,
+      "id": "intc-fy2023-ocf-Q4",
+      "passed": true,
+      "reasons": [
+        "company_level_scope_only; original_instance_dimensions_not_proven_equal",
+        "constructed_from_first_reported_components; not_a_reported_quarter",
+        "cross_filing_operands",
+        "source_decimals_metadata_unavailable; arithmetic_precision_is_not_measurement_precision"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 54228000000,
+      "cik": "0000050863",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 54228000000,
+      "id": "intc-fy2023-revenue",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 1689000000,
+      "cik": "0000050863",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 1689000000,
+      "id": "intc-fy2023-net_income",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 11471000000,
+      "cik": "0000050863",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 11471000000,
+      "id": "intc-fy2023-operating_cash_flow",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 191572000000,
+      "cik": "0000050863",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 191572000000,
+      "id": "intc-fy2023-assets",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "unavailable",
+      "actual_value": null,
+      "cik": "0000050863",
+      "errors": [],
+      "expected_state": "unavailable",
+      "expected_value": null,
+      "id": "intc-fy2023-liabilities",
+      "passed": true,
+      "reasons": [
+        "no_eligible_reported_observation"
+      ]
+    },
+    {
+      "actual_state": "unavailable",
+      "actual_value": null,
+      "cik": "0000050863",
+      "errors": [],
+      "expected_state": "unavailable",
+      "expected_value": null,
+      "id": "intc-fy2023-cash_and_cash_equivalents",
+      "passed": true,
+      "reasons": [
+        "no_eligible_reported_observation"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": -2758000000,
+      "cik": "0000050863",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": -2758000000,
+      "id": "intc-fy2023-q1-net-income",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "source_verification_failed",
+      "actual_value": null,
+      "cik": "0000050863",
+      "errors": [],
+      "expected_state": "source_verification_failed",
+      "expected_value": null,
+      "id": "intc-required-source-cutoff",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic",
+        "original_source_not_fully_verified",
+        "source_verification_failure",
+        "undimensioned_scope_not_proven"
+      ]
+    },
+    {
+      "actual_state": "unavailable",
+      "actual_value": null,
+      "cik": "0000078003",
+      "errors": [],
+      "expected_state": "unavailable",
+      "expected_value": null,
+      "id": "pfe-before-fy2023",
+      "passed": true,
+      "reasons": [
+        "no_eligible_reported_observation"
+      ]
+    },
+    {
+      "actual_state": "resolved_derived",
+      "actual_value": -1208000000,
+      "cik": "0000078003",
+      "errors": [],
+      "expected_state": "resolved_derived",
+      "expected_value": -1208000000,
+      "id": "pfe-fy2023-ocf-Q2",
+      "passed": true,
+      "reasons": [
+        "company_level_scope_only; original_instance_dimensions_not_proven_equal",
+        "constructed_from_first_reported_components; not_a_reported_quarter",
+        "cross_filing_operands",
+        "source_decimals_metadata_unavailable; arithmetic_precision_is_not_measurement_precision"
+      ]
+    },
+    {
+      "actual_state": "resolved_derived",
+      "actual_value": 3456000000,
+      "cik": "0000078003",
+      "errors": [],
+      "expected_state": "resolved_derived",
+      "expected_value": 3456000000,
+      "id": "pfe-fy2023-ocf-Q3",
+      "passed": true,
+      "reasons": [
+        "company_level_scope_only; original_instance_dimensions_not_proven_equal",
+        "constructed_from_first_reported_components; not_a_reported_quarter",
+        "cross_filing_operands",
+        "source_decimals_metadata_unavailable; arithmetic_precision_is_not_measurement_precision"
+      ]
+    },
+    {
+      "actual_state": "resolved_derived",
+      "actual_value": 5240000000,
+      "cik": "0000078003",
+      "errors": [],
+      "expected_state": "resolved_derived",
+      "expected_value": 5240000000,
+      "id": "pfe-fy2023-ocf-Q4",
+      "passed": true,
+      "reasons": [
+        "company_level_scope_only; original_instance_dimensions_not_proven_equal",
+        "constructed_from_first_reported_components; not_a_reported_quarter",
+        "cross_filing_operands",
+        "source_decimals_metadata_unavailable; arithmetic_precision_is_not_measurement_precision"
+      ]
+    },
+    {
+      "actual_state": "conflicted",
+      "actual_value": null,
+      "cik": "0000078003",
+      "errors": [],
+      "expected_state": "conflicted",
+      "expected_value": null,
+      "id": "pfe-fy2023-revenue",
+      "passed": true,
+      "reasons": [
+        "multiple_supported_concept_scopes",
+        "revision_or_scope_conflict"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 2119000000,
+      "cik": "0000078003",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 2119000000,
+      "id": "pfe-fy2023-net_income",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 8700000000,
+      "cik": "0000078003",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 8700000000,
+      "id": "pfe-fy2023-operating_cash_flow",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 226501000000,
+      "cik": "0000078003",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 226501000000,
+      "id": "pfe-fy2023-assets",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 137213000000,
+      "cik": "0000078003",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 137213000000,
+      "id": "pfe-fy2023-liabilities",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 2853000000,
+      "cik": "0000078003",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 2853000000,
+      "id": "pfe-fy2023-cash_and_cash_equivalents",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 5543000000,
+      "cik": "0000078003",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 5543000000,
+      "id": "pfe-fy2023-q1-net-income",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "source_verification_failed",
+      "actual_value": null,
+      "cik": "0000078003",
+      "errors": [],
+      "expected_state": "source_verification_failed",
+      "expected_value": null,
+      "id": "pfe-required-source-cutoff",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic",
+        "original_source_not_fully_verified",
+        "source_verification_failure",
+        "undimensioned_scope_not_proven"
+      ]
+    },
+    {
+      "actual_state": "unavailable",
+      "actual_value": null,
+      "cik": "0000320187",
+      "errors": [],
+      "expected_state": "unavailable",
+      "expected_value": null,
+      "id": "nke-before-fy2023",
+      "passed": true,
+      "reasons": [
+        "no_eligible_reported_observation"
+      ]
+    },
+    {
+      "actual_state": "resolved_derived",
+      "actual_value": 1001000000,
+      "cik": "0000320187",
+      "errors": [],
+      "expected_state": "resolved_derived",
+      "expected_value": 1001000000,
+      "id": "nke-fy2023-ocf-Q2",
+      "passed": true,
+      "reasons": [
+        "company_level_scope_only; original_instance_dimensions_not_proven_equal",
+        "constructed_from_first_reported_components; not_a_reported_quarter",
+        "cross_filing_operands",
+        "source_decimals_metadata_unavailable; arithmetic_precision_is_not_measurement_precision"
+      ]
+    },
+    {
+      "actual_state": "resolved_derived",
+      "actual_value": 2230000000,
+      "cik": "0000320187",
+      "errors": [],
+      "expected_state": "resolved_derived",
+      "expected_value": 2230000000,
+      "id": "nke-fy2023-ocf-Q3",
+      "passed": true,
+      "reasons": [
+        "company_level_scope_only; original_instance_dimensions_not_proven_equal",
+        "constructed_from_first_reported_components; not_a_reported_quarter",
+        "cross_filing_operands",
+        "source_decimals_metadata_unavailable; arithmetic_precision_is_not_measurement_precision"
+      ]
+    },
+    {
+      "actual_state": "resolved_derived",
+      "actual_value": 2253000000,
+      "cik": "0000320187",
+      "errors": [],
+      "expected_state": "resolved_derived",
+      "expected_value": 2253000000,
+      "id": "nke-fy2023-ocf-Q4",
+      "passed": true,
+      "reasons": [
+        "company_level_scope_only; original_instance_dimensions_not_proven_equal",
+        "constructed_from_first_reported_components; not_a_reported_quarter",
+        "cross_filing_operands",
+        "source_decimals_metadata_unavailable; arithmetic_precision_is_not_measurement_precision"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 51217000000,
+      "cik": "0000320187",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 51217000000,
+      "id": "nke-fy2023-revenue",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 5070000000,
+      "cik": "0000320187",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 5070000000,
+      "id": "nke-fy2023-net_income",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 5841000000,
+      "cik": "0000320187",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 5841000000,
+      "id": "nke-fy2023-operating_cash_flow",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 37531000000,
+      "cik": "0000320187",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 37531000000,
+      "id": "nke-fy2023-assets",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "unavailable",
+      "actual_value": null,
+      "cik": "0000320187",
+      "errors": [],
+      "expected_state": "unavailable",
+      "expected_value": null,
+      "id": "nke-fy2023-liabilities",
+      "passed": true,
+      "reasons": [
+        "no_eligible_reported_observation"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 7441000000,
+      "cik": "0000320187",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 7441000000,
+      "id": "nke-fy2023-cash_and_cash_equivalents",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 1468000000,
+      "cik": "0000320187",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 1468000000,
+      "id": "nke-fy2023-q1-net-income",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "source_verification_failed",
+      "actual_value": null,
+      "cik": "0000320187",
+      "errors": [],
+      "expected_state": "source_verification_failed",
+      "expected_value": null,
+      "id": "nke-required-source-cutoff",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic",
+        "original_source_not_fully_verified",
+        "source_verification_failure",
+        "undimensioned_scope_not_proven"
+      ]
+    },
+    {
+      "actual_state": "unavailable",
+      "actual_value": null,
+      "cik": "0000796343",
+      "errors": [],
+      "expected_state": "unavailable",
+      "expected_value": null,
+      "id": "adbe-before-fy2023",
+      "passed": true,
+      "reasons": [
+        "no_eligible_reported_observation"
+      ]
+    },
+    {
+      "actual_state": "resolved_derived",
+      "actual_value": 2139000000,
+      "cik": "0000796343",
+      "errors": [],
+      "expected_state": "resolved_derived",
+      "expected_value": 2139000000,
+      "id": "adbe-fy2023-ocf-Q2",
+      "passed": true,
+      "reasons": [
+        "company_level_scope_only; original_instance_dimensions_not_proven_equal",
+        "constructed_from_first_reported_components; not_a_reported_quarter",
+        "cross_filing_operands",
+        "source_decimals_metadata_unavailable; arithmetic_precision_is_not_measurement_precision"
+      ]
+    },
+    {
+      "actual_state": "resolved_derived",
+      "actual_value": 1873000000,
+      "cik": "0000796343",
+      "errors": [],
+      "expected_state": "resolved_derived",
+      "expected_value": 1873000000,
+      "id": "adbe-fy2023-ocf-Q3",
+      "passed": true,
+      "reasons": [
+        "company_level_scope_only; original_instance_dimensions_not_proven_equal",
+        "constructed_from_first_reported_components; not_a_reported_quarter",
+        "cross_filing_operands",
+        "source_decimals_metadata_unavailable; arithmetic_precision_is_not_measurement_precision"
+      ]
+    },
+    {
+      "actual_state": "resolved_derived",
+      "actual_value": 1597000000,
+      "cik": "0000796343",
+      "errors": [],
+      "expected_state": "resolved_derived",
+      "expected_value": 1597000000,
+      "id": "adbe-fy2023-ocf-Q4",
+      "passed": true,
+      "reasons": [
+        "company_level_scope_only; original_instance_dimensions_not_proven_equal",
+        "constructed_from_first_reported_components; not_a_reported_quarter",
+        "cross_filing_operands",
+        "source_decimals_metadata_unavailable; arithmetic_precision_is_not_measurement_precision"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 19409000000,
+      "cik": "0000796343",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 19409000000,
+      "id": "adbe-fy2023-revenue",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 5428000000,
+      "cik": "0000796343",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 5428000000,
+      "id": "adbe-fy2023-net_income",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 7302000000,
+      "cik": "0000796343",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 7302000000,
+      "id": "adbe-fy2023-operating_cash_flow",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 29779000000,
+      "cik": "0000796343",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 29779000000,
+      "id": "adbe-fy2023-assets",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 13261000000,
+      "cik": "0000796343",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 13261000000,
+      "id": "adbe-fy2023-liabilities",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 7141000000,
+      "cik": "0000796343",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 7141000000,
+      "id": "adbe-fy2023-cash_and_cash_equivalents",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 1247000000,
+      "cik": "0000796343",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 1247000000,
+      "id": "adbe-fy2023-q1-net-income",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "source_verification_failed",
+      "actual_value": null,
+      "cik": "0000796343",
+      "errors": [],
+      "expected_state": "source_verification_failed",
+      "expected_value": null,
+      "id": "adbe-required-source-cutoff",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic",
+        "original_source_not_fully_verified",
+        "source_verification_failure",
+        "undimensioned_scope_not_proven"
+      ]
+    },
+    {
+      "actual_state": "unavailable",
+      "actual_value": null,
+      "cik": "0000909832",
+      "errors": [],
+      "expected_state": "unavailable",
+      "expected_value": null,
+      "id": "cost-before-fy2023",
+      "passed": true,
+      "reasons": [
+        "no_eligible_reported_observation"
+      ]
+    },
+    {
+      "actual_state": "resolved_derived",
+      "actual_value": 3192000000,
+      "cik": "0000909832",
+      "errors": [],
+      "expected_state": "resolved_derived",
+      "expected_value": 3192000000,
+      "id": "cost-fy2023-ocf-Q2",
+      "passed": true,
+      "reasons": [
+        "company_level_scope_only; original_instance_dimensions_not_proven_equal",
+        "constructed_from_first_reported_components; not_a_reported_quarter",
+        "cross_filing_operands",
+        "source_decimals_metadata_unavailable; arithmetic_precision_is_not_measurement_precision"
+      ]
+    },
+    {
+      "actual_state": "resolved_derived",
+      "actual_value": 1541000000,
+      "cik": "0000909832",
+      "errors": [],
+      "expected_state": "resolved_derived",
+      "expected_value": 1541000000,
+      "id": "cost-fy2023-ocf-Q3",
+      "passed": true,
+      "reasons": [
+        "company_level_scope_only; original_instance_dimensions_not_proven_equal",
+        "constructed_from_first_reported_components; not_a_reported_quarter",
+        "cross_filing_operands",
+        "source_decimals_metadata_unavailable; arithmetic_precision_is_not_measurement_precision"
+      ]
+    },
+    {
+      "actual_state": "resolved_derived",
+      "actual_value": 3725000000,
+      "cik": "0000909832",
+      "errors": [],
+      "expected_state": "resolved_derived",
+      "expected_value": 3725000000,
+      "id": "cost-fy2023-ocf-Q4",
+      "passed": true,
+      "reasons": [
+        "company_level_scope_only; original_instance_dimensions_not_proven_equal",
+        "constructed_from_first_reported_components; not_a_reported_quarter",
+        "cross_filing_operands",
+        "source_decimals_metadata_unavailable; arithmetic_precision_is_not_measurement_precision"
+      ]
+    },
+    {
+      "actual_state": "conflicted",
+      "actual_value": null,
+      "cik": "0000909832",
+      "errors": [],
+      "expected_state": "conflicted",
+      "expected_value": null,
+      "id": "cost-fy2023-revenue",
+      "passed": true,
+      "reasons": [
+        "multiple_supported_concept_scopes",
+        "revision_or_scope_conflict"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 6292000000,
+      "cik": "0000909832",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 6292000000,
+      "id": "cost-fy2023-net_income",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 11068000000,
+      "cik": "0000909832",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 11068000000,
+      "id": "cost-fy2023-operating_cash_flow",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 68994000000,
+      "cik": "0000909832",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 68994000000,
+      "id": "cost-fy2023-assets",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 43936000000,
+      "cik": "0000909832",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 43936000000,
+      "id": "cost-fy2023-liabilities",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 13700000000,
+      "cik": "0000909832",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 13700000000,
+      "id": "cost-fy2023-cash_and_cash_equivalents",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 1364000000,
+      "cik": "0000909832",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 1364000000,
+      "id": "cost-fy2023-q1-net-income",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "source_verification_failed",
+      "actual_value": null,
+      "cik": "0000909832",
+      "errors": [],
+      "expected_state": "source_verification_failed",
+      "expected_value": null,
+      "id": "cost-required-source-cutoff",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic",
+        "original_source_not_fully_verified",
+        "source_verification_failure",
+        "undimensioned_scope_not_proven"
+      ]
+    },
+    {
+      "actual_state": "unavailable",
+      "actual_value": null,
+      "cik": "0001018724",
+      "errors": [],
+      "expected_state": "unavailable",
+      "expected_value": null,
+      "id": "amzn-before-fy2023",
+      "passed": true,
+      "reasons": [
+        "no_eligible_reported_observation"
+      ]
+    },
+    {
+      "actual_state": "insufficient_evidence",
+      "actual_value": null,
+      "cik": "0001018724",
+      "errors": [],
+      "expected_state": "insufficient_evidence",
+      "expected_value": null,
+      "id": "amzn-fy2023-ocf-Q2",
+      "passed": true,
+      "reasons": [
+        "company_level_scope_only; original_instance_dimensions_not_proven_equal",
+        "insufficient_cumulative_operands",
+        "minuend:ambiguous_period:ambiguous_period",
+        "source_decimals_metadata_unavailable; arithmetic_precision_is_not_measurement_precision",
+        "subtrahend:ambiguous_period:ambiguous_period"
+      ]
+    },
+    {
+      "actual_state": "insufficient_evidence",
+      "actual_value": null,
+      "cik": "0001018724",
+      "errors": [],
+      "expected_state": "insufficient_evidence",
+      "expected_value": null,
+      "id": "amzn-fy2023-ocf-Q3",
+      "passed": true,
+      "reasons": [
+        "company_level_scope_only; original_instance_dimensions_not_proven_equal",
+        "insufficient_cumulative_operands",
+        "minuend:ambiguous_period:ambiguous_period",
+        "source_decimals_metadata_unavailable; arithmetic_precision_is_not_measurement_precision",
+        "subtrahend:ambiguous_period:ambiguous_period"
+      ]
+    },
+    {
+      "actual_state": "insufficient_evidence",
+      "actual_value": null,
+      "cik": "0001018724",
+      "errors": [],
+      "expected_state": "insufficient_evidence",
+      "expected_value": null,
+      "id": "amzn-fy2023-ocf-Q4",
+      "passed": true,
+      "reasons": [
+        "company_level_scope_only; original_instance_dimensions_not_proven_equal",
+        "insufficient_cumulative_operands",
+        "minuend:resolved:directly_reported; no arithmetic",
+        "source_decimals_metadata_unavailable; arithmetic_precision_is_not_measurement_precision",
+        "subtrahend:ambiguous_period:ambiguous_period"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 574785000000,
+      "cik": "0001018724",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 574785000000,
+      "id": "amzn-fy2023-revenue",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 30425000000,
+      "cik": "0001018724",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 30425000000,
+      "id": "amzn-fy2023-net_income",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 84946000000,
+      "cik": "0001018724",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 84946000000,
+      "id": "amzn-fy2023-operating_cash_flow",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 527854000000,
+      "cik": "0001018724",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 527854000000,
+      "id": "amzn-fy2023-assets",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "unavailable",
+      "actual_value": null,
+      "cik": "0001018724",
+      "errors": [],
+      "expected_state": "unavailable",
+      "expected_value": null,
+      "id": "amzn-fy2023-liabilities",
+      "passed": true,
+      "reasons": [
+        "no_eligible_reported_observation"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 73387000000,
+      "cik": "0001018724",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 73387000000,
+      "id": "amzn-fy2023-cash_and_cash_equivalents",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "ambiguous_period",
+      "actual_value": null,
+      "cik": "0001018724",
+      "errors": [],
+      "expected_state": "ambiguous_period",
+      "expected_value": null,
+      "id": "amzn-fy2023-q1-net-income",
+      "passed": true,
+      "reasons": [
+        "ambiguous_period",
+        "period_ambiguous"
+      ]
+    },
+    {
+      "actual_state": "source_verification_failed",
+      "actual_value": null,
+      "cik": "0001018724",
+      "errors": [],
+      "expected_state": "source_verification_failed",
+      "expected_value": null,
+      "id": "amzn-required-source-cutoff",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic",
+        "original_source_not_fully_verified",
+        "source_verification_failure",
+        "undimensioned_scope_not_proven"
+      ]
+    },
+    {
+      "actual_state": "unavailable",
+      "actual_value": null,
+      "cik": "0001090727",
+      "errors": [],
+      "expected_state": "unavailable",
+      "expected_value": null,
+      "id": "ups-before-fy2023",
+      "passed": true,
+      "reasons": [
+        "no_eligible_reported_observation"
+      ]
+    },
+    {
+      "actual_state": "resolved_derived",
+      "actual_value": 3237000000,
+      "cik": "0001090727",
+      "errors": [],
+      "expected_state": "resolved_derived",
+      "expected_value": 3237000000,
+      "id": "ups-fy2023-ocf-Q2",
+      "passed": true,
+      "reasons": [
+        "company_level_scope_only; original_instance_dimensions_not_proven_equal",
+        "constructed_from_first_reported_components; not_a_reported_quarter",
+        "cross_filing_operands",
+        "source_decimals_metadata_unavailable; arithmetic_precision_is_not_measurement_precision"
+      ]
+    },
+    {
+      "actual_state": "resolved_derived",
+      "actual_value": 2233000000,
+      "cik": "0001090727",
+      "errors": [],
+      "expected_state": "resolved_derived",
+      "expected_value": 2233000000,
+      "id": "ups-fy2023-ocf-Q3",
+      "passed": true,
+      "reasons": [
+        "company_level_scope_only; original_instance_dimensions_not_proven_equal",
+        "constructed_from_first_reported_components; not_a_reported_quarter",
+        "cross_filing_operands",
+        "source_decimals_metadata_unavailable; arithmetic_precision_is_not_measurement_precision"
+      ]
+    },
+    {
+      "actual_state": "resolved_derived",
+      "actual_value": 2411000000,
+      "cik": "0001090727",
+      "errors": [],
+      "expected_state": "resolved_derived",
+      "expected_value": 2411000000,
+      "id": "ups-fy2023-ocf-Q4",
+      "passed": true,
+      "reasons": [
+        "company_level_scope_only; original_instance_dimensions_not_proven_equal",
+        "constructed_from_first_reported_components; not_a_reported_quarter",
+        "cross_filing_operands",
+        "source_decimals_metadata_unavailable; arithmetic_precision_is_not_measurement_precision"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 90958000000,
+      "cik": "0001090727",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 90958000000,
+      "id": "ups-fy2023-revenue",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 6708000000,
+      "cik": "0001090727",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 6708000000,
+      "id": "ups-fy2023-net_income",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 10238000000,
+      "cik": "0001090727",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 10238000000,
+      "id": "ups-fy2023-operating_cash_flow",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 70857000000,
+      "cik": "0001090727",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 70857000000,
+      "id": "ups-fy2023-assets",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "unavailable",
+      "actual_value": null,
+      "cik": "0001090727",
+      "errors": [],
+      "expected_state": "unavailable",
+      "expected_value": null,
+      "id": "ups-fy2023-liabilities",
+      "passed": true,
+      "reasons": [
+        "no_eligible_reported_observation"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 3206000000,
+      "cik": "0001090727",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 3206000000,
+      "id": "ups-fy2023-cash_and_cash_equivalents",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 1895000000,
+      "cik": "0001090727",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 1895000000,
+      "id": "ups-fy2023-q1-net-income",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "source_verification_failed",
+      "actual_value": null,
+      "cik": "0001090727",
+      "errors": [],
+      "expected_state": "source_verification_failed",
+      "expected_value": null,
+      "id": "ups-required-source-cutoff",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic",
+        "original_source_not_fully_verified",
+        "source_verification_failure",
+        "undimensioned_scope_not_proven"
+      ]
+    },
+    {
+      "actual_state": "unavailable",
+      "actual_value": null,
+      "cik": "0001326160",
+      "errors": [],
+      "expected_state": "unavailable",
+      "expected_value": null,
+      "id": "duk-before-fy2023",
+      "passed": true,
+      "reasons": [
+        "no_eligible_reported_observation"
+      ]
+    },
+    {
+      "actual_state": "resolved_derived",
+      "actual_value": 2302000000,
+      "cik": "0001326160",
+      "errors": [],
+      "expected_state": "resolved_derived",
+      "expected_value": 2302000000,
+      "id": "duk-fy2023-ocf-Q2",
+      "passed": true,
+      "reasons": [
+        "company_level_scope_only; original_instance_dimensions_not_proven_equal",
+        "constructed_from_first_reported_components; not_a_reported_quarter",
+        "cross_filing_operands",
+        "source_decimals_metadata_unavailable; arithmetic_precision_is_not_measurement_precision"
+      ]
+    },
+    {
+      "actual_state": "resolved_derived",
+      "actual_value": 3524000000,
+      "cik": "0001326160",
+      "errors": [],
+      "expected_state": "resolved_derived",
+      "expected_value": 3524000000,
+      "id": "duk-fy2023-ocf-Q3",
+      "passed": true,
+      "reasons": [
+        "company_level_scope_only; original_instance_dimensions_not_proven_equal",
+        "constructed_from_first_reported_components; not_a_reported_quarter",
+        "cross_filing_operands",
+        "source_decimals_metadata_unavailable; arithmetic_precision_is_not_measurement_precision"
+      ]
+    },
+    {
+      "actual_state": "resolved_derived",
+      "actual_value": 2569000000,
+      "cik": "0001326160",
+      "errors": [],
+      "expected_state": "resolved_derived",
+      "expected_value": 2569000000,
+      "id": "duk-fy2023-ocf-Q4",
+      "passed": true,
+      "reasons": [
+        "company_level_scope_only; original_instance_dimensions_not_proven_equal",
+        "constructed_from_first_reported_components; not_a_reported_quarter",
+        "cross_filing_operands",
+        "source_decimals_metadata_unavailable; arithmetic_precision_is_not_measurement_precision"
+      ]
+    },
+    {
+      "actual_state": "unavailable",
+      "actual_value": null,
+      "cik": "0001326160",
+      "errors": [],
+      "expected_state": "unavailable",
+      "expected_value": null,
+      "id": "duk-fy2023-revenue",
+      "passed": true,
+      "reasons": [
+        "no_eligible_reported_observation"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 2841000000,
+      "cik": "0001326160",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 2841000000,
+      "id": "duk-fy2023-net_income",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 9878000000,
+      "cik": "0001326160",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 9878000000,
+      "id": "duk-fy2023-operating_cash_flow",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 176893000000,
+      "cik": "0001326160",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 176893000000,
+      "id": "duk-fy2023-assets",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "unavailable",
+      "actual_value": null,
+      "cik": "0001326160",
+      "errors": [],
+      "expected_state": "unavailable",
+      "expected_value": null,
+      "id": "duk-fy2023-liabilities",
+      "passed": true,
+      "reasons": [
+        "no_eligible_reported_observation"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 253000000,
+      "cik": "0001326160",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 253000000,
+      "id": "duk-fy2023-cash_and_cash_equivalents",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 804000000,
+      "cik": "0001326160",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 804000000,
+      "id": "duk-fy2023-q1-net-income",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "source_verification_failed",
+      "actual_value": null,
+      "cik": "0001326160",
+      "errors": [],
+      "expected_state": "source_verification_failed",
+      "expected_value": null,
+      "id": "duk-required-source-cutoff",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic",
+        "original_source_not_fully_verified",
+        "source_verification_failure",
+        "undimensioned_scope_not_proven"
+      ]
+    },
+    {
+      "actual_state": "unavailable",
+      "actual_value": null,
+      "cik": "0001341439",
+      "errors": [],
+      "expected_state": "unavailable",
+      "expected_value": null,
+      "id": "orcl-before-fy2023",
+      "passed": true,
+      "reasons": [
+        "no_eligible_reported_observation"
+      ]
+    },
+    {
+      "actual_state": "resolved_derived",
+      "actual_value": 849000000,
+      "cik": "0001341439",
+      "errors": [],
+      "expected_state": "resolved_derived",
+      "expected_value": 849000000,
+      "id": "orcl-fy2023-ocf-Q2",
+      "passed": true,
+      "reasons": [
+        "company_level_scope_only; original_instance_dimensions_not_proven_equal",
+        "constructed_from_first_reported_components; not_a_reported_quarter",
+        "cross_filing_operands",
+        "source_decimals_metadata_unavailable; arithmetic_precision_is_not_measurement_precision"
+      ]
+    },
+    {
+      "actual_state": "resolved_derived",
+      "actual_value": 4275000000,
+      "cik": "0001341439",
+      "errors": [],
+      "expected_state": "resolved_derived",
+      "expected_value": 4275000000,
+      "id": "orcl-fy2023-ocf-Q3",
+      "passed": true,
+      "reasons": [
+        "company_level_scope_only; original_instance_dimensions_not_proven_equal",
+        "constructed_from_first_reported_components; not_a_reported_quarter",
+        "cross_filing_operands",
+        "source_decimals_metadata_unavailable; arithmetic_precision_is_not_measurement_precision"
+      ]
+    },
+    {
+      "actual_state": "resolved_derived",
+      "actual_value": 5647000000,
+      "cik": "0001341439",
+      "errors": [],
+      "expected_state": "resolved_derived",
+      "expected_value": 5647000000,
+      "id": "orcl-fy2023-ocf-Q4",
+      "passed": true,
+      "reasons": [
+        "company_level_scope_only; original_instance_dimensions_not_proven_equal",
+        "constructed_from_first_reported_components; not_a_reported_quarter",
+        "cross_filing_operands",
+        "source_decimals_metadata_unavailable; arithmetic_precision_is_not_measurement_precision"
+      ]
+    },
+    {
+      "actual_state": "conflicted",
+      "actual_value": null,
+      "cik": "0001341439",
+      "errors": [],
+      "expected_state": "conflicted",
+      "expected_value": null,
+      "id": "orcl-fy2023-revenue",
+      "passed": true,
+      "reasons": [
+        "multiple_supported_concept_scopes",
+        "revision_or_scope_conflict"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 8503000000,
+      "cik": "0001341439",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 8503000000,
+      "id": "orcl-fy2023-net_income",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 17165000000,
+      "cik": "0001341439",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 17165000000,
+      "id": "orcl-fy2023-operating_cash_flow",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 134384000000,
+      "cik": "0001341439",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 134384000000,
+      "id": "orcl-fy2023-assets",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "unavailable",
+      "actual_value": null,
+      "cik": "0001341439",
+      "errors": [],
+      "expected_state": "unavailable",
+      "expected_value": null,
+      "id": "orcl-fy2023-liabilities",
+      "passed": true,
+      "reasons": [
+        "no_eligible_reported_observation"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 9765000000,
+      "cik": "0001341439",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 9765000000,
+      "id": "orcl-fy2023-cash_and_cash_equivalents",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 1548000000,
+      "cik": "0001341439",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 1548000000,
+      "id": "orcl-fy2023-q1-net-income",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "source_verification_failed",
+      "actual_value": null,
+      "cik": "0001341439",
+      "errors": [],
+      "expected_state": "source_verification_failed",
+      "expected_value": null,
+      "id": "orcl-required-source-cutoff",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic",
+        "original_source_not_fully_verified",
+        "source_verification_failure",
+        "undimensioned_scope_not_proven"
+      ]
+    },
+    {
+      "actual_state": "unavailable",
+      "actual_value": null,
+      "cik": "0001751788",
+      "errors": [],
+      "expected_state": "unavailable",
+      "expected_value": null,
+      "id": "dow-before-fy2023",
+      "passed": true,
+      "reasons": [
+        "no_eligible_reported_observation"
+      ]
+    },
+    {
+      "actual_state": "resolved_derived",
+      "actual_value": 1347000000,
+      "cik": "0001751788",
+      "errors": [],
+      "expected_state": "resolved_derived",
+      "expected_value": 1347000000,
+      "id": "dow-fy2023-ocf-Q2",
+      "passed": true,
+      "reasons": [
+        "company_level_scope_only; original_instance_dimensions_not_proven_equal",
+        "constructed_from_first_reported_components; not_a_reported_quarter",
+        "cross_filing_operands",
+        "source_decimals_metadata_unavailable; arithmetic_precision_is_not_measurement_precision"
+      ]
+    },
+    {
+      "actual_state": "resolved_derived",
+      "actual_value": 1658000000,
+      "cik": "0001751788",
+      "errors": [],
+      "expected_state": "resolved_derived",
+      "expected_value": 1658000000,
+      "id": "dow-fy2023-ocf-Q3",
+      "passed": true,
+      "reasons": [
+        "company_level_scope_only; original_instance_dimensions_not_proven_equal",
+        "constructed_from_first_reported_components; not_a_reported_quarter",
+        "cross_filing_operands",
+        "source_decimals_metadata_unavailable; arithmetic_precision_is_not_measurement_precision"
+      ]
+    },
+    {
+      "actual_state": "resolved_derived",
+      "actual_value": 1656000000,
+      "cik": "0001751788",
+      "errors": [],
+      "expected_state": "resolved_derived",
+      "expected_value": 1656000000,
+      "id": "dow-fy2023-ocf-Q4",
+      "passed": true,
+      "reasons": [
+        "company_level_scope_only; original_instance_dimensions_not_proven_equal",
+        "constructed_from_first_reported_components; not_a_reported_quarter",
+        "cross_filing_operands",
+        "source_decimals_metadata_unavailable; arithmetic_precision_is_not_measurement_precision"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 44622000000,
+      "cik": "0001751788",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 44622000000,
+      "id": "dow-fy2023-revenue",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "unavailable",
+      "actual_value": null,
+      "cik": "0001751788",
+      "errors": [],
+      "expected_state": "unavailable",
+      "expected_value": null,
+      "id": "dow-fy2023-net_income",
+      "passed": true,
+      "reasons": [
+        "no_eligible_reported_observation"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 5196000000,
+      "cik": "0001751788",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 5196000000,
+      "id": "dow-fy2023-operating_cash_flow",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 57967000000,
+      "cik": "0001751788",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 57967000000,
+      "id": "dow-fy2023-assets",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "unavailable",
+      "actual_value": null,
+      "cik": "0001751788",
+      "errors": [],
+      "expected_state": "unavailable",
+      "expected_value": null,
+      "id": "dow-fy2023-liabilities",
+      "passed": true,
+      "reasons": [
+        "no_eligible_reported_observation"
+      ]
+    },
+    {
+      "actual_state": "resolved_reported",
+      "actual_value": 2987000000,
+      "cik": "0001751788",
+      "errors": [],
+      "expected_state": "resolved_reported",
+      "expected_value": 2987000000,
+      "id": "dow-fy2023-cash_and_cash_equivalents",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic"
+      ]
+    },
+    {
+      "actual_state": "ambiguous_period",
+      "actual_value": null,
+      "cik": "0001751788",
+      "errors": [],
+      "expected_state": "ambiguous_period",
+      "expected_value": null,
+      "id": "dow-fy2023-q1-net-income",
+      "passed": true,
+      "reasons": [
+        "ambiguous_period",
+        "period_ambiguous"
+      ]
+    },
+    {
+      "actual_state": "source_verification_failed",
+      "actual_value": null,
+      "cik": "0001751788",
+      "errors": [],
+      "expected_state": "source_verification_failed",
+      "expected_value": null,
+      "id": "dow-required-source-cutoff",
+      "passed": true,
+      "reasons": [
+        "directly_reported; no arithmetic",
+        "original_source_not_fully_verified",
+        "source_verification_failure",
+        "undimensioned_scope_not_proven"
+      ]
+    }
+  ],
+  "format": "finpanel-golden-validation-v1",
+  "golden_hash": "03ff1f839fc9a5ff0efd7214fab60d30a126755a141b4d90ddcb4d7e4cf0cdcd",
+  "invariant_checks": 20462,
+  "invariant_failures": [],
+  "issuer_count": 13,
+  "matched": 156,
+  "receipts": [
+    {
+      "query": {
+        "as_of": [
+          "2020-01-01T00:00:00+00:00"
+        ],
+        "entities": [
+          "0000012927"
+        ],
+        "errors": "collect",
+        "fiscal_years": [
+          2023
+        ],
+        "metrics": [
+          "net_income"
+        ],
+        "period_ends": [],
+        "periods": [
+          "FY"
+        ],
+        "revision_policy": "first_reported",
+        "snapshot_id": "e42059094b83ce80c996f4d655f6ee6fa6c7b6a2aa9accff75d1926f0a63ae8f",
+        "source_policy": "reported_only",
+        "source_verification": "off",
+        "timeline_scope": "complete"
+      },
+      "receipt_id": "5843073ce67032d2bd2abda3f5dd3c8d58a67a34489fb4ce966cdcce43b5e555"
+    },
+    {
+      "query": {
+        "as_of": [
+          "2024-06-01T00:00:00+00:00"
+        ],
+        "entities": [
+          "0000012927"
+        ],
+        "errors": "collect",
+        "fiscal_years": [
+          2023
+        ],
+        "metrics": [
+          "operating_cash_flow"
+        ],
+        "period_ends": [],
+        "periods": [
+          "Q2",
+          "Q3",
+          "Q4"
+        ],
+        "revision_policy": "first_reported",
+        "snapshot_id": "e42059094b83ce80c996f4d655f6ee6fa6c7b6a2aa9accff75d1926f0a63ae8f",
+        "source_policy": "derived_only",
+        "source_verification": "off",
+        "timeline_scope": "complete"
+      },
+      "receipt_id": "df179de59b3fde6914151a5e48421b5bc1d5e4c489e11ad3c0ec12d1805c93ef"
+    },
+    {
+      "query": {
+        "as_of": [
+          "2024-06-01T00:00:00+00:00"
+        ],
+        "entities": [
+          "0000012927"
+        ],
+        "errors": "collect",
+        "fiscal_years": [
+          2023
+        ],
+        "metrics": [
+          "assets",
+          "cash_and_cash_equivalents",
+          "liabilities",
+          "net_income",
+          "operating_cash_flow",
+          "revenue"
+        ],
+        "period_ends": [
+          {
+            "cik": "0000012927",
+            "end": "2023-12-31",
+            "fiscal_year": 2023,
+            "period": "FY"
+          }
+        ],
+        "periods": [
+          "FY",
+          "Q1"
+        ],
+        "revision_policy": "first_reported",
+        "snapshot_id": "e42059094b83ce80c996f4d655f6ee6fa6c7b6a2aa9accff75d1926f0a63ae8f",
+        "source_policy": "reported_only",
+        "source_verification": "off",
+        "timeline_scope": "complete"
+      },
+      "receipt_id": "e9fd3e8fbae7b657c3fc3eebe0f1226d8349506036a449b04bf3fa5a9b3e2b1c"
+    },
+    {
+      "query": {
+        "as_of": [
+          "2024-06-01T00:00:00+00:00"
+        ],
+        "entities": [
+          "0000012927"
+        ],
+        "errors": "collect",
+        "fiscal_years": [
+          2023
+        ],
+        "metrics": [
+          "assets"
+        ],
+        "period_ends": [
+          {
+            "cik": "0000012927",
+            "end": "2023-12-31",
+            "fiscal_year": 2023,
+            "period": "FY"
+          }
+        ],
+        "periods": [
+          "FY"
+        ],
+        "revision_policy": "first_reported",
+        "snapshot_id": "e42059094b83ce80c996f4d655f6ee6fa6c7b6a2aa9accff75d1926f0a63ae8f",
+        "source_policy": "reported_only",
+        "source_verification": "required",
+        "timeline_scope": "complete"
+      },
+      "receipt_id": "8c46dc9b77d6e2adfeebd055f58b3f47e0f9e27eb3b2c31f7b6e353265a8a484"
+    },
+    {
+      "query": {
+        "as_of": [
+          "2020-01-01T00:00:00+00:00"
+        ],
+        "entities": [
+          "0000027419"
+        ],
+        "errors": "collect",
+        "fiscal_years": [
+          2023
+        ],
+        "metrics": [
+          "net_income"
+        ],
+        "period_ends": [],
+        "periods": [
+          "FY"
+        ],
+        "revision_policy": "first_reported",
+        "snapshot_id": "e42059094b83ce80c996f4d655f6ee6fa6c7b6a2aa9accff75d1926f0a63ae8f",
+        "source_policy": "reported_only",
+        "source_verification": "off",
+        "timeline_scope": "complete"
+      },
+      "receipt_id": "79a7405c00375fdd5e5014302cf9b02d066b467f4c57e0a5b11f07d78c8e4295"
+    },
+    {
+      "query": {
+        "as_of": [
+          "2024-06-01T00:00:00+00:00"
+        ],
+        "entities": [
+          "0000027419"
+        ],
+        "errors": "collect",
+        "fiscal_years": [
+          2023
+        ],
+        "metrics": [
+          "operating_cash_flow"
+        ],
+        "period_ends": [],
+        "periods": [
+          "Q2",
+          "Q3",
+          "Q4"
+        ],
+        "revision_policy": "first_reported",
+        "snapshot_id": "e42059094b83ce80c996f4d655f6ee6fa6c7b6a2aa9accff75d1926f0a63ae8f",
+        "source_policy": "derived_only",
+        "source_verification": "off",
+        "timeline_scope": "complete"
+      },
+      "receipt_id": "a96d0f2865efde03c4300e6fa9fe8b0af2d182a3936ad3e7eebecf1f27d81c68"
+    },
+    {
+      "query": {
+        "as_of": [
+          "2024-06-01T00:00:00+00:00"
+        ],
+        "entities": [
+          "0000027419"
+        ],
+        "errors": "collect",
+        "fiscal_years": [
+          2023
+        ],
+        "metrics": [
+          "assets",
+          "cash_and_cash_equivalents",
+          "liabilities",
+          "net_income",
+          "operating_cash_flow",
+          "revenue"
+        ],
+        "period_ends": [
+          {
+            "cik": "0000027419",
+            "end": "2024-02-03",
+            "fiscal_year": 2023,
+            "period": "FY"
+          }
+        ],
+        "periods": [
+          "FY",
+          "Q1"
+        ],
+        "revision_policy": "first_reported",
+        "snapshot_id": "e42059094b83ce80c996f4d655f6ee6fa6c7b6a2aa9accff75d1926f0a63ae8f",
+        "source_policy": "reported_only",
+        "source_verification": "off",
+        "timeline_scope": "complete"
+      },
+      "receipt_id": "39f10eb5bfd5b8836bc5488fd7bee55bfb8d8109d23689f0acd671f5331d91f3"
+    },
+    {
+      "query": {
+        "as_of": [
+          "2024-06-01T00:00:00+00:00"
+        ],
+        "entities": [
+          "0000027419"
+        ],
+        "errors": "collect",
+        "fiscal_years": [
+          2023
+        ],
+        "metrics": [
+          "assets"
+        ],
+        "period_ends": [
+          {
+            "cik": "0000027419",
+            "end": "2024-02-03",
+            "fiscal_year": 2023,
+            "period": "FY"
+          }
+        ],
+        "periods": [
+          "FY"
+        ],
+        "revision_policy": "first_reported",
+        "snapshot_id": "e42059094b83ce80c996f4d655f6ee6fa6c7b6a2aa9accff75d1926f0a63ae8f",
+        "source_policy": "reported_only",
+        "source_verification": "required",
+        "timeline_scope": "complete"
+      },
+      "receipt_id": "d32e32b35a716af65be1376d8f8a78b80715f2117320bdabecc0efaccd024bf4"
+    },
+    {
+      "query": {
+        "as_of": [
+          "2020-01-01T00:00:00+00:00"
+        ],
+        "entities": [
+          "0000034088"
+        ],
+        "errors": "collect",
+        "fiscal_years": [
+          2023
+        ],
+        "metrics": [
+          "net_income"
+        ],
+        "period_ends": [],
+        "periods": [
+          "FY"
+        ],
+        "revision_policy": "first_reported",
+        "snapshot_id": "e42059094b83ce80c996f4d655f6ee6fa6c7b6a2aa9accff75d1926f0a63ae8f",
+        "source_policy": "reported_only",
+        "source_verification": "off",
+        "timeline_scope": "complete"
+      },
+      "receipt_id": "1b882d3c6e8ee716293609a50fb556973dbe1e7fe6669143edb718493893eb13"
+    },
+    {
+      "query": {
+        "as_of": [
+          "2024-06-01T00:00:00+00:00"
+        ],
+        "entities": [
+          "0000034088"
+        ],
+        "errors": "collect",
+        "fiscal_years": [
+          2023
+        ],
+        "metrics": [
+          "operating_cash_flow"
+        ],
+        "period_ends": [],
+        "periods": [
+          "Q2",
+          "Q3",
+          "Q4"
+        ],
+        "revision_policy": "first_reported",
+        "snapshot_id": "e42059094b83ce80c996f4d655f6ee6fa6c7b6a2aa9accff75d1926f0a63ae8f",
+        "source_policy": "derived_only",
+        "source_verification": "off",
+        "timeline_scope": "complete"
+      },
+      "receipt_id": "919575aeaf1569a2c089b3a4b6a44a00b976c75a74412e21bc3c390cbb5470a3"
+    },
+    {
+      "query": {
+        "as_of": [
+          "2024-06-01T00:00:00+00:00"
+        ],
+        "entities": [
+          "0000034088"
+        ],
+        "errors": "collect",
+        "fiscal_years": [
+          2023
+        ],
+        "metrics": [
+          "assets",
+          "cash_and_cash_equivalents",
+          "liabilities",
+          "net_income",
+          "operating_cash_flow",
+          "revenue"
+        ],
+        "period_ends": [
+          {
+            "cik": "0000034088",
+            "end": "2023-12-31",
+            "fiscal_year": 2023,
+            "period": "FY"
+          }
+        ],
+        "periods": [
+          "FY",
+          "Q1"
+        ],
+        "revision_policy": "first_reported",
+        "snapshot_id": "e42059094b83ce80c996f4d655f6ee6fa6c7b6a2aa9accff75d1926f0a63ae8f",
+        "source_policy": "reported_only",
+        "source_verification": "off",
+        "timeline_scope": "complete"
+      },
+      "receipt_id": "f08f696093b9534dc156622f27cb3bfad2153218ecc0936783c59b47e6274941"
+    },
+    {
+      "query": {
+        "as_of": [
+          "2024-06-01T00:00:00+00:00"
+        ],
+        "entities": [
+          "0000034088"
+        ],
+        "errors": "collect",
+        "fiscal_years": [
+          2023
+        ],
+        "metrics": [
+          "assets"
+        ],
+        "period_ends": [
+          {
+            "cik": "0000034088",
+            "end": "2023-12-31",
+            "fiscal_year": 2023,
+            "period": "FY"
+          }
+        ],
+        "periods": [
+          "FY"
+        ],
+        "revision_policy": "first_reported",
+        "snapshot_id": "e42059094b83ce80c996f4d655f6ee6fa6c7b6a2aa9accff75d1926f0a63ae8f",
+        "source_policy": "reported_only",
+        "source_verification": "required",
+        "timeline_scope": "complete"
+      },
+      "receipt_id": "c1fa57088609f7e0c46479dccccd333896ec1c4b82ead426ab66425cfd103324"
+    },
+    {
+      "query": {
+        "as_of": [
+          "2020-01-01T00:00:00+00:00"
+        ],
+        "entities": [
+          "0000050863"
+        ],
+        "errors": "collect",
+        "fiscal_years": [
+          2023
+        ],
+        "metrics": [
+          "net_income"
+        ],
+        "period_ends": [],
+        "periods": [
+          "FY"
+        ],
+        "revision_policy": "first_reported",
+        "snapshot_id": "e42059094b83ce80c996f4d655f6ee6fa6c7b6a2aa9accff75d1926f0a63ae8f",
+        "source_policy": "reported_only",
+        "source_verification": "off",
+        "timeline_scope": "complete"
+      },
+      "receipt_id": "5be0742b830757aef9f3389efedc48815a76c8db4226c6cfa80d2d97fff88d38"
+    },
+    {
+      "query": {
+        "as_of": [
+          "2024-06-01T00:00:00+00:00"
+        ],
+        "entities": [
+          "0000050863"
+        ],
+        "errors": "collect",
+        "fiscal_years": [
+          2023
+        ],
+        "metrics": [
+          "operating_cash_flow"
+        ],
+        "period_ends": [],
+        "periods": [
+          "Q2",
+          "Q3",
+          "Q4"
+        ],
+        "revision_policy": "first_reported",
+        "snapshot_id": "e42059094b83ce80c996f4d655f6ee6fa6c7b6a2aa9accff75d1926f0a63ae8f",
+        "source_policy": "derived_only",
+        "source_verification": "off",
+        "timeline_scope": "complete"
+      },
+      "receipt_id": "51eab07ebea15187667628e90ddf7c9a7e91248b934ae48e837bf93ab3e0f29f"
+    },
+    {
+      "query": {
+        "as_of": [
+          "2024-06-01T00:00:00+00:00"
+        ],
+        "entities": [
+          "0000050863"
+        ],
+        "errors": "collect",
+        "fiscal_years": [
+          2023
+        ],
+        "metrics": [
+          "assets",
+          "cash_and_cash_equivalents",
+          "liabilities",
+          "net_income",
+          "operating_cash_flow",
+          "revenue"
+        ],
+        "period_ends": [
+          {
+            "cik": "0000050863",
+            "end": "2023-12-30",
+            "fiscal_year": 2023,
+            "period": "FY"
+          }
+        ],
+        "periods": [
+          "FY",
+          "Q1"
+        ],
+        "revision_policy": "first_reported",
+        "snapshot_id": "e42059094b83ce80c996f4d655f6ee6fa6c7b6a2aa9accff75d1926f0a63ae8f",
+        "source_policy": "reported_only",
+        "source_verification": "off",
+        "timeline_scope": "complete"
+      },
+      "receipt_id": "e7d41dd8c0bab14cea91b29d9dd14ab89c430a4c56818aadb5907452bd90a91b"
+    },
+    {
+      "query": {
+        "as_of": [
+          "2024-06-01T00:00:00+00:00"
+        ],
+        "entities": [
+          "0000050863"
+        ],
+        "errors": "collect",
+        "fiscal_years": [
+          2023
+        ],
+        "metrics": [
+          "assets"
+        ],
+        "period_ends": [
+          {
+            "cik": "0000050863",
+            "end": "2023-12-30",
+            "fiscal_year": 2023,
+            "period": "FY"
+          }
+        ],
+        "periods": [
+          "FY"
+        ],
+        "revision_policy": "first_reported",
+        "snapshot_id": "e42059094b83ce80c996f4d655f6ee6fa6c7b6a2aa9accff75d1926f0a63ae8f",
+        "source_policy": "reported_only",
+        "source_verification": "required",
+        "timeline_scope": "complete"
+      },
+      "receipt_id": "e33bacbb14661966c4135c5f6367342798a71895147c903882140991f2169080"
+    },
+    {
+      "query": {
+        "as_of": [
+          "2020-01-01T00:00:00+00:00"
+        ],
+        "entities": [
+          "0000078003"
+        ],
+        "errors": "collect",
+        "fiscal_years": [
+          2023
+        ],
+        "metrics": [
+          "net_income"
+        ],
+        "period_ends": [],
+        "periods": [
+          "FY"
+        ],
+        "revision_policy": "first_reported",
+        "snapshot_id": "e42059094b83ce80c996f4d655f6ee6fa6c7b6a2aa9accff75d1926f0a63ae8f",
+        "source_policy": "reported_only",
+        "source_verification": "off",
+        "timeline_scope": "complete"
+      },
+      "receipt_id": "2298b54a62f17407d886181332cdb09ac4d1a8b36a3b7f8d0fc72ba1c1dbfd10"
+    },
+    {
+      "query": {
+        "as_of": [
+          "2024-06-01T00:00:00+00:00"
+        ],
+        "entities": [
+          "0000078003"
+        ],
+        "errors": "collect",
+        "fiscal_years": [
+          2023
+        ],
+        "metrics": [
+          "operating_cash_flow"
+        ],
+        "period_ends": [],
+        "periods": [
+          "Q2",
+          "Q3",
+          "Q4"
+        ],
+        "revision_policy": "first_reported",
+        "snapshot_id": "e42059094b83ce80c996f4d655f6ee6fa6c7b6a2aa9accff75d1926f0a63ae8f",
+        "source_policy": "derived_only",
+        "source_verification": "off",
+        "timeline_scope": "complete"
+      },
+      "receipt_id": "7b87255e65b52c05baf5c993253c4532c10959d261bb813ccc2b3ac2bee60907"
+    },
+    {
+      "query": {
+        "as_of": [
+          "2024-06-01T00:00:00+00:00"
+        ],
+        "entities": [
+          "0000078003"
+        ],
+        "errors": "collect",
+        "fiscal_years": [
+          2023
+        ],
+        "metrics": [
+          "assets",
+          "cash_and_cash_equivalents",
+          "liabilities",
+          "net_income",
+          "operating_cash_flow",
+          "revenue"
+        ],
+        "period_ends": [
+          {
+            "cik": "0000078003",
+            "end": "2023-12-31",
+            "fiscal_year": 2023,
+            "period": "FY"
+          }
+        ],
+        "periods": [
+          "FY",
+          "Q1"
+        ],
+        "revision_policy": "first_reported",
+        "snapshot_id": "e42059094b83ce80c996f4d655f6ee6fa6c7b6a2aa9accff75d1926f0a63ae8f",
+        "source_policy": "reported_only",
+        "source_verification": "off",
+        "timeline_scope": "complete"
+      },
+      "receipt_id": "09984a8d984fd50ecc0c4c66744a745dfded99a86c0b8a1d801dcb415ceb57fc"
+    },
+    {
+      "query": {
+        "as_of": [
+          "2024-06-01T00:00:00+00:00"
+        ],
+        "entities": [
+          "0000078003"
+        ],
+        "errors": "collect",
+        "fiscal_years": [
+          2023
+        ],
+        "metrics": [
+          "assets"
+        ],
+        "period_ends": [
+          {
+            "cik": "0000078003",
+            "end": "2023-12-31",
+            "fiscal_year": 2023,
+            "period": "FY"
+          }
+        ],
+        "periods": [
+          "FY"
+        ],
+        "revision_policy": "first_reported",
+        "snapshot_id": "e42059094b83ce80c996f4d655f6ee6fa6c7b6a2aa9accff75d1926f0a63ae8f",
+        "source_policy": "reported_only",
+        "source_verification": "required",
+        "timeline_scope": "complete"
+      },
+      "receipt_id": "57c48b83ceee95bdf4c9ce36a62ef452926a9564bff804c6db0486de68f9ac3c"
+    },
+    {
+      "query": {
+        "as_of": [
+          "2020-01-01T00:00:00+00:00"
+        ],
+        "entities": [
+          "0000320187"
+        ],
+        "errors": "collect",
+        "fiscal_years": [
+          2023
+        ],
+        "metrics": [
+          "net_income"
+        ],
+        "period_ends": [],
+        "periods": [
+          "FY"
+        ],
+        "revision_policy": "first_reported",
+        "snapshot_id": "e42059094b83ce80c996f4d655f6ee6fa6c7b6a2aa9accff75d1926f0a63ae8f",
+        "source_policy": "reported_only",
+        "source_verification": "off",
+        "timeline_scope": "complete"
+      },
+      "receipt_id": "b947882fa1bfa527e05db47a2c865f0d62b1c78d6b04c2ae4fc023a7995f04a0"
+    },
+    {
+      "query": {
+        "as_of": [
+          "2024-06-01T00:00:00+00:00"
+        ],
+        "entities": [
+          "0000320187"
+        ],
+        "errors": "collect",
+        "fiscal_years": [
+          2023
+        ],
+        "metrics": [
+          "operating_cash_flow"
+        ],
+        "period_ends": [],
+        "periods": [
+          "Q2",
+          "Q3",
+          "Q4"
+        ],
+        "revision_policy": "first_reported",
+        "snapshot_id": "e42059094b83ce80c996f4d655f6ee6fa6c7b6a2aa9accff75d1926f0a63ae8f",
+        "source_policy": "derived_only",
+        "source_verification": "off",
+        "timeline_scope": "complete"
+      },
+      "receipt_id": "6e5f6db857bcc81a98193e4b73f3cc0c1aac9f18aea988c12e2628fcfe3c058a"
+    },
+    {
+      "query": {
+        "as_of": [
+          "2024-06-01T00:00:00+00:00"
+        ],
+        "entities": [
+          "0000320187"
+        ],
+        "errors": "collect",
+        "fiscal_years": [
+          2023
+        ],
+        "metrics": [
+          "assets",
+          "cash_and_cash_equivalents",
+          "liabilities",
+          "net_income",
+          "operating_cash_flow",
+          "revenue"
+        ],
+        "period_ends": [
+          {
+            "cik": "0000320187",
+            "end": "2023-05-31",
+            "fiscal_year": 2023,
+            "period": "FY"
+          }
+        ],
+        "periods": [
+          "FY",
+          "Q1"
+        ],
+        "revision_policy": "first_reported",
+        "snapshot_id": "e42059094b83ce80c996f4d655f6ee6fa6c7b6a2aa9accff75d1926f0a63ae8f",
+        "source_policy": "reported_only",
+        "source_verification": "off",
+        "timeline_scope": "complete"
+      },
+      "receipt_id": "e40b4dac9b39cdacf1c5fcde412320b9c6f3b29daeabb637b4126671bd5bde60"
+    },
+    {
+      "query": {
+        "as_of": [
+          "2024-06-01T00:00:00+00:00"
+        ],
+        "entities": [
+          "0000320187"
+        ],
+        "errors": "collect",
+        "fiscal_years": [
+          2023
+        ],
+        "metrics": [
+          "assets"
+        ],
+        "period_ends": [
+          {
+            "cik": "0000320187",
+            "end": "2023-05-31",
+            "fiscal_year": 2023,
+            "period": "FY"
+          }
+        ],
+        "periods": [
+          "FY"
+        ],
+        "revision_policy": "first_reported",
+        "snapshot_id": "e42059094b83ce80c996f4d655f6ee6fa6c7b6a2aa9accff75d1926f0a63ae8f",
+        "source_policy": "reported_only",
+        "source_verification": "required",
+        "timeline_scope": "complete"
+      },
+      "receipt_id": "92e11647b6d1d8483d161fbc0ae242811ffd37031a4fd4e6de0c2a8387fa60e3"
+    },
+    {
+      "query": {
+        "as_of": [
+          "2020-01-01T00:00:00+00:00"
+        ],
+        "entities": [
+          "0000796343"
+        ],
+        "errors": "collect",
+        "fiscal_years": [
+          2023
+        ],
+        "metrics": [
+          "net_income"
+        ],
+        "period_ends": [],
+        "periods": [
+          "FY"
+        ],
+        "revision_policy": "first_reported",
+        "snapshot_id": "e42059094b83ce80c996f4d655f6ee6fa6c7b6a2aa9accff75d1926f0a63ae8f",
+        "source_policy": "reported_only",
+        "source_verification": "off",
+        "timeline_scope": "complete"
+      },
+      "receipt_id": "7d763d44947788b8a97527f6b8dae01c104903215ad5af160061d56f5bb53072"
+    },
+    {
+      "query": {
+        "as_of": [
+          "2024-06-01T00:00:00+00:00"
+        ],
+        "entities": [
+          "0000796343"
+        ],
+        "errors": "collect",
+        "fiscal_years": [
+          2023
+        ],
+        "metrics": [
+          "operating_cash_flow"
+        ],
+        "period_ends": [],
+        "periods": [
+          "Q2",
+          "Q3",
+          "Q4"
+        ],
+        "revision_policy": "first_reported",
+        "snapshot_id": "e42059094b83ce80c996f4d655f6ee6fa6c7b6a2aa9accff75d1926f0a63ae8f",
+        "source_policy": "derived_only",
+        "source_verification": "off",
+        "timeline_scope": "complete"
+      },
+      "receipt_id": "b1e40228347fa4e6d4d3f4b796aa322330abb79c8df956693e2ac8e49c42828b"
+    },
+    {
+      "query": {
+        "as_of": [
+          "2024-06-01T00:00:00+00:00"
+        ],
+        "entities": [
+          "0000796343"
+        ],
+        "errors": "collect",
+        "fiscal_years": [
+          2023
+        ],
+        "metrics": [
+          "assets",
+          "cash_and_cash_equivalents",
+          "liabilities",
+          "net_income",
+          "operating_cash_flow",
+          "revenue"
+        ],
+        "period_ends": [
+          {
+            "cik": "0000796343",
+            "end": "2023-12-01",
+            "fiscal_year": 2023,
+            "period": "FY"
+          }
+        ],
+        "periods": [
+          "FY",
+          "Q1"
+        ],
+        "revision_policy": "first_reported",
+        "snapshot_id": "e42059094b83ce80c996f4d655f6ee6fa6c7b6a2aa9accff75d1926f0a63ae8f",
+        "source_policy": "reported_only",
+        "source_verification": "off",
+        "timeline_scope": "complete"
+      },
+      "receipt_id": "7b2eb4db0a4c9ca405fa1f05103965830d106ffae72585f6ebfc82cb7a97c34d"
+    },
+    {
+      "query": {
+        "as_of": [
+          "2024-06-01T00:00:00+00:00"
+        ],
+        "entities": [
+          "0000796343"
+        ],
+        "errors": "collect",
+        "fiscal_years": [
+          2023
+        ],
+        "metrics": [
+          "assets"
+        ],
+        "period_ends": [
+          {
+            "cik": "0000796343",
+            "end": "2023-12-01",
+            "fiscal_year": 2023,
+            "period": "FY"
+          }
+        ],
+        "periods": [
+          "FY"
+        ],
+        "revision_policy": "first_reported",
+        "snapshot_id": "e42059094b83ce80c996f4d655f6ee6fa6c7b6a2aa9accff75d1926f0a63ae8f",
+        "source_policy": "reported_only",
+        "source_verification": "required",
+        "timeline_scope": "complete"
+      },
+      "receipt_id": "900ff108609aa2a9f083898df6e8f8016dc6772fe6009efa01e18b0474749923"
+    },
+    {
+      "query": {
+        "as_of": [
+          "2020-01-01T00:00:00+00:00"
+        ],
+        "entities": [
+          "0000909832"
+        ],
+        "errors": "collect",
+        "fiscal_years": [
+          2023
+        ],
+        "metrics": [
+          "net_income"
+        ],
+        "period_ends": [],
+        "periods": [
+          "FY"
+        ],
+        "revision_policy": "first_reported",
+        "snapshot_id": "e42059094b83ce80c996f4d655f6ee6fa6c7b6a2aa9accff75d1926f0a63ae8f",
+        "source_policy": "reported_only",
+        "source_verification": "off",
+        "timeline_scope": "complete"
+      },
+      "receipt_id": "7d89fa42ecd2f0fd508b9fdd42b8d6b5cee35d90d7442b8c4ef5979e0ae54cb6"
+    },
+    {
+      "query": {
+        "as_of": [
+          "2024-06-01T00:00:00+00:00"
+        ],
+        "entities": [
+          "0000909832"
+        ],
+        "errors": "collect",
+        "fiscal_years": [
+          2023
+        ],
+        "metrics": [
+          "operating_cash_flow"
+        ],
+        "period_ends": [],
+        "periods": [
+          "Q2",
+          "Q3",
+          "Q4"
+        ],
+        "revision_policy": "first_reported",
+        "snapshot_id": "e42059094b83ce80c996f4d655f6ee6fa6c7b6a2aa9accff75d1926f0a63ae8f",
+        "source_policy": "derived_only",
+        "source_verification": "off",
+        "timeline_scope": "complete"
+      },
+      "receipt_id": "6d5ee131144f548bfd9f454ac6878b0fd00c564f8801bb932fbd06553ec52b05"
+    },
+    {
+      "query": {
+        "as_of": [
+          "2024-06-01T00:00:00+00:00"
+        ],
+        "entities": [
+          "0000909832"
+        ],
+        "errors": "collect",
+        "fiscal_years": [
+          2023
+        ],
+        "metrics": [
+          "assets",
+          "cash_and_cash_equivalents",
+          "liabilities",
+          "net_income",
+          "operating_cash_flow",
+          "revenue"
+        ],
+        "period_ends": [
+          {
+            "cik": "0000909832",
+            "end": "2023-09-03",
+            "fiscal_year": 2023,
+            "period": "FY"
+          }
+        ],
+        "periods": [
+          "FY",
+          "Q1"
+        ],
+        "revision_policy": "first_reported",
+        "snapshot_id": "e42059094b83ce80c996f4d655f6ee6fa6c7b6a2aa9accff75d1926f0a63ae8f",
+        "source_policy": "reported_only",
+        "source_verification": "off",
+        "timeline_scope": "complete"
+      },
+      "receipt_id": "7ceb270513e0ddd6345d7797d5d48530cca49dc7edd05b74c4d54eeae0511eaa"
+    },
+    {
+      "query": {
+        "as_of": [
+          "2024-06-01T00:00:00+00:00"
+        ],
+        "entities": [
+          "0000909832"
+        ],
+        "errors": "collect",
+        "fiscal_years": [
+          2023
+        ],
+        "metrics": [
+          "assets"
+        ],
+        "period_ends": [
+          {
+            "cik": "0000909832",
+            "end": "2023-09-03",
+            "fiscal_year": 2023,
+            "period": "FY"
+          }
+        ],
+        "periods": [
+          "FY"
+        ],
+        "revision_policy": "first_reported",
+        "snapshot_id": "e42059094b83ce80c996f4d655f6ee6fa6c7b6a2aa9accff75d1926f0a63ae8f",
+        "source_policy": "reported_only",
+        "source_verification": "required",
+        "timeline_scope": "complete"
+      },
+      "receipt_id": "c54e2a96d0e80992586467cf0bbf64856a28a2d7ca581fe5da1b75181961f634"
+    },
+    {
+      "query": {
+        "as_of": [
+          "2020-01-01T00:00:00+00:00"
+        ],
+        "entities": [
+          "0001018724"
+        ],
+        "errors": "collect",
+        "fiscal_years": [
+          2023
+        ],
+        "metrics": [
+          "net_income"
+        ],
+        "period_ends": [],
+        "periods": [
+          "FY"
+        ],
+        "revision_policy": "first_reported",
+        "snapshot_id": "e42059094b83ce80c996f4d655f6ee6fa6c7b6a2aa9accff75d1926f0a63ae8f",
+        "source_policy": "reported_only",
+        "source_verification": "off",
+        "timeline_scope": "complete"
+      },
+      "receipt_id": "b58dc5688958ebb485836f495badf6aaef6d16f27804d10e0d4ae4c3fa048ab4"
+    },
+    {
+      "query": {
+        "as_of": [
+          "2024-06-01T00:00:00+00:00"
+        ],
+        "entities": [
+          "0001018724"
+        ],
+        "errors": "collect",
+        "fiscal_years": [
+          2023
+        ],
+        "metrics": [
+          "operating_cash_flow"
+        ],
+        "period_ends": [],
+        "periods": [
+          "Q2",
+          "Q3",
+          "Q4"
+        ],
+        "revision_policy": "first_reported",
+        "snapshot_id": "e42059094b83ce80c996f4d655f6ee6fa6c7b6a2aa9accff75d1926f0a63ae8f",
+        "source_policy": "derived_only",
+        "source_verification": "off",
+        "timeline_scope": "complete"
+      },
+      "receipt_id": "a2d9c5a842e66b3ef511844c2a334443109f5ab90039b4bfdb3b6d8d6c18c168"
+    },
+    {
+      "query": {
+        "as_of": [
+          "2024-06-01T00:00:00+00:00"
+        ],
+        "entities": [
+          "0001018724"
+        ],
+        "errors": "collect",
+        "fiscal_years": [
+          2023
+        ],
+        "metrics": [
+          "assets",
+          "cash_and_cash_equivalents",
+          "liabilities",
+          "net_income",
+          "operating_cash_flow",
+          "revenue"
+        ],
+        "period_ends": [
+          {
+            "cik": "0001018724",
+            "end": "2023-12-31",
+            "fiscal_year": 2023,
+            "period": "FY"
+          }
+        ],
+        "periods": [
+          "FY",
+          "Q1"
+        ],
+        "revision_policy": "first_reported",
+        "snapshot_id": "e42059094b83ce80c996f4d655f6ee6fa6c7b6a2aa9accff75d1926f0a63ae8f",
+        "source_policy": "reported_only",
+        "source_verification": "off",
+        "timeline_scope": "complete"
+      },
+      "receipt_id": "33e52a5cec8ac9cf1a17aad36ee4e0d741831d50659ecab50716384619240952"
+    },
+    {
+      "query": {
+        "as_of": [
+          "2024-06-01T00:00:00+00:00"
+        ],
+        "entities": [
+          "0001018724"
+        ],
+        "errors": "collect",
+        "fiscal_years": [
+          2023
+        ],
+        "metrics": [
+          "assets"
+        ],
+        "period_ends": [
+          {
+            "cik": "0001018724",
+            "end": "2023-12-31",
+            "fiscal_year": 2023,
+            "period": "FY"
+          }
+        ],
+        "periods": [
+          "FY"
+        ],
+        "revision_policy": "first_reported",
+        "snapshot_id": "e42059094b83ce80c996f4d655f6ee6fa6c7b6a2aa9accff75d1926f0a63ae8f",
+        "source_policy": "reported_only",
+        "source_verification": "required",
+        "timeline_scope": "complete"
+      },
+      "receipt_id": "32d38e8f6f2f2160ad8021eedca0a294fb1cfc4b85ecabb1ef27882974e0c791"
+    },
+    {
+      "query": {
+        "as_of": [
+          "2020-01-01T00:00:00+00:00"
+        ],
+        "entities": [
+          "0001090727"
+        ],
+        "errors": "collect",
+        "fiscal_years": [
+          2023
+        ],
+        "metrics": [
+          "net_income"
+        ],
+        "period_ends": [],
+        "periods": [
+          "FY"
+        ],
+        "revision_policy": "first_reported",
+        "snapshot_id": "e42059094b83ce80c996f4d655f6ee6fa6c7b6a2aa9accff75d1926f0a63ae8f",
+        "source_policy": "reported_only",
+        "source_verification": "off",
+        "timeline_scope": "complete"
+      },
+      "receipt_id": "dc0497688230180d7191c6a7d258bd520f825816fff6352d9c253f24063a781f"
+    },
+    {
+      "query": {
+        "as_of": [
+          "2024-06-01T00:00:00+00:00"
+        ],
+        "entities": [
+          "0001090727"
+        ],
+        "errors": "collect",
+        "fiscal_years": [
+          2023
+        ],
+        "metrics": [
+          "operating_cash_flow"
+        ],
+        "period_ends": [],
+        "periods": [
+          "Q2",
+          "Q3",
+          "Q4"
+        ],
+        "revision_policy": "first_reported",
+        "snapshot_id": "e42059094b83ce80c996f4d655f6ee6fa6c7b6a2aa9accff75d1926f0a63ae8f",
+        "source_policy": "derived_only",
+        "source_verification": "off",
+        "timeline_scope": "complete"
+      },
+      "receipt_id": "f7be884c9e63948e4f6209d75d6e970a9057c7595d3d91778589afdb37195ea4"
+    },
+    {
+      "query": {
+        "as_of": [
+          "2024-06-01T00:00:00+00:00"
+        ],
+        "entities": [
+          "0001090727"
+        ],
+        "errors": "collect",
+        "fiscal_years": [
+          2023
+        ],
+        "metrics": [
+          "assets",
+          "cash_and_cash_equivalents",
+          "liabilities",
+          "net_income",
+          "operating_cash_flow",
+          "revenue"
+        ],
+        "period_ends": [
+          {
+            "cik": "0001090727",
+            "end": "2023-12-31",
+            "fiscal_year": 2023,
+            "period": "FY"
+          }
+        ],
+        "periods": [
+          "FY",
+          "Q1"
+        ],
+        "revision_policy": "first_reported",
+        "snapshot_id": "e42059094b83ce80c996f4d655f6ee6fa6c7b6a2aa9accff75d1926f0a63ae8f",
+        "source_policy": "reported_only",
+        "source_verification": "off",
+        "timeline_scope": "complete"
+      },
+      "receipt_id": "bc2f5a68c72d316aa31f40f7fc4e337da11f9980a0752b7a309e4402db18bf98"
+    },
+    {
+      "query": {
+        "as_of": [
+          "2024-06-01T00:00:00+00:00"
+        ],
+        "entities": [
+          "0001090727"
+        ],
+        "errors": "collect",
+        "fiscal_years": [
+          2023
+        ],
+        "metrics": [
+          "assets"
+        ],
+        "period_ends": [
+          {
+            "cik": "0001090727",
+            "end": "2023-12-31",
+            "fiscal_year": 2023,
+            "period": "FY"
+          }
+        ],
+        "periods": [
+          "FY"
+        ],
+        "revision_policy": "first_reported",
+        "snapshot_id": "e42059094b83ce80c996f4d655f6ee6fa6c7b6a2aa9accff75d1926f0a63ae8f",
+        "source_policy": "reported_only",
+        "source_verification": "required",
+        "timeline_scope": "complete"
+      },
+      "receipt_id": "5e99152d33bceee7a602efd791a6fffc47c4745152d0cad93a192dce090bde19"
+    },
+    {
+      "query": {
+        "as_of": [
+          "2020-01-01T00:00:00+00:00"
+        ],
+        "entities": [
+          "0001326160"
+        ],
+        "errors": "collect",
+        "fiscal_years": [
+          2023
+        ],
+        "metrics": [
+          "net_income"
+        ],
+        "period_ends": [],
+        "periods": [
+          "FY"
+        ],
+        "revision_policy": "first_reported",
+        "snapshot_id": "e42059094b83ce80c996f4d655f6ee6fa6c7b6a2aa9accff75d1926f0a63ae8f",
+        "source_policy": "reported_only",
+        "source_verification": "off",
+        "timeline_scope": "complete"
+      },
+      "receipt_id": "aaf1a3f64035d3cf9dd7407eee7f35f5116e4a5ce36ec9e370eb77b114a87df3"
+    },
+    {
+      "query": {
+        "as_of": [
+          "2024-06-01T00:00:00+00:00"
+        ],
+        "entities": [
+          "0001326160"
+        ],
+        "errors": "collect",
+        "fiscal_years": [
+          2023
+        ],
+        "metrics": [
+          "operating_cash_flow"
+        ],
+        "period_ends": [],
+        "periods": [
+          "Q2",
+          "Q3",
+          "Q4"
+        ],
+        "revision_policy": "first_reported",
+        "snapshot_id": "e42059094b83ce80c996f4d655f6ee6fa6c7b6a2aa9accff75d1926f0a63ae8f",
+        "source_policy": "derived_only",
+        "source_verification": "off",
+        "timeline_scope": "complete"
+      },
+      "receipt_id": "4edd5dd8e7b3e893c4ed34deffabca1373d4963db9c92ee89b2f7cc13219aa02"
+    },
+    {
+      "query": {
+        "as_of": [
+          "2024-06-01T00:00:00+00:00"
+        ],
+        "entities": [
+          "0001326160"
+        ],
+        "errors": "collect",
+        "fiscal_years": [
+          2023
+        ],
+        "metrics": [
+          "assets",
+          "cash_and_cash_equivalents",
+          "liabilities",
+          "net_income",
+          "operating_cash_flow",
+          "revenue"
+        ],
+        "period_ends": [
+          {
+            "cik": "0001326160",
+            "end": "2023-12-31",
+            "fiscal_year": 2023,
+            "period": "FY"
+          }
+        ],
+        "periods": [
+          "FY",
+          "Q1"
+        ],
+        "revision_policy": "first_reported",
+        "snapshot_id": "e42059094b83ce80c996f4d655f6ee6fa6c7b6a2aa9accff75d1926f0a63ae8f",
+        "source_policy": "reported_only",
+        "source_verification": "off",
+        "timeline_scope": "complete"
+      },
+      "receipt_id": "f23c983ef7441ee705052d9322b83df893a0cc05567a9b7445c4b91ed83c9995"
+    },
+    {
+      "query": {
+        "as_of": [
+          "2024-06-01T00:00:00+00:00"
+        ],
+        "entities": [
+          "0001326160"
+        ],
+        "errors": "collect",
+        "fiscal_years": [
+          2023
+        ],
+        "metrics": [
+          "assets"
+        ],
+        "period_ends": [
+          {
+            "cik": "0001326160",
+            "end": "2023-12-31",
+            "fiscal_year": 2023,
+            "period": "FY"
+          }
+        ],
+        "periods": [
+          "FY"
+        ],
+        "revision_policy": "first_reported",
+        "snapshot_id": "e42059094b83ce80c996f4d655f6ee6fa6c7b6a2aa9accff75d1926f0a63ae8f",
+        "source_policy": "reported_only",
+        "source_verification": "required",
+        "timeline_scope": "complete"
+      },
+      "receipt_id": "da9a87feb500671f402acb86d2a7bb4bd2777246896543bf830d6d5238b192d7"
+    },
+    {
+      "query": {
+        "as_of": [
+          "2020-01-01T00:00:00+00:00"
+        ],
+        "entities": [
+          "0001341439"
+        ],
+        "errors": "collect",
+        "fiscal_years": [
+          2023
+        ],
+        "metrics": [
+          "net_income"
+        ],
+        "period_ends": [],
+        "periods": [
+          "FY"
+        ],
+        "revision_policy": "first_reported",
+        "snapshot_id": "e42059094b83ce80c996f4d655f6ee6fa6c7b6a2aa9accff75d1926f0a63ae8f",
+        "source_policy": "reported_only",
+        "source_verification": "off",
+        "timeline_scope": "complete"
+      },
+      "receipt_id": "c780943d3cab3db3edffc6ebc6182dcdf3ec2a914c8d3d5b00a733766407122f"
+    },
+    {
+      "query": {
+        "as_of": [
+          "2024-06-01T00:00:00+00:00"
+        ],
+        "entities": [
+          "0001341439"
+        ],
+        "errors": "collect",
+        "fiscal_years": [
+          2023
+        ],
+        "metrics": [
+          "operating_cash_flow"
+        ],
+        "period_ends": [],
+        "periods": [
+          "Q2",
+          "Q3",
+          "Q4"
+        ],
+        "revision_policy": "first_reported",
+        "snapshot_id": "e42059094b83ce80c996f4d655f6ee6fa6c7b6a2aa9accff75d1926f0a63ae8f",
+        "source_policy": "derived_only",
+        "source_verification": "off",
+        "timeline_scope": "complete"
+      },
+      "receipt_id": "63587b8b133b040d38561a70a34672b958012fb79c1cef488bd4c3f4c9f16e30"
+    },
+    {
+      "query": {
+        "as_of": [
+          "2024-06-01T00:00:00+00:00"
+        ],
+        "entities": [
+          "0001341439"
+        ],
+        "errors": "collect",
+        "fiscal_years": [
+          2023
+        ],
+        "metrics": [
+          "assets",
+          "cash_and_cash_equivalents",
+          "liabilities",
+          "net_income",
+          "operating_cash_flow",
+          "revenue"
+        ],
+        "period_ends": [
+          {
+            "cik": "0001341439",
+            "end": "2023-05-31",
+            "fiscal_year": 2023,
+            "period": "FY"
+          }
+        ],
+        "periods": [
+          "FY",
+          "Q1"
+        ],
+        "revision_policy": "first_reported",
+        "snapshot_id": "e42059094b83ce80c996f4d655f6ee6fa6c7b6a2aa9accff75d1926f0a63ae8f",
+        "source_policy": "reported_only",
+        "source_verification": "off",
+        "timeline_scope": "complete"
+      },
+      "receipt_id": "ef324f4a5a081ccfaf6cb8d8580c5275d027b66fbeb144f172f073478d03b6d8"
+    },
+    {
+      "query": {
+        "as_of": [
+          "2024-06-01T00:00:00+00:00"
+        ],
+        "entities": [
+          "0001341439"
+        ],
+        "errors": "collect",
+        "fiscal_years": [
+          2023
+        ],
+        "metrics": [
+          "assets"
+        ],
+        "period_ends": [
+          {
+            "cik": "0001341439",
+            "end": "2023-05-31",
+            "fiscal_year": 2023,
+            "period": "FY"
+          }
+        ],
+        "periods": [
+          "FY"
+        ],
+        "revision_policy": "first_reported",
+        "snapshot_id": "e42059094b83ce80c996f4d655f6ee6fa6c7b6a2aa9accff75d1926f0a63ae8f",
+        "source_policy": "reported_only",
+        "source_verification": "required",
+        "timeline_scope": "complete"
+      },
+      "receipt_id": "db21c81c8ce2b1ab1c281cff34cd216897beb4c0d0391c3cca6b99e9415f2f48"
+    },
+    {
+      "query": {
+        "as_of": [
+          "2020-01-01T00:00:00+00:00"
+        ],
+        "entities": [
+          "0001751788"
+        ],
+        "errors": "collect",
+        "fiscal_years": [
+          2023
+        ],
+        "metrics": [
+          "net_income"
+        ],
+        "period_ends": [],
+        "periods": [
+          "FY"
+        ],
+        "revision_policy": "first_reported",
+        "snapshot_id": "e42059094b83ce80c996f4d655f6ee6fa6c7b6a2aa9accff75d1926f0a63ae8f",
+        "source_policy": "reported_only",
+        "source_verification": "off",
+        "timeline_scope": "complete"
+      },
+      "receipt_id": "48453f77588616885c47b035df90537d429687d4201e3326fbe481eb67a847b5"
+    },
+    {
+      "query": {
+        "as_of": [
+          "2024-06-01T00:00:00+00:00"
+        ],
+        "entities": [
+          "0001751788"
+        ],
+        "errors": "collect",
+        "fiscal_years": [
+          2023
+        ],
+        "metrics": [
+          "operating_cash_flow"
+        ],
+        "period_ends": [],
+        "periods": [
+          "Q2",
+          "Q3",
+          "Q4"
+        ],
+        "revision_policy": "first_reported",
+        "snapshot_id": "e42059094b83ce80c996f4d655f6ee6fa6c7b6a2aa9accff75d1926f0a63ae8f",
+        "source_policy": "derived_only",
+        "source_verification": "off",
+        "timeline_scope": "complete"
+      },
+      "receipt_id": "53f0a11e50e359006361f8794642e955b179aa7d93d5b9ff0ddccbe2a0b4809f"
+    },
+    {
+      "query": {
+        "as_of": [
+          "2024-06-01T00:00:00+00:00"
+        ],
+        "entities": [
+          "0001751788"
+        ],
+        "errors": "collect",
+        "fiscal_years": [
+          2023
+        ],
+        "metrics": [
+          "assets",
+          "cash_and_cash_equivalents",
+          "liabilities",
+          "net_income",
+          "operating_cash_flow",
+          "revenue"
+        ],
+        "period_ends": [
+          {
+            "cik": "0001751788",
+            "end": "2023-12-31",
+            "fiscal_year": 2023,
+            "period": "FY"
+          }
+        ],
+        "periods": [
+          "FY",
+          "Q1"
+        ],
+        "revision_policy": "first_reported",
+        "snapshot_id": "e42059094b83ce80c996f4d655f6ee6fa6c7b6a2aa9accff75d1926f0a63ae8f",
+        "source_policy": "reported_only",
+        "source_verification": "off",
+        "timeline_scope": "complete"
+      },
+      "receipt_id": "f2e1b7aa14fc8463a1d93b268f0b91674fca9395b86bd4d8caf94dceca55d9a1"
+    },
+    {
+      "query": {
+        "as_of": [
+          "2024-06-01T00:00:00+00:00"
+        ],
+        "entities": [
+          "0001751788"
+        ],
+        "errors": "collect",
+        "fiscal_years": [
+          2023
+        ],
+        "metrics": [
+          "assets"
+        ],
+        "period_ends": [
+          {
+            "cik": "0001751788",
+            "end": "2023-12-31",
+            "fiscal_year": 2023,
+            "period": "FY"
+          }
+        ],
+        "periods": [
+          "FY"
+        ],
+        "revision_policy": "first_reported",
+        "snapshot_id": "e42059094b83ce80c996f4d655f6ee6fa6c7b6a2aa9accff75d1926f0a63ae8f",
+        "source_policy": "reported_only",
+        "source_verification": "required",
+        "timeline_scope": "complete"
+      },
+      "receipt_id": "1db902a217f0d9fd543cf2b9d00899926c06177cc136b11549f50d1f3cddbd91"
+    }
+  ],
+  "snapshot_id": "e42059094b83ce80c996f4d655f6ee6fa6c7b6a2aa9accff75d1926f0a63ae8f",
+  "unexpected_mismatches": 0
+}

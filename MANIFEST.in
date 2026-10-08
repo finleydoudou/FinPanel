@@ -5,3 +5,6 @@ recursive-include examples *.py
 
 recursive-include docs *.json *.md
 recursive-include tests/fixtures/xbrl *.xml *.html
+
+recursive-include src/finpanel/validation *.json
+recursive-include tests/fixtures/broad *.gz

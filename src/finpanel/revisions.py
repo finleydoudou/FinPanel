@@ -87,6 +87,13 @@ def _before(a, b):
 
 
 def analyze(view: EvidenceView, *, policy: str = "all_available") -> RevisionHistory:
+    from finpanel._reuse import memo
+
+    # Cached RevisionHistory retains the exact view, so its object ID cannot be reused.
+    return memo("revision_analysis", (id(view), policy), lambda: _analyze(view, policy=policy))
+
+
+def _analyze(view: EvidenceView, *, policy: str) -> RevisionHistory:
     from finpanel.asof import eligibility
 
     validate_policy(policy)

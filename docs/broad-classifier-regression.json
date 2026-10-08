@@ -1,0 +1,9 @@
+{
+  "after_code_sha256": "e5e8d26d7e1b05284f54d8e3ed26e6b171387c3a60b6f3cd2f8daa19e8abbb7b",
+  "before_code_sha256": "17d21a0e80eb2c37475f1feab9e3d541e58f3358a2fdba81178809754bcb39e6",
+  "changed_behavior": "Failure categorization only: generic dimension/revision caveats do not establish blockers",
+  "compared_batches": 100,
+  "excluded_field": "receipt_id: software identity correctly changes when classifier code changes",
+  "identical_financial_rows": 12000,
+  "rows_without_receipt_id_sha256": "6fce65e184df69771888fdd17d4b46031c4fd82bb00516b5878f449a8398e1c3"
+}

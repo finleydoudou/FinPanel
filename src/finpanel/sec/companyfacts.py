@@ -8,6 +8,16 @@ from finpanel.sec.common import Reader, normalize_cik, pointer
 
 
 def parse_companyfacts(response: RawResponse) -> ParseResult[FactObservation]:
+    from finpanel._reuse import memo
+
+    return memo(
+        "companyfacts_parse",
+        (response.url, response.sha256, response.retrieved_at),
+        lambda: _parse_companyfacts(response),
+    )
+
+
+def _parse_companyfacts(response: RawResponse) -> ParseResult[FactObservation]:
     data = response.json()
     cik = normalize_cik(data.get("cik"))
     reader = Reader(response)

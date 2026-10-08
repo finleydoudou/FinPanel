@@ -142,7 +142,13 @@ def main(argv: list[str] | None = None) -> int:
     from finpanel.panel.cli import command as panel_command
 
     panel_commands(commands)
+    from finpanel.validation.cli import add_commands as validation_commands
+    from finpanel.validation.cli import command as validation_command
+
+    validation_commands(commands)
     args = parser.parse_args(argv)
+    if args.command == "validate":
+        return validation_command(args)
     if args.command == "panel":
         return panel_command(args)
     if args.command in {"snapshots", "reproduce"}:

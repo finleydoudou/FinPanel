@@ -1,0 +1,74 @@
+{
+  "category_distribution": {
+    "communications": 2,
+    "consumer_discretionary": 4,
+    "consumer_staples": 3,
+    "energy": 4,
+    "healthcare": 5,
+    "industrials": 4,
+    "large_retail": 5,
+    "manufacturing": 6,
+    "materials": 2,
+    "technology": 9,
+    "transportation": 4,
+    "utilities": 2
+  },
+  "coverage_meaning": "Scalar availability under these evidence and policy contracts; not accuracy",
+  "failure_categories": {
+    "ambiguous_fiscal_period": 994,
+    "conflicting_observations": 219,
+    "incompatible_revision_operands": 13,
+    "insufficient_cumulative_facts": 631,
+    "not_available_as_of": 1834,
+    "unsupported_concept": 680
+  },
+  "findings_by_kind": {
+    "expected_conservatism": 3465,
+    "resolved": 8535
+  },
+  "fiscal_calendar_distribution": {
+    "0103": 1,
+    "0131": 5,
+    "0201": 1,
+    "0531": 3,
+    "0630": 2,
+    "0725": 1,
+    "0830": 1,
+    "0926": 1,
+    "0928": 1,
+    "0930": 1,
+    "1101": 1,
+    "1127": 1,
+    "1226": 2,
+    "1227": 1,
+    "1231": 28
+  },
+  "format": "finpanel-broad-validation-v1",
+  "golden_correctness": "Separate independent golden report required",
+  "invariant_checks": 1238080,
+  "issuer_count": 50,
+  "observed_cells": 12000,
+  "requested_cells": 12000,
+  "source_verification_policy": "best_effort at snapshot capture cutoff; separate from historical rows",
+  "source_verification_queries": 100,
+  "source_verification_states": {
+    "instance_unavailable": 87,
+    "verified_multiple_equivalent": 7,
+    "verified_unique": 6
+  },
+  "states": {
+    "ambiguous_period": 720,
+    "conflicted": 219,
+    "insufficient_evidence": 580,
+    "resolved_derived": 1299,
+    "resolved_reported": 7236,
+    "source_verification_failed": 0,
+    "unavailable": 1946,
+    "unsupported": 0
+  },
+  "successful_replays": 100,
+  "tier": "B",
+  "unexpected_findings": [],
+  "unexpected_mismatches": 0,
+  "universe_hash": "d77ae05fb28699e479473851dc527cefed923cf57fa933d9e6c4551b87d1f85e"
+}

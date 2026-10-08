@@ -1,0 +1,1076 @@
+{
+  "examples": {
+    "52_week_annual_context": [
+      {
+        "accession": "0001047469-10-002121",
+        "cik": "0000027419",
+        "concept": "Revenues",
+        "end": "2008-02-02",
+        "pointer": "/facts/us-gaap/Revenues/units/USD/1",
+        "sha256": "eb15a2cd524e99ff27675db78840d039ec4a68b9cc2dcb10accbcb299933a487",
+        "start": "2007-02-04",
+        "value": 63367000000
+      },
+      {
+        "accession": "0001047469-11-002032",
+        "cik": "0000027419",
+        "concept": "Revenues",
+        "end": "2009-01-31",
+        "pointer": "/facts/us-gaap/Revenues/units/USD/6",
+        "sha256": "eb15a2cd524e99ff27675db78840d039ec4a68b9cc2dcb10accbcb299933a487",
+        "start": "2008-02-03",
+        "value": 64948000000
+      },
+      {
+        "accession": "0001047469-10-002121",
+        "cik": "0000027419",
+        "concept": "Revenues",
+        "end": "2009-01-31",
+        "pointer": "/facts/us-gaap/Revenues/units/USD/8",
+        "sha256": "eb15a2cd524e99ff27675db78840d039ec4a68b9cc2dcb10accbcb299933a487",
+        "start": "2008-02-03",
+        "value": 64948000000
+      },
+      {
+        "accession": "0001047469-12-002714",
+        "cik": "0000027419",
+        "concept": "Revenues",
+        "end": "2010-01-30",
+        "pointer": "/facts/us-gaap/Revenues/units/USD/21",
+        "sha256": "eb15a2cd524e99ff27675db78840d039ec4a68b9cc2dcb10accbcb299933a487",
+        "start": "2009-02-01",
+        "value": 65357000000
+      }
+    ],
+    "53_week_annual_context": [
+      {
+        "accession": "0001047469-13-003100",
+        "cik": "0000027419",
+        "concept": "Revenues",
+        "end": "2013-02-02",
+        "pointer": "/facts/us-gaap/Revenues/units/USD/84",
+        "sha256": "eb15a2cd524e99ff27675db78840d039ec4a68b9cc2dcb10accbcb299933a487",
+        "start": "2012-01-29",
+        "value": 73301000000
+      },
+      {
+        "accession": "0000027419-15-000012",
+        "cik": "0000027419",
+        "concept": "Revenues",
+        "end": "2013-02-02",
+        "pointer": "/facts/us-gaap/Revenues/units/USD/85",
+        "sha256": "eb15a2cd524e99ff27675db78840d039ec4a68b9cc2dcb10accbcb299933a487",
+        "start": "2012-01-29",
+        "value": 73301000000
+      },
+      {
+        "accession": "0000027419-14-000014",
+        "cik": "0000027419",
+        "concept": "Revenues",
+        "end": "2013-02-02",
+        "pointer": "/facts/us-gaap/Revenues/units/USD/86",
+        "sha256": "eb15a2cd524e99ff27675db78840d039ec4a68b9cc2dcb10accbcb299933a487",
+        "start": "2012-01-29",
+        "value": 73301000000
+      },
+      {
+        "accession": "0000027419-19-000006",
+        "cik": "0000027419",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "end": "2018-02-03",
+        "pointer": "/facts/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/units/USD/9",
+        "sha256": "eb15a2cd524e99ff27675db78840d039ec4a68b9cc2dcb10accbcb299933a487",
+        "start": "2017-01-29",
+        "value": 72714000000
+      }
+    ],
+    "amended_filing_observation": [
+      {
+        "accession": "0001047469-10-002408",
+        "cik": "0000027419",
+        "concept": "Revenues",
+        "end": "2008-02-02",
+        "pointer": "/facts/us-gaap/Revenues/units/USD/0",
+        "sha256": "eb15a2cd524e99ff27675db78840d039ec4a68b9cc2dcb10accbcb299933a487",
+        "start": "2007-02-04",
+        "value": 63367000000
+      },
+      {
+        "accession": "0001047469-10-002408",
+        "cik": "0000027419",
+        "concept": "Revenues",
+        "end": "2009-01-31",
+        "pointer": "/facts/us-gaap/Revenues/units/USD/7",
+        "sha256": "eb15a2cd524e99ff27675db78840d039ec4a68b9cc2dcb10accbcb299933a487",
+        "start": "2008-02-03",
+        "value": 64948000000
+      },
+      {
+        "accession": "0001047469-10-002408",
+        "cik": "0000027419",
+        "concept": "Revenues",
+        "end": "2010-01-30",
+        "pointer": "/facts/us-gaap/Revenues/units/USD/23",
+        "sha256": "eb15a2cd524e99ff27675db78840d039ec4a68b9cc2dcb10accbcb299933a487",
+        "start": "2009-02-01",
+        "value": 65357000000
+      },
+      {
+        "accession": "0001047469-10-002408",
+        "cik": "0000027419",
+        "concept": "SalesRevenueNet",
+        "end": "2008-02-02",
+        "pointer": "/facts/us-gaap/SalesRevenueNet/units/USD/0",
+        "sha256": "eb15a2cd524e99ff27675db78840d039ec4a68b9cc2dcb10accbcb299933a487",
+        "start": "2007-02-04",
+        "value": 61471000000
+      }
+    ],
+    "comparative_values_changed_cause_unestablished": [
+      {
+        "cik": "0000012927",
+        "sources": [
+          {
+            "accession": "0000012927-17-000006",
+            "cik": "0000012927",
+            "concept": "Revenues",
+            "end": "2016-12-31",
+            "pointer": "/facts/us-gaap/Revenues/units/USD/165",
+            "sha256": "0c63f1ae7cc10b3c27e0c94f2add0c461e6293036dd4e52e52ae6dbb6f206e15",
+            "start": "2016-01-01",
+            "value": 94571000000
+          },
+          {
+            "accession": "0000012927-19-000010",
+            "cik": "0000012927",
+            "concept": "Revenues",
+            "end": "2016-12-31",
+            "pointer": "/facts/us-gaap/Revenues/units/USD/167",
+            "sha256": "0c63f1ae7cc10b3c27e0c94f2add0c461e6293036dd4e52e52ae6dbb6f206e15",
+            "start": "2016-01-01",
+            "value": 93496000000
+          }
+        ]
+      },
+      {
+        "cik": "0000012927",
+        "sources": [
+          {
+            "accession": "0000012927-17-000024",
+            "cik": "0000012927",
+            "concept": "Revenues",
+            "end": "2017-03-31",
+            "pointer": "/facts/us-gaap/Revenues/units/USD/170",
+            "sha256": "0c63f1ae7cc10b3c27e0c94f2add0c461e6293036dd4e52e52ae6dbb6f206e15",
+            "start": "2017-01-01",
+            "value": 20976000000
+          },
+          {
+            "accession": "0000012927-18-000018",
+            "cik": "0000012927",
+            "concept": "Revenues",
+            "end": "2017-03-31",
+            "pointer": "/facts/us-gaap/Revenues/units/USD/172",
+            "sha256": "0c63f1ae7cc10b3c27e0c94f2add0c461e6293036dd4e52e52ae6dbb6f206e15",
+            "start": "2017-01-01",
+            "value": 21961000000
+          }
+        ]
+      },
+      {
+        "cik": "0000012927",
+        "sources": [
+          {
+            "accession": "0000012927-17-000044",
+            "cik": "0000012927",
+            "concept": "Revenues",
+            "end": "2017-06-30",
+            "pointer": "/facts/us-gaap/Revenues/units/USD/174",
+            "sha256": "0c63f1ae7cc10b3c27e0c94f2add0c461e6293036dd4e52e52ae6dbb6f206e15",
+            "start": "2017-01-01",
+            "value": 43715000000
+          },
+          {
+            "accession": "0000012927-18-000048",
+            "cik": "0000012927",
+            "concept": "Revenues",
+            "end": "2017-06-30",
+            "pointer": "/facts/us-gaap/Revenues/units/USD/175",
+            "sha256": "0c63f1ae7cc10b3c27e0c94f2add0c461e6293036dd4e52e52ae6dbb6f206e15",
+            "start": "2017-01-01",
+            "value": 45012000000
+          }
+        ]
+      },
+      {
+        "cik": "0000012927",
+        "sources": [
+          {
+            "accession": "0000012927-17-000044",
+            "cik": "0000012927",
+            "concept": "Revenues",
+            "end": "2017-06-30",
+            "pointer": "/facts/us-gaap/Revenues/units/USD/176",
+            "sha256": "0c63f1ae7cc10b3c27e0c94f2add0c461e6293036dd4e52e52ae6dbb6f206e15",
+            "start": "2017-04-01",
+            "value": 22739000000
+          },
+          {
+            "accession": "0000012927-18-000048",
+            "cik": "0000012927",
+            "concept": "Revenues",
+            "end": "2017-06-30",
+            "pointer": "/facts/us-gaap/Revenues/units/USD/178",
+            "sha256": "0c63f1ae7cc10b3c27e0c94f2add0c461e6293036dd4e52e52ae6dbb6f206e15",
+            "start": "2017-04-01",
+            "value": 23051000000
+          }
+        ]
+      }
+    ],
+    "decimals_metadata": [
+      {
+        "artifact_sha256": "9027eeffc4883142d9e02691b69e85a4eed47d76417b0ac74de884e281f55265",
+        "cik": "0001018724",
+        "concept": "EmployeeServiceShareBasedCompensationNonvestedAwardsCompensationCostExpensedInNextTwelveMonthsExpectedToExceedPercentage",
+        "context_ref": "c-1",
+        "decimals": "2",
+        "dimensioned": false,
+        "kind": "decimals_metadata",
+        "lexical": "0.50",
+        "position": 400,
+        "unit_ref": "number",
+        "value": "0.50"
+      },
+      {
+        "artifact_sha256": "70d3a177a9228993456bc1ae50dd6179f68111970ce607f1e22739aff5028698",
+        "cik": "0001090727",
+        "concept": "ShareBasedCompensationPaidInRestrictedUnitsPercent",
+        "context_ref": "c-1111",
+        "decimals": "INF",
+        "dimensioned": true,
+        "kind": "decimals_metadata",
+        "lexical": "0.500",
+        "position": 1293,
+        "unit_ref": "number",
+        "value": "0.500"
+      },
+      {
+        "artifact_sha256": "2887397ac7ec09734e93838190cd6cfcdde566bc3e6e38269a7315ad03050136",
+        "cik": "0000012927",
+        "concept": "EntityPublicFloat",
+        "context_ref": "c-2",
+        "decimals": "-8",
+        "dimensioned": false,
+        "kind": "decimals_metadata",
+        "lexical": "127300000000",
+        "position": 791,
+        "unit_ref": "usd",
+        "value": "127300000000"
+      },
+      {
+        "artifact_sha256": "c91b0a19ee557025831432c9d442193a13c931762129ce85c2897069240df8f8",
+        "cik": "0001326160",
+        "concept": "DebtInstrumentConvertibleConversionRatio1",
+        "context_ref": "c-1204",
+        "decimals": "INF",
+        "dimensioned": true,
+        "kind": "decimals_metadata",
+        "lexical": "0.0084131",
+        "position": 2545,
+        "unit_ref": "number",
+        "value": "0.0084131"
+      }
+    ],
+    "dimensioned_original_context": [
+      {
+        "artifact_sha256": "9027eeffc4883142d9e02691b69e85a4eed47d76417b0ac74de884e281f55265",
+        "cik": "0001018724",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "context_ref": "c-10",
+        "decimals": "-6",
+        "dimensioned": true,
+        "kind": "dimensioned_original_context",
+        "lexical": "241787000000",
+        "position": 525,
+        "unit_ref": "usd",
+        "value": "241787000000"
+      },
+      {
+        "artifact_sha256": "70d3a177a9228993456bc1ae50dd6179f68111970ce607f1e22739aff5028698",
+        "cik": "0001090727",
+        "concept": "ShareBasedCompensationPaidInRestrictedUnitsPercent",
+        "context_ref": "c-1111",
+        "decimals": "INF",
+        "dimensioned": true,
+        "kind": "dimensioned_original_context",
+        "lexical": "0.500",
+        "position": 1293,
+        "unit_ref": "number",
+        "value": "0.500"
+      },
+      {
+        "artifact_sha256": "2887397ac7ec09734e93838190cd6cfcdde566bc3e6e38269a7315ad03050136",
+        "cik": "0000012927",
+        "concept": "Revenues",
+        "context_ref": "c-4",
+        "decimals": "-6",
+        "dimensioned": true,
+        "kind": "dimensioned_original_context",
+        "lexical": "65581000000",
+        "position": 794,
+        "unit_ref": "usd",
+        "value": "65581000000"
+      },
+      {
+        "artifact_sha256": "c91b0a19ee557025831432c9d442193a13c931762129ce85c2897069240df8f8",
+        "cik": "0001326160",
+        "concept": "DebtInstrumentConvertibleConversionRatio1",
+        "context_ref": "c-1204",
+        "decimals": "INF",
+        "dimensioned": true,
+        "kind": "dimensioned_original_context",
+        "lexical": "0.0084131",
+        "position": 2545,
+        "unit_ref": "number",
+        "value": "0.0084131"
+      }
+    ],
+    "large_values": [
+      {
+        "accession": "0000012927-19-000010",
+        "cik": "0000012927",
+        "concept": "Revenues",
+        "end": "2018-12-31",
+        "pointer": "/facts/us-gaap/Revenues/units/USD/207",
+        "sha256": "0c63f1ae7cc10b3c27e0c94f2add0c461e6293036dd4e52e52ae6dbb6f206e15",
+        "start": "2018-01-01",
+        "value": 101127000000
+      },
+      {
+        "accession": "0000012927-20-000014",
+        "cik": "0000012927",
+        "concept": "Revenues",
+        "end": "2018-12-31",
+        "pointer": "/facts/us-gaap/Revenues/units/USD/208",
+        "sha256": "0c63f1ae7cc10b3c27e0c94f2add0c461e6293036dd4e52e52ae6dbb6f206e15",
+        "start": "2018-01-01",
+        "value": 101127000000
+      },
+      {
+        "accession": "0000012927-21-000011",
+        "cik": "0000012927",
+        "concept": "Revenues",
+        "end": "2018-12-31",
+        "pointer": "/facts/us-gaap/Revenues/units/USD/209",
+        "sha256": "0c63f1ae7cc10b3c27e0c94f2add0c461e6293036dd4e52e52ae6dbb6f206e15",
+        "start": "2018-01-01",
+        "value": 101127000000
+      },
+      {
+        "accession": "0000012927-20-000014",
+        "cik": "0000012927",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "end": "2018-12-31",
+        "pointer": "/facts/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/units/USD/1",
+        "sha256": "0c63f1ae7cc10b3c27e0c94f2add0c461e6293036dd4e52e52ae6dbb6f206e15",
+        "start": "2018-01-01",
+        "value": 101127000000
+      }
+    ],
+    "negative_net_income": [
+      {
+        "accession": "0001193125-09-210918",
+        "cik": "0000012927",
+        "concept": "NetIncomeLoss",
+        "end": "2009-09-30",
+        "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/16",
+        "sha256": "0c63f1ae7cc10b3c27e0c94f2add0c461e6293036dd4e52e52ae6dbb6f206e15",
+        "start": "2009-07-01",
+        "value": -1564000000
+      },
+      {
+        "accession": "0001193125-10-232425",
+        "cik": "0000012927",
+        "concept": "NetIncomeLoss",
+        "end": "2009-09-30",
+        "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/17",
+        "sha256": "0c63f1ae7cc10b3c27e0c94f2add0c461e6293036dd4e52e52ae6dbb6f206e15",
+        "start": "2009-07-01",
+        "value": -1564000000
+      },
+      {
+        "accession": "0001193125-11-028490",
+        "cik": "0000012927",
+        "concept": "NetIncomeLoss",
+        "end": "2009-09-30",
+        "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/18",
+        "sha256": "0c63f1ae7cc10b3c27e0c94f2add0c461e6293036dd4e52e52ae6dbb6f206e15",
+        "start": "2009-07-01",
+        "value": -1564000000
+      },
+      {
+        "accession": "0000012927-16-000143",
+        "cik": "0000012927",
+        "concept": "NetIncomeLoss",
+        "end": "2016-06-30",
+        "pointer": "/facts/us-gaap/NetIncomeLoss/units/USD/155",
+        "sha256": "0c63f1ae7cc10b3c27e0c94f2add0c461e6293036dd4e52e52ae6dbb6f206e15",
+        "start": "2016-04-01",
+        "value": -234000000
+      }
+    ],
+    "negative_operating_cash_flow": [
+      {
+        "accession": "0001193125-10-024406",
+        "cik": "0000012927",
+        "concept": "NetCashProvidedByUsedInOperatingActivities",
+        "end": "2008-12-31",
+        "pointer": "/facts/us-gaap/NetCashProvidedByUsedInOperatingActivities/units/USD/3",
+        "sha256": "0c63f1ae7cc10b3c27e0c94f2add0c461e6293036dd4e52e52ae6dbb6f206e15",
+        "start": "2008-01-01",
+        "value": -401000000
+      },
+      {
+        "accession": "0001193125-11-028490",
+        "cik": "0000012927",
+        "concept": "NetCashProvidedByUsedInOperatingActivities",
+        "end": "2008-12-31",
+        "pointer": "/facts/us-gaap/NetCashProvidedByUsedInOperatingActivities/units/USD/4",
+        "sha256": "0c63f1ae7cc10b3c27e0c94f2add0c461e6293036dd4e52e52ae6dbb6f206e15",
+        "start": "2008-01-01",
+        "value": -401000000
+      },
+      {
+        "accession": "0001193125-10-088623",
+        "cik": "0000012927",
+        "concept": "NetCashProvidedByUsedInOperatingActivities",
+        "end": "2010-03-31",
+        "pointer": "/facts/us-gaap/NetCashProvidedByUsedInOperatingActivities/units/USD/13",
+        "sha256": "0c63f1ae7cc10b3c27e0c94f2add0c461e6293036dd4e52e52ae6dbb6f206e15",
+        "start": "2010-01-01",
+        "value": -285000000
+      },
+      {
+        "accession": "0001193125-11-111215",
+        "cik": "0000012927",
+        "concept": "NetCashProvidedByUsedInOperatingActivities",
+        "end": "2010-03-31",
+        "pointer": "/facts/us-gaap/NetCashProvidedByUsedInOperatingActivities/units/USD/14",
+        "sha256": "0c63f1ae7cc10b3c27e0c94f2add0c461e6293036dd4e52e52ae6dbb6f206e15",
+        "start": "2010-01-01",
+        "value": -285000000
+      }
+    ],
+    "zero_original_fact": [
+      {
+        "artifact_sha256": "9027eeffc4883142d9e02691b69e85a4eed47d76417b0ac74de884e281f55265",
+        "cik": "0001018724",
+        "concept": "PaymentsForRepurchaseOfCommonStock",
+        "context_ref": "c-7",
+        "decimals": "-6",
+        "dimensioned": false,
+        "kind": "zero_original_fact",
+        "lexical": "0",
+        "position": 492,
+        "unit_ref": "usd",
+        "value": "0"
+      },
+      {
+        "artifact_sha256": "70d3a177a9228993456bc1ae50dd6179f68111970ce607f1e22739aff5028698",
+        "cik": "0001090727",
+        "concept": "AdditionalPaidInCapitalCommonStock",
+        "context_ref": "c-8",
+        "decimals": "-6",
+        "dimensioned": false,
+        "kind": "zero_original_fact",
+        "lexical": "0",
+        "position": 1407,
+        "unit_ref": "usd",
+        "value": "0"
+      },
+      {
+        "artifact_sha256": "2887397ac7ec09734e93838190cd6cfcdde566bc3e6e38269a7315ad03050136",
+        "cik": "0000012927",
+        "concept": "OtherComprehensiveIncomeUnrealizedHoldingGainLossOnSecuritiesArisingDuringPeriodTax",
+        "context_ref": "c-1",
+        "decimals": "-6",
+        "dimensioned": false,
+        "kind": "zero_original_fact",
+        "lexical": "0",
+        "position": 863,
+        "unit_ref": "usd",
+        "value": "0"
+      },
+      {
+        "artifact_sha256": "c91b0a19ee557025831432c9d442193a13c931762129ce85c2897069240df8f8",
+        "cik": "0001326160",
+        "concept": "ProceedsFromFromDiscontinuedOperationsNetOfTaxIncludingPortionAttributableToNoncontrollingInterest",
+        "context_ref": "c-20",
+        "decimals": "-6",
+        "dimensioned": false,
+        "kind": "zero_original_fact",
+        "lexical": "0",
+        "position": 3056,
+        "unit_ref": "usd",
+        "value": "0"
+      }
+    ],
+    "zero_standard_concept": [
+      {
+        "accession": "0001193125-10-151896",
+        "cik": "0001341439",
+        "concept": "SalesRevenueNet",
+        "end": "2008-05-31",
+        "pointer": "/facts/us-gaap/SalesRevenueNet/units/USD/0",
+        "sha256": "65523545f040abaea1dfcf321da2a5aec85e7f34387244b0ffcb26e4c8707f7d",
+        "start": "2007-06-01",
+        "value": 0
+      },
+      {
+        "accession": "0001193125-10-070192",
+        "cik": "0001341439",
+        "concept": "SalesRevenueNet",
+        "end": "2009-02-28",
+        "pointer": "/facts/us-gaap/SalesRevenueNet/units/USD/1",
+        "sha256": "65523545f040abaea1dfcf321da2a5aec85e7f34387244b0ffcb26e4c8707f7d",
+        "start": "2008-06-01",
+        "value": 0
+      },
+      {
+        "accession": "0001193125-10-070192",
+        "cik": "0001341439",
+        "concept": "SalesRevenueNet",
+        "end": "2009-02-28",
+        "pointer": "/facts/us-gaap/SalesRevenueNet/units/USD/2",
+        "sha256": "65523545f040abaea1dfcf321da2a5aec85e7f34387244b0ffcb26e4c8707f7d",
+        "start": "2008-12-01",
+        "value": 0
+      },
+      {
+        "accession": "0001193125-10-151896",
+        "cik": "0001341439",
+        "concept": "SalesRevenueNet",
+        "end": "2009-05-31",
+        "pointer": "/facts/us-gaap/SalesRevenueNet/units/USD/3",
+        "sha256": "65523545f040abaea1dfcf321da2a5aec85e7f34387244b0ffcb26e4c8707f7d",
+        "start": "2008-06-01",
+        "value": 0
+      }
+    ]
+  },
+  "methodology": "Direct raw JSON/XML ledger; changed comparative values are not automatically labeled restatements. No resolver output used.",
+  "not_established": [
+    "A confirmed fiscal-year transition within the audited query window",
+    "Causal attribution of changed comparatives to restatement rather than other reporting changes"
+  ],
+  "xbrl_cases": [
+    {
+      "artifact_sha256": "9027eeffc4883142d9e02691b69e85a4eed47d76417b0ac74de884e281f55265",
+      "cik": "0001018724",
+      "concept": "EmployeeServiceShareBasedCompensationNonvestedAwardsCompensationCostExpensedInNextTwelveMonthsExpectedToExceedPercentage",
+      "context_ref": "c-1",
+      "decimals": "2",
+      "dimensioned": false,
+      "kind": "decimals_metadata",
+      "lexical": "0.50",
+      "position": 400,
+      "unit_ref": "number",
+      "value": "0.50"
+    },
+    {
+      "artifact_sha256": "9027eeffc4883142d9e02691b69e85a4eed47d76417b0ac74de884e281f55265",
+      "cik": "0001018724",
+      "concept": "PaymentsForRepurchaseOfCommonStock",
+      "context_ref": "c-7",
+      "decimals": "-6",
+      "dimensioned": false,
+      "kind": "zero_original_fact",
+      "lexical": "0",
+      "position": 492,
+      "unit_ref": "usd",
+      "value": "0"
+    },
+    {
+      "artifact_sha256": "9027eeffc4883142d9e02691b69e85a4eed47d76417b0ac74de884e281f55265",
+      "cik": "0001018724",
+      "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+      "context_ref": "c-10",
+      "decimals": "-6",
+      "dimensioned": true,
+      "kind": "dimensioned_original_context",
+      "lexical": "241787000000",
+      "position": 525,
+      "unit_ref": "usd",
+      "value": "241787000000"
+    },
+    {
+      "artifact_sha256": "70d3a177a9228993456bc1ae50dd6179f68111970ce607f1e22739aff5028698",
+      "cik": "0001090727",
+      "concept": "ShareBasedCompensationPaidInRestrictedUnitsPercent",
+      "context_ref": "c-1111",
+      "decimals": "INF",
+      "dimensioned": true,
+      "kind": "decimals_metadata",
+      "lexical": "0.500",
+      "position": 1293,
+      "unit_ref": "number",
+      "value": "0.500"
+    },
+    {
+      "artifact_sha256": "70d3a177a9228993456bc1ae50dd6179f68111970ce607f1e22739aff5028698",
+      "cik": "0001090727",
+      "concept": "ShareBasedCompensationPaidInRestrictedUnitsPercent",
+      "context_ref": "c-1111",
+      "decimals": "INF",
+      "dimensioned": true,
+      "kind": "dimensioned_original_context",
+      "lexical": "0.500",
+      "position": 1293,
+      "unit_ref": "number",
+      "value": "0.500"
+    },
+    {
+      "artifact_sha256": "70d3a177a9228993456bc1ae50dd6179f68111970ce607f1e22739aff5028698",
+      "cik": "0001090727",
+      "concept": "AdditionalPaidInCapitalCommonStock",
+      "context_ref": "c-8",
+      "decimals": "-6",
+      "dimensioned": false,
+      "kind": "zero_original_fact",
+      "lexical": "0",
+      "position": 1407,
+      "unit_ref": "usd",
+      "value": "0"
+    },
+    {
+      "artifact_sha256": "2887397ac7ec09734e93838190cd6cfcdde566bc3e6e38269a7315ad03050136",
+      "cik": "0000012927",
+      "concept": "EntityPublicFloat",
+      "context_ref": "c-2",
+      "decimals": "-8",
+      "dimensioned": false,
+      "kind": "decimals_metadata",
+      "lexical": "127300000000",
+      "position": 791,
+      "unit_ref": "usd",
+      "value": "127300000000"
+    },
+    {
+      "artifact_sha256": "2887397ac7ec09734e93838190cd6cfcdde566bc3e6e38269a7315ad03050136",
+      "cik": "0000012927",
+      "concept": "Revenues",
+      "context_ref": "c-4",
+      "decimals": "-6",
+      "dimensioned": true,
+      "kind": "dimensioned_original_context",
+      "lexical": "65581000000",
+      "position": 794,
+      "unit_ref": "usd",
+      "value": "65581000000"
+    },
+    {
+      "artifact_sha256": "2887397ac7ec09734e93838190cd6cfcdde566bc3e6e38269a7315ad03050136",
+      "cik": "0000012927",
+      "concept": "OtherComprehensiveIncomeUnrealizedHoldingGainLossOnSecuritiesArisingDuringPeriodTax",
+      "context_ref": "c-1",
+      "decimals": "-6",
+      "dimensioned": false,
+      "kind": "zero_original_fact",
+      "lexical": "0",
+      "position": 863,
+      "unit_ref": "usd",
+      "value": "0"
+    },
+    {
+      "artifact_sha256": "c91b0a19ee557025831432c9d442193a13c931762129ce85c2897069240df8f8",
+      "cik": "0001326160",
+      "concept": "DebtInstrumentConvertibleConversionRatio1",
+      "context_ref": "c-1204",
+      "decimals": "INF",
+      "dimensioned": true,
+      "kind": "decimals_metadata",
+      "lexical": "0.0084131",
+      "position": 2545,
+      "unit_ref": "number",
+      "value": "0.0084131"
+    },
+    {
+      "artifact_sha256": "c91b0a19ee557025831432c9d442193a13c931762129ce85c2897069240df8f8",
+      "cik": "0001326160",
+      "concept": "DebtInstrumentConvertibleConversionRatio1",
+      "context_ref": "c-1204",
+      "decimals": "INF",
+      "dimensioned": true,
+      "kind": "dimensioned_original_context",
+      "lexical": "0.0084131",
+      "position": 2545,
+      "unit_ref": "number",
+      "value": "0.0084131"
+    },
+    {
+      "artifact_sha256": "c91b0a19ee557025831432c9d442193a13c931762129ce85c2897069240df8f8",
+      "cik": "0001326160",
+      "concept": "ProceedsFromFromDiscontinuedOperationsNetOfTaxIncludingPortionAttributableToNoncontrollingInterest",
+      "context_ref": "c-20",
+      "decimals": "-6",
+      "dimensioned": false,
+      "kind": "zero_original_fact",
+      "lexical": "0",
+      "position": 3056,
+      "unit_ref": "usd",
+      "value": "0"
+    },
+    {
+      "artifact_sha256": "4f8838f04c4c1ab9eb10174cdbf6705824040ae4a2f55280b4d94b546763b0b0",
+      "cik": "0001341439",
+      "concept": "NumberOfOperatingSegments",
+      "context_ref": "C_7e8b1434-0853-44d8-85c9-da212a9259c1",
+      "decimals": "INF",
+      "dimensioned": true,
+      "kind": "decimals_metadata",
+      "lexical": "1",
+      "position": 647,
+      "unit_ref": "U_Segment",
+      "value": "1"
+    },
+    {
+      "artifact_sha256": "4f8838f04c4c1ab9eb10174cdbf6705824040ae4a2f55280b4d94b546763b0b0",
+      "cik": "0001341439",
+      "concept": "NumberOfOperatingSegments",
+      "context_ref": "C_7e8b1434-0853-44d8-85c9-da212a9259c1",
+      "decimals": "INF",
+      "dimensioned": true,
+      "kind": "dimensioned_original_context",
+      "lexical": "1",
+      "position": 647,
+      "unit_ref": "U_Segment",
+      "value": "1"
+    },
+    {
+      "artifact_sha256": "4f8838f04c4c1ab9eb10174cdbf6705824040ae4a2f55280b4d94b546763b0b0",
+      "cik": "0001341439",
+      "concept": "PreferredStockSharesOutstanding",
+      "context_ref": "C_8dc19c16-0a90-49bb-9768-74f9aa8bba7f",
+      "decimals": "-6",
+      "dimensioned": false,
+      "kind": "zero_original_fact",
+      "lexical": "0",
+      "position": 738,
+      "unit_ref": "U_shares",
+      "value": "0"
+    },
+    {
+      "artifact_sha256": "3e581b50fc00e2e34257391b6a1ad9130236796420ad783f43d7bdaa47fca1a0",
+      "cik": "0001751788",
+      "concept": "EntityPublicFloat",
+      "context_ref": "c-7",
+      "decimals": "0",
+      "dimensioned": false,
+      "kind": "decimals_metadata",
+      "lexical": "37400000000",
+      "position": 1087,
+      "unit_ref": "usd",
+      "value": "37400000000"
+    },
+    {
+      "artifact_sha256": "3e581b50fc00e2e34257391b6a1ad9130236796420ad783f43d7bdaa47fca1a0",
+      "cik": "0001751788",
+      "concept": "EntityCommonStockSharesOutstanding",
+      "context_ref": "c-9",
+      "decimals": "0",
+      "dimensioned": true,
+      "kind": "dimensioned_original_context",
+      "lexical": "100",
+      "position": 1090,
+      "unit_ref": "shares",
+      "value": "100"
+    },
+    {
+      "artifact_sha256": "3e581b50fc00e2e34257391b6a1ad9130236796420ad783f43d7bdaa47fca1a0",
+      "cik": "0001751788",
+      "concept": "OtherComprehensiveIncomeLossAvailableForSaleSecuritiesAdjustmentNetOfTax",
+      "context_ref": "c-1",
+      "decimals": "-6",
+      "dimensioned": false,
+      "kind": "zero_original_fact",
+      "lexical": "0",
+      "position": 1156,
+      "unit_ref": "usd",
+      "value": "0"
+    },
+    {
+      "artifact_sha256": "0dd83275bbe10e53e073d9653aa48d989d759ef49cba6b4c3fca0f67902646b0",
+      "cik": "0000027419",
+      "concept": "EntityPublicFloat",
+      "context_ref": "c-2",
+      "decimals": "0",
+      "dimensioned": false,
+      "kind": "decimals_metadata",
+      "lexical": "62198134569",
+      "position": 287,
+      "unit_ref": "usd",
+      "value": "62198134569"
+    },
+    {
+      "artifact_sha256": "0dd83275bbe10e53e073d9653aa48d989d759ef49cba6b4c3fca0f67902646b0",
+      "cik": "0000027419",
+      "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+      "context_ref": "c-4",
+      "decimals": "-6",
+      "dimensioned": true,
+      "kind": "dimensioned_original_context",
+      "lexical": "105803000000",
+      "position": 292,
+      "unit_ref": "usd",
+      "value": "105803000000"
+    },
+    {
+      "artifact_sha256": "0dd83275bbe10e53e073d9653aa48d989d759ef49cba6b4c3fca0f67902646b0",
+      "cik": "0000027419",
+      "concept": "AntidilutiveSecuritiesExcludedFromComputationOfEarningsPerShareAmount",
+      "context_ref": "c-11",
+      "decimals": "0",
+      "dimensioned": false,
+      "kind": "zero_original_fact",
+      "lexical": "0",
+      "position": 342,
+      "unit_ref": "shares",
+      "value": "0"
+    },
+    {
+      "artifact_sha256": "7f2089977244b834843f3c68e2366fed488d41d99ef10e4222e391883a8f2c34",
+      "cik": "0000320187",
+      "concept": "EntityPublicFloat",
+      "context_ref": "c-2",
+      "decimals": "0",
+      "dimensioned": true,
+      "kind": "decimals_metadata",
+      "lexical": "7831564572",
+      "position": 538,
+      "unit_ref": "usd",
+      "value": "7831564572"
+    },
+    {
+      "artifact_sha256": "7f2089977244b834843f3c68e2366fed488d41d99ef10e4222e391883a8f2c34",
+      "cik": "0000320187",
+      "concept": "EntityPublicFloat",
+      "context_ref": "c-2",
+      "decimals": "0",
+      "dimensioned": true,
+      "kind": "dimensioned_original_context",
+      "lexical": "7831564572",
+      "position": 538,
+      "unit_ref": "usd",
+      "value": "7831564572"
+    },
+    {
+      "artifact_sha256": "7f2089977244b834843f3c68e2366fed488d41d99ef10e4222e391883a8f2c34",
+      "cik": "0000320187",
+      "concept": "LongTermDebtCurrent",
+      "context_ref": "c-9",
+      "decimals": "-6",
+      "dimensioned": false,
+      "kind": "zero_original_fact",
+      "lexical": "0",
+      "position": 633,
+      "unit_ref": "usd",
+      "value": "0"
+    },
+    {
+      "artifact_sha256": "7213f85b0da5db887780893531f7c6b46b4228c7660299da8c11e6f6ed01214e",
+      "cik": "0000034088",
+      "concept": "EntityPublicFloat",
+      "context_ref": "c-7",
+      "decimals": "-9",
+      "dimensioned": false,
+      "kind": "decimals_metadata",
+      "lexical": "429000000000",
+      "position": 725,
+      "unit_ref": "usd",
+      "value": "429000000000"
+    },
+    {
+      "artifact_sha256": "7213f85b0da5db887780893531f7c6b46b4228c7660299da8c11e6f6ed01214e",
+      "cik": "0000034088",
+      "concept": "Revenues",
+      "context_ref": "c-10",
+      "decimals": "-6",
+      "dimensioned": true,
+      "kind": "dimensioned_original_context",
+      "lexical": "334697000000",
+      "position": 735,
+      "unit_ref": "usd",
+      "value": "334697000000"
+    },
+    {
+      "artifact_sha256": "7213f85b0da5db887780893531f7c6b46b4228c7660299da8c11e6f6ed01214e",
+      "cik": "0000034088",
+      "concept": "OtherComprehensiveIncomeLossForeignCurrencyTransactionAndTranslationReclassificationAdjustmentFromAOCIRealizedUponSaleOrLiquidationNetOfTax",
+      "context_ref": "c-19",
+      "decimals": "-6",
+      "dimensioned": false,
+      "kind": "zero_original_fact",
+      "lexical": "0",
+      "position": 802,
+      "unit_ref": "usd",
+      "value": "0"
+    },
+    {
+      "artifact_sha256": "b77e5ce2288908a53e2e21e2db55b46889316229e57c973beccd52d165d5052a",
+      "cik": "0000050863",
+      "concept": "EntityCommonStockSharesOutstanding",
+      "context_ref": "c-3",
+      "decimals": "-6",
+      "dimensioned": false,
+      "kind": "decimals_metadata",
+      "lexical": "4228000000",
+      "position": 618,
+      "unit_ref": "shares",
+      "value": "4228000000"
+    },
+    {
+      "artifact_sha256": "b77e5ce2288908a53e2e21e2db55b46889316229e57c973beccd52d165d5052a",
+      "cik": "0000050863",
+      "concept": "PreferredStockSharesIssued",
+      "context_ref": "c-7",
+      "decimals": "-6",
+      "dimensioned": false,
+      "kind": "zero_original_fact",
+      "lexical": "0",
+      "position": 624,
+      "unit_ref": "shares",
+      "value": "0"
+    },
+    {
+      "artifact_sha256": "b77e5ce2288908a53e2e21e2db55b46889316229e57c973beccd52d165d5052a",
+      "cik": "0000050863",
+      "concept": "CommonStockDividendsPerShareDeclared",
+      "context_ref": "c-35",
+      "decimals": "INF",
+      "dimensioned": true,
+      "kind": "dimensioned_original_context",
+      "lexical": "0.7400",
+      "position": 634,
+      "unit_ref": "usdPerShare",
+      "value": "0.7400"
+    },
+    {
+      "artifact_sha256": "6df3a97b0eb241874df90b56e526de28b36234349c6c4cc2e47e1fca5eee4291",
+      "cik": "0000078003",
+      "concept": "DefinedBenefitPlanPlanAssetsTargetAllocationPercentage",
+      "context_ref": "c-735",
+      "decimals": "2",
+      "dimensioned": true,
+      "kind": "zero_original_fact",
+      "lexical": "0",
+      "position": 1123,
+      "unit_ref": "number",
+      "value": "0"
+    },
+    {
+      "artifact_sha256": "6df3a97b0eb241874df90b56e526de28b36234349c6c4cc2e47e1fca5eee4291",
+      "cik": "0000078003",
+      "concept": "DefinedBenefitPlanPlanAssetsTargetAllocationPercentage",
+      "context_ref": "c-735",
+      "decimals": "2",
+      "dimensioned": true,
+      "kind": "decimals_metadata",
+      "lexical": "0",
+      "position": 1123,
+      "unit_ref": "number",
+      "value": "0"
+    },
+    {
+      "artifact_sha256": "6df3a97b0eb241874df90b56e526de28b36234349c6c4cc2e47e1fca5eee4291",
+      "cik": "0000078003",
+      "concept": "DefinedBenefitPlanPlanAssetsTargetAllocationPercentage",
+      "context_ref": "c-735",
+      "decimals": "2",
+      "dimensioned": true,
+      "kind": "dimensioned_original_context",
+      "lexical": "0",
+      "position": 1123,
+      "unit_ref": "number",
+      "value": "0"
+    },
+    {
+      "artifact_sha256": "f409e7b81cbd8afe874ab4116efd911b99fc61cdcbed685f5de39a5024ed5617",
+      "cik": "0000796343",
+      "concept": "EntityPublicFloat",
+      "context_ref": "c-2",
+      "decimals": "-7",
+      "dimensioned": false,
+      "kind": "decimals_metadata",
+      "lexical": "165530000000",
+      "position": 409,
+      "unit_ref": "usd",
+      "value": "165530000000"
+    },
+    {
+      "artifact_sha256": "f409e7b81cbd8afe874ab4116efd911b99fc61cdcbed685f5de39a5024ed5617",
+      "cik": "0000796343",
+      "concept": "DebtCurrent",
+      "context_ref": "c-4",
+      "decimals": "-6",
+      "dimensioned": false,
+      "kind": "zero_original_fact",
+      "lexical": "0",
+      "position": 445,
+      "unit_ref": "usd",
+      "value": "0"
+    },
+    {
+      "artifact_sha256": "f409e7b81cbd8afe874ab4116efd911b99fc61cdcbed685f5de39a5024ed5617",
+      "cik": "0000796343",
+      "concept": "Revenues",
+      "context_ref": "c-6",
+      "decimals": "-6",
+      "dimensioned": true,
+      "kind": "dimensioned_original_context",
+      "lexical": "18284000000",
+      "position": 501,
+      "unit_ref": "usd",
+      "value": "18284000000"
+    },
+    {
+      "artifact_sha256": "08fc6b7c58a617adcb049a00a66608d227ec732626e0b58785f6037ed57dbe0a",
+      "cik": "0000909832",
+      "concept": "PreferredStockParOrStatedValuePerShare",
+      "context_ref": "c-12",
+      "decimals": "INF",
+      "dimensioned": false,
+      "kind": "decimals_metadata",
+      "lexical": "0.005",
+      "position": 167,
+      "unit_ref": "usdPerShare",
+      "value": "0.005"
+    },
+    {
+      "artifact_sha256": "08fc6b7c58a617adcb049a00a66608d227ec732626e0b58785f6037ed57dbe0a",
+      "cik": "0000909832",
+      "concept": "PreferredStockSharesIssued",
+      "context_ref": "c-12",
+      "decimals": "INF",
+      "dimensioned": false,
+      "kind": "zero_original_fact",
+      "lexical": "0",
+      "position": 171,
+      "unit_ref": "shares",
+      "value": "0"
+    },
+    {
+      "artifact_sha256": "08fc6b7c58a617adcb049a00a66608d227ec732626e0b58785f6037ed57dbe0a",
+      "cik": "0000909832",
+      "concept": "NumberOfStores",
+      "context_ref": "c-69",
+      "decimals": "INF",
+      "dimensioned": true,
+      "kind": "dimensioned_original_context",
+      "lexical": "1",
+      "position": 186,
+      "unit_ref": "warehouse",
+      "value": "1"
+    }
+  ]
+}

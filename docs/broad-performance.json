@@ -1,0 +1,590 @@
+{
+  "after": {
+    "counts": {
+      ".venv/lib/python3.12/site-packages/httpx/_models.py:raw": {
+        "calls": 2,
+        "cumulative_seconds": 7.91E-7
+      },
+      "src/finpanel/models/source.py:json": {
+        "calls": 23,
+        "cumulative_seconds": 0.5066874180000001
+      },
+      "src/finpanel/sec/companyfacts.py:_parse_companyfacts": {
+        "calls": 1,
+        "cumulative_seconds": 0.262334083
+      },
+      "src/finpanel/sec/companyfacts.py:parse_companyfacts": {
+        "calls": 28,
+        "cumulative_seconds": 0.264264332
+      },
+      "src/finpanel/snapshots/store.py:load": {
+        "calls": 2,
+        "cumulative_seconds": 0.011182375000000001
+      },
+      "src/finpanel/snapshots/store.py:raw": {
+        "calls": 195,
+        "cumulative_seconds": 0.09753030300000001
+      }
+    },
+    "peak_rss_mib": 200.953125,
+    "performance": {
+      "candidate_builds": 12,
+      "candidate_reuses": 108,
+      "raw_response_reuses": 11,
+      "wall_seconds": 16.14431454199803
+    },
+    "rows": 120,
+    "wall_seconds": 16.284634250001545
+  },
+  "before": {
+    "counts": {
+      ".venv/lib/python3.12/site-packages/httpx/_models.py:raw": {
+        "calls": 2,
+        "cumulative_seconds": 7.510000000000001E-7
+      },
+      "src/finpanel/models/source.py:json": {
+        "calls": 50,
+        "cumulative_seconds": 1.355873251
+      },
+      "src/finpanel/sec/companyfacts.py:parse_companyfacts": {
+        "calls": 28,
+        "cumulative_seconds": 7.6374101670000005
+      },
+      "src/finpanel/snapshots/store.py:load": {
+        "calls": 2,
+        "cumulative_seconds": 0.010864292000000001
+      },
+      "src/finpanel/snapshots/store.py:raw": {
+        "calls": 195,
+        "cumulative_seconds": 0.10163158400000001
+      }
+    },
+    "peak_rss_mib": 217.0,
+    "performance": {
+      "candidate_builds": 12,
+      "candidate_reuses": 108,
+      "raw_response_reuses": 11,
+      "wall_seconds": 37.96845008400123
+    },
+    "rows": 120,
+    "wall_seconds": 38.10710666600062
+  },
+  "broad": {
+    "candidate_builds": 1200,
+    "candidate_reuses": 10800,
+    "issuer_batches": 50,
+    "process_peak_rss_mib": 863.484375,
+    "raw_response_reuses": 1100,
+    "reuse": [
+      {
+        "builds": {
+          "companyfacts_parse": 1,
+          "revision_analysis": 130
+        },
+        "hits": {
+          "companyfacts_parse": 113,
+          "revision_analysis": 993
+        }
+      },
+      {
+        "builds": {
+          "companyfacts_parse": 1,
+          "revision_analysis": 130
+        },
+        "hits": {
+          "companyfacts_parse": 113,
+          "revision_analysis": 833
+        }
+      },
+      {
+        "builds": {
+          "companyfacts_parse": 1,
+          "revision_analysis": 130
+        },
+        "hits": {
+          "companyfacts_parse": 113,
+          "revision_analysis": 993
+        }
+      },
+      {
+        "builds": {
+          "companyfacts_parse": 1,
+          "revision_analysis": 130
+        },
+        "hits": {
+          "companyfacts_parse": 113,
+          "revision_analysis": 1025
+        }
+      },
+      {
+        "builds": {
+          "companyfacts_parse": 1,
+          "revision_analysis": 130
+        },
+        "hits": {
+          "companyfacts_parse": 113,
+          "revision_analysis": 993
+        }
+      },
+      {
+        "builds": {
+          "companyfacts_parse": 1,
+          "revision_analysis": 130
+        },
+        "hits": {
+          "companyfacts_parse": 113,
+          "revision_analysis": 969
+        }
+      },
+      {
+        "builds": {
+          "companyfacts_parse": 1,
+          "revision_analysis": 130
+        },
+        "hits": {
+          "companyfacts_parse": 113,
+          "revision_analysis": 993
+        }
+      },
+      {
+        "builds": {
+          "companyfacts_parse": 1,
+          "revision_analysis": 130
+        },
+        "hits": {
+          "companyfacts_parse": 113,
+          "revision_analysis": 873
+        }
+      },
+      {
+        "builds": {
+          "companyfacts_parse": 1,
+          "revision_analysis": 130
+        },
+        "hits": {
+          "companyfacts_parse": 113,
+          "revision_analysis": 801
+        }
+      },
+      {
+        "builds": {
+          "companyfacts_parse": 1,
+          "revision_analysis": 130
+        },
+        "hits": {
+          "companyfacts_parse": 113,
+          "revision_analysis": 993
+        }
+      },
+      {
+        "builds": {
+          "companyfacts_parse": 1,
+          "revision_analysis": 228
+        },
+        "hits": {
+          "companyfacts_parse": 113,
+          "revision_analysis": 1714
+        }
+      },
+      {
+        "builds": {
+          "companyfacts_parse": 1,
+          "revision_analysis": 130
+        },
+        "hits": {
+          "companyfacts_parse": 113,
+          "revision_analysis": 1033
+        }
+      },
+      {
+        "builds": {
+          "companyfacts_parse": 1,
+          "revision_analysis": 130
+        },
+        "hits": {
+          "companyfacts_parse": 113,
+          "revision_analysis": 897
+        }
+      },
+      {
+        "builds": {
+          "companyfacts_parse": 1,
+          "revision_analysis": 130
+        },
+        "hits": {
+          "companyfacts_parse": 113,
+          "revision_analysis": 865
+        }
+      },
+      {
+        "builds": {
+          "companyfacts_parse": 1,
+          "revision_analysis": 130
+        },
+        "hits": {
+          "companyfacts_parse": 113,
+          "revision_analysis": 993
+        }
+      },
+      {
+        "builds": {
+          "companyfacts_parse": 1,
+          "revision_analysis": 130
+        },
+        "hits": {
+          "companyfacts_parse": 113,
+          "revision_analysis": 897
+        }
+      },
+      {
+        "builds": {
+          "companyfacts_parse": 1,
+          "revision_analysis": 130
+        },
+        "hits": {
+          "companyfacts_parse": 113,
+          "revision_analysis": 1025
+        }
+      },
+      {
+        "builds": {
+          "companyfacts_parse": 1,
+          "revision_analysis": 130
+        },
+        "hits": {
+          "companyfacts_parse": 113,
+          "revision_analysis": 993
+        }
+      },
+      {
+        "builds": {
+          "companyfacts_parse": 1,
+          "revision_analysis": 130
+        },
+        "hits": {
+          "companyfacts_parse": 113,
+          "revision_analysis": 921
+        }
+      },
+      {
+        "builds": {
+          "companyfacts_parse": 1,
+          "revision_analysis": 130
+        },
+        "hits": {
+          "companyfacts_parse": 113,
+          "revision_analysis": 993
+        }
+      },
+      {
+        "builds": {
+          "companyfacts_parse": 1,
+          "revision_analysis": 130
+        },
+        "hits": {
+          "companyfacts_parse": 113,
+          "revision_analysis": 929
+        }
+      },
+      {
+        "builds": {
+          "companyfacts_parse": 1,
+          "revision_analysis": 130
+        },
+        "hits": {
+          "companyfacts_parse": 113,
+          "revision_analysis": 865
+        }
+      },
+      {
+        "builds": {
+          "companyfacts_parse": 1,
+          "revision_analysis": 130
+        },
+        "hits": {
+          "companyfacts_parse": 113,
+          "revision_analysis": 961
+        }
+      },
+      {
+        "builds": {
+          "companyfacts_parse": 1,
+          "revision_analysis": 130
+        },
+        "hits": {
+          "companyfacts_parse": 113,
+          "revision_analysis": 865
+        }
+      },
+      {
+        "builds": {
+          "companyfacts_parse": 1,
+          "revision_analysis": 130
+        },
+        "hits": {
+          "companyfacts_parse": 113,
+          "revision_analysis": 993
+        }
+      },
+      {
+        "builds": {
+          "companyfacts_parse": 1,
+          "revision_analysis": 130
+        },
+        "hits": {
+          "companyfacts_parse": 113,
+          "revision_analysis": 993
+        }
+      },
+      {
+        "builds": {
+          "companyfacts_parse": 1,
+          "revision_analysis": 130
+        },
+        "hits": {
+          "companyfacts_parse": 113,
+          "revision_analysis": 1025
+        }
+      },
+      {
+        "builds": {
+          "companyfacts_parse": 1,
+          "revision_analysis": 130
+        },
+        "hits": {
+          "companyfacts_parse": 113,
+          "revision_analysis": 953
+        }
+      },
+      {
+        "builds": {
+          "companyfacts_parse": 1,
+          "revision_analysis": 130
+        },
+        "hits": {
+          "companyfacts_parse": 113,
+          "revision_analysis": 1033
+        }
+      },
+      {
+        "builds": {
+          "companyfacts_parse": 1,
+          "revision_analysis": 130
+        },
+        "hits": {
+          "companyfacts_parse": 113,
+          "revision_analysis": 1089
+        }
+      },
+      {
+        "builds": {
+          "companyfacts_parse": 1,
+          "revision_analysis": 130
+        },
+        "hits": {
+          "companyfacts_parse": 113,
+          "revision_analysis": 833
+        }
+      },
+      {
+        "builds": {
+          "companyfacts_parse": 1,
+          "revision_analysis": 130
+        },
+        "hits": {
+          "companyfacts_parse": 113,
+          "revision_analysis": 897
+        }
+      },
+      {
+        "builds": {
+          "companyfacts_parse": 1,
+          "revision_analysis": 130
+        },
+        "hits": {
+          "companyfacts_parse": 113,
+          "revision_analysis": 993
+        }
+      },
+      {
+        "builds": {
+          "companyfacts_parse": 1,
+          "revision_analysis": 130
+        },
+        "hits": {
+          "companyfacts_parse": 113,
+          "revision_analysis": 953
+        }
+      },
+      {
+        "builds": {
+          "companyfacts_parse": 1,
+          "revision_analysis": 130
+        },
+        "hits": {
+          "companyfacts_parse": 113,
+          "revision_analysis": 953
+        }
+      },
+      {
+        "builds": {
+          "companyfacts_parse": 1,
+          "revision_analysis": 130
+        },
+        "hits": {
+          "companyfacts_parse": 113,
+          "revision_analysis": 881
+        }
+      },
+      {
+        "builds": {
+          "companyfacts_parse": 1,
+          "revision_analysis": 130
+        },
+        "hits": {
+          "companyfacts_parse": 113,
+          "revision_analysis": 849
+        }
+      },
+      {
+        "builds": {
+          "companyfacts_parse": 1,
+          "revision_analysis": 130
+        },
+        "hits": {
+          "companyfacts_parse": 113,
+          "revision_analysis": 929
+        }
+      },
+      {
+        "builds": {
+          "companyfacts_parse": 1,
+          "revision_analysis": 130
+        },
+        "hits": {
+          "companyfacts_parse": 113,
+          "revision_analysis": 1025
+        }
+      },
+      {
+        "builds": {
+          "companyfacts_parse": 1,
+          "revision_analysis": 130
+        },
+        "hits": {
+          "companyfacts_parse": 113,
+          "revision_analysis": 993
+        }
+      },
+      {
+        "builds": {
+          "companyfacts_parse": 1,
+          "revision_analysis": 130
+        },
+        "hits": {
+          "companyfacts_parse": 113,
+          "revision_analysis": 897
+        }
+      },
+      {
+        "builds": {
+          "companyfacts_parse": 1,
+          "revision_analysis": 244
+        },
+        "hits": {
+          "companyfacts_parse": 113,
+          "revision_analysis": 1730
+        }
+      },
+      {
+        "builds": {
+          "companyfacts_parse": 1,
+          "revision_analysis": 130
+        },
+        "hits": {
+          "companyfacts_parse": 113,
+          "revision_analysis": 849
+        }
+      },
+      {
+        "builds": {
+          "companyfacts_parse": 1,
+          "revision_analysis": 196
+        },
+        "hits": {
+          "companyfacts_parse": 113,
+          "revision_analysis": 1602
+        }
+      },
+      {
+        "builds": {
+          "companyfacts_parse": 1,
+          "revision_analysis": 130
+        },
+        "hits": {
+          "companyfacts_parse": 113,
+          "revision_analysis": 993
+        }
+      },
+      {
+        "builds": {
+          "companyfacts_parse": 1,
+          "revision_analysis": 130
+        },
+        "hits": {
+          "companyfacts_parse": 113,
+          "revision_analysis": 833
+        }
+      },
+      {
+        "builds": {
+          "companyfacts_parse": 1,
+          "revision_analysis": 130
+        },
+        "hits": {
+          "companyfacts_parse": 113,
+          "revision_analysis": 921
+        }
+      },
+      {
+        "builds": {
+          "companyfacts_parse": 1,
+          "revision_analysis": 130
+        },
+        "hits": {
+          "companyfacts_parse": 113,
+          "revision_analysis": 801
+        }
+      },
+      {
+        "builds": {
+          "companyfacts_parse": 1,
+          "revision_analysis": 130
+        },
+        "hits": {
+          "companyfacts_parse": 113,
+          "revision_analysis": 897
+        }
+      },
+      {
+        "builds": {
+          "companyfacts_parse": 1,
+          "revision_analysis": 130
+        },
+        "hits": {
+          "companyfacts_parse": 113,
+          "revision_analysis": 825
+        }
+      }
+    ],
+    "snapshot_loads": 702,
+    "snapshot_object_reads": 58918,
+    "source_parse_hits": 5650,
+    "source_parses": 50,
+    "wall_seconds": 1184.703234333,
+    "workers": 1
+  },
+  "method": "Same Boeing 120-cell workload/evidence under cProfile, paired run isolated from the full suite. Full 50-issuer wall time overlaps regression tests; not a controlled latency comparison.",
+  "profile_snapshot_id": "1685d5caebf7432db1a4efdbc2ac6fcb414b4437837d94a7713cbb5b7536e322",
+  "semantic_rows_sha256": "8901398896f92325cfc5c9a3ce98d47d4f324a3fb47831a34d0a07e74a4ab0e2"
+}
