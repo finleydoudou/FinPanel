@@ -1,5 +1,7 @@
-name: TestPyPI release rehearsal
+name: Protected A2 publishing
 on:
+  push:
+    tags: [v0.1.0-alpha.2]
   workflow_dispatch:
     inputs:
       candidate_sha:
@@ -8,7 +10,7 @@ on:
 permissions:
   contents: read
 concurrency:
-  group: testpypi-release
+  group: release-${{ github.ref }}
   cancel-in-progress: false
 jobs:
   build:
@@ -129,3 +131,177 @@ jobs:
         uses: pypa/gh-action-pypi-publish@dc37677b2e1c63e2034f94d8a5b11f265b73ba33 # release/v1
         with:
           repository-url: https://test.pypi.org/legacy/
+  build-production:
+    if: github.event_name == 'push' && github.repository == 'finleydoudou/FinPanel' && github.ref == 'refs/tags/v0.1.0-alpha.2'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: read
+    env:
+      AUTHORIZED_CANDIDATE: ${{ vars.FINPANEL_PRODUCTION_CANDIDATE_SHA }}
+    steps:
+      - name: Verify authorized tag event before checkout
+        run: |
+          [[ "$AUTHORIZED_CANDIDATE" =~ ^[0-9a-f]{40}$ ]]
+          test "$GITHUB_SHA" = "$AUTHORIZED_CANDIDATE"
+          test "$GITHUB_REF" = 'refs/tags/v0.1.0-alpha.2'
+          test "$GITHUB_EVENT_NAME" = 'push'
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.12'
+      - name: Verify exact candidate source, version, and completed CI
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          test "$(git rev-parse HEAD)" = "$AUTHORIZED_CANDIDATE"
+          test "$(python -c 'import tomllib; print(tomllib.load(open("pyproject.toml", "rb"))["project"]["version"])')" = '0.1.0a2'
+          gh api "repos/$GITHUB_REPOSITORY/actions/workflows/tests.yml/runs?head_sha=$AUTHORIZED_CANDIDATE&event=push" > /tmp/ci-runs.json
+          python -c 'import json; runs=json.load(open("/tmp/ci-runs.json"))["workflow_runs"]; assert any(r["conclusion"] == "success" and r["head_branch"] == "main" for r in runs), "Required three-platform CI has not passed"'
+      - run: python -m pip install build
+      - run: python -m build
+      - name: Validate both distributions and record source provenance
+        run: |
+          python - <<'PYCODE'
+          import hashlib
+          import json
+          import os
+          import re
+          import tarfile
+          import zipfile
+          from email.parser import BytesParser
+          from pathlib import Path
+
+          expected = {"finpanel-0.1.0a2-py3-none-any.whl", "finpanel-0.1.0a2.tar.gz"}
+          artifacts = sorted(Path("dist").iterdir())
+          assert {p.name for p in artifacts} == expected
+          readme = Path("README.md").read_text()
+          records = []
+          for path in artifacts:
+              if path.suffix == ".whl":
+                  with zipfile.ZipFile(path) as archive:
+                      names = [n for n in archive.namelist() if n.endswith(".dist-info/METADATA")]
+                      assert len(names) == 1
+                      metadata = archive.read(names[0])
+              else:
+                  with tarfile.open(path) as archive:
+                      members = [m for m in archive if m.name.endswith("/PKG-INFO") and m.name.count("/") == 1]
+                      assert len(members) == 1
+                      metadata = archive.extractfile(members[0]).read()
+              message = BytesParser().parsebytes(metadata)
+              assert message["Name"] == "finpanel"
+              assert message["Version"] == "0.1.0a2"
+              assert message["Requires-Python"] == "<3.13,>=3.12"
+              assert message["License-Expression"] == "MIT"
+              assert message["Description-Content-Type"] == "text/markdown"
+              assert message["Summary"] and message.get_all("Classifier")
+              assert len(message.get_all("Requires-Dist")) >= 5
+              assert message.get_all("Project-URL") == [
+                  "Repository, https://github.com/finleydoudou/FinPanel",
+                  "Issues, https://github.com/finleydoudou/FinPanel/issues",
+                  "Documentation, https://github.com/finleydoudou/FinPanel#readme",
+              ]
+              assert message.get_payload(decode=True).decode().strip() == readme.strip()
+              assert all(url.startswith(("https://", "#")) for url in re.findall(r"\]\(([^)]+)\)", readme))
+              records.append({"filename": path.name, "bytes": path.stat().st_size, "sha256": hashlib.sha256(path.read_bytes()).hexdigest()})
+          provenance = {
+              "candidate_sha": os.environ["AUTHORIZED_CANDIDATE"],
+              "workflow_sha": os.environ["GITHUB_SHA"],
+              "run_id": os.environ["GITHUB_RUN_ID"],
+              "run_attempt": os.environ["GITHUB_RUN_ATTEMPT"],
+              "repository": os.environ["GITHUB_REPOSITORY"],
+              "version": "0.1.0a2",
+              "artifacts": records,
+          }
+          Path("build-provenance.json").write_text(json.dumps(provenance, indent=2) + "\n")
+          checksums = "".join(f"{r['sha256']}  {r['filename']}\n" for r in records)
+          Path("SHA256SUMS.txt").write_text(checksums)
+          with open(os.environ["GITHUB_STEP_SUMMARY"], "a") as summary:
+              summary.write("Production candidate; exact tagged package source: `" + provenance["candidate_sha"] + "`\n\n")
+              summary.write("Workflow commit: `" + provenance["workflow_sha"] + "`\n\n```text\n" + checksums + "```\n")
+          PYCODE
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: production-a2-distributions
+          path: dist/
+          if-no-files-found: error
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: production-a2-checksums
+          path: |
+            SHA256SUMS.txt
+            build-provenance.json
+  publish-pypi:
+    needs: build-production
+    if: github.event_name == 'push' && github.repository == 'finleydoudou/FinPanel' && github.ref == 'refs/tags/v0.1.0-alpha.2' && github.sha == vars.FINPANEL_PRODUCTION_CANDIDATE_SHA
+    runs-on: ubuntu-latest
+    environment:
+      name: pypi
+      url: https://pypi.org/p/finpanel
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: production-a2-distributions
+          path: dist/
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: production-a2-checksums
+          path: provenance/
+      - name: Reverify this run's exact source and artifact hashes before upload
+        env:
+          AUTHORIZED_CANDIDATE: ${{ vars.FINPANEL_PRODUCTION_CANDIDATE_SHA }}
+        run: |
+          python - <<'PYCODE'
+          import hashlib
+          import json
+          import os
+          import re
+          import tarfile
+          import zipfile
+          from email.parser import BytesParser
+          from pathlib import Path
+
+          authorized = os.environ["AUTHORIZED_CANDIDATE"]
+          assert re.fullmatch(r"[0-9a-f]{40}", authorized)
+          assert os.environ["GITHUB_SHA"] == authorized
+          assert os.environ["GITHUB_REF"] == "refs/tags/v0.1.0-alpha.2"
+          assert os.environ["GITHUB_EVENT_NAME"] == "push"
+          provenance = json.loads(Path("provenance/build-provenance.json").read_text())
+          assert provenance["candidate_sha"] == provenance["workflow_sha"] == authorized
+          assert provenance["repository"] == os.environ["GITHUB_REPOSITORY"] == "finleydoudou/FinPanel"
+          assert provenance["run_id"] == os.environ["GITHUB_RUN_ID"]
+          assert provenance["run_attempt"] == os.environ["GITHUB_RUN_ATTEMPT"]
+          assert provenance["version"] == "0.1.0a2"
+          expected = {"finpanel-0.1.0a2-py3-none-any.whl", "finpanel-0.1.0a2.tar.gz"}
+          records = provenance["artifacts"]
+          assert len(records) == 2 and {r["filename"] for r in records} == expected
+          assert {p.name for p in Path("dist").iterdir()} == expected
+          for record in records:
+              path = Path("dist") / record["filename"]
+              assert path.stat().st_size == record["bytes"]
+              assert hashlib.sha256(path.read_bytes()).hexdigest() == record["sha256"]
+              if path.suffix == ".whl":
+                  with zipfile.ZipFile(path) as archive:
+                      names = [n for n in archive.namelist() if n.endswith(".dist-info/METADATA")]
+                      assert len(names) == 1
+                      metadata = archive.read(names[0])
+              else:
+                  with tarfile.open(path) as archive:
+                      members = [m for m in archive if m.name.endswith("/PKG-INFO") and m.name.count("/") == 1]
+                      assert len(members) == 1
+                      metadata = archive.extractfile(members[0]).read()
+              message = BytesParser().parsebytes(metadata)
+              assert message["Name"] == "finpanel" and message["Version"] == "0.1.0a2"
+          checksums = "".join(f"{r['sha256']}  {r['filename']}\n" for r in records)
+          assert Path("provenance/SHA256SUMS.txt").read_text() == checksums
+          PYCODE
+      - name: Publish only to production PyPI through OIDC after human approval
+        uses: pypa/gh-action-pypi-publish@dc37677b2e1c63e2034f94d8a5b11f265b73ba33 # release/v1
+        with:
+          repository-url: https://upload.pypi.org/legacy/
+          attestations: true

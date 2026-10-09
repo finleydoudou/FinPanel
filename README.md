@@ -14,29 +14,29 @@ Banks, insurers, IFRS normalization, segment aggregation, FX normalization, pric
 and returns are outside scope. Historical/original-XBRL evidence is incomplete for
 some issuers; extension-heavy or dimension-heavy disclosures may remain unresolved.
 
-**A2 preparation:** this source tree builds package **0.1.0a2**, intended tag
-`v0.1.0-alpha.2`. A2 is not yet a public GitHub release or a production PyPI
-publication. The existing [a1 GitHub pre-release](https://github.com/finleydoudou/FinPanel/releases/tag/v0.1.0-alpha)
-(package `0.1.0a1`) and its assets remain unchanged. Python **3.12** is required.
+**Alpha.2:** this source tree builds package **0.1.0a2**, with Git label
+`v0.1.0-alpha.2`. Python **3.12** is required. Check the
+[release list](https://github.com/finleydoudou/FinPanel/releases) and
+[PyPI project](https://pypi.org/project/finpanel/) for publication availability;
+source preparation alone does not imply that a release has been published.
+The existing [a1 GitHub pre-release](https://github.com/finleydoudou/FinPanel/releases/tag/v0.1.0-alpha)
+(package `0.1.0a1`) remains unchanged.
 See [validation evidence](https://github.com/finleydoudou/FinPanel/blob/main/docs/release-validation.md)
-and [current release status](https://github.com/finleydoudou/FinPanel/blob/main/docs/release-status.md).
+and [release notes](https://github.com/finleydoudou/FinPanel/blob/main/docs/release-a2-notes.md).
 This is experimental research software, not a stable production release.
 
 ## Installation
 
-### Published release users
+Once version `0.1.0a2` is available on production PyPI, install that exact version
+in a clean Python 3.12 environment with `python -m pip install finpanel==0.1.0a2`.
+Before publication, use only a verified candidate wheel supplied with its
+`SHA256SUMS.txt`. Do not substitute an a1 artifact or rename its wheel.
+For published a1 users, follow the
+[a1 installation instructions](https://github.com/finleydoudou/FinPanel/blob/07f3e16fcf18019b16e5ac25d575e646d126c570/README.md#installation).
 
-The currently downloadable release is still **a1**, not a2. Follow the
-[a1 installation instructions](https://github.com/finleydoudou/FinPanel/blob/07f3e16fcf18019b16e5ac25d575e646d126c570/README.md#installation)
-for its wheel and checksum file. No checkout is needed for that published release.
-Do not assume `pip install finpanel` is available on production PyPI.
-
-### A2 candidate users
-
-There is no public a2 asset download link yet. Maintainers build fresh candidate
-artifacts from the exact preparation commit with `python -m build`; a candidate
-wheel is named `finpanel-0.1.0a2-py3-none-any.whl`. Use only a verified candidate
-artifact supplied with its `SHA256SUMS.txt`; do not rename an a1 wheel.
+The verified-wheel workflow below also works for a2 GitHub release assets when
+available. Maintainers build fresh artifacts from the exact authorized source;
+the a2 wheel is named `finpanel-0.1.0a2-py3-none-any.whl`.
 
 In the artifact folder, print the wheel hash:
 
@@ -128,10 +128,10 @@ cutoffs, original XBRL verification, pinned replay, and troubleshooting.
 
 ## Validation and release status
 
-- Candidate: **0.1.0a2**, intended tag **v0.1.0-alpha.2**; not yet published.
+- Alpha.2 package: **0.1.0a2**, Git label **v0.1.0-alpha.2**. Check the release list for publication availability.
 - Existing public GitHub release: [a1](https://github.com/finleydoudou/FinPanel/releases/tag/v0.1.0-alpha), package **0.1.0a1**, unchanged.
 - Production PyPI: **not published**. TestPyPI rehearsal is conditional on gates and account setup; it is not a production release.
-- Supported Python: **3.12**. [A1 release CI](https://github.com/finleydoudou/FinPanel/actions/runs/37758981406) passed macOS/Linux/Windows with **814 tests / 0 skipped** each. A2 must independently pass the same matrix; a1 results are not a2 acceptance.
+- Supported Python: **3.12**. [A2 software CI](https://github.com/finleydoudou/FinPanel/actions/runs/37799312175) passed macOS/Linux/Windows with **814 tests / 0 skipped** each on the TestPyPI-tested software candidate. Final release-only documentation/workflow changes additionally require successful CI on the exact final commit before publication.
 
 The audited population contains 100 ordinary US-GAAP operating companies and
 24,000 financial cells. **69.61% scalar coverage is not accuracy**. All 255
